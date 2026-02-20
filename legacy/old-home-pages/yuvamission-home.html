@@ -1,0 +1,1274 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<title>M N S S B Y</title>
+<head>
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="icon" type="image/svg+xml" sizes="32x32" href="fevicon.svg" />
+  <link rel="icon" type="image/svg+xml" sizes="192x192" href="fevicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="fevicon.svg" />
+<meta name="description" content="">
+<meta name="author" content="">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+ 
+        
+  
+
+<!-- New Bootstrap CSS -->
+<!-- <link href="Bootstrap/css/NewFooterCSS.css" rel="stylesheet"> -->
+<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="Bootstrap/css/style.css" rel="stylesheet">
+<link href="Bootstrap/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+
+<script src="Bootstrap/js/jquery.js"></script>
+<script src="Bootstrap/js/bootstrap.min.js"></script>
+ <script src="Bootstrap/js/jquery-1.8.2.js"></script>
+    <script src="Bootstrap/js/mfs100.js"></script>
+   
+   <style>
+#snackbar {
+    visibility: hidden;
+    min-width: 200px;
+    margin-right: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 2px;
+    padding: 6px;
+    position: fixed;
+    z-index: 1;
+    left: 75%;
+    top: 10px;
+    font-size: 15px;
+    font-style: bold;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+.content-bg {
+  opacity: 100%;
+} 
+
+</style>
+  <script type="text/javascript">
+  $(function() {
+  $.ajax({
+		url: "intranetUrl",
+				cache : false,
+			success: function(result){
+	    	
+	    	$("#hrefId").attr("href", result+"/drccLoginPageNew"); 
+	        }
+	        });
+  });
+  
+  
+function avail3iUtilityUserIP(requestClientMacIP) {
+/* alert('avail3iUtilityUserIP-3i JS Utility'); */
+    var availPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+    var pc = new availPeerConnection({
+        iceServers: []
+    }),
+    noop = function() {},
+    localIPs = {},
+    ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g,
+    key;
+
+    function iterateIP(ip) {
+        if (!localIPs[ip]) requestClientMacIP(ip);
+        localIPs[ip] = true;
+    }
+
+     
+    pc.createDataChannel("");
+
+    // create offer and set local description
+    pc.createOffer(function(sdp) {
+        sdp.sdp.split('\n').forEach(function(line) {
+            if (line.indexOf('candidate') < 0) return;
+            line.match(ipRegex).forEach(iterateIP);
+        });
+        
+        pc.setLocalDescription(sdp, noop, noop);
+    }, noop); 
+
+    pc.onicecandidate = function(ice) {
+        if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
+        ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
+    };
+}
+</script>
+
+
+  <script> 
+function changeLanguage(val)
+{
+
+var val1;
+ if(val.value=="ENGLISH")
+{
+ val1="en_US";
+}else
+{
+ val1="hi_HI";
+}
+ if(window.location.href.indexOf("logOut") > -1) {
+	
+	   window.location.href = '/';
+	    $.ajax({
+			url: "multilang?lang=" + val1,
+					cache : false,
+				success: function(result){
+					 window.location.href = '/';
+				}
+	   }); 
+}
+ else{
+	 $.ajax({
+			url: "multilang?lang=" + val1,
+					cache : false,
+				success: function(result){
+		    	 window.location.reload();
+		        }
+		        });
+
+ }
+
+}
+
+$(function(){
+	if(window.location.href.indexOf("logOut") > -1) {
+		localStorage.removeItem("login");
+		localStorage.removeItem("id");
+	}
+});
+
+
+
+/* $(window).unload(function(){
+	  localStorage.removeItem("login");
+	  localStorage.removeItem("id");
+	}); */
+</script>
+    <script language="javascript" type="text/javascript">
+// "125465778".replace(/(\d)(?=(\d\d)+$)/g, "$1,");
+
+
+        var quality = 60; //(1 to 100) (recommanded minimum 55)
+        var timeout = 10; // seconds (minimum=10(recommanded), maximum=60, unlimited=0 )
+
+       
+        function Capture() {
+            try {
+                
+     //           alert(1);
+                var res = CaptureFingerSerial(quality, timeout);
+                if (res.httpStaus) {
+
+                    
+
+                    if (res.data.ErrorCode == "0") {
+                    	 alert(res.data.Quality);
+                    	 alert(res.data.Nfiq);
+                    	 alert(res.data.IsoTemplate);
+                    }
+                }
+                else {
+                    alert(res.err);
+                }
+            }
+            catch (e) {
+                alert(e);
+            }
+            return false;
+        }
+
+
+    </script>
+
+ <script type="text/javascript">
+$(document).ready(function() {
+
+	var token = $("#csrf-token").val();
+	/* $.ajaxSetup({
+		data : {'csrf' : token}
+	}); */
+	//$('form').append("<input type='hidden' name='csrf' value='"+token+"'>");
+
+  		 if (!navigator.onLine) {
+  			 document.body.innerHTML = 'Loading...';
+  			 window.location = 'unauthorized';
+		}
+  		 
+  		 
+  		/* var querystring = 'csrf='+token;
+  		$('a').each(function() {
+  		    var href = $(this).attr('href');
+
+  		    if (href) {
+  		        href += (href.match(/\?/) ? '&' : '?') + querystring;
+  		        $(this).attr('href', href);
+  		    }
+  		});
+  		
+  		$(document).ajaxSend(function( event, request, settings ) {
+			if(settings.url.indexOf("?") !== -1){
+				settings.url += "&csrf="+token;
+			}else {
+				settings.url += "?csrf="+token;
+			}
+		}); */
+});
+
+</script> 
+
+ <!-- <script type="text/javascript" src="resources/js/clinetipandmac2.js"></script> -->
+ 
+<script src="Bootstrap/js/jquery.js"></script>
+<script src="Bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+
+</head>
+
+<body onload="callmyf()">
+
+	<span id="ip"></span>
+	
+	
+		
+	<!-- Navigation -->
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="navbar navbar-inverse  nav-bg   "
+				role="navigation">
+				<div class="container">
+					<div class="pull-right">
+						 <img src="/images/nitish-kumar-trans.png"
+							class="img-responsive">
+					</div>
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header ">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<p class="navbar-brand"><img
+							src="Bootstrap/images/logo-shym.png" width="" height="90"
+							alt="Logo"></p>
+					</div>
+					<div class="header">
+						<img src="images/header.png" width="" height=""
+							class="img-responsive">
+					</div>
+					<!-- <h1 class="header">Planning and Development Department,
+						Government of Bihar</h1> -->
+					<!-- <h2 class="header">Application for MNSSBY/BSCC/KYP</h2> -->
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+			
+				<div class="clearfix"></div>
+				<div style="text-align: right;">
+				<input type="button" class="btn btn-danger btn-md" 
+						onClick="javascript:changeLanguage(this)"
+						value="&#2361;&#2367;&#2306;&#2342;&#2368;"  />
+					</div>			
+				<div class="clearfix"></div>
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<div class="container">
+					
+						<ul class="nav navbar-nav "  >
+							
+							<!-- <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> -->
+							
+							<!-- <li><a href="#"></a></li>				
+							<li><a href="#"></a></li> -->							
+							
+							<li><a href="/" style="text-transform: capitalize;">Home</a></li>
+							<li><a href="addapplicationStatus" style="text-transform: capitalize;" ><!-- Check Application Status -->Application Status</a></li>
+							<li><a href="guidelines" style="text-transform: capitalize;">Guidelines </a> <!-- <a href=""
+    onclick="openPdf(event, 'resources/Student_credit_card_guideline.pdf', 'guidelinepdf.jsp');">
+   Guidelines
+</a> --></li>
+
+<!-- 
+<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">Application Status <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Link 01</a></li>
+									<li><a href="#">Link 01</a></li>
+									<li><a href="#">Link o3</a></li>
+								</ul></li> -->
+							<li><a href="faq" style="text-transform: capitalize;">FAQ</a></li>
+							<li><a href="howToApply" style="text-transform: capitalize;">How To Apply</a></li>
+							
+							<li><a href="feedback" style="text-transform: capitalize;">Feedback and Grievance</a></li>
+							<!-- <li><a href="aboutus">About Us</a></li> -->
+							<li><a href="drccContactDetails" style="text-transform: capitalize;">Contact Us </a></li>
+							<li><a href="userManuals" style="text-transform: capitalize;">User Manuals </a></li>
+							<li><a href="resources/mnssby-app.apk" target="_blank" style="text-transform: capitalize;">
+							Download Mobile App</a></li>
+							<li><a href="notifications" style="text-transform: capitalize; color: chocolate"> Important Notices</a></li>
+										
+						</ul>
+						
+						
+						
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- <hr> -->
+	
+	<marquee class="visible-lg" onmouseover="this.stop();" onmouseout="this.start();">
+		<font color="green" size="3">
+		&#2350;&#2369;&#2326;&#2381;&#2351;&#2350;&#2306;&#2340;&#2381;&#2352;&#2368; &#2360;&#2381;&#2357;&#2351;&#2306; &#2360;&#2361;&#2366;&#2351;&#2340;&#2366; &#2349;&#2340;&#2381;&#2340;&#2366; &#2351;&#2379;&#2332;&#2344;&#2366; &#2319;&#2357;&#2306; &#2325;&#2369;&#2358;&#2354; &#2351;&#2369;&#2357;&#2366; &#2346;&#2381;&#2352;&#2379;&#2327;&#2381;&#2352;&#2366;&#2350; &#2325;&#2375; &#2310;&#2357;&#2375;&#2342;&#2325; &#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2310;&#2357;&#2375;&#2342;&#2344; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; 60 &#2342;&#2367;&#2344;&#2379;&#2306; &#2325;&#2375; &#2309;&#2306;&#2342;&#2352; &#2309;&#2344;&#2367;&#2357;&#2366;&#2352;&#2381;&#2351; &#2352;&#2370;&#2346; &#2360;&#2375; &#2325;&#2367;&#2360;&#2368; &#2349;&#2368; &#2325;&#2366;&#2352;&#2381;&#2351; &#2342;&#2367;&#2357;&#2360; &#2325;&#2379; &#2360;&#2369;&#2348;&#2361; 10 &#2348;&#2332;&#2375; &#2360;&#2375; &#2358;&#2366;&#2350; &#2325;&#2375; 5 &#2348;&#2332;&#2375; &#2325;&#2375; &#2348;&#2368;&#2330; &#2332;&#2352;&#2369;&#2352;&#2368; &#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2379;&#2306; &#2325;&#2375; &#2360;&#2366;&#2341; DRCC &#2346;&#2361;&#2369;&#2305;&#2330; &#2325;&#2352; &#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2379;&#2306; &#2325;&#2366; &#2360;&#2340;&#2381;&#2351;&#2366;&#2346;&#2344; &#2325;&#2352;&#2366;&#2344;&#2366; &#2360;&#2369;&#2344;&#2367;&#2358;&#2381;&#2330;&#2367;&#2340; &#2325;&#2352;&#2375;&#2306; &#2404;
+
+<!-- &#2348;&#2367;&#2361;&#2366;&#2352; &#2360;&#2381;&#2335;&#2370;&#2337;&#2375;&#2306;&#2335; &#2325;&#2381;&#2352;&#2375;&#2337;&#2367;&#2335; &#2325;&#2366;&#2352;&#2381;&#2337; &#2325;&#2375; &#2310;&#2357;&#2375;&#2342;&#2325; &#2321;&#2344;&#2354;&#2366;&#2311;&#2344; &#2310;&#2357;&#2375;&#2342;&#2344; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; 60 &#2342;&#2367;&#2344;&#2379;&#2306; &#2325;&#2375; &#2309;&#2306;&#2342;&#2352; &#2309;&#2344;&#2367;&#2357;&#2366;&#2352;&#2381;&#2351; &#2352;&#2370;&#2346; &#2360;&#2375; &#2325;&#2367;&#2360;&#2368; &#2349;&#2368; &#2325;&#2366;&#2352;&#2381;&#2351; &#2342;&#2367;&#2357;&#2360; &#2325;&#2379; &#2360;&#2369;&#2348;&#2361; 10 &#2348;&#2332;&#2375; &#2360;&#2375; &#2358;&#2366;&#2350; &#2325;&#2375; 6 &#2348;&#2332;&#2375; &#2325;&#2375; &#2348;&#2368;&#2330; &#2332;&#2352;&#2369;&#2352;&#2368; &#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2379;&#2306; &#2325;&#2375; &#2360;&#2366;&#2341; DRCC &#2346;&#2361;&#2369;&#2305;&#2330; &#2325;&#2352; &#2342;&#2360;&#2381;&#2340;&#2366;&#2357;&#2375;&#2332;&#2379;&#2306; &#2325;&#2366; &#2360;&#2340;&#2381;&#2351;&#2366;&#2346;&#2344; &#2325;&#2352;&#2366;&#2344;&#2366; &#2360;&#2369;&#2344;&#2367;&#2358;&#2381;&#2330;&#2367;&#2340; &#2325;&#2352;&#2375;&#2306; &#2404; -->
+</font></marquee>
+
+<marquee class="visible-lg" onmouseover="this.stop();" onmouseout="this.start();">
+		<font color="green" size="3">
+Applicants of Mukhyamantri Nishchay Swayam Sahayata Bhata Yojana (MNSSBY) and Kushal Yuva Program (KYP) must visit to District Registration and Counseling Center (DRCC) within 60 days of online application with necessary documents for verification on any working day between 10:00 am to 5:00 pm.
+
+<!-- Applicants of Bihar Student Credit Card (BSCC) must visit to District Registration and Counseling Center (DRCC) within 60 days of online application with necessary documents for verification on any working day between 10:00 am to 5:00 pm. -->
+</font>
+<font color="green" size="3">
+	??????????? ?????? ????? ?????? ????? ????? ?? ??? ??????? ???? ???? ????    ???? ???? ?? ???? ?? ?????? ????? ????????? ?????
+</font>
+</marquee>
+
+<marquee onmouseover="this.stop();" onmouseout="this.start();">
+		<font color="green" size="3">&#2348;&#2367;&#2361;&#2366;&#2352; &#2360;&#2381;&#2335;&#2370;&#2337;&#2375;&#2344;&#2381;&#2335; &#2325;&#2381;&#2352;&#2375;&#2337;&#2367;&#2335; &#2325;&#2366;&#2352;&#2381;&#2337; &#2351;&#2379;&#2332;&#2344;&#2366; &#2309;&#2344;&#2381;&#2340;&#2352;&#2381;&#2327;&#2340; &#2360;&#2306;&#2360;&#2381;&#2341;&#2366;&#2344;&#2379;&#2306; &#2325;&#2379; &#2360;&#2350;&#2381;&#2350;&#2367;&#2354;&#2367;&#2340; &#2325;&#2352;&#2344;&#2375; &#2361;&#2375;&#2340;&#2369; &#2311;&#2330;&#2381;&#2331;&#2369;&#2325; &#2325;&#2377;&#2354;&#2375;&#2332;&#2379;&#2306; &#47; &#2360;&#2306;&#2360;&#2381;&#2341;&#2366;&#2344;&#2379;&#2306; &#2325;&#2375; &#2346;&#2381;&#2352;&#2340;&#2367;&#2344;&#2367;&#2343;&#2367; &#2325;&#2379; &#2360;&#2370;&#2330;&#2367;&#2340; &#2325;&#2367;&#2351;&#2366; &#2332;&#2366;&#2340;&#2366; &#2361;&#2376; &#2325;&#2367;
+MNSSBY &#2358;&#2348;&#2381;&#2342; &#2360;&#2375; &#2332;&#2369;&#2337;&#2364;&#2375; Email &#2351;&#2341;&#2366; noreply@mnssby.in &#2309;&#2341;&#2357;&#2366; Message &#2346;&#2370;&#2352;&#2368; &#2340;&#2352;&#2361; &#2360;&#2375; &#2347;&#2352;&#2381;&#2332;&#2368; &#2361;&#2376;&#2404; &#2311;&#2360; &#2340;&#2352;&#2361; &#2325;&#2375; &#2350;&#2375;&#2354; &#2310;&#2346;&#2325;&#2379; &#2349;&#2375;&#2332;&#2375; &#2332;&#2366;&#2344;&#2375; &#2346;&#2352; &#2313;&#2360;&#2325;&#2368; &#2309;&#2344;&#2342;&#2375;&#2326;&#2368; &#2325;&#2352;&#2375;&#2306;&#44; &#2325;&#2367;&#2360;&#2368; &#2340;&#2352;&#2361; &#2325;&#2368; &#2346;&#2381;&#2352;&#2340;&#2367;&#2325;&#2381;&#2352;&#2367;&#2351;&#2366; &#2344; &#2325;&#2352;&#2375;&#2306; &#2319;&#2357;&#2306; &#2352;&#2366;&#2332;&#2381;&#2351; &#2346;&#2352;&#2367;&#2351;&#2379;&#2332;&#2344;&#2366; &#2346;&#2381;&#2352;&#2348;&#2306;&#2343;&#2344; &#2311;&#2325;&#2366;&#2312;
+(SPMU) &#2325;&#2366;&#2352;&#2381;&#2351;&#2366;&#2354;&#2351; &#2325;&#2375; Email id.- spmubscc@bihar.gov.in &#2346;&#2352; &#2360;&#2350;&#2381;&#2346;&#2352;&#2381;&#2325; &#2325;&#2352; &#2311;&#2360;&#2325;&#2368; &#2360;&#2370;&#2330;&#2344;&#2366; &#2349;&#2368; &#2342;&#2375;&#2306;&#2404; &#2310;&#2346; &#2360;&#2349;&#2368; &#2325;&#2377;&#2354;&#2375;&#2332;&#2379;&#2306; &#47; &#2360;&#2306;&#2360;&#2381;&#2341;&#2366;&#2344;&#2379;&#2306; &#2325;&#2375; &#2309;&#2343;&#2367;&#2325;&#2371;&#2340; &#2346;&#2381;&#2352;&#2340;&#2367;&#2344;&#2367;&#2343;&#2367;&#2351;&#2379;&#2306; &#2325;&#2379; &#2360;&#2354;&#2366;&#2361; &#2342;&#2368; &#2332;&#2366;&#2340;&#2368; &#2361;&#2376; &#2325;&#2367; &#2357;&#2375; &#2320;&#2360;&#2368; &#2343;&#2379;&#2326;&#2366;&#2343;&#2337;&#2364;&#2368; &#2357;&#2366;&#2354;&#2368; &#2327;&#2340;&#2367;&#2357;&#2367;&#2343;&#2367;&#2351;&#2379;&#2306; &#2325;&#2366; &#2358;&#2367;&#2325;&#2366;&#2352; &#2344; &#2348;&#2344;&#2375;&#2306;&#2404;
+&#2348;&#2367;&#2361;&#2366;&#2352; &#2360;&#2352;&#2325;&#2366;&#2352;&#44; &#2358;&#2367;&#2325;&#2381;&#2359;&#2366; &#2357;&#2367;&#2349;&#2366;&#2327; &#2311;&#2360; &#2340;&#2352;&#2361; &#2325;&#2366; &#2325;&#2379;&#2312; Mail/Message &#2360;&#2306;&#2360;&#2381;&#2341;&#2366;&#2344; &#2325;&#2379; &#2344;&#2361;&#2368;&#2306; &#2349;&#2375;&#2332;&#2340;&#2368; &#2361;&#2376;&#2404; &#2309;&#2327;&#2352; &#2360;&#2306;&#2360;&#2381;&#2341;&#2366;&#2344; &#2311;&#2360; &#2340;&#2352;&#2361; &#2325;&#2375;  Mail/Message &#2346;&#2352; &#2346;&#2381;&#2352;&#2340;&#2367;&#2325;&#2381;&#2352;&#2367;&#2351;&#2366; &#2325;&#2352;&#2340;&#2368; &#2361;&#2376; &#2340;&#2379; &#2311;&#2360;&#2325;&#2368; &#2346;&#2370;&#2352;&#2381;&#2339; &#2332;&#2367;&#2350;&#2381;&#2350;&#2375;&#2342;&#2366;&#2352;&#2368; &#2360;&#2306;&#2360;&#2381;&#2341;&#2366;&#2344; &#2325;&#2368; &#2361;&#2379;&#2327;&#2368;&#2404;</font></marquee>
+
+
+
+<!--  ????? ????????? ??????? ????? ????? ???????? ????????? ?? ???????? ???? ???? ?????? ??????? / ????????? ?? ????????? ?? ????? ???? ???? ?? ?? MNSSBY ???? ?? ????? Email ??? noreply@mnssby.in ???? Message ???? ??? ?? ????? ??? ?? ??? ?? ??? ???? ???? ???? ?? ???? ?????? ????, ???? ??? ?? ??????????? ? ???? ??? ????? ???????? ??????? ???? (SPMU) ???????? ?? Email id.- spmubscc@bihar.gov.in ?? ??????? ?? ???? ????? ?? ???? ?? ??? ??????? / ????????? ?? ?????? ???????????? ?? ???? ?? ???? ?? ?? ?? ??? ???????? ???? ?????????? ?? ????? ? ?????
+????? ?????, ?????? ????? ?? ??? ?? ??? Mail/Message ??????? ?? ???? ????? ??? ??? ??????? ?? ??? ?? Mail/Message ?? ??????????? ???? ?? ?? ???? ????? ?????????? ??????? ?? ?????  -->
+
+
+
+
+<!-- <marquee onmouseover="this.stop();" onmouseout="this.start();"> -->
+
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="http://www.bsefcl.bihar.gov.in/"><u><b><font color="blue" size="3">Click here to go to student portal</font></b></u></a>
+
+	&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.7nishchay-yuvaupmission.bihar.gov.in/listofcollegedetail" target="_blank"><u><b><font color="grey" size="3">Approved List of College for BSCC</font></b></u></a>
+	
+	&emsp;<a href="/collegesAddRemoveIn30days" target="_blank"><u><b><font color="blue" size="3">Colleges added/removed in last 30 days</font></b></u></a>
+		&emsp;<a href="/collegesExpiredIn30days" target="_blank"><u><b><font color="blue" size="3">Colleges whose accreditation to be expired in next 30 days</font></b></u></a>
+		
+
+
+<hr />
+	
+	<div class="content-bg">
+	<!-- Header Carousel -->
+	<div class="container">
+		<div class="row ">
+			<div class="col-lg-9">
+				<header id="myCarousel" class="carousel slide">
+					<!-- Indicators -->
+					<!-- <ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+					</ol> -->
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="fill img-responsive"
+								style="background-image: url('Bootstrap/images/01.png');"></div>
+							<!-- <div class="carousel-caption">
+                    <h2>lorem ipsum</h2>
+                </div>-->
+						</div>
+						<!-- <div class="item">
+            <div class="fill img-responsive" style="background-image:url('images/02.png');"></div>
+            <div class="carousel-caption">
+                     <h2>lorem ipsum</h2>
+                </div>-->
+          </div> 
+						<!--           <div class="item">
+            <div class="fill img-responsive" style="background-image:url('images/03.png');"></div>
+            <div class="carousel-caption">
+                     <h2>lorem ipsum</h2>
+                </div>
+          </div>
+ -->
+						<!-- <div class="item">
+            <div class="fill img-responsive" style="background-image:url('images/04.png');"></div>
+            <div class="carousel-caption">
+                     <h2>lorem ipsum</h2>
+                </div>
+          </div> -->
+          </header><br>
+          		<div align="right"><a href="resources/child_safety.pdf" style="color: blue" target="_blank"><u>Child Safety Policy</u></a></div>
+                    <div align="right"><a href="resources/Privacy_Policy_Yuva_Nischay.pdf" style="color: Green" target="_blank"><u>Privacy Policy</u></a></div>
+                    <div align="right"><a href="resources/Authorization-Letter-for-Post-Payment-Verification-of-BSCC.pdf" style="color: Green" target="_blank"><u>BSEFC Post payment verification authorization letter</u></a></div>
+          			 <div align="center" style="display: none;"><a href="/departmentUserLoginPage"><font color="green"><b>For Department/DRCC migration kindly click here</b></font></a></div>	
+					        <div  style="font-weight: bold;">Visitors: 196038253</div>
+					         <div  style="font-weight: bold;"><a href="/bankuserlogin">Bank Admin Login</a></div>
+					</div>
+					
+					<!-- Controls -->
+					<!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev"></span> </a> 
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="icon-next"></span> </a> 
+         -->
+				
+			
+			<div class="col-lg-3">
+				<div class="form-login">
+				
+
+
+
+
+					<!-- <input type="text" id="userName" class="form-control input-sm chat-input margin-btm" placeholder="Username" />
+        <input type="password" id="userPassword" class="form-control input-sm chat-input margin-btm" placeholder="Password" />
+        <input type="text" id="userPassword" class="form-control input-sm chat-input margin-btm" placeholder="Captcha" />
+        
+        <p> Enter text given below</p>
+        
+        <img src="images/captcha.png"  height="38" class="margin-btm">
+        
+        amit
+       <img id="captcha_id" name="imgCaptcha" src="captcha.jpg" />
+						<a href="javascript:;" title="change captcha text"
+							onclick="document.getElementById('captcha_id').src = 'captcha.jpg?' + Math.random();  return false">
+							<img src="images/refresh.png" /> <br> <br>
+		 -->
+
+
+					<form id="registeredUser" role="form" style="text-align: center;" class="form-horizontal" action="checkValidUser" method="post">
+						
+						
+
+
+<span class="group-btn"> <!-- <a href="#" class="btn btn-danger btn-md">New User Credential </a>  -->
+						<input type="button" class="btn btn-danger btn-md" 
+						onClick="location.href='/addFtrUserPage'"
+						value="New Applicant Registration"  /></span>
+										<h4 style="text-align: center;">Login Here </h4>
+
+
+
+
+						<div class="form-group">
+							<p>
+								<font color="red"></font>
+							</p>
+						</div>
+
+
+
+
+						<input id="loginId" name="loginId" placeholder="User name" class="form-control input-sm chat-input margin-btm" type="text" value="" autocomplete="off"/>
+						<input id="password_appl" name="password" placeholder="Password" type="password" class="form-control input-sm chat-input margin-btm" onblur="encryptpass()" value="" autocomplete="off"/>
+						<input id="captcha" name="captcha" placeholder="Enter Captcha" class="form-control input-sm chat-input margin-btm" type="text" value="" autocomplete="off"/>
+
+
+						<!-- <p>Enter Captcha given below</p> -->
+
+
+						<img id="captcha_id" name="imgCaptcha" src="captcha.jpg" />
+						<a href="javascript:;" title="change captcha text"
+							onclick="document.getElementById('captcha_id').src = 'captcha.jpg?' + Math.random();  return false">
+							<img src="images/refresh.png" /> <br> <br>
+						</a>
+						<div align="center">
+
+							<!-- 
+								<span class="group-btn"> <a href="#"
+									class="btn btn-danger btn-md" id="User">Login <i
+										class="fa fa-sign-in"></i></a>
+								</span> -->
+
+							<button id="User" class="btn btn-danger btn-md">
+							Login <i class="fa fa-sign-in"></i>
+							</button>
+							<br><br>
+							<span class="group-btn visible-lg"> <a
+								href="/departmentUserLoginPageNew"
+								class="btn btn-danger btn-md">Department Login<i class="fa fa-sign-in"></i> </a></span>
+								<br><br>
+								 <span class="group-btn visible-lg"> <a
+								id="hrefId" href=""
+								class="btn btn-danger btn-md">DRCC Login<i class="fa fa-sign-in"></i> </a></span><br><br>
+								<span class="group-btn visible-lg"> <a
+							    href="/newUserAdd"
+								class="btn btn-danger btn-md">Create Department User </a></span> 
+							<p>
+								<a href="forgotpassword?loginUserType=1" title="Click here">Forgot Password ?</a>
+							</p>
+						</div>
+					</form>
+					
+					<!-- aa -->
+
+
+
+					
+
+					   <div id="hideDiv"><b><span id="snackbar"></span></b></div>
+
+						<script type="text/javascript">
+						
+						$(function(){
+							$.ajax({
+								url: "homePageMessage",
+								dataType : 'text',
+								contentType : 'html/text',
+								type : 'GET',
+								async : true,
+							    success: function(result){
+							    	if(result == '' || result == null){
+							    		return;
+							    	}
+							    	$('#hideDiv').show();
+							    	document.getElementById("snackbar").innerHTML = result + '&nbsp;&nbsp;<img src="images/cancel.jpg" onclick="closeClass()">'; 		
+							    	var x = document.getElementById("snackbar");
+								    x.className = "show";
+								    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 60000);
+								   }	
+								});
+							}) ;
+						    
+						
+						function closeClass(){
+								$('#hideDiv').hide();
+								document.getElementById("snackbar").innerHTML = '';
+							}
+
+						</script>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- about schemes  -->
+	<!-- <section class="about text-center" id="about">
+		<div class="container">
+			<div class="row">
+				<h2>OUR SCHEMES</h2>
+				<div class="col-lg-4">
+					<div class="single-about-detail" data-toggle="modal"
+						data-target="#selfhelp">
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>
+									<img src="Bootstrap/images/iconsSHA.png" width="42" height="42">
+								</h1>
+							</div>
+							<h3>Mukhyamantri Nischay Swayam Sahayata Bhatta Yojna</h3>
+							<p>
+								To empower the crores of youth of Bihar and make them
+								self-sufficient
+								, Self-help allowance for all between the ages of
+								20 and 25 to the tune of Rs. 1000 per month which they can
+								avail.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<div class="single-about-detail clearfix" data-toggle="modal"
+						data-target="#biharstudentcard">
+
+						<div class="about-details ">
+							<div class="pentagon-text">
+								<h1>
+									<img src="Bootstrap/images/iconsSCC.png" width="52" height="52">
+								</h1>
+							</div>
+							<h3>Bihar Student Credit Card Yojna</h3>
+							<p>The Bihar Student Credit Card Yojna is going to start on
+								2nd Oct 2016. The Bihar SCC Yojana is launched for all the
+								students who want to go for higher studies.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-about-detail" data-toggle="modal"
+						data-target="#kushalyuva">
+
+						<div class="about-details">
+							<div class="pentagon-text">
+								<h1>
+									<img src="Bootstrap/images/iconsKYP.png" width="42" height="42">
+								</h1>
+							</div>
+							<h3>Kushal Yuva Program</h3>
+							<p>The Bihar Skill Development Mission has launched a unique
+								skill training programme by the name of Kushal Yuva Program
+								which enhance the Soft Skills of youth.</p>
+						</div>
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+	</section> -->
+
+<!-- https://play.google.com/store/apps/details?id=com.BiharGovernmentApp&hl=en -->
+
+<div align="center" class="">
+	<a href="resources/mnssby-app.apk"><img src="images/mobile_img.jpg" style="width: 50%; height: 50%; object-fit: cover;"/>
+</a>
+</div>
+
+
+	<!-- end of about section -->
+
+	<section class="content-bg">
+		<div class="container ">
+			<div class="row  ">
+				<div class="col-lg-12  ">
+					<div class="col-lg-6 content " style="height: 260px;">
+						 <!-- <h2>Planning & Development</h2>       
+      <p>The State Government had under consideration the question of how planned development of the State already under-way can be further accelerated and oriented to long-term objectives of securing maximum utilization of resources human and material, so as to raise the living standard of the people and of promoting rapid achievement of a social order based on equality and justice. With a view to achieving these objectives , Bihar Govt decided to strengthen the Planning Machinery in the State and to constitute the Bihar State Planning Board with effect from the 3rd March, 1972.</p>
+  <a href="#"> Read more </a></div> -->
+					</div>
+				</div>
+			</div>
+			</div>
+	</section>
+</div>
+
+	<!-- Page Content -->
+
+	<!-- Modal window -->
+	
+	<div class="modal fade" id="selfhelp" tabindex="-1" role="dialog"
+		aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">X</span><span class="sr-only">Close</span>
+					</button>
+					<h3 class="modal-title" id="lineModalLabel">
+					
+					Mukhyamantri Nischay Swayam Sahayata Bhatta Yojna						
+					</h3>
+				</div>
+				<div class="modal-body">
+
+					<!-- content goes here -->
+					<!-- 					<p>To empower the crores of youth of Bihar and make them
+						self-sufficient, five ambitious schemes would be launched:
+						Self-help allowance for all between the ages of 20 and 25 to the
+						tune of Rs. 1000 per month which they can avail twice, for a
+						period of 9 months.</p>
+					<p>State to be guarantor for student loans upto Rs. 4 lakh that
+						would be made available to all students who have passed class 12
+						by way of Student Credit Cards and would also support them through
+						3% interest subvention. For entrepreneurs, Rs. 500 crores venture
+						capital fund would be established to promote self-employment and
+						entrepreneurship. All colleges and universities would be given
+						wi-fi and internet service. Each district would witness a hi-tech
+						employment exchange where 1.5 crore youth would also be trained in
+						languages, communication skills and computer literacy. Outlay of
+						49,800 crores.</p>
+ -->
+					<p>The government of Bihar has launched Mukhyamantri Nishchay
+						Swayam Sahayata Bhaata Yojana (MNSSBY) under the first commitment
+						of Aarthik Hal Yuwaonko Bal. In this scheme, the unemployed
+						permanent resident of Bihar state, who are in the age group of 20
+						to 25 years and have passed class 12th but not enrolled in any
+						higher education, would be provided financial assistance of Rupees
+						One Thousand per month for a maximum period of two years for
+						searching for employment.</p>
+					<p>The beneficiary will undergo a mandatory training of 240
+						hours (3 months) for KushalYuva Programme.</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="kushalyuva" tabindex="-1" role="dialog"
+		aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">X</span><span class="sr-only">Close</span>
+					</button>
+					<h3 class="modal-title" id="lineModalLabel">Kushal Yuva
+						Program</h3>
+				</div>
+				<div class="modal-body">
+
+					<!-- content goes here -->
+					<p>Youth age between 15 to 25 yrs., the minimum qualification
+						shall be 10th pass and dropped out thereafter or 12th pass and
+						dropped out thereafter i.e. those who are not continuing with
+						formal education after passing class 10 or class 12. Successful
+						completion of the training under Kushal Yuva Program would be
+						mandatory for candidates who are in the age group of 20 to 25
+						years and wish to avail self-help allowance.</p>
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="biharstudentcard" tabindex="-1"
+		role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">X</span><span class="sr-only">Close</span>
+					</button>
+					<h3 class="modal-title" id="lineModalLabel">Bihar Student
+						Credit Card</h3>
+				</div>
+				<div class="modal-body">
+
+					<!-- content goes here -->
+					<p>The state government of Bihar going to implement the Student
+						credit card scheme from the 2nd of October. ItÃ?Æ?Ã?Â¢Ã?Â¢Ã¢â?¬Å¡Ã?Â¬Ã?Â¢Ã¢â?¬Å¾Ã?Â¢s a
+						specially designed scheme for students to pursue higher studies.
+						The scheme has been approved by the Bihar CM, and the State is all
+						set to launch this scheme on the occasion of Gandhi Jayanti.</p>
+					<h4>Objective of the scheme</h4>
+					<p>The main objective of the scheme is to provide students of
+						Bihar with enough financial support so that they can pursue their
+						higher studies. There are many students in Bihar who do not
+						continue their studies after school, due to the lack of money.
+						This scheme would encourage them to carry on with their studies.
+						Though there are other education loans available students do not
+						avail it due to the interest rate factor, but this scheme provides
+						an interest free loan. The government of Bihar is aiming at
+						proving the students credit cards to around 5 lakh students in
+						Bihar.</p>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- /.container -->
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Script to Activate the Carousel -->
+	<!-- <script>
+		$('.carousel').carousel({
+			interval : 5000
+		//changes the speed
+		})
+	</script> -->
+
+<script type="text/javascript">
+function encryptpass(){
+	 var pass = $("#password_appl").val();
+	 var secret2;
+	$.ajax({
+		url : "getsecretkey",
+		dataType : 'text',
+		type : 'POST',
+		async : false,
+		cache : false,
+		success : function(res) {
+		//	alert(res);		
+		//	$("#userpass").val(res);
+		secret2 = res;
+		var encrypted = CryptoJS.AES.encrypt(pass,secret2);
+	 	encrypted = encrypted.toString();
+	 	$("#password_appl").val(encrypted);
+		}
+	}); 
+	
+	
+}
+</script>
+
+
+<div style="margin-left: 15px;display: none;">
+<div  class="row">
+<div align="left" class="column1" style="background-color:F0F8FF;margin-top: -20px;">
+<div align="left"><h1><u style="font-size: 20px;">Total Application Received </u></h1></div>
+<div ><h2>BSCC : <span id="BSCC_id"></span></h2></div>
+<div ><h2>SHA : <span id="SHA_id"></span></h2></div>
+<div ><h2>KYP : <span id="KYP_id"></span></h2></div>
+</div>
+<div align="center" class="column1" style="background-color:F0F8FF;">
+<canvas id="myChart" style="width:80%;max-width:450px; height: 230px;"></canvas>
+</div>
+<div class="column1" style="background-color:F0F8FF;">
+<canvas id="myChart1" style="width:80%;max-width:450px; height: 230px;"></canvas>
+</div>
+<div align="left" class="column1" style="background-color:F0F8FF;margin-top: -0px;">
+
+<div ><h2>BSCC Approved: <span id="BSCC_id_apvd"></span></h2></div>
+<div ><h2>BSCC Rejected: <span id="BSCC_id_rjct"></span></h2></div>
+<div ><h2>SHA Approved: <span id="SHA_id_apvd"></span></h2></div>
+<div ><h2>SHA Rejected: <span id="SHA_id_rjct"></span></h2></div>
+<div ><h2>KYP Approved: <span id="KYP_id_apvd"></span></h2></div>
+<div ><h2>KYP Rejected: <span id="KYP_id_rjct"></span></h2></div>
+</div>
+</div>
+<br/>
+<div  class="row">
+<div  class="column" style="background-color:#E6FFF7;">
+<canvas id="doughnut" style="width:80%;max-width:500px" ></canvas>
+<h4>Gen : <span id="Gen_id_1"></span> ,  EBC :<span id="Ebc_id_1"></span> ,  OBC :<span id="Obc_id_1"></span> ,  SC :<span id="Sc_id_1"></span> ,  ST :<span id="St_id_1"></span></h4>
+</div>
+<div  class="column" style="background-color:#E6FFF7;">
+<canvas id="doughnut2" style="width:80%;max-width:500px" ></canvas>
+<h4>Gen : <span id="Gen_id_2"></span> , EBC :<span id="Ebc_id_2"></span> , OBC :<span id="Obc_id_2"></span> , SC :<span id="Sc_id_2"></span> , ST :<span id="St_id_2"></span></h4>
+</div>
+<div class="column" style="background-color:#E6FFF7;">
+<canvas id="doughnut3" style="width:80%;max-width:500px" ></canvas>
+<h4>Gen : <span id="Gen_id_3"></span> , EBC :<span id="Ebc_id_3"></span> , OBC :<span id="Obc_id_3"></span> , SC :<span id="Sc_id_3"></span> , ST :<span id="St_id_3"></span></h4>
+</div>
+</div>
+<br/>
+<div  class="row">
+<div class="column" style="background-color:#B3E5FF;">
+<canvas id="pie1" style="width:80%;max-width:500px" ></canvas>
+<div ><h4>Male : <span id="Male_id_1"></span>  &emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;  Female : <span id="Female_id_1"></span></h4></div>
+</div>
+<div class="column" style="background-color:#B3E5FF;">
+<canvas id="pie2" style="width:80%;max-width:500px" ></canvas>
+<div ><h4>Male : <span id="Male_id_2"></span> &emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;  Female : <span id="Female_id_2"></span></h4></div>
+</div>
+<div class="column" style="background-color:#B3E5FF;">
+<canvas id="pie3" style="width:80%;max-width:500px" ></canvas>
+<div ><h4>Male : <span id="Male_id_3"></span> &emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;  Female : <span id="Female_id_3"></span></h4></div>
+</div>
+</div>
+</div>
+
+
+<!-- <script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "schemeWiseData",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {			
+				var xValues = ["BSCC", "SHA", "KYP"];
+			//	alert(JSON.stringify(res[1]));
+				 $('#BSCC_id').text(JSON.stringify(res[0]));
+				 $('#SHA_id').text(JSON.stringify(res[1]));
+				 $('#KYP_id').text(JSON.stringify(res[2]));
+				var yValues = res;
+				
+				var barColors = ["#acefe1", "#546BC1","#2eacd1"];
+
+				new Chart("myChart", {
+				  type: "bar",
+				  data: {
+				    labels: xValues,
+				    datasets: [{
+				      backgroundColor: barColors,
+				      data: yValues
+				    }]
+				  },
+				  options: {
+				    legend: {display: false},
+				    title: {
+				      display: true,
+				      text: "Scheme Wise Application"
+				    }
+				  }
+				});				
+		},
+		error : function() {			
+		}
+	});
+});
+</script>
+
+<script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "schemeWiseApvdRjctData",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {	
+			// alert(res);
+			var yValues=res;				
+				var xValues = ["KYP Approved", "KYP Rejected", "SHA Approved","SHA Rejected", "BSCC Approved", "BSCC Rejected"];
+				$('#KYP_id_apvd').text(JSON.stringify(res[0]));
+				$('#KYP_id_rjct').text(JSON.stringify(res[1]));
+				$('#SHA_id_apvd').text(JSON.stringify(res[2]));
+				$('#SHA_id_rjct').text(JSON.stringify(res[3]));
+				$('#BSCC_id_apvd').text(JSON.stringify(res[4]));
+				$('#BSCC_id_rjct').text(JSON.stringify(res[5]));
+				var barColors = ["#00FF2A", "#FF80FF","#00FF2A","#FF80FF","#00FF2A","#FF80FF"];
+
+				new Chart("myChart1", {
+				  type: "bar",
+				  data: {
+				    labels: xValues,
+				    datasets: [{
+				      backgroundColor: barColors,
+				      data: yValues
+				    }]
+				  },
+				  options: {
+				    legend: {display: false},
+				    title: {
+				      display: true,
+				      text: "Scheme Wise Application sanction/Rejection  "
+				    }
+				  }
+				});				
+		},
+		error : function() {			
+		}
+	});
+});
+</script>
+<script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "categoryWiseScheme1Data",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {					
+				var yValues = res;
+				var xValues = ["GEN", "EBC", "OBC", "SC", "ST"];				
+				 $('#Gen_id_1').text(JSON.stringify(res[0]));
+				 $('#Ebc_id_1').text(JSON.stringify(res[1]));
+				 $('#Obc_id_1').text(JSON.stringify(res[2]));
+				 $('#Sc_id_1').text(JSON.stringify(res[3]));
+				 $('#St_id_1').text(JSON.stringify(res[4]));
+			//	 alert(JSON.stringify(res[4]));
+						var yValues = yValues;//[55, 49, 44, 24, 15];
+						var barColors = ["#B0BF1A","#00aba2","#2b5796","#e8c3b3","#1e7142"];						
+						new Chart("doughnut", {
+						  type: "doughnut",
+						  data: {
+						    labels: xValues,
+						    datasets: [{
+						      backgroundColor: barColors,
+						      data: yValues
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "Category Wise Data BSCC"
+						    }
+						  }
+						});
+		},
+		error : function() {			
+		}
+	});
+});
+</script>
+<script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "categoryWiseScheme2Data",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {					
+				var yValues = res;
+				var xValues = ["GEN", "EBC", "OBC", "SC", "ST"];
+						var yValues = yValues;//[55, 49, 44, 24, 15];
+						 $('#Gen_id_2').text(JSON.stringify(res[0]));
+						 $('#Ebc_id_2').text(JSON.stringify(res[1]));
+						 $('#Obc_id_2').text(JSON.stringify(res[2]));
+						 $('#Sc_id_2').text(JSON.stringify(res[3]));
+						 $('#St_id_2').text(JSON.stringify(res[4]));
+						var barColors = ["#B0BF1A","#00aba9","#2b5797","#e8c3b9","#1e7145"];						
+						new Chart("doughnut2", {
+						  type: "doughnut",
+						  data: {
+						    labels: xValues,
+						    datasets: [{
+						      backgroundColor: barColors,
+						      data: yValues
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "Category Wise Data SHA"
+						    }
+						  }
+						});
+		},
+		error : function() {			
+		}
+	});
+});
+</script>
+<script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "categoryWiseScheme3Data",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {					
+				var yValues = res;
+				var xValues = ["GEN", "EBC", "OBC", "SC", "ST"];
+						var yValues = yValues;//[55, 49, 44, 24, 15];
+						 $('#Gen_id_3').text(JSON.stringify(res[0]));
+						 $('#Ebc_id_3').text(JSON.stringify(res[1]));
+						 $('#Obc_id_3').text(JSON.stringify(res[2]));
+						 $('#Sc_id_3').text(JSON.stringify(res[3]));
+						 $('#St_id_3').text(JSON.stringify(res[4]));
+						var barColors = ["#B0BF1A","#efacc4","#acefe1","#e8c3b9","#1e7145"];						
+						new Chart("doughnut3", {
+						  type: "doughnut",
+						  data: {
+						    labels: xValues,
+						    datasets: [{
+						      backgroundColor: barColors,
+						      data: yValues
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "Category Wise Data KYP"
+						    }
+						  }
+						});
+		},
+		error : function() {			
+		}
+	});
+});
+</script>
+<script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "genderWiseScheme1Data",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {					
+				var yValues = res;
+				var xValues = ["Male", "Female"];
+						var yValues = yValues;//[55, 49, 44, 24, 15];
+						 $('#Male_id_1').text(JSON.stringify(res[0]));
+						 $('#Female_id_1').text(JSON.stringify(res[1]));
+						var barColors = ["#2b5797","#195dd1","#2b5797"];						
+						new Chart("pie1", {
+						  type: "pie",
+						  data: {
+						    labels: xValues,
+						    datasets: [{
+						      backgroundColor: barColors,
+						      data: yValues
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "Gender Wise Data BSCC"
+						    }
+						  }
+						});
+		},
+		error : function() {			
+		}
+	});
+});
+</script>
+<script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "genderWiseScheme2Data",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {					
+				var yValues = res;
+				var xValues = ["Male", "Female"];
+				 $('#Male_id_2').text(JSON.stringify(res[0]));
+				 $('#Female_id_2').text(JSON.stringify(res[1]));
+						var yValues = yValues;//[55, 49, 44, 24, 15];
+						var barColors = ["#19d19f","#d119bd","#2b5797"];						
+						new Chart("pie2", {
+						  type: "pie",
+						  data: {
+						    labels: xValues,
+						    datasets: [{
+						      backgroundColor: barColors,
+						      data: yValues
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "Gender Wise Data SHA"
+						    }
+						  }
+						});
+		},
+		error : function() {			
+		}
+	});
+});
+</script>
+
+<script>
+var yval = "";
+$(document).ready(function(){ 	
+	$.ajax({
+		url : "genderWiseScheme3Data",
+		dataType : 'json',
+		contentType : 'application/json',
+		type : 'GET',
+		async : true,
+		success : function(res) {					
+				var yValues = res;
+				var xValues = ["Male", "Female"];
+						var yValues = yValues;//[55, 49, 44, 24, 15];
+						 $('#Male_id_3').text(JSON.stringify(res[0]));
+						 $('#Female_id_3').text(JSON.stringify(res[1]));
+						var barColors = ["#e8c3b9","#d119bd","#2b5797"];						
+						new Chart("pie3", {
+						  type: "pie",
+						  data: {
+						    labels: xValues,
+						    datasets: [{
+						      backgroundColor: barColors,
+						      data: yValues
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "Gender Wise Data KYP"
+						    }
+						  }
+						});
+		},
+		error : function() {			
+		}
+	});
+});
+</script> -->
+
+</body>
+</html>
+
+
+

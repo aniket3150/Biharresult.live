@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admit Card | BiharResult.live</title>
+  <meta name="description" content="Latest admit card and exam date updates with download process and required instructions." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://biharresult.live/sections/admit-card/" />
+  <link rel="icon" type="image/svg+xml" sizes="32x32" href="../../fevicon.svg" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header class="post-topbar"><div class="br-wrap"><a href="../../index.html" class="post-brand">BiharResult.live</a></div></header>
+  <main class="br-wrap br-main-content">
+    <article class="br-static-page">
+      <h1>Admit Card</h1>
+      <p>Browse admit card updates and open each post for download links, exam date, and reporting instructions.</p>
+      <ul id="section-posts-list" class="br-pro-list"></ul>
+    </article>
+    <footer class="br-legal-links" aria-label="Legal Links">
+      <a href="../../pages/legal/about.html">About Us</a>
+      <a href="../../pages/legal/contact.html">Contact Us</a>
+      <a href="../../pages/legal/privacy-policy.html">Privacy Policy</a>
+      <p class="br-legal-disclaimer"><strong>Disclaimer:</strong> Information is provided for education purposes. Always verify final details from the official notification/website.</p>
+    </footer>
+  </main>
+  <script>
+    (async function () {
+      const list = document.getElementById("section-posts-list");
+      try {
+        const res = await fetch("./posts.json", { cache: "no-store" });
+        const posts = await res.json();
+        posts.sort((a, b) => new Date(b.updatedAt || b.publishedAt || 0) - new Date(a.updatedAt || a.publishedAt || 0)).slice(0, 120).forEach((post) => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `./${encodeURIComponent(post.slug)}.html`;
+          a.textContent = post.title;
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      } catch (e) {
+        list.innerHTML = "<li>Section posts are being updated.</li>";
+      }
+    }());
+  </script>
+</body>
+</html>
+
