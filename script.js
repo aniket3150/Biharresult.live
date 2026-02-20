@@ -47,14 +47,21 @@ function trimForMeta(text, max = 158) {
 }
 
 function buildSeoDescription(post) {
-  const source = cleanSnippet(post.shortInfo || post.longDescription || "");
-  if (source) return trimForMeta(source, 158);
-
   const title = String(post.title || "Latest update").trim();
   const category = String(post.category || "Sarkari update").trim();
-  const department = String(post.department || "official department").trim();
-  const fallback = `${title} in ${category}. Check eligibility, important dates, and official links from ${department}.`;
-  return trimForMeta(fallback, 158);
+  const actionByCategory = {
+    "Latest Results": "Check result status, cut off, and official result links",
+    "Latest Jobs": "Check eligibility, vacancy, dates, and apply link",
+    "Admit Card": "Check exam date, shift details, and admit card download link",
+    Scholarship: "Check eligibility, required documents, and apply process",
+    Admission: "Check admission dates, eligibility, and application steps",
+    "Sarkari Yojana": "Check beneficiary rules, documents, and official apply process",
+    Verification: "Check document status, verification process, and official links"
+  };
+
+  const actionText = actionByCategory[category] || "Check important dates, eligibility, and official links";
+  const template = `${title}: ${actionText}. Fast and reliable student update on BiharResult.live.`;
+  return trimForMeta(template, 158);
 }
 
 async function loadData() {
