@@ -1403,6 +1403,16 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   margin-top: 18px;
 }
 
+.br-post-mini-footer {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #dbe3ef;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
+
 /* RRB detail page */
 .rrb-meta-row {
   display: flex;
