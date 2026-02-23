@@ -1537,6 +1537,32 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   font-weight: 700;
 }
 
+.rrb-link-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rrb-link-table td {
+  border: 1px solid #2f2f2f;
+  background: #ebe18f;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 14px;
+}
+
+.rrb-link-table td a {
+  color: #0000ee;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.rrb-link-table td a:hover,
+.rrb-link-table td a:focus-visible {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .rrb-two-col {
     grid-template-columns: 1fr;
@@ -1547,6 +1573,11 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   .rrb-total-head,
   .rrb-banner-head {
     font-size: 22px;
+  }
+
+  .rrb-link-table td {
+    font-size: 17px;
+    padding: 10px 8px;
   }
 
   .rrb-total-value {
