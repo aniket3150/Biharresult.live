@@ -1,5 +1,135 @@
 [
     {
+        "id":  "se-691260",
+        "wpId":  691260,
+        "slug":  "bpsc-33rd-judicial-service-civil-judge-recruitment-2026",
+        "title":  "BPSC 33rd Judicial Service Civil Judge Recruitment 2026",
+        "category":  "Latest Jobs",
+        "department":  "Bihar Public Service Commission (BPSC)",
+        "location":  "Bihar",
+        "shortInfo":  "Bihar Public Service Commission (BPSC) invites online applications for Civil Judge (Junior Division) under 33rd Bihar Judicial Services Competitive Examination 2026 for 173 vacancies. Apply online from 25 February 2026 to 18 March 2026.",
+        "publishedAt":  "2026-02-24",
+        "updatedAt":  "2026-02-24",
+        "isFeatured":  true,
+        "sourceName":  "BiharResult.live",
+        "sourceUrl":  "https://bpsc.bihar.gov.in/",
+        "image":  "",
+        "importantDates":  [
+                               {
+                                   "label":  "Application Start Date",
+                                   "value":  "25-02-2026"
+                               },
+                               {
+                                   "label":  "Application Last Date",
+                                   "value":  "18-03-2026"
+                               },
+                               {
+                                   "label":  "Fee Payment Last Date",
+                                   "value":  "18-03-2026"
+                               }
+                           ],
+        "applicationFee":  [
+                               {
+                                   "label":  "For All Candidates",
+                                   "value":  "Rs. 100/-"
+                               },
+                               {
+                                   "label":  "Fee Payment Mode",
+                                   "value":  "Debit Card / Credit Card / Net Banking / UPI / Interbanking"
+                               }
+                           ],
+        "eligibility":  [
+                            {
+                                "label":  "Educational Qualification",
+                                "value":  "Bachelor of Law (LLB) or equivalent degree from a University/Institute recognized by the Bar Council of India (BCI), New Delhi."
+                            },
+                            {
+                                "label":  "Experience",
+                                "value":  "Minimum 3 years of experience as a legal practitioner at the Bar as on the date of advertisement. Practice period will be counted from provisional enrollment/registration with the respective State Bar Council."
+                            }
+                        ],
+        "vacancyDetails":  [
+                               {
+                                   "post":  "Civil Judge (Junior Division) - UR",
+                                   "total":  "69",
+                                   "criteria":  "Category-wise vacancy"
+                               },
+                               {
+                                   "post":  "Civil Judge (Junior Division) - EWS",
+                                   "total":  "17",
+                                   "criteria":  "Category-wise vacancy"
+                               },
+                               {
+                                   "post":  "Civil Judge (Junior Division) - SC",
+                                   "total":  "28",
+                                   "criteria":  "Category-wise vacancy"
+                               },
+                               {
+                                   "post":  "Civil Judge (Junior Division) - ST",
+                                   "total":  "02",
+                                   "criteria":  "Category-wise vacancy"
+                               },
+                               {
+                                   "post":  "Civil Judge (Junior Division) - EBC",
+                                   "total":  "36",
+                                   "criteria":  "Category-wise vacancy"
+                               },
+                               {
+                                   "post":  "Civil Judge (Junior Division) - BC",
+                                   "total":  "21",
+                                   "criteria":  "Category-wise vacancy"
+                               },
+                               {
+                                   "post":  "Total",
+                                   "total":  "173",
+                                   "criteria":  "Total posts"
+                               }
+                           ],
+        "ageLimit":  [
+                         "Age as on: 01.08.2025",
+                         "Minimum Age: 22 Years",
+                         "Maximum Age: 35 Years",
+                         "Age relaxation as per BPSC 33rd Judicial Service Examination rules."
+                     ],
+        "importantLinks":  [
+                               {
+                                   "label":  "Apply Online (Active from 25-02-2026)",
+                                   "url":  "https://bpsconline.bihar.gov.in/",
+                                   "type":  "primary"
+                               },
+                               {
+                                   "label":  "Applicant Login",
+                                   "url":  "https://bpsconline.bihar.gov.in/candidate/login",
+                                   "type":  "secondary"
+                               },
+                               {
+                                   "label":  "Download Notification",
+                                   "url":  "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Advertisement-122026-33rd-BJSE_BPSC-20260223-82eskn.pdf",
+                                   "type":  "secondary"
+                               },
+                               {
+                                   "label":  "Official Website",
+                                   "url":  "https://bpsc.bihar.gov.in/",
+                                   "type":  "secondary"
+                               }
+                           ],
+        "longDescription":  "Bihar Public Service Commission (BPSC) invites online applications for selection to the post of Civil Judge (Junior Division) through 33rd Bihar Judicial Services Competitive Examination 2026 for 173 vacancies under Advt. No. 12/2026. Eligible applicants can fill online application form at BPSC official portal from 25 February 2026 to 18 March 2026. Candidates should verify eligibility, experience, age criteria, and documents before final submission.",
+        "howToApply":  [
+                           "Visit BPSC online portal and open 33rd Judicial Service Civil Judge Recruitment 2026 form link.",
+                           "Complete registration/login and fill all required personal, academic, and Bar enrollment details carefully.",
+                           "Upload clear photo, signature, and required supporting documents as per prescribed format.",
+                           "Pay the application fee online and verify payment status before final submit.",
+                           "Submit the form, then download/print application and fee receipt for future reference."
+                       ],
+        "beforeYouStart":  [
+                               "Read complete Advt. No. 12/2026 notification before applying.",
+                               "Ensure LLB qualification and 3-year practice requirement are fulfilled.",
+                               "Keep Bar Council registration/enrollment proof and certificates ready.",
+                               "Check category, DOB, and all details carefully before final submission.",
+                               "Submit application before 18-03-2026 deadline."
+                           ]
+    },
+    {
         "id":  "supp-Sarkari Yojana-31",
         "wpId":  null,
         "slug":  "bihar-yojana-official-information-31-31",
@@ -8462,5 +8592,3 @@
                        ]
     }
 ]
-
-

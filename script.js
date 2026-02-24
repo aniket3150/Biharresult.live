@@ -1,4 +1,4 @@
-﻿const DATA_FILE = "data.json";
+const DATA_FILE = "data.json";
 const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
 
@@ -163,13 +163,7 @@ function createListItem(post, options = {}) {
   a.href = postHref(post);
   a.textContent = formatHomeListTitle(post);
 
-  const meta = document.createElement("div");
-  meta.className = "br-item-meta";
-  const date = `Published: ${formatDate(post.publishedAt)}`;
-  meta.textContent = date;
-
   body.appendChild(a);
-  body.appendChild(meta);
   if (showSnippet) {
     const desc = document.createElement("p");
     desc.className = "br-item-desc";
@@ -210,7 +204,7 @@ function renderTicker(posts) {
     const link = document.createElement("a");
     link.href = postHref(post);
     link.className = "br-ticker-link";
-    link.textContent = `• ${post.title}`;
+    link.textContent = `| ${post.title}`;
     track.appendChild(link);
   });
 }
