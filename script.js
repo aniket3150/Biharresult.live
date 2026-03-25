@@ -113,6 +113,62 @@ const MANUAL_PRIORITY_POSTS = [
       "Check all details carefully after the result is displayed.",
       "Save a copy of the result for admission and future reference."
     ]
+  },
+  {
+    id: "custom-latest-results-bpsc-school-teacher-tre-4-0-2026-update",
+    wpId: null,
+    slug: "bpsc-school-teacher-tre-4-0-2026-latest-update",
+    path: "./sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
+    title: "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts) - Final Update",
+    category: "Latest Results",
+    department: "Sarkari Exam",
+    location: "Bihar",
+    shortInfo: "Final mixed update: previous TRE 4.0 eligibility/age details kept, plus current status tracking while detailed official schedule is awaited.",
+    publishedAt: "2026-03-25",
+    updatedAt: "2026-03-25",
+    isFeatured: true,
+    sourceName: "BiharResult.live",
+    sourceUrl: "https://www.biharresult.live/bpsc-school-teacher-tre-4-0-2026/",
+    image: "",
+    importantDates: [
+      { label: "Current Status", value: "Mixed final update with latest tracking" },
+      { label: "Online Apply Start Date", value: "To Be Announced" },
+      { label: "Last Date To Apply", value: "To Be Announced" },
+      { label: "Exam Date", value: "To Be Announced" }
+    ],
+    applicationFee: [
+      { label: "General / OBC / EWS", value: "To Be Announced in official notification" },
+      { label: "SC / ST / Female / PH", value: "To Be Announced in official notification" }
+    ],
+    eligibility: [
+      { label: "Primary School Teacher (Class 1-5)", value: "Graduation Degree in any stream with D.El.Ed OR B.Ed / B.L.Ed (as applicable) and valid STET / CTET qualification as per rules." },
+      { label: "Middle School Teacher (Class 6-8)", value: "Graduation Degree with 50% marks and B.Ed / B.A.Ed / B.Sc.Ed OR equivalent qualification with valid STET/CTET as per post requirement." },
+      { label: "TGT Secondary School Teacher (Class 9-10)", value: "Graduation / Post Graduation in relevant subject with B.Ed and Bihar STET Paper I/II as required for TGT posts." },
+      { label: "PGT Secondary School Teacher (Class 11-12)", value: "Post Graduation in relevant subject with minimum required marks, B.Ed / equivalent teaching degree, and STET Paper II qualification." }
+    ],
+    vacancyDetails: [
+      { post: "Primary School Teacher (Class 1-5)", total: "--", criteria: "See official notification" },
+      { post: "Middle School Teacher (Class 6-8)", total: "--", criteria: "See official notification" },
+      { post: "TGT Secondary School Teacher (Class 9-10)", total: "--", criteria: "See official notification" },
+      { post: "TGT Secondary School Teacher (Class 9-10 Science)", total: "--", criteria: "See official notification" },
+      { post: "PGT Secondary School Teacher (Class 11-12)", total: "--", criteria: "See official notification" }
+    ],
+    importantLinks: [
+      { label: "Open Final TRE 4.0 Post", url: "./sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html", type: "primary" },
+      { label: "Official Website", url: "https://bpsc.bihar.gov.in/", type: "secondary" }
+    ],
+    longDescription: "This final TRE 4.0 post combines previous recruitment details and current status context. It keeps earlier eligibility and age structure while clarifying that final date/fee/vacancy confirmation should be taken from official BPSC notification.",
+    howToApply: [
+      "Read the official BPSC TRE 4.0 notification carefully before applying.",
+      "Check post-wise eligibility, required marks, and STET/CTET requirement for your target post.",
+      "Keep scanned documents ready: photo, signature, identity proof, educational certificates, and caste/category documents (if applicable).",
+      "Open the official application link, complete registration, and fill the online form carefully.",
+      "Pay the required application fee using online mode and submit the final form before deadline.",
+      "Download and print the final submitted form and fee receipt for future use."
+    ],
+    beforeYouStart: [
+      "Check official instructions before starting process."
+    ]
   }
 ];
 const MANUAL_PRIORITY_SLUGS = new Set(MANUAL_PRIORITY_POSTS.map((post) => post.slug));
@@ -238,6 +294,10 @@ function hardenExternalLinks(scope = document) {
 }
 
 function postHref(post) {
+  if (post?.path && isUsableUrl(post.path)) {
+    return sanitizeUrl(post.path);
+  }
+
   const sectionMap = {
     "Latest Results": "latest-results",
     "Latest Jobs": "latest-jobs",
