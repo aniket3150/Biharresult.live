@@ -1,6 +1,121 @@
 const DATA_FILE = "data.json";
 const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
+const MANUAL_PRIORITY_POSTS = [
+  {
+    id: "custom-latest-results-bihar-board-class-12th-result-2026",
+    wpId: null,
+    slug: "bihar-board-class-12th-result-2026",
+    title: "Bihar Board Class 12th Result 2026",
+    category: "Latest Results",
+    department: "Bihar School Examination Board (BSEB)",
+    location: "Bihar",
+    shortInfo: "The Bihar School Examination Board (BSEB) has released the result for the Bihar Board Class 12th Examination 2026 on its official website. Candidates can now check their result using Roll Number and Captcha.",
+    publishedAt: "2026-03-25",
+    updatedAt: "2026-03-25",
+    isFeatured: true,
+    sourceName: "interbiharboard.com",
+    sourceUrl: "https://interbiharboard.com/",
+    image: "",
+    importantDates: [
+      { label: "Exam Start Date", value: "02-02-2026" },
+      { label: "Exam Last Date", value: "13-02-2026" },
+      { label: "Result Declared Date", value: "25-03-2026" },
+      { label: "Result Status", value: "Available Now" }
+    ],
+    applicationFee: [
+      { label: "Fee", value: "No fee required to check the result." }
+    ],
+    eligibility: [
+      { label: "Who Can Check Result", value: "Candidates who appeared in Bihar Board Class 12th Examination 2026." },
+      { label: "Required Details", value: "Examination Roll Number and Captcha." }
+    ],
+    vacancyDetails: [
+      { post: "Science - Aditya Prakash Aman", total: "481 Marks", criteria: "Topper" },
+      { post: "Science - Sakshi Kumari", total: "479 Marks", criteria: "Topper" },
+      { post: "Science - Swapna Kumari", total: "479 Marks", criteria: "Topper" },
+      { post: "Arts - Nishu Kumari", total: "489 Marks (95.8%)", criteria: "Topper" },
+      { post: "Arts - Siddhi Shukla", total: "478 Marks", criteria: "Topper" },
+      { post: "Arts - Chandradeep Kumar", total: "478 Marks", criteria: "Topper" },
+      { post: "Arts - Mohammad Zakir Ansari", total: "478 Marks", criteria: "Topper" },
+      { post: "Commerce - Aditi Kumari", total: "480 Marks", criteria: "Topper" },
+      { post: "Commerce - Mahi Kumari", total: "470 Marks", criteria: "Topper" }
+    ],
+    importantLinks: [
+      { label: "Download Class 12th Result Link-I", url: "https://interbiharboard.com/", type: "primary" },
+      { label: "Download Class 12th Result Link-II", url: "https://interbiharboard.com/", type: "primary" },
+      { label: "Check Class 12th Result Notice", url: "https://interbiharboard.com/", type: "secondary" },
+      { label: "Register For Class 10th Result", url: "https://interbiharboard.com/", type: "secondary" }
+    ],
+    longDescription: "The Bihar School Examination Board (BSEB) has released the result for the Bihar Board Class 12th Examination 2026 on its official website. The examination was conducted from 02 to 13 February 2026. Candidates can now check their result by logging into the portal using their Examination Roll Number and Captcha. The direct link to check the Bihar Board Class 12th Result 2026 is provided below.",
+    howToApply: [
+      "Open any result link given in the Important Links section.",
+      "Enter your Bihar Board Class 12th Examination Roll Number carefully.",
+      "Fill the Captcha exactly as shown on the screen.",
+      "Submit the details to view your result and marks.",
+      "Download or print the result for future use."
+    ],
+    beforeYouStart: [
+      "Keep your Examination Roll Number ready before opening the portal.",
+      "Use only the official result link to avoid confusion.",
+      "Check your name, roll number, and marks carefully after login.",
+      "Download and save a copy of the result for admission and counselling use."
+    ]
+  },
+  {
+    id: "custom-latest-results-bihar-board-class-10th-result-2026-soon",
+    wpId: null,
+    slug: "bihar-board-class-10th-result-2026-soon",
+    title: "Bihar Board Class 10th Result 2026 (Soon)",
+    category: "Latest Results",
+    department: "Bihar School Examination Board (BSEB)",
+    location: "Bihar",
+    shortInfo: "The Bihar School Examination Board (BSEB) will release the Bihar Board Class 10th Result 2026 on its official website. Candidates will be able to check their result using Examination Roll Number and Captcha.",
+    publishedAt: "2026-03-25",
+    updatedAt: "2026-03-25",
+    isFeatured: true,
+    sourceName: "interbiharboard.com",
+    sourceUrl: "https://interbiharboard.com/",
+    image: "",
+    importantDates: [
+      { label: "Dummy Registration Card", value: "05 To 25 July 2025" },
+      { label: "Dummy Admit Card", value: "21-27 November 2025" },
+      { label: "2nd Dummy Admit Card", value: "28 November - 04 December 2025" },
+      { label: "Exam Date Class 10th", value: "17-25 February 2026" },
+      { label: "10th Answer Key", value: "07 March 2026" },
+      { label: "Expected Result Date", value: "27 March 2026" },
+      { label: "Result Declared", value: "March-April 2026" }
+    ],
+    applicationFee: [
+      { label: "Fee", value: "No fee required to check the result." }
+    ],
+    eligibility: [
+      { label: "Who Can Check Result", value: "Candidates who appeared in Bihar Board Class 10th Examination 2026." },
+      { label: "Required Details", value: "Examination Roll Number and Captcha." }
+    ],
+    vacancyDetails: [],
+    importantLinks: [
+      { label: "Register For Class 10th Result", url: "https://interbiharboard.com/", type: "primary" },
+      { label: "Check Class 12th Result", url: "https://interbiharboard.com/", type: "secondary" },
+      { label: "Download Class 10th Answer Key", url: "https://interbiharboard.com/", type: "secondary" }
+    ],
+    longDescription: "The Bihar School Examination Board (BSEB) will release the Bihar Board Class 10th Result 2026 on its official website. The examination was conducted from 17 February to 25 February 2026. Candidates will be able to check their result by using their Examination Roll Number and Captcha by logging into the portal. The Bihar Board Class 10th Result 2026 is expected to be released on 27 March 2026. The direct link to check the result is provided below.",
+    howToApply: [
+      "Open the result or registration link given in the Important Links section.",
+      "Enter your Bihar Board Class 10th Examination Roll Number carefully.",
+      "Fill the Captcha exactly as shown on the screen.",
+      "Submit the details to check your result or status when available.",
+      "Download or print the result page for future use."
+    ],
+    beforeYouStart: [
+      "Keep your Examination Roll Number ready before opening the portal.",
+      "Use only the official link for result and answer key updates.",
+      "Check all details carefully after the result is displayed.",
+      "Save a copy of the result for admission and future reference."
+    ]
+  }
+];
+const MANUAL_PRIORITY_SLUGS = new Set(MANUAL_PRIORITY_POSTS.map((post) => post.slug));
 
 const HOME_MAP = {
   "Latest Results": "results-list",
@@ -68,6 +183,14 @@ async function loadData() {
   const response = await fetch(DATA_FILE, { cache: "no-store" });
   if (!response.ok) throw new Error("Failed to load data.json");
   return response.json();
+}
+
+function mergeManualPriorityPosts(posts) {
+  const basePosts = Array.isArray(posts) ? posts : [];
+  return [
+    ...MANUAL_PRIORITY_POSTS,
+    ...basePosts.filter((post) => !MANUAL_PRIORITY_SLUGS.has(post.slug))
+  ];
 }
 
 function byDate(a, b) {
@@ -234,7 +357,17 @@ function renderHomeHighlights(posts) {
   const selected = [];
   const used = new Set();
 
+  MANUAL_PRIORITY_POSTS
+    .filter((post) => sorted.some((item) => item.slug === post.slug))
+    .sort(byDate)
+    .forEach((post) => {
+      if (selected.length >= highlightLimit || used.has(post.slug)) return;
+      selected.push(post);
+      used.add(post.slug);
+    });
+
   preferredCategories.forEach((category) => {
+    if (selected.length >= highlightLimit) return;
     const item = sorted.find((post) => post.category === category && !used.has(post.slug));
     if (!item) return;
     selected.push(item);
@@ -1068,19 +1201,20 @@ async function init() {
 
   try {
     const posts = await loadData();
+    const mergedPosts = mergeManualPriorityPosts(posts);
 
     if (isHome) {
-      renderTicker(posts);
-      renderHomeHighlights(posts);
+      renderTicker(mergedPosts);
+      renderHomeHighlights(mergedPosts);
       let currentHighlightLimit = getHomeHighlightLimit();
       window.addEventListener("resize", () => {
         const nextLimit = getHomeHighlightLimit();
         if (nextLimit === currentHighlightLimit) return;
         currentHighlightLimit = nextLimit;
-        renderHomeHighlights(posts);
+        renderHomeHighlights(mergedPosts);
       });
-      renderHome(posts);
-      renderProFeatures(posts);
+      renderHome(mergedPosts);
+      renderProFeatures(mergedPosts);
       setupHomeSearchFilters();
       applyHomeSearchFilter();
       setupAutoExpandBlocks(document);
@@ -1089,7 +1223,7 @@ async function init() {
 
     if (isPost) {
       const slug = getSlugFromUrl();
-      const post = posts.find((p) => p.slug === slug);
+      const post = mergedPosts.find((p) => p.slug === slug);
       if (!post) renderNotFound();
       else renderPost(post);
       hardenExternalLinks(document);
