@@ -3,6 +3,130 @@ const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
 const MANUAL_PRIORITY_POSTS = [
   {
+    id: "custom-latest-results-bihar-board-inter-12th-scrutiny-online-application-form-2026",
+    wpId: null,
+    slug: "bihar-board-inter-12th-scrutiny-online-application-form-2026",
+    path: "./sections/latest-results/bihar-board-inter-12th-scrutiny-online-application-form-2026.html",
+    title: "Bihar Board Inter 12th Scrutiny Online Application Form 2026",
+    category: "Latest Results",
+    department: "Bihar School Examination Board (BSEB)",
+    location: "Bihar",
+    shortInfo: "Bihar School Examination Board (BSEB) invites online scrutiny application form for Inter (12th class) of Annual Examination Result 2026. The Intermediate Annual Examination 2026 result was declared on 23rd March 2026 by the board. All appeared students can fill online form at BSEB official portal intermediate.biharboardscrutiny.com from 25th March 2026 to the application last date 02nd April 2026 for Inter Scrutiny Application 2026.",
+    publishedAt: "2026-03-26",
+    updatedAt: "2026-03-26",
+    isFeatured: true,
+    sourceName: "intermediate.biharboardscrutiny.com",
+    sourceUrl: "https://intermediate.biharboardscrutiny.com/",
+    image: "",
+    importantDates: [
+      { label: "Board Name", value: "Bihar School Examination Board" },
+      { label: "Class", value: "12th" },
+      { label: "Subject", value: "All" },
+      { label: "Annual Examination Year", value: "2026" },
+      { label: "Scrutiny Application Status", value: "Started" },
+      { label: "Inter Result Declared Date", value: "23 March 2026" },
+      { label: "Bihar Board 12th Scrutiny Application Period", value: "25 March 2026 to 02 April 2026" },
+      { label: "Scrutiny Apply Start Date", value: "25 March 2026" },
+      { label: "Scrutiny Apply Last Date", value: "02 April 2026" },
+      { label: "Scrutiny Result Date", value: "As per official notification" }
+    ],
+    applicationFee: [
+      { label: "Scrutiny Application Fee", value: "Rs.120/- (Per Subject)" },
+      { label: "Payment Mode", value: "Debit Card, Credit Card, Net Banking" }
+    ],
+    eligibility: [
+      { label: "Who Can Apply", value: "All appeared students of Bihar Board Inter (Class 12th) Annual Examination Result 2026 who want scrutiny / rechecking." },
+      { label: "Bihar Board Scrutiny Form Link", value: "https://intermediate.biharboardscrutiny.com/" },
+      { label: "Alternate Portal", value: "https://intermediate.biharboardonline.com/" },
+      { label: "Helpline Email ID", value: "intermediatescrutinyhelpdesk@gmail.com" }
+    ],
+    vacancyDetails: [],
+    importantLinks: [
+      { label: "Click Here To Apply For Scrutiny", url: "https://intermediate.biharboardscrutiny.com/", type: "primary" },
+      { label: "Bihar Board Inter Scrutiny 2026 Notification Download", url: "https://intermediate.biharboardonline.com/", type: "secondary" },
+      { label: "Click Here To Open Official Website", url: "https://intermediate.biharboardonline.com/", type: "secondary" }
+    ],
+    longDescription: "Bihar School Examination Board (BSEB) invites online scrutiny application form for Inter (12th class) of Annual Examination Result 2026. The Intermediate Annual Examination 2026 result was declared on 23rd March 2026 by the board. All appeared students can fill online form at BSEB official portal intermediate.biharboardscrutiny.com from 25th March 2026 to the application last date 02nd April 2026 for Inter Scrutiny Application 2026.",
+    howToApply: [
+      "To apply online for scrutiny of answer sheets, open the official portal https://intermediate.biharboardscrutiny.com or https://intermediate.biharboardonline.com and click on \"Apply for scrutiny (Intermediate Annual Examination 2026)\".",
+      "Register by entering Roll Code, Roll Number, and Date of Birth to create a password, and keep this password safe for future use.",
+      "Login using Roll Code, Roll Number, and Password. The scrutiny application form will open with your details and subject list.",
+      "Select the subject(s) for scrutiny by checking the required checkbox.",
+      "Click the Pay button and complete fee payment through Debit Card, Credit Card, or Net Banking.",
+      "Submit final form and keep printout / acknowledgment for record."
+    ],
+    beforeYouStart: [
+      "Read the scrutiny instructions carefully before final submission.",
+      "Keep Roll Code, Roll Number, and Date of Birth ready for login/registration.",
+      "Apply only between 25 March 2026 and 02 April 2026.",
+      "Use correct subjects while selecting scrutiny request."
+    ]
+  },
+  {
+    id: "custom-latest-results-bihar-iti-cat-admission-form-2026",
+    wpId: null,
+    slug: "bihar-iti-cat-admission-form-2026",
+    path: "./sections/latest-results/bihar-iti-cat-admission-form-2026.html",
+    title: "Bihar ITI CAT Admission Form 2026",
+    category: "Latest Results",
+    department: "Bihar Combined Entrance Competitive Examination Board (BCECEB)",
+    location: "Bihar",
+    shortInfo: "Bihar Combined Entrance Competitive Examination Board (BCECEB) has released a notification on the official website for the Admission of Industrial Training Institute Competitive Admission Test (I.T.I.C.A.T) 2026. BCECEB Application Form has started on 16 March 2026 and candidates can apply until 14 April 2026. Candidates must check the complete details for Bihar ITI CAT Admission Form 2026. Links are provided below.",
+    publishedAt: "2026-03-26",
+    updatedAt: "2026-03-26",
+    isFeatured: true,
+    sourceName: "BCECEB",
+    sourceUrl: "https://bceceboard.bihar.gov.in/",
+    image: "",
+    importantDates: [
+      { label: "Online Apply Start Date", value: "16 March 2026" },
+      { label: "Online Apply Last Date", value: "14 April 2026" },
+      { label: "Last Date Of Fee Payment", value: "15 April 2026" },
+      { label: "Correction Last Date", value: "16 - 17 April 2026" },
+      { label: "Exam Date", value: "17 May 2026" },
+      { label: "Admit Card Date", value: "08 May 2026" },
+      { label: "Result Declared Date", value: "Will Be Updated Here Soon" }
+    ],
+    applicationFee: [
+      { label: "General / EBC / OBC", value: "Rs. 750/-" },
+      { label: "SC / ST", value: "Rs. 100/-" },
+      { label: "PH", value: "Rs. 430/-" },
+      { label: "Payment Mode (Online)", value: "Debit Card, Credit Card, Internet Banking, IMPS, Cash Card / Mobile Wallet" }
+    ],
+    eligibility: [
+      { label: "Bihar ITI CAT", value: "Candidates must have passed or be appearing in the 10th (High School) examination from any recognized board. For more details regarding eligibility, candidates should read the official notification carefully." }
+    ],
+    ageLimit: [
+      "Minimum Age: 14 Years",
+      "Minimum Age: 17 Years (For MMT / MT)",
+      "Maximum Age: N/A",
+      "Age limit as on 01 August 2026."
+    ],
+    vacancyDetails: [
+      { post: "ITI CAT Total Seat", total: "33,108 Seats", criteria: "As per official notification" }
+    ],
+    importantLinks: [
+      { label: "Apply Now", url: "https://bceceboard.bihar.gov.in/", type: "primary" },
+      { label: "Check Official Notification", url: "https://bceceboard.bihar.gov.in/", type: "secondary" },
+      { label: "BCECEB Official Website", url: "https://bceceboard.bihar.gov.in/", type: "secondary" }
+    ],
+    longDescription: "Bihar Combined Entrance Competitive Examination Board (BCECEB), has released a notification on the official website for the Admission of Industrial Training Institute Competitive Admission Test (I.T.I.C.A.T) 2026. BCECEB Application Form has started on 16 March 2026 and the candidates can apply until 14 April 2026. Candidates must check the complete details for Bihar ITI CAT Admission Form 2026. Links are provided below.",
+    howToApply: [
+      "Open the Apply Online link from the Important Links section.",
+      "Complete registration with valid mobile number and email ID.",
+      "Fill personal, educational, and category details carefully.",
+      "Upload required documents, photo, and signature in prescribed format.",
+      "Pay the required application fee in online mode and submit the form.",
+      "Download and print the final submitted application form for future use."
+    ],
+    beforeYouStart: [
+      "Read the official BCECEB ITI CAT 2026 notification carefully before applying.",
+      "Keep Class 10th details and required documents ready.",
+      "Use only the official website for registration and payment.",
+      "Check all details before final submit to avoid correction issues later."
+    ]
+  },
+  {
     id: "custom-latest-results-bihar-board-class-12th-result-2026",
     wpId: null,
     slug: "bihar-board-class-12th-result-2026",
