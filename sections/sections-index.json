@@ -1,884 +1,2594 @@
-﻿[
-    {
-        "slug":  "bihar-admission-official-update-14-14",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-14-14.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 14)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-15-15",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-15-15.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 15)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-34-34",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-34-34.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 34)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-38-38",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-38-38.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 38)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-18-18",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-18-18.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 18)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-39-39",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-39-39.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 39)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-40-40",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-40-40.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 40)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-40-40",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-40-40.html",
-        "title":  "Bihar Parimarjan Land Correction Verification Portal 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-25-25",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-25-25.html",
-        "title":  "Bihar ServiceOnline Application Status Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-36-36",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-36-36.html",
-        "title":  "Bihar Bhumi Jankari Land Record Verification Portal 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-43-43",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-43-43.html",
-        "title":  "Bihar Nibandhan NEC Certificate Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-42-42",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-42-42.html",
-        "title":  "Bihar Bhumi Jamabandi Record Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-41-41",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-41-41.html",
-        "title":  "Bihar Parimarjan Mutation Status Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-38-38",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-38-38.html",
-        "title":  "Bihar Bhumi Jankari MVR Land Value Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-snatakscholarship-login-14",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-snatakscholarship-login-14.html",
-        "title":  "Bihar Scholarship Snatak Scholarship Login Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bpsc-school-teacher-tre-4-0-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
-        "title":  "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-official-update-38-38",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-official-update-38-38.html",
-        "title":  "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-official-update-36-36",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-official-update-36-36.html",
-        "title":  "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-official-update-40-40",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-official-update-40-40.html",
-        "title":  "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-official-update-37-37",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-official-update-37-37.html",
-        "title":  "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-matric2023-3",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-matric2023-3.html",
-        "title":  "Bihar Scholarship Matric 2023 Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-13-13",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-13-13.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 13)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-20-20",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-20-20.html",
-        "title":  "Bihar ServiceOnline Application Status Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-17-17",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-17-17.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 17)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-16-16",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-16-16.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 16)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-official-update-39-39",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-official-update-39-39.html",
-        "title":  "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-44-44",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-44-44.html",
-        "title":  "Bihar Nibandhan Online NEC Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-19-19",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-19-19.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 19)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-35-35",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-35-35.html",
-        "title":  "Bihar SWCS RTPS Certificate Download Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-sarkari-yojana-service-link-6-6",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-6-6.html",
-        "title":  "Bihar 7 Nischay Yuva Up Mission Scheme Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-35-35",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-35-35.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 35)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-36-36",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-36-36.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 36)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-sarkari-yojana-service-link-7-7",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-7-7.html",
-        "title":  "Bihar 7 Nischay Yuva Up Mission Scheme Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-pms-maindefault-13",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-pms-maindefault-13.html",
-        "title":  "Bihar Scholarship Post Matric Scholarship Portal Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-interscst2022-12",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-interscst2022-12.html",
-        "title":  "Bihar Scholarship Inter SC/ST 2022 Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-yojana-official-information-32-32",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-yojana-official-information-32-32.html",
-        "title":  "Bihar Social Welfare Department Yojana Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-yojana-official-information-33-33",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-yojana-official-information-33-33.html",
-        "title":  "Bihar SC/ST Welfare Department Yojana Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-yojana-official-information-34-34",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-yojana-official-information-34-34.html",
-        "title":  "Bihar Minority Welfare Department Yojana Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-yojana-official-information-31-31",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-yojana-official-information-31-31.html",
-        "title":  "Bihar Youth Empowerment and Skill Development Yojana Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-sarkari-yojana-service-link-21-21",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-21-21.html",
-        "title":  "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 21)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-37-37",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-37-37.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 37)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-yojana-official-information-30-30",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-yojana-official-information-30-30.html",
-        "title":  "Bihar Rural Development Department Yojana Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-sarkari-yojana-service-link-24-24",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-24-24.html",
-        "title":  "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 24)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-sarkari-yojana-service-link-25-25",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-25-25.html",
-        "title":  "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 25)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-yojana-official-information-28-28",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-yojana-official-information-28-28.html",
-        "title":  "Bihar BOCW Welfare Board Yojana Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-interscst2023-11",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-interscst2023-11.html",
-        "title":  "Bihar Scholarship Inter SC/ST 2023 Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-39-39",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-39-39.html",
-        "title":  "Bihar Bhumi Jankari Circle Rate Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-34-34",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-34-34.html",
-        "title":  "Bihar RTPS Land Certificate Verification Service 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-37-37",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-37-37.html",
-        "title":  "Bihar Bhumi Jankari Advanced Land Search Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-verification-service-link-46-46",
-        "category":  "Verification",
-        "folder":  "verification",
-        "path":  "sections/verification/bihar-verification-service-link-46-46.html",
-        "title":  "Bihar RC Online Vehicle Registration Verification 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-inter2024-6",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-inter2024-6.html",
-        "title":  "Bihar Scholarship Inter 2024 Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-inter-2425-5",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-inter-2425-5.html",
-        "title":  "Bihar Scholarship Inter 2024-25 Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-matric2024-2",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-matric2024-2.html",
-        "title":  "Bihar Scholarship Matric 2024 Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-scholarship-update-matric-2425-1",
-        "category":  "Scholarship",
-        "folder":  "scholarship",
-        "path":  "sections/scholarship/bihar-scholarship-update-matric-2425-1.html",
-        "title":  "Bihar Scholarship Matric 2024-25 Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-sarkari-yojana-service-link-20-20",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-20-20.html",
-        "title":  "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 20)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-yojana-official-information-27-27",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-yojana-official-information-27-27.html",
-        "title":  "Ayushman Bharat PM-JAY Bihar Yojana Update 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-sarkari-yojana-service-link-26-26",
-        "category":  "Sarkari Yojana",
-        "folder":  "sarkari-yojana",
-        "path":  "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-26-26.html",
-        "title":  "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 26)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-bssc-inter-level-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bssc-inter-level-2026.html",
-        "title":  "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) – Last Date Today",
-        "publishedAt":  "2026-02-16",
-        "updatedAt":  "2026-02-17"
-    },
-    {
-        "slug":  "bihar-police-bpssc-asi-operation-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-police-bpssc-asi-operation-2026.html",
-        "title":  "BPSSC ASI Operation Online Form 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-17"
-    },
-    {
-        "slug":  "wbssc-group-c-and-d-2025",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/wbssc-group-c-and-d-2025.html",
-        "title":  "WBSSC Group C and D Admit Card 2026",
-        "publishedAt":  "2026-02-17",
-        "updatedAt":  "2026-02-17"
-    },
-    {
-        "slug":  "bihar-police-bpssc-si-prohibition-2025",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bihar-police-bpssc-si-prohibition-2025.html",
-        "title":  "BPSSC Bihar Police SI Prohibition Final Result Marks 2026",
-        "publishedAt":  "2026-02-17",
-        "updatedAt":  "2026-02-17"
-    },
-    {
-        "slug":  "bpsc-ldc-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bpsc-ldc-2026.html",
-        "title":  "BPSC LDC Typing Test Result 2026",
-        "publishedAt":  "2026-02-17",
-        "updatedAt":  "2026-02-17"
-    },
-    {
-        "slug":  "bpsc-aso-mains-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpsc-aso-mains-2026.html",
-        "title":  "BPSC ASO Mains Admit Card 2026 – Soon",
-        "publishedAt":  "2026-02-16",
-        "updatedAt":  "2026-02-16"
-    },
-    {
-        "slug":  "bihar-police-csbc-driver-constable-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bihar-police-csbc-driver-constable-2026.html",
-        "title":  "Bihar Police CSBC Driver Constable PET Admit Card 2026 – Out",
-        "publishedAt":  "2026-02-15",
-        "updatedAt":  "2026-02-16"
-    },
-    {
-        "slug":  "bpssc-bihar-police-enforcement-si-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpssc-bihar-police-enforcement-si-2026.html",
-        "title":  "BPSSC Bihar Police Enforcement SI Interview Date 2026",
-        "publishedAt":  "2026-02-14",
-        "updatedAt":  "2026-02-14"
-    },
-    {
-        "slug":  "bihar-btsc-dairy-field-officer-dairy-technical-officer-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-btsc-dairy-field-officer-dairy-technical-officer-2026.html",
-        "title":  "Bihar BTSC Dairy Field Officer/ Dairy Technical Officer Online Form 2026",
-        "publishedAt":  "2026-02-14",
-        "updatedAt":  "2026-02-14"
-    },
-    {
-        "slug":  "bseb-bihar-d-el-ed-2026-28",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bseb-bihar-d-el-ed-2026-28.html",
-        "title":  "BSEB Bihar D.El.Ed 2nd Dummy Admit Card 2026-28",
-        "publishedAt":  "2026-02-05",
-        "updatedAt":  "2026-02-12"
-    },
-    {
-        "slug":  "bihar-jeevika-2025",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bihar-jeevika-2025.html",
-        "title":  "Bihar JEEVIKA Various Posts Response Sheet 2026",
-        "publishedAt":  "2026-02-12",
-        "updatedAt":  "2026-02-12"
-    },
-    {
-        "slug":  "bihar-police-csbc-constable-gd-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-police-csbc-constable-gd-2026.html",
-        "title":  "Bihar Police CSBC Constable GD Online Form 2026",
-        "publishedAt":  "2026-02-11",
-        "updatedAt":  "2026-02-11"
-    },
-    {
-        "slug":  "bsnl-senior-executive-trainee-set-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bsnl-senior-executive-trainee-set-2026.html",
-        "title":  "BSNL Senior Executive Trainee SET Online Form 2026",
-        "publishedAt":  "2026-02-11",
-        "updatedAt":  "2026-02-11"
-    },
-    {
-        "slug":  "bihar-bcece-junior-resident-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bcece-junior-resident-2026.html",
-        "title":  "Bihar BCECE Junior Resident Online Form 2026 – Last Date",
-        "publishedAt":  "2026-02-06",
-        "updatedAt":  "2026-02-07"
-    },
-    {
-        "slug":  "bpssc-bihar-home-guard-havildar-clerk-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpssc-bihar-home-guard-havildar-clerk-2026.html",
-        "title":  "BPSSC Bihar Home Guard Havildar Clerk Online Form 2026",
-        "publishedAt":  "2026-02-05",
-        "updatedAt":  "2026-02-06"
-    },
-    {
-        "slug":  "bpsc-atps-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-atps-2026.html",
-        "title":  "Bihar BPSC ATPS Online Form 2026",
-        "publishedAt":  "2026-02-05",
-        "updatedAt":  "2026-02-06"
-    },
-    {
-        "slug":  "bpsc-deputy-director-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-deputy-director-2026.html",
-        "title":  "BPSC Deputy Director Online Form 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-04"
-    },
-    {
-        "slug":  "bpsc-boiler-inspector-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-boiler-inspector-2026.html",
-        "title":  "BPSC Boiler Inspector Online Form 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-04"
-    },
-    {
-        "slug":  "bpsc-factory-inspector-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-factory-inspector-2026.html",
-        "title":  "Bihar BPSC Factory Inspector Online Form 2026 – Last Date",
-        "publishedAt":  "2026-02-02",
-        "updatedAt":  "2026-02-03"
-    },
-    {
-        "slug":  "bpsc-stenographer-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-stenographer-2026.html",
-        "title":  "Bihar BPSC Stenographer Online Form 2026",
-        "publishedAt":  "2026-02-02",
-        "updatedAt":  "2026-02-03"
-    },
-    {
-        "slug":  "bpsc-acf-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-acf-2026.html",
-        "title":  "Bihar BPSC ACF Online Form 2026",
-        "publishedAt":  "2026-02-02",
-        "updatedAt":  "2026-02-03"
-    },
-    {
-        "slug":  "bpsc-exam-calendar-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpsc-exam-calendar-2026.html",
-        "title":  "BPSC Revised Exam Calendar 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-03"
-    },
-    {
-        "slug":  "bpssc-bihar-police-range-officer-of-forest-2025",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bpssc-bihar-police-range-officer-of-forest-2025.html",
-        "title":  "BPSSC Bihar Police Range Officer of Forest Final Result 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-03"
-    },
-    {
-        "slug":  "ecgc-po-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/ecgc-po-2026.html",
-        "title":  "ECGC PO Result 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-03"
-    },
-    {
-        "slug":  "patna-high-court-stenographer-result-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/patna-high-court-stenographer-result-2026.html",
-        "title":  "Patna High Court Stenographer Result 2026",
-        "publishedAt":  "2026-01-31",
-        "updatedAt":  "2026-01-31"
-    },
-    {
-        "slug":  "beltron-programmer-result-cutoff-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/beltron-programmer-result-cutoff-2026.html",
-        "title":  "BELTRON Programmer Result / Cutoff 2026",
-        "publishedAt":  "2026-01-29",
-        "updatedAt":  "2026-01-29"
-    },
-    {
-        "slug":  "bihar-btsc-pharmacist-dv-schedule-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bihar-btsc-pharmacist-dv-schedule-2026.html",
-        "title":  "Bihar BTSC Pharmacist DV Schedule 2026",
-        "publishedAt":  "2026-01-28",
-        "updatedAt":  "2026-01-28"
-    },
-    {
-        "slug":  "bpsc-aee-other-post-result-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bpsc-aee-other-post-result-2026.html",
-        "title":  "BPSC AEE, Law Officer, PRO \u0026 Jr Lab Assistant Result 2026",
-        "publishedAt":  "2026-01-28",
-        "updatedAt":  "2026-01-28"
-    },
-    {
-        "slug":  "bpsc-mvi-final-result-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bpsc-mvi-final-result-2026.html",
-        "title":  "BPSC MVI Final Result 2026",
-        "publishedAt":  "2026-01-28",
-        "updatedAt":  "2026-01-28"
-    },
-    {
-        "slug":  "patna-high-court-mazdoor-interview-letter-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/patna-high-court-mazdoor-interview-letter-2026.html",
-        "title":  "Patna High Court Mazdoor Interview Letter 2026",
-        "publishedAt":  "2026-01-27",
-        "updatedAt":  "2026-01-27"
-    },
-    {
-        "slug":  "bssc-field-assistant-pre-result-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bssc-field-assistant-pre-result-2026.html",
-        "title":  "BSSC Field Assistant Pre Result 2026",
-        "publishedAt":  "2026-01-22",
-        "updatedAt":  "2026-01-23"
-    },
-    {
-        "slug":  "bihar-shs-anm-result-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bihar-shs-anm-result-2026.html",
-        "title":  "Bihar SHS ANM Result 2026",
-        "publishedAt":  "2026-01-23",
-        "updatedAt":  "2026-01-23"
-    },
-    {
-        "slug":  "bpssc-bihar-police-si-pre-admit-card-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpssc-bihar-police-si-pre-admit-card-2026.html",
-        "title":  "BPSSC Bihar Police SI Pre Admit Card 2026",
-        "publishedAt":  "2026-01-20",
-        "updatedAt":  "2026-01-22"
-    },
-    {
-        "slug":  "bpsc-dso-admit-card-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpsc-dso-admit-card-2026.html",
-        "title":  "BPSC DSO Admit Card 2026",
-        "publishedAt":  "2026-01-22",
-        "updatedAt":  "2026-01-22"
-    },
-    {
-        "slug":  "bihar-bpsc-special-school-teacher-admit-card-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bihar-bpsc-special-school-teacher-admit-card-2026.html",
-        "title":  "Bihar BPSC Special School Teacher Admit Card 2026",
-        "publishedAt":  "2026-01-22",
-        "updatedAt":  "2026-01-22"
-    },
-    {
-        "slug":  "bpsc-dso-ad-mains-admit-card-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpsc-dso-ad-mains-admit-card-2026.html",
-        "title":  "BPSC DSO/ AD Mains Admit Card 2026",
-        "publishedAt":  "2026-01-22",
-        "updatedAt":  "2026-01-22"
-    },
-    {
-        "slug":  "bpsc-71st-mains-exam-date-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpsc-71st-mains-exam-date-2026.html",
-        "title":  "BPSC 71st Mains Exam Date 2026",
-        "publishedAt":  "2026-01-19",
-        "updatedAt":  "2026-01-19"
-    },
-    {
-        "slug":  "bpsc-70th-interview-letter-2026",
-        "category":  "Admit Card",
-        "folder":  "admit-card",
-        "path":  "sections/admit-card/bpsc-70th-interview-letter-2026.html",
-        "title":  "Bihar BPSC 70th Interview Letter 2026",
-        "publishedAt":  "2026-01-19",
-        "updatedAt":  "2026-01-19"
-    },
-    {
-        "slug":  "bihar-btsc-tutor-nursing-result-2026",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bihar-btsc-tutor-nursing-result-2026.html",
-        "title":  "Bihar BTSC Tutor Nursing Result 2026",
-        "publishedAt":  "2026-01-14",
-        "updatedAt":  "2026-01-14"
-    },
-    {
-        "slug":  "bpsc-mdo-final-result-2025",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/bpsc-mdo-final-result-2025.html",
-        "title":  "BPSC MDO Final Result 2025",
-        "publishedAt":  "2026-01-06",
-        "updatedAt":  "2026-01-07"
-    },
-    {
-        "slug":  "ukpsc-upper-pcs-pre-revised-result-2025",
-        "category":  "Latest Results",
-        "folder":  "latest-results",
-        "path":  "sections/latest-results/ukpsc-upper-pcs-pre-revised-result-2025.html",
-        "title":  "UKPSC Upper PCS Pre Revised Result 2025",
-        "publishedAt":  "2026-01-07",
-        "updatedAt":  "2026-01-07"
-    }
+[
+  {
+    "slug": "bihar-board-inter-12th-scrutiny-online-application-form-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-board-inter-12th-scrutiny-online-application-form-2026.html",
+    "title": "Bihar Board Inter 12th Scrutiny Online Application Form 2026",
+    "publishedAt": "2026-03-26",
+    "updatedAt": "2026-03-27"
+  },
+  {
+    "slug": "bihar-iti-cat-admission-form-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-iti-cat-admission-form-2026.html",
+    "title": "Bihar ITI CAT Admission Form 2026",
+    "publishedAt": "2026-03-26",
+    "updatedAt": "2026-03-26"
+  },
+  {
+    "slug": "bihar-board-class-10th-result-2026-soon",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-board-class-10th-result-2026-soon.html",
+    "title": "Bihar Board Class 10th Result 2026 (Expected)",
+    "publishedAt": "2026-03-25",
+    "updatedAt": "2026-03-25"
+  },
+  {
+    "slug": "bihar-board-class-12th-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-board-class-12th-result-2026.html",
+    "title": "Bihar Board Class 12th Result 2026 (Declared)",
+    "publishedAt": "2026-03-23",
+    "updatedAt": "2026-03-25"
+  },
+  {
+    "slug": "download-10th-bseb-result",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/download-10th-bseb-result.html",
+    "title": "Download Class 10th Result Link-I | Link-II",
+    "publishedAt": "2026-03-25",
+    "updatedAt": "2026-03-25"
+  },
+  {
+    "slug": "download-12th-bseb-result",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/download-12th-bseb-result.html",
+    "title": "Download Class 12th Result Link-I | Link-II",
+    "publishedAt": "2026-03-25",
+    "updatedAt": "2026-03-25"
+  },
+  {
+    "slug": "bpsc-33rd-judicial-service-civil-judge-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-33rd-judicial-service-civil-judge-recruitment-2026.html",
+    "title": "BPSC 33rd Judicial Service Civil Judge Recruitment 2026",
+    "publishedAt": "2026-02-24",
+    "updatedAt": "2026-02-24"
+  },
+  {
+    "slug": "railway-rrb-group-d-online-form-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/railway-rrb-group-d-online-form-2026.html",
+    "title": "Railway RRB Group D Online Form 2026 (22,195 Posts) - Start",
+    "publishedAt": "2026-02-20",
+    "updatedAt": "2026-02-20"
+  },
+  {
+    "slug": "bihar-yojana-official-information-27-27",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-27-27.html",
+    "title": "Ayushman Bharat PM-JAY Bihar Yojana Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bank-of-maharashtra-apprentice-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bank-of-maharashtra-apprentice-recruitment-2026.html",
+    "title": "Bank of Maharashtra Apprentice Recruitment 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bank-of-maharashtra-generalist-officer-scale-ii-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bank-of-maharashtra-generalist-officer-scale-ii-result-2025.html",
+    "title": "Bank Of Maharashtra Generalist Officer Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "beltron-deo-dv-schedule-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/beltron-deo-dv-schedule-2025.html",
+    "title": "BELTRON DEO DV Schedule 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "beltron-stenographer-admit-card-date-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/beltron-stenographer-admit-card-date-2025.html",
+    "title": "Beltron Stenographer Admit Card Date 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bhu-uet-cuet-ug-admission-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bhu-uet-cuet-ug-admission-2024.html",
+    "title": "BHU UET CUET UG Online Registration Form 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-6-6",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-6-6.html",
+    "title": "Bihar 7 Nischay Yuva Up Mission Scheme Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-7-7",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-7-7.html",
+    "title": "Bihar 7 Nischay Yuva Up Mission Scheme Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-13-13",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-13-13.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 13)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-14-14",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-14-14.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 14)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-15-15",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-15-15.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 15)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-16-16",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-16-16.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 16)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-17-17",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-17-17.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 17)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-18-18",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-18-18.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 18)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-19-19",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-19-19.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 19)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-34-34",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-34-34.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 34)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-35-35",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-35-35.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 35)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-36-36",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-36-36.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 36)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-37-37",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-37-37.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 37)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-38-38",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-38-38.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 38)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-39-39",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-39-39.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 39)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-40-40",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-40-40.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 40)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-10-10",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-10-10.html",
+    "title": "Bihar Admission Official Update 10",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-11-11",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-11-11.html",
+    "title": "Bihar Admission Official Update 11",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-12-12",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-12-12.html",
+    "title": "Bihar Admission Official Update 12",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-20-20",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-20-20.html",
+    "title": "Bihar Admission Official Update 20",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-21-21",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-21-21.html",
+    "title": "Bihar Admission Official Update 21",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-22-22",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-22-22.html",
+    "title": "Bihar Admission Official Update 22",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-23-23",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-23-23.html",
+    "title": "Bihar Admission Official Update 23",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-24-24",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-24-24.html",
+    "title": "Bihar Admission Official Update 24",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-25-25",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-25-25.html",
+    "title": "Bihar Admission Official Update 25",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-26-26",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-26-26.html",
+    "title": "Bihar Admission Official Update 26",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-27-27",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-27-27.html",
+    "title": "Bihar Admission Official Update 27",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-28-28",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-28-28.html",
+    "title": "Bihar Admission Official Update 28",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-29-29",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-29-29.html",
+    "title": "Bihar Admission Official Update 29",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-30-30",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-30-30.html",
+    "title": "Bihar Admission Official Update 30",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-31-31",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-31-31.html",
+    "title": "Bihar Admission Official Update 31",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-32-32",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-32-32.html",
+    "title": "Bihar Admission Official Update 32",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-33-33",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-33-33.html",
+    "title": "Bihar Admission Official Update 33",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bcece-revised-mop-up-counselling-schedule-2025",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-bcece-revised-mop-up-counselling-schedule-2025.html",
+    "title": "Bihar BCECE Revised Mop-up Counselling Schedule 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bcece-sr-resident-tutor-online-form-2025-re-open",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bcece-sr-resident-tutor-online-form-2025-re-open.html",
+    "title": "Bihar BCECE Sr. Resident/ Tutor Online Form 2025- Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-42-42",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-42-42.html",
+    "title": "Bihar Bhumi Jamabandi Record Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-37-37",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-37-37.html",
+    "title": "Bihar Bhumi Jankari Advanced Land Search Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-39-39",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-39-39.html",
+    "title": "Bihar Bhumi Jankari Circle Rate Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-36-36",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-36-36.html",
+    "title": "Bihar Bhumi Jankari Land Record Verification Portal 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-38-38",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-38-38.html",
+    "title": "Bihar Bhumi Jankari MVR Land Value Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-board-10th-12th-time-table-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-board-10th-12th-time-table-2025.html",
+    "title": "Bihar Board 10th / 12th Time Table 2025-26",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-board-10th-compartmental-exam-time-table-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-board-10th-compartmental-exam-time-table-2025.html",
+    "title": "Bihar Board 10th Compartmental Exam Time Table 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-board-12th-compartmental-exam-time-table-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-board-12th-compartmental-exam-time-table-2025.html",
+    "title": "Bihar Board 12th Compartmental Exam Time Table 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-board-class-10th-12th-2nd-dummy-admit-card-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-board-class-10th-12th-2nd-dummy-admit-card-2026.html",
+    "title": "Bihar Board Class 10th & 12th 2nd Dummy Admit Card 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-board-class-10th-admit-card-2025-soon",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-board-class-10th-admit-card-2025-soon.html",
+    "title": "Bihar Board Class 10th Admit Card 2025 Soon",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-28-28",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-28-28.html",
+    "title": "Bihar BOCW Welfare Board Yojana Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-atp-exam-date-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-atp-exam-date-2026.html",
+    "title": "Bihar BPSC ATP Exam 2026 Postponed",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bpsc-auditor-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bpsc-auditor-2026.html",
+    "title": "Bihar BPSC Auditor Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-deled-admission-2023-25",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-deled-admission-2023-25.html",
+    "title": "Bihar BSEB D.El.Ed Online Counseling Form 2023",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bseb-sakshamta-pariksha-phase-5th-online-form-2026-apply-now",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bseb-sakshamta-pariksha-phase-5th-online-form-2026-apply-now.html",
+    "title": "Bihar BSEB Sakshamta Pariksha Phase 5th Online Form 2026 Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bsphcl-cc-store-assistant-technical-gr-3-dv-list-2025-out",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-bsphcl-cc-store-assistant-technical-gr-3-dv-list-2025-out.html",
+    "title": "Bihar BSPHCL CC/ Store Assistant & Technical Gr-3 DV List 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bssc-4th-graduate-level-online-form-2025-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-4th-graduate-level-online-form-2025-last-date.html",
+    "title": "Bihar BSSC 4th Graduate Level Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bssc-dst-karyalay-parichari-pre-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-bssc-dst-karyalay-parichari-pre-result-2025.html",
+    "title": "Bihar BSSC DST Karyalay Parichari Pre Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bssc-office-attendant-online-form-2025-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-office-attendant-online-form-2025-last-date.html",
+    "title": "Bihar BSSC Office Attendant Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bssc-bihar-sports-trainer-recruitment-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bssc-bihar-sports-trainer-recruitment-2025.html",
+    "title": "Bihar BSSC Sports Trainer Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bssc-stenographer-online-form-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-stenographer-online-form-2025.html",
+    "title": "Bihar BSSC Stenographer Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-btsc-smo-final-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-btsc-smo-final-result-2025.html",
+    "title": "Bihar BTSC SMO Final Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-btsc-sports-trainer-recruitment-2026-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-sports-trainer-recruitment-2026-last-date.html",
+    "title": "Bihar BTSC Sports Trainer Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-btsc-staff-nurse-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-btsc-staff-nurse-result-2025.html",
+    "title": "Bihar BTSC Staff Nurse Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-cet-int-4-years-bed-1st-merit-list-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-cet-int-4-years-bed-1st-merit-list-2025.html",
+    "title": "Bihar CET INT 4 Years BEd 1st Merit List 2025 Out",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-civil-court-udc-clerk-score-card-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-civil-court-udc-clerk-score-card-2025.html",
+    "title": "Bihar Civil Court UDC Clerk Score Card 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-co-operative-bank-assistant-mains-admit-card-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-co-operative-bank-assistant-mains-admit-card-2025.html",
+    "title": "Bihar Co-operative Bank Assistant Mains Admit Card 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-polytechnic-admission-form",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-polytechnic-admission-form.html",
+    "title": "Bihar DCECE PM / PMM 2023 Online Counselling / Choice Filling",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-iti-cat-offline-mop-up-counselling-2025",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-iti-cat-offline-mop-up-counselling-2025.html",
+    "title": "Bihar ITI-CAT Offline Mop-Up Counselling 2025- Date Extended",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-34-34",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-34-34.html",
+    "title": "Bihar Minority Welfare Department Yojana Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-43-43",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-43-43.html",
+    "title": "Bihar Nibandhan NEC Certificate Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-44-44",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-44-44.html",
+    "title": "Bihar Nibandhan Online NEC Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-40-40",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-40-40.html",
+    "title": "Bihar Parimarjan Land Correction Verification Portal 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-41-41",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-41-41.html",
+    "title": "Bihar Parimarjan Mutation Status Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpssc-si-prohibition-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpssc-si-prohibition-2026.html",
+    "title": "Bihar Police BPSSC SI Prohibition Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-police-csbc-constable-pet-admit-card-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-police-csbc-constable-pet-admit-card-2025.html",
+    "title": "Bihar Police CSBC Constable PET Admit Card 2025 -Out",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-polytechnic-diploma-form-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-polytechnic-diploma-form-2024.html",
+    "title": "Bihar Polytechnic / Diploma Online Counselling / Choice Filling",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-46-46",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-46-46.html",
+    "title": "Bihar RC Online Vehicle Registration Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-34-34",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-34-34.html",
+    "title": "Bihar RTPS Land Certificate Verification Service 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-30-30",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-30-30.html",
+    "title": "Bihar Rural Development Department Yojana Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-official-update-39-39",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-official-update-39-39.html",
+    "title": "Bihar Sarkari Yojana Official Update 39",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-official-update-40-40",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-official-update-40-40.html",
+    "title": "Bihar Sarkari Yojana Official Update 40",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-1-1",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-1-1.html",
+    "title": "Bihar Sarkari Yojana Service Link 1",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-10-10",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-10-10.html",
+    "title": "Bihar Sarkari Yojana Service Link 10",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-11-11",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-11-11.html",
+    "title": "Bihar Sarkari Yojana Service Link 11",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-12-12",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-12-12.html",
+    "title": "Bihar Sarkari Yojana Service Link 12",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-13-13",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-13-13.html",
+    "title": "Bihar Sarkari Yojana Service Link 13",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-14-14",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-14-14.html",
+    "title": "Bihar Sarkari Yojana Service Link 14",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-15-15",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-15-15.html",
+    "title": "Bihar Sarkari Yojana Service Link 15",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-16-16",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-16-16.html",
+    "title": "Bihar Sarkari Yojana Service Link 16",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-17-17",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-17-17.html",
+    "title": "Bihar Sarkari Yojana Service Link 17",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-18-18",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-18-18.html",
+    "title": "Bihar Sarkari Yojana Service Link 18",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-19-19",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-19-19.html",
+    "title": "Bihar Sarkari Yojana Service Link 19",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-2-2",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-2-2.html",
+    "title": "Bihar Sarkari Yojana Service Link 2",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-22-22",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-22-22.html",
+    "title": "Bihar Sarkari Yojana Service Link 22",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-23-23",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-23-23.html",
+    "title": "Bihar Sarkari Yojana Service Link 23",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-3-3",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-3-3.html",
+    "title": "Bihar Sarkari Yojana Service Link 3",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-4-4",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-4-4.html",
+    "title": "Bihar Sarkari Yojana Service Link 4",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-5-5",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-5-5.html",
+    "title": "Bihar Sarkari Yojana Service Link 5",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-8-8",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-8-8.html",
+    "title": "Bihar Sarkari Yojana Service Link 8",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-9-9",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-9-9.html",
+    "title": "Bihar Sarkari Yojana Service Link 9",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-33-33",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-33-33.html",
+    "title": "Bihar SC/ST Welfare Department Yojana Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-inter2024-6",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-inter2024-6.html",
+    "title": "Bihar Scholarship Inter 2024 Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-inter-2425-5",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-inter-2425-5.html",
+    "title": "Bihar Scholarship Inter 2024-25 Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-interscst2022-12",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-interscst2022-12.html",
+    "title": "Bihar Scholarship Inter SC/ST 2022 Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-interscst2023-11",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-interscst2023-11.html",
+    "title": "Bihar Scholarship Inter SC/ST 2023 Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-kanya-utthan-protsahan-yojna-form",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-kanya-utthan-protsahan-yojna-form.html",
+    "title": "Bihar Scholarship Kalyan Yojna Payment List ????, ???? ?? ???? ???",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-matric2023-3",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-matric2023-3.html",
+    "title": "Bihar Scholarship Matric 2023 Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-matric2024-2",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-matric2024-2.html",
+    "title": "Bihar Scholarship Matric 2024 Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-matric-2425-1",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-matric-2425-1.html",
+    "title": "Bihar Scholarship Matric 2024-25 Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-36-36",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-36-36.html",
+    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-37-37",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-37-37.html",
+    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-38-38",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-38-38.html",
+    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-39-39",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-39-39.html",
+    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-40-40",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-40-40.html",
+    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-20-20",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-20-20.html",
+    "title": "Bihar Scholarship Official Portal Link 20",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-21-21",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-21-21.html",
+    "title": "Bihar Scholarship Official Portal Link 21",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-22-22",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-22-22.html",
+    "title": "Bihar Scholarship Official Portal Link 22",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-23-23",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-23-23.html",
+    "title": "Bihar Scholarship Official Portal Link 23",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-24-24",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-24-24.html",
+    "title": "Bihar Scholarship Official Portal Link 24",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-25-25",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-25-25.html",
+    "title": "Bihar Scholarship Official Portal Link 25",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-26-26",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-26-26.html",
+    "title": "Bihar Scholarship Official Portal Link 26",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-27-27",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-27-27.html",
+    "title": "Bihar Scholarship Official Portal Link 27",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-28-28",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-28-28.html",
+    "title": "Bihar Scholarship Official Portal Link 28",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-portal-link-29-29",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-portal-link-29-29.html",
+    "title": "Bihar Scholarship Official Portal Link 29",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-31-31",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-31-31.html",
+    "title": "Bihar Scholarship Official Update 31",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-32-32",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-32-32.html",
+    "title": "Bihar Scholarship Official Update 32",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-33-33",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-33-33.html",
+    "title": "Bihar Scholarship Official Update 33",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-34-34",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-34-34.html",
+    "title": "Bihar Scholarship Official Update 34",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-official-update-35-35",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-official-update-35-35.html",
+    "title": "Bihar Scholarship Official Update 35",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-pms-maindefault-13",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-pms-maindefault-13.html",
+    "title": "Bihar Scholarship Post Matric Scholarship Portal Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-snatakscholarship-login-14",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-snatakscholarship-login-14.html",
+    "title": "Bihar Scholarship Snatak Scholarship Login Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-edudbt-instructionmanual-18",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-edudbt-instructionmanual-18.html",
+    "title": "Bihar Scholarship Update: EDUDBT instructionmanual",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-inter2022-8",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-inter2022-8.html",
+    "title": "Bihar Scholarship Update: inter2022",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-inter2023-7",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-inter2023-7.html",
+    "title": "Bihar Scholarship Update: inter2023",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-interscst-2425-9",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-interscst-2425-9.html",
+    "title": "Bihar Scholarship Update: interscst 2425",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-interscst2024-10",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-interscst2024-10.html",
+    "title": "Bihar Scholarship Update: interscst2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-matric2022-4",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-matric2022-4.html",
+    "title": "Bihar Scholarship Update: Matric2022",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-medha-paymentstatus-17",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-medha-paymentstatus-17.html",
+    "title": "Bihar Scholarship Update: Medha PaymentStatus",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-medhasoft-bihar-gov-in-snatak25link3-16",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-medhasoft-bihar-gov-in-snatak25link3-16.html",
+    "title": "Bihar Scholarship Update: medhasoft.bihar.gov.in snatak25link3",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-pmsonline-bih-nic-in-19",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-pmsonline-bih-nic-in-19.html",
+    "title": "Bihar Scholarship Update: pmsonline.bih.nic.in",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-scholarship-update-snatak25link2-15",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/bihar-scholarship-update-snatak25link2-15.html",
+    "title": "Bihar Scholarship Update: snatak25link2",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-20-20",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-20-20.html",
+    "title": "Bihar ServiceOnline Application Status Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-25-25",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-25-25.html",
+    "title": "Bihar ServiceOnline Application Status Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-20-20",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-20-20.html",
+    "title": "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 20)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-21-21",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-21-21.html",
+    "title": "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 21)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-24-24",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-24-24.html",
+    "title": "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 24)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-25-25",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-25-25.html",
+    "title": "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 25)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-sarkari-yojana-service-link-26-26",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-sarkari-yojana-service-link-26-26.html",
+    "title": "Bihar ServiceOnline Sarkari Yojana Services Update 2026 (Service 26)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-shs-ophthalmic-assistant-answer-key-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-shs-ophthalmic-assistant-answer-key-2025.html",
+    "title": "Bihar SHS Ophthalmic Assistant Answer Key 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-shsb-cho-admit-card-2024",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-shsb-cho-admit-card-2024.html",
+    "title": "Bihar SHSB CHO Admit Card 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-32-32",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-32-32.html",
+    "title": "Bihar Social Welfare Department Yojana Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-stet-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-stet-result-2026.html",
+    "title": "Bihar STET Result 2025 Out",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-35-35",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-35-35.html",
+    "title": "Bihar SWCS RTPS Certificate Download Verification 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-1-1",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-1-1.html",
+    "title": "Bihar Verification Service Link 1",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-10-10",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-10-10.html",
+    "title": "Bihar Verification Service Link 10",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-16-16",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-16-16.html",
+    "title": "Bihar Verification Service Link 16",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-17-17",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-17-17.html",
+    "title": "Bihar Verification Service Link 17",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-18-18",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-18-18.html",
+    "title": "Bihar Verification Service Link 18",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-2-2",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-2-2.html",
+    "title": "Bihar Verification Service Link 2",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-21-21",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-21-21.html",
+    "title": "Bihar Verification Service Link 21",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-22-22",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-22-22.html",
+    "title": "Bihar Verification Service Link 22",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-23-23",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-23-23.html",
+    "title": "Bihar Verification Service Link 23",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-24-24",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-24-24.html",
+    "title": "Bihar Verification Service Link 24",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-26-26",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-26-26.html",
+    "title": "Bihar Verification Service Link 26",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-27-27",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-27-27.html",
+    "title": "Bihar Verification Service Link 27",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-28-28",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-28-28.html",
+    "title": "Bihar Verification Service Link 28",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-29-29",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-29-29.html",
+    "title": "Bihar Verification Service Link 29",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-3-3",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-3-3.html",
+    "title": "Bihar Verification Service Link 3",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-30-30",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-30-30.html",
+    "title": "Bihar Verification Service Link 30",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-31-31",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-31-31.html",
+    "title": "Bihar Verification Service Link 31",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-32-32",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-32-32.html",
+    "title": "Bihar Verification Service Link 32",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-33-33",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-33-33.html",
+    "title": "Bihar Verification Service Link 33",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-4-4",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-4-4.html",
+    "title": "Bihar Verification Service Link 4",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-45-45",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-45-45.html",
+    "title": "Bihar Verification Service Link 45",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-5-5",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-5-5.html",
+    "title": "Bihar Verification Service Link 5",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-6-6",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-6-6.html",
+    "title": "Bihar Verification Service Link 6",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-7-7",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-7-7.html",
+    "title": "Bihar Verification Service Link 7",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-8-8",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-8-8.html",
+    "title": "Bihar Verification Service Link 8",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-verification-service-link-9-9",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/bihar-verification-service-link-9-9.html",
+    "title": "Bihar Verification Service Link 9",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-vidha-sabha-security-guard-020305-2023-result-cutoff-marks",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-vidha-sabha-security-guard-020305-2023-result-cutoff-marks.html",
+    "title": "Bihar Vidha Sabha 02,03,05/2023 Result With Cutoff Marks",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-vidhan-parishad-abo-02-2024-final-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-vidhan-parishad-abo-02-2024-final-result-2025.html",
+    "title": "Bihar Vidhan Parishad ABO 02/2024 Final Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-vidhan-parishad-driver-office-attendant-answer-key-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-vidhan-parishad-driver-office-attendant-answer-key-2025.html",
+    "title": "Bihar Vidhan Parishad Driver, Office Attendant Answer Key 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-vidhan-parishad-pa-deo-ldc-stenographer-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-vidhan-parishad-pa-deo-ldc-stenographer-online-form-2026.html",
+    "title": "Bihar Vidhan Parishad PA, DEO, LDC & Stenographer Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-vidhan-sabha-05-2024-mains-result-with-cutoff-marks",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-vidhan-sabha-05-2024-mains-result-with-cutoff-marks.html",
+    "title": "Bihar Vidhan Sabha 05/2024 Result With Cutoff Marks",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-vidhan-sabha-junior-clerk-pa-0203-2024-result-cutoff-marks",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-vidhan-sabha-junior-clerk-pa-0203-2024-result-cutoff-marks.html",
+    "title": "Bihar Vidhan Sabha Junior Clerk, PA 02,03/2024 Result With Cutoff Marks",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-vidhan-sabha-security-guard-01-2023-pet-result-cutoff-mark",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-vidhan-sabha-security-guard-01-2023-pet-result-cutoff-mark.html",
+    "title": "Bihar Vidhan Sabha Security Guard 01/2023 Result With Cutoff Marks",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-29-29",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-29-29.html",
+    "title": "Bihar Yojana Official Information 29",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-35-35",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-35-35.html",
+    "title": "Bihar Yojana Official Information 35",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-36-36",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-36-36.html",
+    "title": "Bihar Yojana Official Information 36",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-37-37",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-37-37.html",
+    "title": "Bihar Yojana Official Information 37",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-38-38",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-38-38.html",
+    "title": "Bihar Yojana Official Information 38",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-yojana-official-information-31-31",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/bihar-yojana-official-information-31-31.html",
+    "title": "Bihar Youth Empowerment and Skill Development Yojana Update 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-exam-admit-card-2024",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-exam-admit-card-2024.html",
+    "title": "BPSC 70th Re Exam Pre Admit Card 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-aedo-new-exam-date-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-aedo-new-exam-date-2026.html",
+    "title": "BPSC AEDO New Exam Date 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-assistant-architect-result-2024",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-assistant-architect-result-2024.html",
+    "title": "BPSC Assistant Architect 2024 DV Program",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-lecturer-mining-engineering-final-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bpsc-lecturer-mining-engineering-final-result-2025.html",
+    "title": "BPSC Lecture Mining Engineering Final Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-professor-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-professor-2026.html",
+    "title": "BPSC Professor Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-project-manager-online-form-2026-apply-now",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-project-manager-online-form-2026-apply-now.html",
+    "title": "BPSC Project Manager Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-school-teacher-tre-4-0-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
+    "title": "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpsc-vice-principal-iti-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bpsc-vice-principal-iti-result-2025.html",
+    "title": "BPSC Vice Principal ITI Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bpssc-bihar-police-havildar-clerk-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpssc-bihar-police-havildar-clerk-2026.html",
+    "title": "BPSSC Bihar Police Havildar Clerk Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bseb-bihar-board-model-question-paper-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bseb-bihar-board-model-question-paper-2026.html",
+    "title": "BSEB Bihar Board Model Question Paper 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "d-el-ed-application-form-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/d-el-ed-application-form-2024.html",
+    "title": "BSEB Bihar D.El.Ed Online Counselling 2024-26",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bseb-bihar-d-el-ed-spot-admission-online-form-2025-27",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bseb-bihar-d-el-ed-spot-admission-online-form-2025-27.html",
+    "title": "BSEB Bihar D.El.Ed Spot Admission Online Form 2025 -27",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bseb-bihar-jee-neet-free-coaching-admit-card-2025-2027",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bseb-bihar-jee-neet-free-coaching-admit-card-2025-2027.html",
+    "title": "BSEB Bihar JEE/ NEET Free Coaching Admit Card 2025-2027",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bseb-sakshamta-pariksha-ctt-4th-phase-answer-key-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bseb-sakshamta-pariksha-ctt-4th-phase-answer-key-2025.html",
+    "title": "BSEB Sakshamta Pariksha CTT 4th Phase Answer Key 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bssc-ldc-welfare-organiser-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bssc-ldc-welfare-organiser-result-2025.html",
+    "title": "BSSC LDC & Welfare Organiser Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-btsc-dental-hygienist-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-dental-hygienist-recruitment-2026.html",
+    "title": "BTSC Dental Hygienist Online Form 2026 (702 Posts)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "btsc-hostel-manager-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/btsc-hostel-manager-recruitment-2026.html",
+    "title": "BTSC Hostel Manager Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-btsc-junior-engineer-recruitment-2026-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-junior-engineer-recruitment-2026-last-date.html",
+    "title": "BTSC Junior Engineer Online Form 2026 (2809 Posts) Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "btsc-pump-operator-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/btsc-pump-operator-2026.html",
+    "title": "BTSC Pump Operator Online Form 2026 Re-Open",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "btsc-work-inspector-mechanical-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/btsc-work-inspector-mechanical-2026.html",
+    "title": "BTSC Work Inspector Mechanical Online Form 2026 Re-Open",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-btsc-work-inspector-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-work-inspector-recruitment-2026.html",
+    "title": "BTSC Work Inspector Online Form 2026 (1114 Posts)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "central-bank-of-india-safai-karamchari-fee-refund-form-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/central-bank-of-india-safai-karamchari-fee-refund-form-2025.html",
+    "title": "Central Bank of India Safai Karamchari Fee Refund Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "csbc-bihar-prohibition-constable-recruitment-03-2025-rejected-list-gender-correction",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-bihar-prohibition-constable-recruitment-03-2025-rejected-list-gender-correction.html",
+    "title": "CSBC Bihar Prohibition Constable Recruitment 03/2025 Rejected List/ Gender Correction",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "harish-chandra-post-graduate-college-admission-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/harish-chandra-post-graduate-college-admission-2024.html",
+    "title": "Harish Chandra PG College Online Admission Form 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "jceceb-paramedical-entrance-exam-admit-card-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/jceceb-paramedical-entrance-exam-admit-card-2025.html",
+    "title": "JCECEB Paramedical Entrance Exam Admit Card 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "mpesb-group-5-paramedical-staff-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/mpesb-group-5-paramedical-staff-result-2025.html",
+    "title": "MPESB Group 5 Paramedical Staff Result 2025 Out",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "ofss-bihar-11th-intermediate-spot-admission-2025-27",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/ofss-bihar-11th-intermediate-spot-admission-2025-27.html",
+    "title": "OFSS Bihar 11th Intermediate Spot Admission 2025-27 Re-Open",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "railway-rrb-paramedical-staff-cen-042024-dv-call-letter-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/railway-rrb-paramedical-staff-cen-042024-dv-call-letter-2025.html",
+    "title": "Railway RRB Paramedical Staff CEN 04/2024 DV Call Letter 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "railway-rrc-ecr-patna-apprentice-online-form-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/railway-rrc-ecr-patna-apprentice-online-form-2025.html",
+    "title": "Railway RRC ECR Patna Apprentice Online Form 2025 Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "rrb-paramedical-staff-cen-no-03-2025-exam-dates-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/rrb-paramedical-staff-cen-no-03-2025-exam-dates-2026.html",
+    "title": "RRB Paramedical Staff CEN.No.03/2025 Exam Date 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "sav-bihar-class-6-pre-result-2026-27",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/sav-bihar-class-6-pre-result-2026-27.html",
+    "title": "SAV Bihar Class 6 Pre Result 2026-27",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "ssc-gd-constable-syllabus-exam-pattern-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ssc-gd-constable-syllabus-exam-pattern-2026.html",
+    "title": "SSC GD Constable Syllabus / Exam Pattern 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "ukmssb-nursing-officer-online-form-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ukmssb-nursing-officer-online-form-2025.html",
+    "title": "UKMSSB Nursing Officer Online Form-2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "ukpsc-lecturer-recruitment-2026-apply",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ukpsc-lecturer-recruitment-2026-apply.html",
+    "title": "UKPSC Lecturer Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "ukpsc-lower-pcs-mains-admit-card-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/ukpsc-lower-pcs-mains-admit-card-2025.html",
+    "title": "UKPSC Lower PCS Mains Admit Card 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "ukpsc-upper-pcs-2024-mains-result",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ukpsc-upper-pcs-2024-mains-result.html",
+    "title": "UKPSC Upper PCS 2024 Mains Result",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "uksssc-assistant-inspector-ado-answer-key-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/uksssc-assistant-inspector-ado-answer-key-2025.html",
+    "title": "UKSSSC Assistant Inspector / ADO Answer Key 2025 Out",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "uksssc-forester-group-c-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/uksssc-forester-group-c-result-2025.html",
+    "title": "UKSSSC Forester (Group C) Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "uksssc-junior-assistant-other-post-answer-key-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/uksssc-junior-assistant-other-post-answer-key-2025.html",
+    "title": "UKSSSC Junior Assistant Other Post 2024 Answer Key",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "uksssc-pa-steno-admit-card-2024",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/uksssc-pa-steno-admit-card-2024.html",
+    "title": "UKSSSC PA, Steno & Other Post Admit Card 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "uksssc-police-constable-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/uksssc-police-constable-result-2025.html",
+    "title": "UKSSSC Police Constable Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "uksssc-vdo-patwari-other-post-admit-card-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/uksssc-vdo-patwari-other-post-admit-card-2025.html",
+    "title": "UKSSSC VDO, Patwari & Other Post Admit Card 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "upsmfac-paramedical-admission-form-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/upsmfac-paramedical-admission-form-2024.html",
+    "title": "UPSMFAC Paramedical Courses Online Counseling 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "utet-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/utet-result-2025.html",
+    "title": "UTET Result 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "wbssc-assistant-teacher-admit-card-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/wbssc-assistant-teacher-admit-card-2025.html",
+    "title": "WBSSC Assistant Teacher Admit Card 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bssc-inter-level-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-inter-level-2026.html",
+    "title": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) Last Date Today",
+    "publishedAt": "2026-02-16",
+    "updatedAt": "2026-02-17"
+  },
+  {
+    "slug": "bpsc-ldc-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bpsc-ldc-2026.html",
+    "title": "BPSC LDC Typing Test Result 2026",
+    "publishedAt": "2026-02-17",
+    "updatedAt": "2026-02-17"
+  },
+  {
+    "slug": "bihar-police-bpssc-asi-operation-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-police-bpssc-asi-operation-2026.html",
+    "title": "BPSSC ASI Operation Online Form 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-17"
+  },
+  {
+    "slug": "bihar-police-bpssc-si-prohibition-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-police-bpssc-si-prohibition-2025.html",
+    "title": "BPSSC Bihar Police SI Prohibition Final Result Marks 2026",
+    "publishedAt": "2026-02-17",
+    "updatedAt": "2026-02-17"
+  },
+  {
+    "slug": "wbssc-group-c-and-d-2025",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/wbssc-group-c-and-d-2025.html",
+    "title": "WBSSC Group C and D Admit Card 2026",
+    "publishedAt": "2026-02-17",
+    "updatedAt": "2026-02-17"
+  },
+  {
+    "slug": "bihar-police-csbc-driver-constable-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-police-csbc-driver-constable-2026.html",
+    "title": "Bihar Police CSBC Driver Constable PET Admit Card 2026 Out",
+    "publishedAt": "2026-02-15",
+    "updatedAt": "2026-02-16"
+  },
+  {
+    "slug": "bpsc-aso-mains-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-aso-mains-2026.html",
+    "title": "BPSC ASO Mains Admit Card 2026 Soon",
+    "publishedAt": "2026-02-16",
+    "updatedAt": "2026-02-16"
+  },
+  {
+    "slug": "bihar-btsc-dairy-field-officer-dairy-technical-officer-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-dairy-field-officer-dairy-technical-officer-2026.html",
+    "title": "Bihar BTSC Dairy Field Officer/ Dairy Technical Officer Online Form 2026",
+    "publishedAt": "2026-02-14",
+    "updatedAt": "2026-02-14"
+  },
+  {
+    "slug": "bpssc-bihar-police-enforcement-si-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpssc-bihar-police-enforcement-si-2026.html",
+    "title": "BPSSC Bihar Police Enforcement SI Interview Date 2026",
+    "publishedAt": "2026-02-14",
+    "updatedAt": "2026-02-14"
+  },
+  {
+    "slug": "bihar-jeevika-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-jeevika-2025.html",
+    "title": "Bihar JEEVIKA Various Posts Response Sheet 2026",
+    "publishedAt": "2026-02-12",
+    "updatedAt": "2026-02-12"
+  },
+  {
+    "slug": "bseb-bihar-d-el-ed-2026-28",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bseb-bihar-d-el-ed-2026-28.html",
+    "title": "BSEB Bihar D.El.Ed 2nd Dummy Admit Card 2026-28",
+    "publishedAt": "2026-02-05",
+    "updatedAt": "2026-02-12"
+  },
+  {
+    "slug": "bihar-police-csbc-constable-gd-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-police-csbc-constable-gd-2026.html",
+    "title": "Bihar Police CSBC Constable GD Online Form 2026",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-02-11"
+  },
+  {
+    "slug": "bsnl-senior-executive-trainee-set-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bsnl-senior-executive-trainee-set-2026.html",
+    "title": "BSNL Senior Executive Trainee SET Online Form 2026",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-02-11"
+  },
+  {
+    "slug": "bihar-bcece-junior-resident-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bcece-junior-resident-2026.html",
+    "title": "Bihar BCECE Junior Resident Online Form 2026 Last Date",
+    "publishedAt": "2026-02-06",
+    "updatedAt": "2026-02-07"
+  },
+  {
+    "slug": "bpsc-atps-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-atps-2026.html",
+    "title": "Bihar BPSC ATPS Online Form 2026",
+    "publishedAt": "2026-02-05",
+    "updatedAt": "2026-02-06"
+  },
+  {
+    "slug": "bpssc-bihar-home-guard-havildar-clerk-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpssc-bihar-home-guard-havildar-clerk-2026.html",
+    "title": "BPSSC Bihar Home Guard Havildar Clerk Online Form 2026",
+    "publishedAt": "2026-02-05",
+    "updatedAt": "2026-02-06"
+  },
+  {
+    "slug": "bpsc-boiler-inspector-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-boiler-inspector-2026.html",
+    "title": "BPSC Boiler Inspector Online Form 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-04"
+  },
+  {
+    "slug": "bpsc-deputy-director-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-deputy-director-2026.html",
+    "title": "BPSC Deputy Director Online Form 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-04"
+  },
+  {
+    "slug": "bpsc-acf-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-acf-2026.html",
+    "title": "Bihar BPSC ACF Online Form 2026",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-02-03"
+  },
+  {
+    "slug": "bpsc-factory-inspector-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-factory-inspector-2026.html",
+    "title": "Bihar BPSC Factory Inspector Online Form 2026 Last Date",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-02-03"
+  },
+  {
+    "slug": "bpsc-stenographer-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-stenographer-2026.html",
+    "title": "Bihar BPSC Stenographer Online Form 2026",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-02-03"
+  },
+  {
+    "slug": "bpsc-exam-calendar-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-exam-calendar-2026.html",
+    "title": "BPSC Revised Exam Calendar 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-03"
+  },
+  {
+    "slug": "bpssc-bihar-police-range-officer-of-forest-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bpssc-bihar-police-range-officer-of-forest-2025.html",
+    "title": "BPSSC Bihar Police Range Officer of Forest Final Result 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-03"
+  },
+  {
+    "slug": "ecgc-po-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ecgc-po-2026.html",
+    "title": "ECGC PO Result 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-03"
+  },
+  {
+    "slug": "patna-high-court-stenographer-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/patna-high-court-stenographer-result-2026.html",
+    "title": "Patna High Court Stenographer Result 2026",
+    "publishedAt": "2026-01-31",
+    "updatedAt": "2026-01-31"
+  },
+  {
+    "slug": "beltron-programmer-result-cutoff-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/beltron-programmer-result-cutoff-2026.html",
+    "title": "BELTRON Programmer Result / Cutoff 2026",
+    "publishedAt": "2026-01-29",
+    "updatedAt": "2026-01-29"
+  },
+  {
+    "slug": "bihar-btsc-pharmacist-dv-schedule-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-btsc-pharmacist-dv-schedule-2026.html",
+    "title": "Bihar BTSC Pharmacist DV Schedule 2026",
+    "publishedAt": "2026-01-28",
+    "updatedAt": "2026-01-28"
+  },
+  {
+    "slug": "bpsc-aee-other-post-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bpsc-aee-other-post-result-2026.html",
+    "title": "BPSC AEE, Law Officer, PRO & Jr Lab Assistant Result 2026",
+    "publishedAt": "2026-01-28",
+    "updatedAt": "2026-01-28"
+  },
+  {
+    "slug": "bpsc-mvi-final-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bpsc-mvi-final-result-2026.html",
+    "title": "BPSC MVI Final Result 2026",
+    "publishedAt": "2026-01-28",
+    "updatedAt": "2026-01-28"
+  },
+  {
+    "slug": "patna-high-court-mazdoor-interview-letter-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/patna-high-court-mazdoor-interview-letter-2026.html",
+    "title": "Patna High Court Mazdoor Interview Letter 2026",
+    "publishedAt": "2026-01-27",
+    "updatedAt": "2026-01-27"
+  },
+  {
+    "slug": "bihar-shs-anm-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-shs-anm-result-2026.html",
+    "title": "Bihar SHS ANM Result 2026",
+    "publishedAt": "2026-01-23",
+    "updatedAt": "2026-01-23"
+  },
+  {
+    "slug": "bssc-field-assistant-pre-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bssc-field-assistant-pre-result-2026.html",
+    "title": "BSSC Field Assistant Pre Result 2026",
+    "publishedAt": "2026-01-22",
+    "updatedAt": "2026-01-23"
+  },
+  {
+    "slug": "bihar-bpsc-special-school-teacher-admit-card-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bihar-bpsc-special-school-teacher-admit-card-2026.html",
+    "title": "Bihar BPSC Special School Teacher Admit Card 2026",
+    "publishedAt": "2026-01-22",
+    "updatedAt": "2026-01-22"
+  },
+  {
+    "slug": "bpsc-dso-admit-card-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-dso-admit-card-2026.html",
+    "title": "BPSC DSO Admit Card 2026",
+    "publishedAt": "2026-01-22",
+    "updatedAt": "2026-01-22"
+  },
+  {
+    "slug": "bpsc-dso-ad-mains-admit-card-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-dso-ad-mains-admit-card-2026.html",
+    "title": "BPSC DSO/ AD Mains Admit Card 2026",
+    "publishedAt": "2026-01-22",
+    "updatedAt": "2026-01-22"
+  },
+  {
+    "slug": "bpssc-bihar-police-si-pre-admit-card-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpssc-bihar-police-si-pre-admit-card-2026.html",
+    "title": "BPSSC Bihar Police SI Pre Admit Card 2026",
+    "publishedAt": "2026-01-20",
+    "updatedAt": "2026-01-22"
+  },
+  {
+    "slug": "bpsc-70th-interview-letter-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-70th-interview-letter-2026.html",
+    "title": "Bihar BPSC 70th Interview Letter 2026",
+    "publishedAt": "2026-01-19",
+    "updatedAt": "2026-01-19"
+  },
+  {
+    "slug": "bpsc-71st-mains-exam-date-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/bpsc-71st-mains-exam-date-2026.html",
+    "title": "BPSC 71st Mains Exam Date 2026",
+    "publishedAt": "2026-01-19",
+    "updatedAt": "2026-01-19"
+  },
+  {
+    "slug": "bihar-btsc-tutor-nursing-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-btsc-tutor-nursing-result-2026.html",
+    "title": "Bihar BTSC Tutor Nursing Result 2026",
+    "publishedAt": "2026-01-14",
+    "updatedAt": "2026-01-14"
+  },
+  {
+    "slug": "bpsc-mdo-final-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bpsc-mdo-final-result-2025.html",
+    "title": "BPSC MDO Final Result 2025",
+    "publishedAt": "2026-01-06",
+    "updatedAt": "2026-01-07"
+  },
+  {
+    "slug": "ukpsc-upper-pcs-pre-revised-result-2025",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ukpsc-upper-pcs-pre-revised-result-2025.html",
+    "title": "UKPSC Upper PCS Pre Revised Result 2025",
+    "publishedAt": "2026-01-07",
+    "updatedAt": "2026-01-07"
+  }
 ]

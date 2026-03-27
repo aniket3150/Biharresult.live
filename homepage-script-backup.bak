@@ -469,16 +469,8 @@ function createListItem(post, options = {}) {
   a.className = "br-link";
   a.href = postHref(post);
   a.textContent = formatHomeListTitle(post);
+
   body.appendChild(a);
-
-  const meta = document.createElement("div");
-  meta.className = "br-item-meta";
-  const metaParts = [];
-  if (post.category) metaParts.push(post.category);
-  if (post.updatedAt || post.publishedAt) metaParts.push(`Updated ${formatDate(post.updatedAt || post.publishedAt)}`);
-  meta.textContent = metaParts.join(" | ");
-  body.appendChild(meta);
-
   if (showSnippet) {
     const desc = document.createElement("p");
     desc.className = "br-item-desc";
@@ -592,20 +584,7 @@ function renderHomeHighlights(posts) {
     if (/tre\s*4\.?0|44000\+?\s*posts/i.test(post.title || "")) {
       a.classList.add("br-hot-update");
     }
-
-    const category = document.createElement("span");
-    category.className = "br-home-highlight-card-category";
-    category.textContent = post.category || "Update";
-
-    const title = document.createElement("strong");
-    title.className = "br-home-highlight-card-title";
-    title.textContent = post.title;
-
-    const meta = document.createElement("span");
-    meta.className = "br-home-highlight-card-meta";
-    meta.textContent = `Updated ${formatDate(post.updatedAt || post.publishedAt || "") || "Recently"}`;
-
-    a.append(category, title, meta);
+    a.textContent = post.title;
     grid.appendChild(a);
   });
 }

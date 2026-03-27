@@ -1,128 +1,362 @@
-﻿[
-    {
-        "slug":  "bihar-admission-official-update-18-18",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-18-18.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 18)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-39-39",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-39-39.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 39)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-40-40",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-40-40.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 40)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-17-17",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-17-17.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 17)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-19-19",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-19-19.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 19)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-16-16",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-16-16.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 16)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-13-13",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-13-13.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 13)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-35-35",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-35-35.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 35)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-36-36",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-36-36.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 36)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-37-37",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-37-37.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 37)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-34-34",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-34-34.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 34)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-38-38",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-38-38.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 38)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-14-14",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-14-14.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 14)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    },
-    {
-        "slug":  "bihar-admission-official-update-15-15",
-        "category":  "Admission",
-        "folder":  "admission",
-        "path":  "sections/admission/bihar-admission-official-update-15-15.html",
-        "title":  "Bihar Admission 2026 Latest Official Update (Notice 15)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18"
-    }
+[
+  {
+    "slug": "bhu-uet-cuet-ug-admission-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bhu-uet-cuet-ug-admission-2024.html",
+    "title": "BHU UET CUET UG Online Registration Form 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-13-13",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-13-13.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 13)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-14-14",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-14-14.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 14)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-15-15",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-15-15.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 15)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-16-16",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-16-16.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 16)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-17-17",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-17-17.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 17)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-18-18",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-18-18.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 18)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-19-19",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-19-19.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 19)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-34-34",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-34-34.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 34)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-35-35",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-35-35.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 35)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-36-36",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-36-36.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 36)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-37-37",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-37-37.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 37)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-38-38",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-38-38.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 38)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-39-39",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-39-39.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 39)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-40-40",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-40-40.html",
+    "title": "Bihar Admission 2026 Latest Official Update (Notice 40)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-10-10",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-10-10.html",
+    "title": "Bihar Admission Official Update 10",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-11-11",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-11-11.html",
+    "title": "Bihar Admission Official Update 11",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-12-12",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-12-12.html",
+    "title": "Bihar Admission Official Update 12",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-20-20",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-20-20.html",
+    "title": "Bihar Admission Official Update 20",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-21-21",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-21-21.html",
+    "title": "Bihar Admission Official Update 21",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-22-22",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-22-22.html",
+    "title": "Bihar Admission Official Update 22",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-23-23",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-23-23.html",
+    "title": "Bihar Admission Official Update 23",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-24-24",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-24-24.html",
+    "title": "Bihar Admission Official Update 24",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-25-25",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-25-25.html",
+    "title": "Bihar Admission Official Update 25",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-26-26",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-26-26.html",
+    "title": "Bihar Admission Official Update 26",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-27-27",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-27-27.html",
+    "title": "Bihar Admission Official Update 27",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-28-28",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-28-28.html",
+    "title": "Bihar Admission Official Update 28",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-29-29",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-29-29.html",
+    "title": "Bihar Admission Official Update 29",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-30-30",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-30-30.html",
+    "title": "Bihar Admission Official Update 30",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-31-31",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-31-31.html",
+    "title": "Bihar Admission Official Update 31",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-32-32",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-32-32.html",
+    "title": "Bihar Admission Official Update 32",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-admission-official-update-33-33",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-admission-official-update-33-33.html",
+    "title": "Bihar Admission Official Update 33",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-bcece-revised-mop-up-counselling-schedule-2025",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-bcece-revised-mop-up-counselling-schedule-2025.html",
+    "title": "Bihar BCECE Revised Mop-up Counselling Schedule 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-deled-admission-2023-25",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-deled-admission-2023-25.html",
+    "title": "Bihar BSEB D.El.Ed Online Counseling Form 2023",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-polytechnic-admission-form",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-polytechnic-admission-form.html",
+    "title": "Bihar DCECE PM / PMM 2023 Online Counselling / Choice Filling",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-iti-cat-offline-mop-up-counselling-2025",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-iti-cat-offline-mop-up-counselling-2025.html",
+    "title": "Bihar ITI-CAT Offline Mop-Up Counselling 2025- Date Extended",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-polytechnic-diploma-form-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/bihar-polytechnic-diploma-form-2024.html",
+    "title": "Bihar Polytechnic / Diploma Online Counselling / Choice Filling",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "d-el-ed-application-form-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/d-el-ed-application-form-2024.html",
+    "title": "BSEB Bihar D.El.Ed Online Counselling 2024-26",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "harish-chandra-post-graduate-college-admission-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/harish-chandra-post-graduate-college-admission-2024.html",
+    "title": "Harish Chandra PG College Online Admission Form 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "upsmfac-paramedical-admission-form-2024",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/upsmfac-paramedical-admission-form-2024.html",
+    "title": "UPSMFAC Paramedical Courses Online Counseling 2024",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  }
 ]
