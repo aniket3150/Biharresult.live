@@ -501,11 +501,9 @@ function buildHeroLead(post) {
 function buildSummaryCopy(post) {
   const dept = cleanText(post.department || "the concerned department");
   const category = cleanText(post.category || "official update");
-  const lastDate = cleanText(findLastDate(post));
-  const extra = lastDate ? ` Important date reference: ${lastDate}.` : "";
   return [
     `${cleanText(post.title)} is listed under ${category} on BiharResult.live.`,
-    `This page is designed to help students and candidates quickly understand the main process, official links, and key instructions shared by ${dept}.${extra}`,
+    `This page is designed to help students and candidates quickly understand the main process, official links, and key instructions shared by ${dept}.`,
     "Always verify final details from the official website or notification before taking action."
   ].join(" ");
 }
@@ -613,10 +611,11 @@ function buildHtml(post, folder) {
   const quickFacts = [
     { label: "Category", value: cleanText(post.category || "-") },
     { label: "Department", value: cleanText(post.department || "Official Update") },
-    { label: "Updated", value: cleanText(post.updatedAt || post.publishedAt || "-") },
     { label: "Key Point", value: lastDate || primaryLabel || "Official update" }
   ];
-  const summaryRows = (post.importantDates || []).slice(0, 10);
+  const summaryRows = (post.importantDates || [])
+    .filter((row) => !/^(updated(?:\s+date)?|arrival(?:\s+date)?)$/i.test(cleanText(row?.label || "")))
+    .slice(0, 10);
   const feeRows = (post.applicationFee || []).slice(0, 10);
   const eligibilityRows = (post.eligibility || []).slice(0, 10);
   const vacancyRows = (post.vacancyDetails || []).slice(0, 12);
@@ -704,14 +703,13 @@ ${buildSchema(post, folder, canonicalUrl, faq)}
         <p class="seo-post-lead">${escapeHtml(lead)}</p>
         <div class="seo-post-meta-row">
           <span class="seo-post-pill live">${escapeHtml(detectCategoryMeta(post.category).badge)}</span>
-          <span class="seo-post-pill">Updated: ${escapeHtml(cleanText(post.updatedAt || post.publishedAt || "-"))}</span>
           <span class="seo-post-pill">${escapeHtml(primaryLabel || "Official Link")}</span>
           <span class="seo-post-pill">${escapeHtml(cleanText(post.category || "Latest Update"))}</span>
         </div>
       </section>
       <div class="seo-post-content">
         <div class="seo-post-grid">${quickFacts.map((item) => `<div class="seo-post-box"><strong>${escapeHtml(item.label)}</strong><span>${escapeHtml(item.value)}</span></div>`).join("\n")}</div>
-        <div class="seo-post-note"><strong>Accuracy Note:</strong> This page was updated on <strong>${escapeHtml(cleanText(post.updatedAt || post.publishedAt || "-"))}</strong> using available source information. Always verify final details from the official website before taking action.</div>
+        <div class="seo-post-note"><strong>Accuracy Note:</strong> Always verify final details from the official website before taking action.</div>
         <section><h2 class="table-title">${escapeHtml(buildSectionTitle(post))}</h2><div class="seo-post-copy"><p>${escapeHtml(buildSummaryCopy(post))}</p><p>${escapeHtml(cleanText(post.longDescription || post.shortInfo || ""))}</p></div></section>
         ${summaryRows.length ? `<section class="mt-6"><h2 class="table-title">Important Dates and Key Details</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(summaryRows)}</table></div></section>` : ""}
         ${feeRows.length ? `<section class="mt-6"><h2 class="table-title">Application Fee / Service Fee</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(feeRows)}</table></div></section>` : ""}
@@ -799,7 +797,8 @@ function rebuildSitemap(entries) {
     { loc: "https://biharresult.live/pages/legal/about.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/contact.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/privacy-policy.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
-    { loc: "https://biharresult.live/pages/guides/guides.html", lastmod: "2026-02-18", changefreq: "weekly", priority: "0.7" },
+    { loc: "https://biharresult.live/pages/guides/guides.html", lastmod: "2026-03-28", changefreq: "weekly", priority: "0.7" },
+    { loc: "https://biharresult.live/pages/guides/guide-bihar-job-result-admit-card-hub.html", lastmod: "2026-03-28", changefreq: "weekly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/guide-post-matric-scholarship-apply.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/guide-ssc-cgl-2026-books-strategy.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/guide-bihar-age-relaxation-reservation-explained.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.7" }

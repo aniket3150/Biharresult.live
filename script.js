@@ -475,9 +475,10 @@ function createListItem(post, options = {}) {
   meta.className = "br-item-meta";
   const metaParts = [];
   if (post.category) metaParts.push(post.category);
-  if (post.updatedAt || post.publishedAt) metaParts.push(`Updated ${formatDate(post.updatedAt || post.publishedAt)}`);
-  meta.textContent = metaParts.join(" | ");
-  body.appendChild(meta);
+  if (metaParts.length) {
+    meta.textContent = metaParts.join(" | ");
+    body.appendChild(meta);
+  }
 
   if (showSnippet) {
     const desc = document.createElement("p");
@@ -501,9 +502,7 @@ function createListItem(post, options = {}) {
 
 const MANUAL_TICKER_FILE = "./ticker-items.html";
 const MANUAL_HIGHLIGHTS_FILE = "./priority-updates-items.html";
-const MANUAL_SHORTCUTS_FILE = "./shortcut-items.html";
 let manualHighlightItemsCache = null;
-let manualShortcutItemsCache = null;
 
 function buildFallbackTickerItems(posts) {
   const sorted = [...posts].sort(byDate);
@@ -576,58 +575,6 @@ async function ensureManualHighlightItemsLoaded() {
   manualHighlightItemsCache = await loadManualHighlightItems();
 }
 
-async function loadManualShortcutItems() {
-  try {
-    const response = await fetch(MANUAL_SHORTCUTS_FILE, { cache: "no-store" });
-    if (!response.ok) return [];
-
-    const html = await response.text();
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    const items = Array.from(doc.querySelectorAll("[data-shortcut-item]"));
-
-    return items
-      .map((item) => {
-        const href = (item.getAttribute("href") || "").trim() || "#";
-        const title = ((item.getAttribute("data-title") || "").trim()).replace(/\s+/g, " ");
-        const desc = ((item.getAttribute("data-desc") || "").trim()).replace(/\s+/g, " ");
-        if (!title || !desc) return null;
-        return { href, title, desc };
-      })
-      .filter(Boolean);
-  } catch {
-    return [];
-  }
-}
-
-async function ensureManualShortcutItemsLoaded() {
-  if (manualShortcutItemsCache !== null) return;
-  manualShortcutItemsCache = await loadManualShortcutItems();
-}
-
-function renderHomeShortcuts() {
-  const strip = document.querySelector(".br-home-shortcut-strip");
-  if (!strip) return;
-
-  const manualItems = Array.isArray(manualShortcutItemsCache) ? manualShortcutItemsCache : [];
-  if (!manualItems.length) return;
-
-  strip.innerHTML = "";
-  manualItems.forEach((item) => {
-    const a = document.createElement("a");
-    a.className = "br-home-shortcut-card";
-    a.href = item.href;
-
-    const strong = document.createElement("strong");
-    strong.textContent = item.title;
-
-    const span = document.createElement("span");
-    span.textContent = item.desc;
-
-    a.append(strong, span);
-    strip.appendChild(a);
-  });
-}
-
 async function renderTicker(posts) {
   const track = document.getElementById("br-ticker-track");
   if (!track) return;
@@ -694,11 +641,7 @@ function renderHomeHighlights(posts) {
       title.className = "br-home-highlight-card-title";
       title.textContent = item.title;
 
-      const meta = document.createElement("span");
-      meta.className = "br-home-highlight-card-meta";
-      meta.textContent = item.meta || "Updated Recently";
-
-      a.append(category, title, meta);
+      a.append(category, title);
       grid.appendChild(a);
     });
     return;
@@ -759,11 +702,7 @@ function renderHomeHighlights(posts) {
     title.className = "br-home-highlight-card-title";
     title.textContent = post.title;
 
-    const meta = document.createElement("span");
-    meta.className = "br-home-highlight-card-meta";
-    meta.textContent = `Updated ${formatDate(post.updatedAt || post.publishedAt || "") || "Recently"}`;
-
-    a.append(category, title, meta);
+    a.append(category, title);
     grid.appendChild(a);
   });
 }
@@ -1568,9 +1507,7 @@ async function init() {
 
     if (isHome) {
       await ensureManualHighlightItemsLoaded();
-      await ensureManualShortcutItemsLoaded();
       await renderTicker(mergedPosts);
-      renderHomeShortcuts();
       renderHomeHighlights(mergedPosts);
       let currentHighlightLimit = getHomeHighlightLimit();
       window.addEventListener("resize", () => {

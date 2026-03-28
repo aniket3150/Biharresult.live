@@ -2,7 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>https://biharresult.live/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -26,7 +26,13 @@
   </url>
   <url>
     <loc>https://biharresult.live/pages/guides/guides.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/pages/guides/guide-bihar-job-result-admit-card-hub.html</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -50,43 +56,169 @@
   </url>
   <url>
     <loc>https://biharresult.live/sections/latest-results/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://biharresult.live/sections/latest-jobs/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://biharresult.live/sections/admit-card/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://biharresult.live/sections/scholarship/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://biharresult.live/sections/admission/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://biharresult.live/sections/sarkari-yojana/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://biharresult.live/sections/verification/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/bihar-civil-court-peon-admit-card-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/bihar-civil-court-peon-exam-cancelled-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/bihar-nmms-admit-card-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-jobs/bihar-police-constable-gd-close-cadre-vacancy-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-jobs/bihar-police-constable-operator-vacancy-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/bihar-state-cooperative-bank-bscb-dv-notice-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/bihar-vidhan-parishad-pa-and-stenographer-exam-date-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/bpsc-aedo-exam-program-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-jobs/bpsc-physics-chemistry-professor-vacancy-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-jobs/bpsc-prosecution-officer-online-form-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/brlps-jeevika-result-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/btsc-ecg-technician-dv-list-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/btsc-ot-assistant-dv-list-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/btsc-x-ray-technician-dv-call-letter-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/btsc-x-ray-technician-dv-list-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/buhs-jet-admit-card-2026.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/admit-card/lnmu-semester-1-admit-card-2025-29.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/lnmu-semester-4-result-2023-27.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/magadh-university-semester-5-result-2023-27.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/sav-bihar-class-6-mains-result-2026-27.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biharresult.live/sections/latest-results/vksu-semester-1-result-2025-29.html</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
