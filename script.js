@@ -499,10 +499,13 @@ function createListItem(post, options = {}) {
   return li;
 }
 
-function renderTicker(posts) {
-  const track = document.getElementById("br-ticker-track");
-  if (!track) return;
+const MANUAL_TICKER_FILE = "./ticker-items.html";
+const MANUAL_HIGHLIGHTS_FILE = "./priority-updates-items.html";
+const MANUAL_SHORTCUTS_FILE = "./shortcut-items.html";
+let manualHighlightItemsCache = null;
+let manualShortcutItemsCache = null;
 
+function buildFallbackTickerItems(posts) {
   const sorted = [...posts].sort(byDate);
   const trePost = sorted.find((post) => /tre\s*4\.?0|\btre\b/i.test(post.title || ""));
   const rrbGroupDPost = sorted.find((post) => /railway\s*rrb\s*group\s*d|rrb\s*group\s*d/i.test(post.title || ""));
@@ -512,14 +515,137 @@ function renderTicker(posts) {
   if (rrbGroupDPost && rrbGroupDPost.slug !== trePost?.slug) top.push(rrbGroupDPost);
   if (top.length === 0) top.push(...sorted.slice(0, 2));
 
-  const repeated = Array.from({ length: 10 }, (_, idx) => top[idx % top.length]).filter(Boolean);
+  return top
+    .filter(Boolean)
+    .map((post) => ({
+      href: postHref(post),
+      text: post.title
+    }));
+}
+
+async function loadManualTickerItems() {
+  try {
+    const response = await fetch(MANUAL_TICKER_FILE, { cache: "no-store" });
+    if (!response.ok) return [];
+
+    const html = await response.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const links = Array.from(doc.querySelectorAll("[data-ticker-item]"));
+
+    return links
+      .map((link) => {
+        const text = (link.textContent || "").trim().replace(/\s+/g, " ");
+        if (!text) return null;
+        const href = (link.getAttribute("href") || "").trim() || "#";
+        return { href, text };
+      })
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+async function loadManualHighlightItems() {
+  try {
+    const response = await fetch(MANUAL_HIGHLIGHTS_FILE, { cache: "no-store" });
+    if (!response.ok) return [];
+
+    const html = await response.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const items = Array.from(doc.querySelectorAll("[data-highlight-item]"));
+
+    return items
+      .map((item) => {
+        const href = (item.getAttribute("href") || "").trim() || "#";
+        const category = (item.getAttribute("data-category") || "Update").trim();
+        const title = ((item.getAttribute("data-title") || item.textContent || "").trim()).replace(/\s+/g, " ");
+        const meta = ((item.getAttribute("data-meta") || "").trim()).replace(/\s+/g, " ");
+        const colorClass = (item.getAttribute("data-color") || "").trim();
+        const isHot = /^(1|true|yes)$/i.test((item.getAttribute("data-hot") || "").trim());
+        if (!title) return null;
+        return { href, category, title, meta, colorClass, isHot };
+      })
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+async function ensureManualHighlightItemsLoaded() {
+  if (manualHighlightItemsCache !== null) return;
+  manualHighlightItemsCache = await loadManualHighlightItems();
+}
+
+async function loadManualShortcutItems() {
+  try {
+    const response = await fetch(MANUAL_SHORTCUTS_FILE, { cache: "no-store" });
+    if (!response.ok) return [];
+
+    const html = await response.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const items = Array.from(doc.querySelectorAll("[data-shortcut-item]"));
+
+    return items
+      .map((item) => {
+        const href = (item.getAttribute("href") || "").trim() || "#";
+        const title = ((item.getAttribute("data-title") || "").trim()).replace(/\s+/g, " ");
+        const desc = ((item.getAttribute("data-desc") || "").trim()).replace(/\s+/g, " ");
+        if (!title || !desc) return null;
+        return { href, title, desc };
+      })
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+async function ensureManualShortcutItemsLoaded() {
+  if (manualShortcutItemsCache !== null) return;
+  manualShortcutItemsCache = await loadManualShortcutItems();
+}
+
+function renderHomeShortcuts() {
+  const strip = document.querySelector(".br-home-shortcut-strip");
+  if (!strip) return;
+
+  const manualItems = Array.isArray(manualShortcutItemsCache) ? manualShortcutItemsCache : [];
+  if (!manualItems.length) return;
+
+  strip.innerHTML = "";
+  manualItems.forEach((item) => {
+    const a = document.createElement("a");
+    a.className = "br-home-shortcut-card";
+    a.href = item.href;
+
+    const strong = document.createElement("strong");
+    strong.textContent = item.title;
+
+    const span = document.createElement("span");
+    span.textContent = item.desc;
+
+    a.append(strong, span);
+    strip.appendChild(a);
+  });
+}
+
+async function renderTicker(posts) {
+  const track = document.getElementById("br-ticker-track");
+  if (!track) return;
+  const manualItems = await loadManualTickerItems();
+  const baseItems = manualItems.length > 0 ? manualItems : buildFallbackTickerItems(posts);
+  if (!baseItems.length) {
+    track.innerHTML = "";
+    return;
+  }
+  const repeatCount = Math.max(10, baseItems.length * 3);
+  const repeated = Array.from({ length: repeatCount }, (_, idx) => baseItems[idx % baseItems.length]).filter(Boolean);
 
   track.innerHTML = "";
-  repeated.forEach((post) => {
+  repeated.forEach((item) => {
     const link = document.createElement("a");
-    link.href = postHref(post);
+    link.href = item.href;
     link.className = "br-ticker-link";
-    link.textContent = `| ${post.title}`;
+    link.textContent = `| ${item.text}`;
     track.appendChild(link);
   });
 }
@@ -534,6 +660,49 @@ function renderHomeHighlights(posts) {
   const grid = document.getElementById("home-highlight-grid");
   if (!grid) return;
   const highlightLimit = getHomeHighlightLimit();
+
+  const colorClasses = [
+    "br-home-highlight-red",
+    "br-home-highlight-orange",
+    "br-home-highlight-purple",
+    "br-home-highlight-navy",
+    "br-home-highlight-olive",
+    "br-home-highlight-blue",
+    "br-home-highlight-maroon",
+    "br-home-highlight-green"
+  ];
+
+  const manualItems = Array.isArray(manualHighlightItemsCache) ? manualHighlightItemsCache : [];
+  if (manualItems.length > 0) {
+    grid.innerHTML = "";
+    manualItems.slice(0, highlightLimit).forEach((item, idx) => {
+      const colorClass = colorClasses.includes(item.colorClass)
+        ? item.colorClass
+        : colorClasses[idx % colorClasses.length];
+      const a = document.createElement("a");
+      a.href = item.href;
+      a.className = `br-home-highlight-card ${colorClass}`;
+      if (item.isHot || /tre\s*4\.?0|44000\+?\s*posts/i.test(item.title || "")) {
+        a.classList.add("br-hot-update");
+      }
+
+      const category = document.createElement("span");
+      category.className = "br-home-highlight-card-category";
+      category.textContent = item.category || "Update";
+
+      const title = document.createElement("strong");
+      title.className = "br-home-highlight-card-title";
+      title.textContent = item.title;
+
+      const meta = document.createElement("span");
+      meta.className = "br-home-highlight-card-meta";
+      meta.textContent = item.meta || "Updated Recently";
+
+      a.append(category, title, meta);
+      grid.appendChild(a);
+    });
+    return;
+  }
 
   const preferredCategories = [
     "Latest Results",
@@ -572,17 +741,6 @@ function renderHomeHighlights(posts) {
     selected.push(post);
     used.add(post.slug);
   });
-
-  const colorClasses = [
-    "br-home-highlight-red",
-    "br-home-highlight-orange",
-    "br-home-highlight-purple",
-    "br-home-highlight-navy",
-    "br-home-highlight-olive",
-    "br-home-highlight-blue",
-    "br-home-highlight-maroon",
-    "br-home-highlight-green"
-  ];
 
   grid.innerHTML = "";
   selected.slice(0, highlightLimit).forEach((post, idx) => {
@@ -1409,7 +1567,10 @@ async function init() {
     const mergedPosts = mergeManualPriorityPosts(posts);
 
     if (isHome) {
-      renderTicker(mergedPosts);
+      await ensureManualHighlightItemsLoaded();
+      await ensureManualShortcutItemsLoaded();
+      await renderTicker(mergedPosts);
+      renderHomeShortcuts();
       renderHomeHighlights(mergedPosts);
       let currentHighlightLimit = getHomeHighlightLimit();
       window.addEventListener("resize", () => {
