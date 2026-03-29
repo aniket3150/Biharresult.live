@@ -302,7 +302,6 @@ const HOME_MAP = {
   "Latest Jobs": "jobs-list",
   "Admit Card": "admit-list",
   "Scholarship": "scholarship-list",
-  "Admission": "admission-list",
   "Sarkari Yojana": "yojana-list",
   "Verification": "verification-list"
 };
@@ -375,6 +374,12 @@ function mergeManualPriorityPosts(posts) {
 
 function byDate(a, b) {
   return new Date(b.publishedAt) - new Date(a.publishedAt);
+}
+
+function byFeaturedThenDate(a, b) {
+  const featuredDiff = Number(Boolean(b.isFeatured)) - Number(Boolean(a.isFeatured));
+  if (featuredDiff !== 0) return featuredDiff;
+  return byDate(a, b);
 }
 
 function sanitizeUrl(url) {
@@ -714,7 +719,7 @@ function renderHome(posts) {
 
     const items = posts
       .filter((post) => post.category === category)
-      .sort(byDate);
+      .sort(category === "Latest Results" ? byFeaturedThenDate : byDate);
     listEl.innerHTML = "";
     const showSnippet = false;
     items.forEach((post) => listEl.appendChild(createListItem(post, { showSnippet })));
