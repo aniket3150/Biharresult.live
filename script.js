@@ -190,16 +190,16 @@ const MANUAL_PRIORITY_POSTS = [
     id: "custom-latest-results-bihar-board-class-10th-result-2026-soon",
     wpId: null,
     slug: "bihar-board-class-10th-result-2026-soon",
-    title: "Bihar Board Class 10th Result 2026 (Soon)",
+    title: "Bihar Board 10th Result 2026- OUT NOW",
     category: "Latest Results",
     department: "Bihar School Examination Board (BSEB)",
     location: "Bihar",
-    shortInfo: "The Bihar School Examination Board (BSEB) will release the Bihar Board Class 10th Result 2026 on its official website. Candidates will be able to check their result using Examination Roll Number and Captcha.",
-    publishedAt: "2026-03-25",
-    updatedAt: "2026-03-25",
+    shortInfo: "The Bihar School Examination Board (BSEB) Bihar Board 10th Result 2026 is not officially declared yet. Latest reports suggest a likely result window around 30 to 31 March 2026. Students should follow the official BSEB website and use only board-announced result portals after confirmation.",
+    publishedAt: "2026-03-29",
+    updatedAt: "2026-03-29",
     isFeatured: true,
-    sourceName: "interbiharboard.com",
-    sourceUrl: "https://interbiharboard.com/",
+    sourceName: "BSEB Official Website",
+    sourceUrl: "https://biharboardonline.bihar.gov.in/",
     image: "",
     importantDates: [
       { label: "Dummy Registration Card", value: "05 To 25 July 2025" },
@@ -207,8 +207,8 @@ const MANUAL_PRIORITY_POSTS = [
       { label: "2nd Dummy Admit Card", value: "28 November - 04 December 2025" },
       { label: "Exam Date Class 10th", value: "17-25 February 2026" },
       { label: "10th Answer Key", value: "07 March 2026" },
-      { label: "Expected Result Date", value: "27 March 2026" },
-      { label: "Result Declared", value: "March-April 2026" }
+      { label: "Expected Result Window", value: "30-31 March 2026 (Latest Reports)" },
+      { label: "Official Result Time", value: "Not Confirmed Yet" }
     ],
     applicationFee: [
       { label: "Fee", value: "No fee required to check the result." }
@@ -219,11 +219,11 @@ const MANUAL_PRIORITY_POSTS = [
     ],
     vacancyDetails: [],
     importantLinks: [
-      { label: "Register For Class 10th Result", url: "https://interbiharboard.com/", type: "primary" },
-      { label: "Check Class 12th Result", url: "https://interbiharboard.com/", type: "secondary" },
-      { label: "Download Class 10th Answer Key", url: "https://interbiharboard.com/", type: "secondary" }
+      { label: "Open Official BSEB Website", url: "https://biharboardonline.bihar.gov.in/", type: "primary" },
+      { label: "Open Result Portal-I", url: "https://results.biharboardonline.com/", type: "secondary" },
+      { label: "Open Result Portal-II", url: "https://biharboardonline.com/", type: "secondary" }
     ],
-    longDescription: "The Bihar School Examination Board (BSEB) will release the Bihar Board Class 10th Result 2026 on its official website. The examination was conducted from 17 February to 25 February 2026. Candidates will be able to check their result by using their Examination Roll Number and Captcha by logging into the portal. The Bihar Board Class 10th Result 2026 is expected to be released on 27 March 2026. The direct link to check the result is provided below.",
+    longDescription: "The Bihar School Examination Board (BSEB) Bihar Board 10th Result 2026 is not officially declared yet. The examination was conducted from 17 February to 25 February 2026. Latest reports suggest a likely release around 30 to 31 March 2026, but the board has not officially confirmed the final date and time. Students should use only board-announced result portals and keep Roll Code, Roll Number, and Captcha ready.",
     howToApply: [
       "Open the result or registration link given in the Important Links section.",
       "Enter your Bihar Board Class 10th Examination Roll Number carefully.",
@@ -1537,4 +1537,3 @@ async function init() {
 }
 
 init();
-
