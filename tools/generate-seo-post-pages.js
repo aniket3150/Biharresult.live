@@ -48,7 +48,7 @@ const MANUAL_PRESERVE_SLUGS = new Set([
   "bihar-board-inter-12th-scrutiny-online-application-form-2026",
   "bihar-iti-cat-admission-form-2026",
   "bihar-board-class-12th-result-2026",
-  "bihar-board-class-10th-result-2026-soon",
+  "bihar-board-10th-result-2026",
   "download-10th-bseb-result",
   "download-12th-bseb-result",
   "bpsc-school-teacher-tre-4-0-2026"
