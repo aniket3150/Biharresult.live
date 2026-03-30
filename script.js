@@ -1,5 +1,5 @@
-const ASSET_VERSION = resolveAssetVersion();
-const DATA_FILE = withAssetVersion("data.json");
+const HOME_ASSET_VERSION = resolveHomeAssetVersion();
+const DATA_FILE = withHomeAssetVersion("data.json");
 const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
 const MANUAL_PRIORITY_POSTS = [
@@ -360,9 +360,27 @@ function buildSeoDescription(post) {
 }
 
 async function loadData() {
-  const response = await fetch(DATA_FILE, { cache: "no-store" });
-  if (!response.ok) throw new Error("Failed to load data.json");
-  return response.json();
+  try {
+    const response = await fetch(DATA_FILE, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`Failed to load data.json (${response.status})`);
+    }
+
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
+  } catch (error) {
+    console.error("[BiharResult.live] Failed to load homepage data.", error);
+    return [];
+  }
+}
+
+async function runSafeHomeStep(stepName, handler) {
+  try {
+    return await handler();
+  } catch (error) {
+    console.error(`[BiharResult.live] Home step failed: ${stepName}`, error);
+    return null;
+  }
 }
 
 function mergeManualPriorityPosts(posts) {
@@ -506,10 +524,10 @@ function createListItem(post, options = {}) {
   return li;
 }
 
-const MANUAL_TICKER_FILE = withAssetVersion("./ticker-items.html");
-const MANUAL_HIGHLIGHTS_FILE = withAssetVersion("./priority-updates-items.html");
+const MANUAL_TICKER_FILE = withHomeAssetVersion("./ticker-items.html");
+const MANUAL_HIGHLIGHTS_FILE = withHomeAssetVersion("./priority-updates-items.html");
 
-function resolveAssetVersion() {
+function resolveHomeAssetVersion() {
   const selectors = [
     'script[src*="script.js"]',
     'script[src*="monetization.js"]',
@@ -532,14 +550,14 @@ function resolveAssetVersion() {
   return "";
 }
 
-function withAssetVersion(url) {
-  if (!ASSET_VERSION) return url;
+function withHomeAssetVersion(url) {
+  if (!HOME_ASSET_VERSION) return url;
 
   try {
     const [baseUrl, hash = ""] = url.split("#");
     const [path, query = ""] = baseUrl.split("?");
     const params = new URLSearchParams(query);
-    params.set("v", ASSET_VERSION);
+    params.set("v", HOME_ASSET_VERSION);
     const versionedUrl = `${path}?${params.toString()}`;
     return hash ? `${versionedUrl}#${hash}` : versionedUrl;
   } catch (error) {
@@ -1550,21 +1568,21 @@ async function init() {
     const mergedPosts = mergeManualPriorityPosts(posts);
 
     if (isHome) {
-      await ensureManualHighlightItemsLoaded();
-      await renderTicker(mergedPosts);
-      renderHomeHighlights(mergedPosts);
+      await runSafeHomeStep("manual highlight preload", () => ensureManualHighlightItemsLoaded());
+      await runSafeHomeStep("ticker render", () => renderTicker(mergedPosts));
+      await runSafeHomeStep("priority highlights render", () => renderHomeHighlights(mergedPosts));
       let currentHighlightLimit = getHomeHighlightLimit();
       window.addEventListener("resize", () => {
         const nextLimit = getHomeHighlightLimit();
         if (nextLimit === currentHighlightLimit) return;
         currentHighlightLimit = nextLimit;
-        renderHomeHighlights(mergedPosts);
+        runSafeHomeStep("priority highlights resize render", () => renderHomeHighlights(mergedPosts));
       });
-      renderHome(mergedPosts);
-      renderProFeatures(mergedPosts);
-      setupHomeSearchFilters();
-      applyHomeSearchFilter();
-      setupAutoExpandBlocks(document);
+      await runSafeHomeStep("home list render", () => renderHome(mergedPosts));
+      await runSafeHomeStep("home tools render", () => renderProFeatures(mergedPosts));
+      await runSafeHomeStep("search filter setup", () => setupHomeSearchFilters());
+      await runSafeHomeStep("search filter apply", () => applyHomeSearchFilter());
+      await runSafeHomeStep("auto expand setup", () => setupAutoExpandBlocks(document));
       hardenExternalLinks(document);
     }
 

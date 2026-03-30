@@ -4,8 +4,14 @@ const path = require("path");
 const ROOT = process.cwd();
 const OUTPUT_DIR = path.join(ROOT, "_site");
 const VERSION = resolveAssetVersion();
-const SKIP_NAMES = new Set([".git", ".github", "_site", "tools"]);
-
+const SKIP_NAMES = new Set([
+  ".git",
+  ".github",
+  "_site",
+  "tools",
+  "legacy",
+  "homepage-script-backup.bak"
+]);
 function resolveAssetVersion() {
   const fallback = new Date().toISOString().replace(/\D/g, "").slice(0, 14);
   return String(process.env.ASSET_VERSION || process.env.GITHUB_SHA || fallback)

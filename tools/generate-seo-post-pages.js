@@ -774,7 +774,7 @@ function buildHtml(post, folder) {
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="https://biharresult.live/favicon.png" />
   <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
-  <link rel="stylesheet" href="/style.css?v=${ASSET_VERSION}" />
+  <link rel="stylesheet" href="/style.css" />
   <style>
     .seo-post-card { padding: 0; overflow: hidden; }
     .seo-post-hero { background: linear-gradient(120deg, #02124d 0%, #0b2f9b 52%, #0c44d5 100%); color: #fff; padding: 24px 22px; }
@@ -849,7 +849,7 @@ ${buildSchema(post, folder, canonicalUrl, faq)}
     </article>
     <section class="br-ad-section" aria-label="Bottom Advertisement"><div class="br-ad-head">Advertisement</div><div class="br-ad-slot"><div class="br-ad-slot-code"></div></div></section>
   </main>
-  <script src="../../monetization.js?v=${ASSET_VERSION}" defer></script>
+  <script src="../../monetization.js" defer></script>
 </body>
 </html>
 `;
@@ -961,7 +961,7 @@ function buildSectionArchiveHtml(folder, folderEntries) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(meta.socialTitle)}" />
   <meta name="twitter:description" content="${escapeHtml(meta.socialDescription)}" />
-  <link rel="stylesheet" href="/style.css?v=${ASSET_VERSION}" />
+  <link rel="stylesheet" href="/style.css" />
   <script type="application/ld+json">${schema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
   <script>

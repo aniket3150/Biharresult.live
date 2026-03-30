@@ -1,6 +1,6 @@
-const ASSET_VERSION = resolveAssetVersion();
-const MONETIZATION_FILE = withAssetVersion("monetization.json");
-const POSTS_DATA_FILE = withAssetVersion("data.json");
+const MONETIZATION_ASSET_VERSION = resolveMonetizationAssetVersion();
+const MONETIZATION_FILE = withMonetizationAssetVersion("monetization.json");
+const POSTS_DATA_FILE = withMonetizationAssetVersion("data.json");
 const ADS_PAUSED = true;
 const COOKIE_CONSENT_KEY = "br_cookie_consent_v1";
 
@@ -71,7 +71,7 @@ function getBasePrefix() {
   return window.location.pathname.includes("/sections/") ? "../../" : "";
 }
 
-function resolveAssetVersion() {
+function resolveMonetizationAssetVersion() {
   const selectors = [
     'script[src*="monetization.js"]',
     'script[src*="script.js"]',
@@ -94,14 +94,14 @@ function resolveAssetVersion() {
   return "";
 }
 
-function withAssetVersion(url) {
-  if (!ASSET_VERSION) return url;
+function withMonetizationAssetVersion(url) {
+  if (!MONETIZATION_ASSET_VERSION) return url;
 
   try {
     const [baseUrl, hash = ""] = url.split("#");
     const [path, query = ""] = baseUrl.split("?");
     const params = new URLSearchParams(query);
-    params.set("v", ASSET_VERSION);
+    params.set("v", MONETIZATION_ASSET_VERSION);
     const versionedUrl = `${path}?${params.toString()}`;
     return hash ? `${versionedUrl}#${hash}` : versionedUrl;
   } catch (error) {

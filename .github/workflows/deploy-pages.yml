@@ -41,6 +41,9 @@ jobs:
           ASSET_VERSION: ${{ github.sha }}
         run: node tools/build-pages-artifact.js
 
+      - name: Validate generated site
+        run: node tools/validate-site.js
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
