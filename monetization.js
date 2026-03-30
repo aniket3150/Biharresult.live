@@ -1,4 +1,6 @@
-const MONETIZATION_FILE = "monetization.json";
+const ASSET_VERSION = resolveAssetVersion();
+const MONETIZATION_FILE = withAssetVersion("monetization.json");
+const POSTS_DATA_FILE = withAssetVersion("data.json");
 const ADS_PAUSED = true;
 const COOKIE_CONSENT_KEY = "br_cookie_consent_v1";
 
@@ -69,6 +71,44 @@ function getBasePrefix() {
   return window.location.pathname.includes("/sections/") ? "../../" : "";
 }
 
+function resolveAssetVersion() {
+  const selectors = [
+    'script[src*="monetization.js"]',
+    'script[src*="script.js"]',
+    'link[href*="style.css"]'
+  ];
+
+  for (const selector of selectors) {
+    const asset = document.querySelector(selector);
+    const assetUrl = asset ? asset.getAttribute("src") || asset.getAttribute("href") : "";
+    if (!assetUrl) continue;
+
+    try {
+      const version = new URL(assetUrl, window.location.href).searchParams.get("v");
+      if (version) return version;
+    } catch (error) {
+      continue;
+    }
+  }
+
+  return "";
+}
+
+function withAssetVersion(url) {
+  if (!ASSET_VERSION) return url;
+
+  try {
+    const [baseUrl, hash = ""] = url.split("#");
+    const [path, query = ""] = baseUrl.split("?");
+    const params = new URLSearchParams(query);
+    params.set("v", ASSET_VERSION);
+    const versionedUrl = `${path}?${params.toString()}`;
+    return hash ? `${versionedUrl}#${hash}` : versionedUrl;
+  } catch (error) {
+    return url;
+  }
+}
+
 async function loadMonetizationConfig() {
   const fallback = DEFAULT_MONETIZATION;
   try {
@@ -114,7 +154,7 @@ function categoryToFolder(category) {
 async function loadPostsData() {
   try {
     const base = getBasePrefix();
-    const res = await fetch(`${base}data.json`, { cache: "no-store" });
+    const res = await fetch(`${base}${POSTS_DATA_FILE}`, { cache: "no-store" });
     if (!res.ok) return [];
     const data = await res.json();
     return Array.isArray(data) ? data : [];

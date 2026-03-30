@@ -1,4 +1,5 @@
-const DATA_FILE = "data.json";
+const ASSET_VERSION = resolveAssetVersion();
+const DATA_FILE = withAssetVersion("data.json");
 const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
 const MANUAL_PRIORITY_POSTS = [
@@ -505,8 +506,46 @@ function createListItem(post, options = {}) {
   return li;
 }
 
-const MANUAL_TICKER_FILE = "./ticker-items.html";
-const MANUAL_HIGHLIGHTS_FILE = "./priority-updates-items.html";
+const MANUAL_TICKER_FILE = withAssetVersion("./ticker-items.html");
+const MANUAL_HIGHLIGHTS_FILE = withAssetVersion("./priority-updates-items.html");
+
+function resolveAssetVersion() {
+  const selectors = [
+    'script[src*="script.js"]',
+    'script[src*="monetization.js"]',
+    'link[href*="style.css"]'
+  ];
+
+  for (const selector of selectors) {
+    const asset = document.querySelector(selector);
+    const assetUrl = asset ? asset.getAttribute("src") || asset.getAttribute("href") : "";
+    if (!assetUrl) continue;
+
+    try {
+      const version = new URL(assetUrl, window.location.href).searchParams.get("v");
+      if (version) return version;
+    } catch (error) {
+      continue;
+    }
+  }
+
+  return "";
+}
+
+function withAssetVersion(url) {
+  if (!ASSET_VERSION) return url;
+
+  try {
+    const [baseUrl, hash = ""] = url.split("#");
+    const [path, query = ""] = baseUrl.split("?");
+    const params = new URLSearchParams(query);
+    params.set("v", ASSET_VERSION);
+    const versionedUrl = `${path}?${params.toString()}`;
+    return hash ? `${versionedUrl}#${hash}` : versionedUrl;
+  } catch (error) {
+    return url;
+  }
+}
 let manualHighlightItemsCache = null;
 
 function buildFallbackTickerItems(posts) {
