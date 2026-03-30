@@ -1,5 +1,32 @@
 [
   {
+    "slug": "bihar-board-10th-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-board-10th-result-2026.html",
+    "title": "Bihar Board 10th Result 2026 (Declared)",
+    "publishedAt": "2026-03-29",
+    "updatedAt": "2026-03-29"
+  },
+  {
+    "slug": "bihar-board-class-10th-topper-list-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-board-class-10th-topper-list-2026.html",
+    "title": "Bihar Board 10th Topper List 2026",
+    "publishedAt": "2026-03-29",
+    "updatedAt": "2026-03-29"
+  },
+  {
+    "slug": "download-10th-bseb-result",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/download-10th-bseb-result.html",
+    "title": "Download Bihar Board 10th Result 2026 Marksheet",
+    "publishedAt": "2026-03-29",
+    "updatedAt": "2026-03-29"
+  },
+  {
     "slug": "bihar-civil-court-peon-admit-card-2026",
     "category": "Admit Card",
     "folder": "admit-card",
@@ -207,39 +234,12 @@
     "updatedAt": "2026-03-26"
   },
   {
-    "slug": "bihar-board-10th-result-2026",
-    "category": "Latest Results",
-    "folder": "latest-results",
-    "path": "sections/latest-results/bihar-board-10th-result-2026.html",
-    "title": "Bihar Board 10th Result 2026 Declared",
-    "publishedAt": "2026-03-29",
-    "updatedAt": "2026-03-29"
-  },
-  {
-    "slug": "bihar-board-class-10th-topper-list-2026",
-    "category": "Latest Results",
-    "folder": "latest-results",
-    "path": "sections/latest-results/bihar-board-class-10th-topper-list-2026.html",
-    "title": "Bihar Board 10th Topper List 2026",
-    "publishedAt": "2026-03-29",
-    "updatedAt": "2026-03-29"
-  },
-  {
     "slug": "bihar-board-class-12th-result-2026",
     "category": "Latest Results",
     "folder": "latest-results",
     "path": "sections/latest-results/bihar-board-class-12th-result-2026.html",
     "title": "Bihar Board Class 12th Result 2026 (Declared)",
     "publishedAt": "2026-03-23",
-    "updatedAt": "2026-03-25"
-  },
-  {
-    "slug": "download-10th-bseb-result",
-    "category": "Latest Results",
-    "folder": "latest-results",
-    "path": "sections/latest-results/download-10th-bseb-result.html",
-    "title": "Download Class 10th Result Link-I | Link-II",
-    "publishedAt": "2026-03-25",
     "updatedAt": "2026-03-25"
   },
   {
@@ -698,6 +698,15 @@
     "folder": "admit-card",
     "path": "sections/admit-card/bihar-board-10th-compartmental-exam-time-table-2025.html",
     "title": "Bihar Board 10th Compartmental Exam Time Table 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "slug": "bihar-board-class-10th-result-2026-soon",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bihar-board-class-10th-result-2026-soon.html",
+    "title": "Bihar Board 10th Result 2026 Redirecting",
     "publishedAt": "2026-02-18",
     "updatedAt": "2026-02-18"
   },
@@ -2425,7 +2434,7 @@
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/bihar-bssc-inter-level-2026.html",
-    "title": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) Last Date Today",
+    "title": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) � Last Date Today",
     "publishedAt": "2026-02-16",
     "updatedAt": "2026-02-17"
   },
@@ -2470,7 +2479,7 @@
     "category": "Admit Card",
     "folder": "admit-card",
     "path": "sections/admit-card/bihar-police-csbc-driver-constable-2026.html",
-    "title": "Bihar Police CSBC Driver Constable PET Admit Card 2026 Out",
+    "title": "Bihar Police CSBC Driver Constable PET Admit Card 2026 � Out",
     "publishedAt": "2026-02-15",
     "updatedAt": "2026-02-16"
   },
@@ -2479,7 +2488,7 @@
     "category": "Admit Card",
     "folder": "admit-card",
     "path": "sections/admit-card/bpsc-aso-mains-2026.html",
-    "title": "BPSC ASO Mains Admit Card 2026 Soon",
+    "title": "BPSC ASO Mains Admit Card 2026 � Soon",
     "publishedAt": "2026-02-16",
     "updatedAt": "2026-02-16"
   },
@@ -2542,7 +2551,7 @@
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/bihar-bcece-junior-resident-2026.html",
-    "title": "Bihar BCECE Junior Resident Online Form 2026 Last Date",
+    "title": "Bihar BCECE Junior Resident Online Form 2026 � Last Date",
     "publishedAt": "2026-02-06",
     "updatedAt": "2026-02-07"
   },
@@ -2596,7 +2605,7 @@
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/bpsc-factory-inspector-2026.html",
-    "title": "Bihar BPSC Factory Inspector Online Form 2026 Last Date",
+    "title": "Bihar BPSC Factory Inspector Online Form 2026 � Last Date",
     "publishedAt": "2026-02-02",
     "updatedAt": "2026-02-03"
   },

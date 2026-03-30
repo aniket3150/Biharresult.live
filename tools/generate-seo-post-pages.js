@@ -22,6 +22,7 @@ const BUILD_DATE = formatDateInTimeZone(new Date(), "Asia/Kolkata");
 const ASSET_VERSION = String(process.env.ASSET_VERSION || BUILD_DATE.replace(/-/g, ""))
   .trim()
   .replace(/[^a-zA-Z0-9._-]/g, "");
+const SKIP_POST_REWRITE = process.env.SKIP_POST_REWRITE === "1";
 
 const CATEGORY_TO_FOLDER = {
   "Latest Results": "latest-results",
@@ -57,6 +58,124 @@ const MANUAL_PRESERVE_SLUGS = new Set([
   "bpsc-school-teacher-tre-4-0-2026"
 ]);
 
+const SECTION_INDEX_META = {
+  "latest-results": {
+    pageTitle: "Bihar Result 2026, Sarkari Result Bihar, Board Result, Direct Links | BiharResult.live",
+    socialTitle: "Bihar Result 2026, Sarkari Result Bihar, Board Result, Direct Links",
+    description: "Check Bihar Result 2026, Sarkari Result Bihar, latest board results, recruitment results, cutoff notices, score card pages, and direct official links on BiharResult.live.",
+    socialDescription: "Browse BiharResult.live latest Bihar result, board result, and recruitment result updates with official links and notices.",
+    keywords: "Bihar Result 2026, Sarkari Result Bihar, latest results Bihar, Bihar board result, Bihar job result, BSEB result, direct result link",
+    heading: "Bihar Result 2026",
+    intro: "Browse official Bihar result updates and open each post for check links, cutoff details, score card guidance, and update timeline.",
+    summary: "This page helps users searching Bihar Result 2026, Sarkari Result Bihar, Bihar Board result, score card updates, and direct result links. Browse every published result post below.",
+    usefulHeading: "Popular Result Links",
+    archiveHeading: "Latest Result Archive",
+    usefulLinks: [
+      { href: "../../index.html#latest-results", label: "Homepage Latest Result Updates" },
+      { href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html", label: "Bihar Jobs, Result and Admit Card Hub" },
+      { href: "../../pages/guides/guides.html", label: "Guide Library" }
+    ]
+  },
+  "latest-jobs": {
+    pageTitle: "Bihar Latest Job 2026, Online Form, Vacancy, Sarkari Result Bihar | BiharResult.live",
+    socialTitle: "Bihar Latest Job 2026, Online Form, Vacancy, Sarkari Result Bihar",
+    description: "Check Bihar latest job 2026, online form, vacancy, Sarkari Result Bihar job updates, eligibility details, and official recruitment notices on BiharResult.live.",
+    socialDescription: "Browse BiharResult.live latest Bihar job, online form, and vacancy updates with official links, eligibility highlights, and important dates.",
+    keywords: "Bihar Latest Job 2026, Bihar Online Form, Bihar Vacancy 2026, Sarkari Result Bihar Job, Bihar Government Jobs 2026, Bihar recruitment",
+    heading: "Bihar Latest Job 2026",
+    intro: "Browse the latest Bihar job notifications, online form links, and vacancy pages. Open each post for eligibility, fees, age criteria, and official links.",
+    summary: "This archive targets searches like Bihar latest job 2026, Bihar online form, Bihar vacancy, Sarkari Result Bihar job update, and Bihar recruitment notices. Browse every published job post below.",
+    usefulHeading: "Useful Job Links",
+    archiveHeading: "Latest Job Archive",
+    usefulLinks: [
+      { href: "../../index.html#latest-jobs", label: "Homepage Latest Jobs Section" },
+      { href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html", label: "Bihar Jobs, Result and Admit Card Hub" },
+      { href: "../../pages/guides/guides.html", label: "Guide Library for Form Fill and Eligibility" }
+    ]
+  },
+  "admit-card": {
+    pageTitle: "Bihar Admit Card 2026, Exam Date, Hall Ticket, Sarkari Result Bihar | BiharResult.live",
+    socialTitle: "Bihar Admit Card 2026, Exam Date, Hall Ticket, Sarkari Result Bihar",
+    description: "Check Bihar Admit Card 2026 updates, exam date notices, hall ticket download links, DV call letter, and Sarkari Result Bihar admit card instructions on BiharResult.live.",
+    socialDescription: "Browse Bihar admit card and exam date updates with download steps, reporting instructions, DV notice, and official links.",
+    keywords: "Bihar Admit Card 2026, exam date Bihar, hall ticket download, Sarkari Result Bihar Admit Card, DV call letter Bihar, Bihar exam admit card",
+    heading: "Bihar Admit Card 2026",
+    intro: "Browse Bihar admit card updates and open each post for download links, exam date, hall ticket, DV call letter, and reporting instructions.",
+    summary: "This admit card archive is useful for searches like Bihar Admit Card 2026, exam date update, hall ticket download, Sarkari Result Bihar admit card, and official admit card notice. Browse every published admit card post below.",
+    usefulHeading: "Useful Admit Card Links",
+    archiveHeading: "Admit Card Archive",
+    usefulLinks: [
+      { href: "../../index.html#admit-card", label: "Homepage Admit Card Section" },
+      { href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html", label: "Bihar Jobs, Result and Admit Card Hub" },
+      { href: "../../pages/guides/guides.html", label: "Guide Library for Exam and Form Support" }
+    ]
+  },
+  admission: {
+    pageTitle: "Bihar Admission 2026, Admission Form, Counselling Notice | BiharResult.live",
+    socialTitle: "Bihar Admission 2026, Admission Form, Counselling Notice",
+    description: "Check Bihar Admission 2026 latest notices, application guidance, admission form links, and counselling updates for Bihar students.",
+    socialDescription: "Browse Bihar admission notices, admission form links, and counselling updates for students.",
+    keywords: "Bihar Admission 2026, Bihar admission form, counselling notice Bihar, college admission Bihar, Bihar student admission",
+    heading: "Admission",
+    intro: "Browse admission notices, forms, counselling updates, and official institution links.",
+    summary: "This archive targets searches like Bihar Admission 2026, Bihar admission form, college counselling update, and admission notice for students in Bihar. Browse every published admission post below.",
+    usefulHeading: "Useful Admission Links",
+    archiveHeading: "Admission Archive",
+    usefulLinks: [
+      { href: "../../index.html#admission", label: "Homepage Admission Section" },
+      { href: "../../pages/guides/guides.html", label: "Guide Library for Admission and Documents" }
+    ]
+  },
+  scholarship: {
+    pageTitle: "Bihar Scholarship 2026, Eligibility, Portal Link, Payment Status | BiharResult.live",
+    socialTitle: "Bihar Scholarship 2026, Eligibility, Portal Link, Payment Status",
+    description: "Check Bihar Scholarship 2026 updates, eligibility notes, official portal links, document guidance, and payment status resources on BiharResult.live.",
+    socialDescription: "Browse Bihar scholarship updates with official portal links, eligibility notes, and payment status resources.",
+    keywords: "Bihar Scholarship 2026, Bihar scholarship portal, scholarship eligibility Bihar, payment status scholarship, Bihar student scholarship",
+    heading: "Scholarship",
+    intro: "Browse scholarship posts for eligibility, portal links, and important official notices.",
+    summary: "This page helps students searching Bihar Scholarship 2026, scholarship portal link, eligibility details, and payment status updates. Browse every published scholarship post below.",
+    usefulHeading: "Useful Scholarship Links",
+    archiveHeading: "Scholarship Archive",
+    usefulLinks: [
+      { href: "../../index.html#scholarship", label: "Homepage Scholarship Section" },
+      { href: "../../pages/guides/guide-post-matric-scholarship-apply.html", label: "Bihar Post-Matric Scholarship Guide" }
+    ]
+  },
+  "sarkari-yojana": {
+    pageTitle: "Sarkari Yojana Bihar 2026, Benefits, Eligibility, Official Link | BiharResult.live",
+    socialTitle: "Sarkari Yojana Bihar 2026, Benefits, Eligibility, Official Link",
+    description: "Check Sarkari Yojana Bihar 2026 updates, benefit details, eligibility notes, documents, and official links on BiharResult.live.",
+    socialDescription: "Browse Bihar Sarkari Yojana updates with benefit details, eligibility notes, documents, and official links.",
+    keywords: "Sarkari Yojana Bihar 2026, Bihar yojana, Bihar scheme update, Bihar benefit eligibility, official yojana link",
+    heading: "Sarkari Yojana",
+    intro: "Browse Bihar scheme and welfare notifications with direct official service links.",
+    summary: "This yojana archive supports searches like Sarkari Yojana Bihar 2026, Bihar scheme benefits, official Bihar yojana link, and eligibility details for citizen services. Browse every published yojana post below.",
+    usefulHeading: "Useful Yojana Links",
+    archiveHeading: "Yojana Archive",
+    usefulLinks: [
+      { href: "../../index.html#sarkari-yojana", label: "Homepage Sarkari Yojana Section" },
+      { href: "../../pages/guides/guides.html", label: "Guide Library for Documents and Applications" }
+    ]
+  },
+  verification: {
+    pageTitle: "Bihar Verification Service, Certificate Check, Official Portal Link | BiharResult.live",
+    socialTitle: "Bihar Verification Service, Certificate Check, Official Portal Link",
+    description: "Check Bihar verification service updates, certificate check links, application status tools, and official portal access on BiharResult.live.",
+    socialDescription: "Browse Bihar verification service updates and official portal links for certificate and public-service checks.",
+    keywords: "Bihar verification service, certificate check Bihar, application status Bihar, official verification portal, Bihar service verification",
+    heading: "Verification",
+    intro: "Open verification updates and official service links for certificate and status checks.",
+    summary: "This page is designed for searches like Bihar verification service, certificate check Bihar, application status link, and official portal verification. Browse every published verification post below.",
+    usefulHeading: "Useful Verification Links",
+    archiveHeading: "Verification Archive",
+    usefulLinks: [
+      { href: "../../index.html#verification", label: "Homepage Verification Section" },
+      { href: "../../pages/guides/guides.html", label: "Guide Library for Status and Document Support" }
+    ]
+  }
+};
+
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, ""));
 }
@@ -84,7 +203,7 @@ function cleanText(value) {
     .replace(/Author:\s*[^.|\n]+/gi, "")
     .replace(/Tag:\s*[^.|\n]+/gi, "")
     .replace(/\s*Read more\s*$/gi, "")
-    .replace(/[Ã¯Â¿Â½ï¿½]+/g, " ")
+    .replace(/[ÃƒÆ’Ã‚Â¯Ãƒâ€šÃ‚Â¿Ãƒâ€šÃ‚Â½ÃƒÂ¯Ã‚Â¿Ã‚Â½]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -639,6 +758,7 @@ function buildHtml(post, folder) {
   <meta name="keywords" content="${escapeHtml(keywords)}" />
   <meta name="author" content="BiharResult.live Editorial Team" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="BiharResult.live" />
   <meta property="og:locale" content="en_IN" />
@@ -777,6 +897,118 @@ function buildSectionEntries(sectionFiles, dataMap) {
     .sort(compareEntriesByDate);
 }
 
+function buildSectionArchiveSchema(folder, meta, entries) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: meta.heading,
+    description: meta.description,
+    url: sectionUrl(folder),
+    mainEntity: {
+      "@type": "ItemList",
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      numberOfItems: entries.length,
+      itemListElement: entries.map((entry, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: pageUrl(folder, entry.slug),
+        name: entry.title
+      }))
+    }
+  });
+}
+
+function renderSectionArchiveList(entries) {
+  if (!entries.length) {
+    return '<li>Archive is being updated.</li>';
+  }
+
+  return entries
+    .map((entry) => `<li><a href="./${escapeHtml(entry.slug)}.html">${escapeHtml(entry.title)}</a><br /><small>Updated: ${escapeHtml(entry.updatedAt || entry.publishedAt || BUILD_DATE)}</small></li>`)
+    .join("\n");
+}
+
+function buildSectionArchiveHtml(folder, folderEntries) {
+  const meta = SECTION_INDEX_META[folder];
+  if (!meta) {
+    throw new Error(`Missing section index metadata for ${folder}`);
+  }
+
+  const sortedEntries = [...folderEntries].sort(compareEntriesByDate);
+  const schema = buildSectionArchiveSchema(folder, meta, sortedEntries);
+  const usefulLinks = meta.usefulLinks
+    .map((item) => `        <li><a href="${item.href}">${escapeHtml(item.label)}</a></li>`)
+    .join("\n");
+  const archiveList = renderSectionArchiveList(sortedEntries);
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(meta.pageTitle)}</title>
+  <meta name="description" content="${escapeHtml(meta.description)}" />
+  <meta name="keywords" content="${escapeHtml(meta.keywords)}" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="${escapeHtml(sectionUrl(folder))}" />
+  <link rel="icon" type="image/svg+xml" sizes="32x32" href="../../fevicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="${escapeHtml(meta.socialTitle)}" />
+  <meta property="og:description" content="${escapeHtml(meta.socialDescription)}" />
+  <meta property="og:url" content="${escapeHtml(sectionUrl(folder))}" />
+  <meta property="og:image" content="https://biharresult.live/favicon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escapeHtml(meta.socialTitle)}" />
+  <meta name="twitter:description" content="${escapeHtml(meta.socialDescription)}" />
+  <link rel="stylesheet" href="/style.css?v=${ASSET_VERSION}" />
+  <script type="application/ld+json">${schema}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YVN84V93Z6');
+  </script>
+</head>
+<body>
+  <header class="post-topbar"><div class="br-wrap"><a href="../../index.html" class="post-brand">BiharResult.live</a></div></header>
+  <main class="br-wrap br-main-content">
+    <article class="br-static-page">
+      <h1>${escapeHtml(meta.heading)}</h1>
+      <p>${escapeHtml(meta.intro)}</p>
+      <p>${escapeHtml(meta.summary)}</p>
+      <p><strong>Total posts in this archive:</strong> ${sortedEntries.length}</p>
+      <h2>${escapeHtml(meta.usefulHeading)}</h2>
+      <ul>
+${usefulLinks}
+      </ul>
+      <h2>${escapeHtml(meta.archiveHeading)}</h2>
+      <ul class="br-pro-list">
+${archiveList}
+      </ul>
+    </article>
+    <footer class="br-legal-links" aria-label="Legal Links">
+      <a href="../../pages/legal/about.html">About Us</a>
+      <a href="../../pages/legal/contact.html">Contact Us</a>
+      <a href="../../pages/legal/privacy-policy.html">Privacy Policy</a>
+      <p class="br-legal-disclaimer"><strong>Disclaimer:</strong> Information is provided for education purposes. Always verify final details from the official notification/website.</p>
+    </footer>
+  </main>
+</body>
+</html>
+`;
+}
+
+function rebuildSectionLandingPages(groupedEntries) {
+  for (const folder of Object.values(CATEGORY_TO_FOLDER)) {
+    const folderEntries = groupedEntries.get(folder) || [];
+    const html = buildSectionArchiveHtml(folder, folderEntries);
+    const indexPath = path.join(ROOT, "sections", folder, "index.html");
+    fs.writeFileSync(indexPath, html, "utf8");
+  }
+}
+
 function writeSectionIndexes(entries) {
   const grouped = new Map();
 
@@ -786,10 +1018,12 @@ function writeSectionIndexes(entries) {
   }
 
   for (const [folder, folderEntries] of grouped.entries()) {
+    const sortedEntries = [...folderEntries].sort(compareEntriesByDate);
     const postsPath = path.join(ROOT, "sections", folder, "posts.json");
-    fs.writeFileSync(postsPath, `${JSON.stringify(folderEntries.sort(compareEntriesByDate), null, 2)}\n`, "utf8");
+    fs.writeFileSync(postsPath, `${JSON.stringify(sortedEntries, null, 2)}\n`, "utf8");
   }
 
+  rebuildSectionLandingPages(grouped);
   fs.writeFileSync(SECTIONS_INDEX_PATH, `${JSON.stringify(entries, null, 2)}\n`, "utf8");
 }
 
@@ -845,20 +1079,22 @@ function main() {
   let generatedCount = 0;
   let preservedCount = 0;
 
-  for (const filePath of sectionFiles) {
-    const slug = path.basename(filePath, ".html");
-    const folder = path.basename(path.dirname(filePath));
-    const existing = fs.readFileSync(filePath, "utf8");
+  if (!SKIP_POST_REWRITE) {
+    for (const filePath of sectionFiles) {
+      const slug = path.basename(filePath, ".html");
+      const folder = path.basename(path.dirname(filePath));
+      const existing = fs.readFileSync(filePath, "utf8");
 
-    if (detectExistingRichPage(existing, slug)) {
-      preservedCount += 1;
-      continue;
+      if (detectExistingRichPage(existing, slug)) {
+        preservedCount += 1;
+        continue;
+      }
+
+      const post = dataMap.get(slug) || buildFallbackPost(filePath, existing);
+      const html = buildHtml(post, folder);
+      fs.writeFileSync(filePath, html, "utf8");
+      generatedCount += 1;
     }
-
-    const post = dataMap.get(slug) || buildFallbackPost(filePath, existing);
-    const html = buildHtml(post, folder);
-    fs.writeFileSync(filePath, html, "utf8");
-    generatedCount += 1;
   }
 
   const entries = buildSectionEntries(sectionFiles, dataMap);
@@ -868,7 +1104,8 @@ function main() {
     generatedCount,
     preservedCount,
     sectionEntryCount: entries.length,
-    sitemapCount
+    sitemapCount,
+    skipPostRewrite: SKIP_POST_REWRITE
   }, null, 2));
 
 }
