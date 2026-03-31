@@ -4,6 +4,75 @@ const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
 const MANUAL_PRIORITY_POSTS = [
   {
+    id: "custom-latest-results-ctet-feb-result-2026-download-link",
+    wpId: null,
+    slug: "ctet-feb-result-2026-download-link",
+    path: "./post.html?slug=ctet-feb-result-2026-download-link",
+    title: "CTET Feb Result 2026 Download Link ctet.nic.in (OUT)",
+    category: "Latest Results",
+    department: "Central Board of Secondary Education (CBSE)",
+    location: "India",
+    shortInfo: "The Central Board of Secondary Education (CBSE) invites online applications for Central Teacher Eligibility Test (CTET) February 2026. The 21st Edition of CTET Examination is scheduled on 08th February, 2026 (Sunday) in 132 cities in the country. All eligible and interested candidates can apply online at CTET Official Website ctet.nic.in from 27th November 2025 to till the application last date 18th December 2025 for Central Teacher Eligibility Test (CTET) February 2026.",
+    publishedAt: "2026-03-31",
+    updatedAt: "2026-03-31",
+    isFeatured: true,
+    sourceName: "CTET Official Website",
+    sourceUrl: "https://ctet.nic.in/",
+    image: "",
+    importantDates: [
+      { label: "Application Start Date", value: "27-11-2025" },
+      { label: "Application Last Date", value: "18-12-2025" },
+      { label: "Last Date for Fee Payment", value: "18-12-2025" },
+      { label: "Online Correction", value: "23 to 26 Dec 2025" },
+      { label: "Admit Card Date", value: "06 February 2026" },
+      { label: "Date of Examination", value: "08 February 2026 (Sunday)" },
+      { label: "Exam Cities", value: "132 Cities (India)" },
+      { label: "Result Date", value: "End of March 2026" },
+      { label: "Result Status", value: "OUT" }
+    ],
+    applicationFee: [
+      { label: "General / OBC - Only Paper I or II", value: "Rs. 1000/-" },
+      { label: "General / OBC - Both Paper I & II", value: "Rs. 1200/-" },
+      { label: "SC / ST / PwBD - Only Paper I or II", value: "Rs. 500/-" },
+      { label: "SC / ST / PwBD - Both Paper I & II", value: "Rs. 600/-" },
+      { label: "Payment Mode", value: "Pay Fee Through Online by Debit Card / Credit Card / Net Banking." }
+    ],
+    eligibility: [
+      { label: "Classes I to V | Qualification Id 1", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 2-year Diploma in Elementary Education (by whatever name known)." },
+      { label: "Classes I to V | Qualification Id 2", value: "Senior Secondary (or its equivalent) with at least 45% marks and passed or appearing in final year of 2-year Diploma in Elementary Education (by whatever name known), in accordance with the NCTE (Recognition Norms and Procedure), Regulations, 2002." },
+      { label: "Classes I to V | Qualification Id 3", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 4-year Bachelor of Elementary Education (B.El.Ed)." },
+      { label: "Classes I to V | Qualification Id 4", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 2-year Diploma in Education (Special Education).*" },
+      { label: "Classes I to V | Qualification Id 5", value: "Graduation with at least 50% marks and passed or appearing in final year Bachelor of Education (B.Ed). (a) A person who has acquired the qualification of Bachelor of Education from any NCTE recognized institution shall be considered for appointment as a teacher in classes I to V, provided the person so appointed shall mandatorily undergo a six month Bridge Course in Elementary Education recognized by the NCTE, within two year of such appointment as primary teacher." },
+      { label: "Classes I to V | Qualification Id 6", value: "Post-Graduation with a minimum 55% marks or equivalent grade and passed or appearing in final year of three-year integrated B.Ed.-M.Ed." },
+      { label: "Classes VI to VIII | Qualification Id 1", value: "Graduation and passed or appearing in final year of 2-year Diploma in Elementary Education (by whatever name known)." },
+      { label: "Classes VI to VIII | Qualification Id 2", value: "At least 50% marks either in Graduation or in PostGraduation and passed or appearing in final year Bachelor in Education (B.Ed)." },
+      { label: "Classes VI to VIII | Qualification Id 3", value: "Graduation with at least 45% marks and passed or appearing in final year Bachelor in Education (B.Ed), in accordance with the NCTE (Recognition Norms and Procedure) Regulations issued from time to time in this regard." },
+      { label: "Classes VI to VIII | Qualification Id 4", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 4-year Bachelor in Elementary Education (B.El.Ed)." },
+      { label: "Classes VI to VIII | Qualification Id 5", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 4-year B.A / B.Sc.Ed or B.A.Ed / B.Sc.Ed." },
+      { label: "Classes VI to VIII | Qualification Id 6", value: "Graduation with at least 50% marks and passed or appearing in final year B.Ed. (Special Education).*" },
+      { label: "Classes VI to VIII | Qualification Id 7", value: "Any candidate having qualified B.Ed. Programme recognized by the NCTE is eligible to appear in TET / CTET. Moreover, as per existing TET guidelines circulated vide NCTE letter dated 11-02-2011, a person who is pursuing any of the teacher education courses (recognized by the NCTE or the RCI, as the case may be) specified in the NCTE Notification dated 23rd August 2010 is also qualified to appear in the TET / CTET." },
+      { label: "Classes VI to VIII | Qualification Id 8", value: "Post-Graduation with a minimum 55% marks or equivalent grade and passed or appearing in final year of three-year integrated B.Ed.-M.Ed." }
+    ],
+    vacancyDetails: [],
+    importantLinks: [
+      { label: "Download CTET Feb Result 2026", url: "https://cbseresults.nic.in/CtetFeb26ii/CtetFeb26iix.htm", type: "primary" },
+      { label: "CTET Official Website", url: "https://ctet.nic.in/", type: "secondary" },
+      { label: "CBSE Results Portal", url: "https://cbseresults.nic.in/", type: "secondary" }
+    ],
+    longDescription: "The Central Board of Secondary Education (CBSE) invites online applications for Central Teacher Eligibility Test (CTET) February 2026. The 21st Edition of CTET Examination is scheduled on 08th February, 2026 (Sunday) in 132 cities in the country. All eligible and interested candidates can apply online at CTET Official Website ctet.nic.in from 27th November 2025 to till the application last date 18th December 2025 for Central Teacher Eligibility Test (CTET) February 2026.",
+    howToApply: [
+      "Open the CTET Feb 2026 result link from the Important Links section.",
+      "Enter required login details (such as roll number and other asked credentials).",
+      "Submit details to view your CTET February 2026 result and score card.",
+      "Download and print the score card for future use."
+    ],
+    beforeYouStart: [
+      "Keep your CTET roll number and login credentials ready.",
+      "Use only official CTET/CBSE links listed on this page.",
+      "Verify all details after downloading the result."
+    ]
+  },
+  {
     id: "custom-latest-results-bihar-board-inter-12th-scrutiny-online-application-form-2026",
     wpId: null,
     slug: "bihar-board-inter-12th-scrutiny-online-application-form-2026",
