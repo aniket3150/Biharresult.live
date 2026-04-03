@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /legacy/
+
+Host: biharresult.live
+Sitemap: https://biharresult.live/sitemap.xml

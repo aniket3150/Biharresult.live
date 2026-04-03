@@ -1,0 +1,63 @@
+{
+  "adSlots": {
+    "home-top": "",
+    "home-between-updates": "",
+    "home-mid": "",
+    "home-bottom": "",
+    "post-top": "",
+    "post-bottom": "",
+    "mobile-inline": "",
+    "mobile-sticky": "",
+    "footer": "",
+    "right-rail": "<div style=\"min-height:250px;display:flex;align-items:center;justify-content:center;background:#f8fafc;border:1px dashed #94a3b8;color:#0f172a;font-weight:700;font-size:14px;\">Right Side Ad</div>",
+    "left-rail": "<div style=\"min-height:250px;display:flex;align-items:center;justify-content:center;background:#f8fafc;border:1px dashed #94a3b8;color:#0f172a;font-weight:700;font-size:14px;\">Left Side Ad</div>"
+  },
+  "affiliates": {
+    "home": [
+      {
+        "title": "Best Test Series For Bihar Exams",
+        "description": "Mock tests and previous year paper practice for BPSC, BSSC, and Bihar Police.",
+        "cta": "Check Offer",
+        "url": "#"
+      },
+      {
+        "title": "Online Coaching Platform",
+        "description": "Complete video courses, notes, and quiz support for students.",
+        "cta": "Join Now",
+        "url": "#"
+      },
+      {
+        "title": "Student Laptop Deals",
+        "description": "Affordable laptops and accessories suitable for exam preparation.",
+        "cta": "View Deals",
+        "url": "#"
+      },
+      {
+        "title": "Document Assistance Service",
+        "description": "Guidance for document preparation and verification workflows.",
+        "cta": "Get Help",
+        "url": "#"
+      }
+    ],
+    "post": [
+      {
+        "title": "Exam Book Collection",
+        "description": "Latest exam books, solved papers, and objective sets.",
+        "cta": "Open Store",
+        "url": "#"
+      },
+      {
+        "title": "Premium Mock Tests",
+        "description": "Full-length mock tests and rank analysis for competitive exams.",
+        "cta": "Start Practice",
+        "url": "#"
+      },
+      {
+        "title": "Scholarship Form Help",
+        "description": "Step-by-step help for scholarship and admission form filling.",
+        "cta": "View Service",
+        "url": "#"
+      }
+    ]
+  }
+}
