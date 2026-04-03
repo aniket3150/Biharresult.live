@@ -73,6 +73,112 @@ const MANUAL_PRIORITY_POSTS = [
     ]
   },
   {
+    id: "custom-latest-results-bpsc-aedo-admit-card-2026",
+    wpId: null,
+    slug: "bpsc-aedo-admit-card-2026-latest-update",
+    path: "./sections/admit-card/bpsc-aedo-admit-card-2026.html",
+    title: "BPSC AEDO Admit Card 2026 Download Link (OUT)",
+    category: "Latest Results",
+    department: "Bihar Public Service Commission (BPSC)",
+    location: "Bihar",
+    shortInfo: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar.",
+    publishedAt: "2026-04-03",
+    updatedAt: "2026-04-03",
+    isFeatured: true,
+    sourceName: "BPSC Official Portal",
+    sourceUrl: "https://bpsc.bihar.gov.in/",
+    image: "",
+    importantDates: [
+      { label: "BPSC Admit Card Released Date", value: "03 April 2026" },
+      { label: "BPSC AEDO Exam Date", value: "14 & 15 April 2026, 17 & 18 April 2026 and 20 & 21 April 2026" },
+      { label: "Shift", value: "03 Shift" },
+      { label: "Admit Card Status", value: "Released" },
+      { label: "Admit Card Download Start", value: "03 April 2026 Onwards" }
+    ],
+    applicationFee: [
+      { label: "Admit Card Fee", value: "No fee required for admit card download." }
+    ],
+    eligibility: [
+      { label: "Who Can Download", value: "All eligible aspirants for Assistant Education Development Officer (AEDO) recruitment examination 2026." },
+      { label: "Required Login", value: "Candidate Login with User Id and Password." }
+    ],
+    vacancyDetails: [
+      { post: "Assistant Education Development Officer (AEDO)", total: "935", criteria: "Advt. No. 87/2025" }
+    ],
+    importantLinks: [
+      { label: "Download BPSC AEDO Admit Card 2026", url: "https://bpsc.bihar.gov.in/", type: "primary" },
+      { label: "BPSC Official Website", url: "https://bpsc.bihar.gov.in/", type: "secondary" },
+      { label: "Helpdesk Email", url: "mailto:bpscpat-bih@nic.in", type: "secondary" }
+    ],
+    longDescription: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar. The written examination shall be held on 14th & 15th April 2026, 17th & 18th April 2026 and 20th & 21st April 2026 in 03 shift of the state as per the notified examination center by the commission. All eligible aspirants can download their admit card online at BPSC official portal bpsc.bihar.gov.in from 03rd April 2026 onwards for AEDO recruitment examination 2026.",
+    howToApply: [
+      "Open BPSC official portal https://bpsc.bihar.gov.in/.",
+      "Go to Candidate Login for AEDO recruitment examination 2026.",
+      "Login using User Id and Password.",
+      "Download admit card and verify exam date, shift, and center details.",
+      "Keep printout of admit card for examination day."
+    ],
+    beforeYouStart: [
+      "Keep User Id and Password ready before login.",
+      "Check exam date and shift carefully on admit card.",
+      "Verify exam center code / name view date before examination.",
+      "Carry valid photo ID proof with admit card printout."
+    ]
+  },
+  {
+    id: "custom-admit-card-bpsc-aedo-admit-card-2026",
+    wpId: null,
+    slug: "bpsc-aedo-admit-card-2026",
+    path: "./sections/admit-card/bpsc-aedo-admit-card-2026.html",
+    title: "BPSC AEDO Admit Card 2026 Download Link (OUT)",
+    category: "Admit Card",
+    department: "Bihar Public Service Commission (BPSC)",
+    location: "Bihar",
+    shortInfo: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar.",
+    publishedAt: "2026-04-03",
+    updatedAt: "2026-04-03",
+    isFeatured: true,
+    sourceName: "BPSC Official Portal",
+    sourceUrl: "https://bpsc.bihar.gov.in/",
+    image: "",
+    importantDates: [
+      { label: "BPSC Admit Card Released Date", value: "03 April 2026" },
+      { label: "BPSC AEDO Exam Date", value: "14 & 15 April 2026, 17 & 18 April 2026 and 20 & 21 April 2026" },
+      { label: "Shift", value: "03 Shift" },
+      { label: "Admit Card Status", value: "Released" },
+      { label: "Admit Card Download Start", value: "03 April 2026 Onwards" }
+    ],
+    applicationFee: [
+      { label: "Admit Card Fee", value: "No fee required for admit card download." }
+    ],
+    eligibility: [
+      { label: "Who Can Download", value: "All eligible aspirants for Assistant Education Development Officer (AEDO) recruitment examination 2026." },
+      { label: "Required Login", value: "Candidate Login with User Id and Password." }
+    ],
+    vacancyDetails: [
+      { post: "Assistant Education Development Officer (AEDO)", total: "935", criteria: "Advt. No. 87/2025" }
+    ],
+    importantLinks: [
+      { label: "Download BPSC AEDO Admit Card 2026", url: "https://bpsc.bihar.gov.in/", type: "primary" },
+      { label: "BPSC Official Website", url: "https://bpsc.bihar.gov.in/", type: "secondary" },
+      { label: "Helpdesk Email", url: "mailto:bpscpat-bih@nic.in", type: "secondary" }
+    ],
+    longDescription: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar. The written examination shall be held on 14th & 15th April 2026, 17th & 18th April 2026 and 20th & 21st April 2026 in 03 shift of the state as per the notified examination center by the commission. All eligible aspirants can download their admit card online at BPSC official portal bpsc.bihar.gov.in from 03rd April 2026 onwards for AEDO recruitment examination 2026.",
+    howToApply: [
+      "Open BPSC official portal https://bpsc.bihar.gov.in/.",
+      "Go to Candidate Login for AEDO recruitment examination 2026.",
+      "Login using User Id and Password.",
+      "Download admit card and verify exam date, shift, and center details.",
+      "Keep printout of admit card for examination day."
+    ],
+    beforeYouStart: [
+      "Keep User Id and Password ready before login.",
+      "Check exam date and shift carefully on admit card.",
+      "Verify exam center code / name view date before examination.",
+      "Carry valid photo ID proof with admit card printout."
+    ]
+  },
+  {
     id: "custom-latest-results-bihar-board-inter-12th-scrutiny-online-application-form-2026",
     wpId: null,
     slug: "bihar-board-inter-12th-scrutiny-online-application-form-2026",

@@ -9647,5 +9647,171 @@
             "Upload required photo, signature, and documents in correct format.",
             "Pay fee (if applicable), preview details, and submit final form."
         ]
+    },
+    {
+        "id": "custom-bihar-btsc-lab-assistant-recruitment-2026",
+        "wpId": null,
+        "slug": "bihar-btsc-lab-assistant-recruitment-2026",
+        "title": "BTSC Lab Assistant Recruitment 2026 Online Form 1091 Posts",
+        "category": "Latest Jobs",
+        "department": "Bihar Technical Service Commission (BTSC)",
+        "location": "Bihar",
+        "shortInfo": "Bihar Technical Service Commission (BTSC) invites online applications for Lab Assistant (Prayogshala Sahayak) recruitment 2026 for 1091 posts under Advertisement No. 02 to 13/2026. Eligible candidates can apply online from 06 April 2026 to 06 May 2026 through the BTSC official portal.",
+        "publishedAt": "2026-04-03",
+        "updatedAt": "2026-04-03",
+        "isFeatured": true,
+        "sourceName": "BTSC Official Portal",
+        "sourceUrl": "https://btsc.bihar.gov.in/",
+        "image": "",
+        "importantDates": [
+            {
+                "label": "Advertisement Number",
+                "value": "02 to 13/2026"
+            },
+            {
+                "label": "Application Start Date",
+                "value": "06-04-2026"
+            },
+            {
+                "label": "Application Last Date",
+                "value": "06-05-2026"
+            },
+            {
+                "label": "Apply Mode",
+                "value": "Online"
+            },
+            {
+                "label": "Total Vacancy",
+                "value": "1091 Posts"
+            }
+        ],
+        "applicationFee": [
+            {
+                "label": "Application Fee",
+                "value": "To be notified later"
+            },
+            {
+                "label": "Payment Mode",
+                "value": "Pay fee through online using Debit Card / Credit Card / Internet Banking / UPI."
+            }
+        ],
+        "eligibility": [
+            {
+                "label": "Post Name",
+                "value": "Lab Assistant (Prayogshala Sahayak)"
+            },
+            {
+                "label": "Educational Qualification",
+                "value": "BTSC Lab Assistant educational qualifications and rest details will be updated soon."
+            },
+            {
+                "label": "Eligibility Note",
+                "value": "Check post-wise educational qualification and detailed eligibility in Advertisement No. 02 to 13/2026 before applying."
+            }
+        ],
+        "vacancyDetails": [
+            {
+                "post": "Lab Assistant (Automobile Engineering / Mechanical Diesel)",
+                "total": "04",
+                "criteria": "Advt. No. 02/2026"
+            },
+            {
+                "post": "Lab Assistant (Textile Engineering)",
+                "total": "20",
+                "criteria": "Advt. No. 03/2026"
+            },
+            {
+                "post": "Lab Assistant (Electrical Engineering)",
+                "total": "166",
+                "criteria": "Advt. No. 04/2026"
+            },
+            {
+                "post": "Lab Assistant (Electronics / Electronics Communication Engineering)",
+                "total": "146",
+                "criteria": "Advt. No. 05/2026"
+            },
+            {
+                "post": "Lab Assistant (Chemical Engineering)",
+                "total": "02",
+                "criteria": "Advt. No. 06/2026"
+            },
+            {
+                "post": "Lab Assistant (Printing Engineering)",
+                "total": "02",
+                "criteria": "Advt. No. 07/2026"
+            },
+            {
+                "post": "Lab Assistant (Ceramic Engineering)",
+                "total": "02",
+                "criteria": "Advt. No. 08/2026"
+            },
+            {
+                "post": "Lab Assistant (Computer Science Engineering and IT)",
+                "total": "252",
+                "criteria": "Advt. No. 09/2026"
+            },
+            {
+                "post": "Lab Assistant (Civil / Rural Engineering)",
+                "total": "166",
+                "criteria": "Advt. No. 10/2026"
+            },
+            {
+                "post": "Lab Assistant (Mechanical Engineering)",
+                "total": "166",
+                "criteria": "Advt. No. 11/2026"
+            },
+            {
+                "post": "Lab Assistant (Science)",
+                "total": "164",
+                "criteria": "Advt. No. 12/2026"
+            },
+            {
+                "post": "Lab Assistant (Agriculture and Machinery)",
+                "total": "01",
+                "criteria": "Advt. No. 13/2026"
+            },
+            {
+                "post": "Total",
+                "total": "1091",
+                "criteria": "All advertised posts combined"
+            }
+        ],
+        "ageLimit": [
+            "Age as on: As per BTSC recruitment notification 2026.",
+            "Minimum Age: Not notified yet.",
+            "Maximum Age: Not notified yet.",
+            "For age relaxation, see the official notification."
+        ],
+        "importantLinks": [
+            {
+                "label": "Apply Online",
+                "url": "https://btsc.bihar.gov.in/",
+                "type": "primary"
+            },
+            {
+                "label": "Applicant Login",
+                "url": "https://btsc.bihar.gov.in/",
+                "type": "primary"
+            },
+            {
+                "label": "BTSC Official Website",
+                "url": "https://btsc.bihar.gov.in/",
+                "type": "secondary"
+            }
+        ],
+        "longDescription": "Bihar Technical Service Commission (BTSC) invites online applications for selection to the various post of Lab Assistant (Prayogshala Sahayak) for 1091 vacancies against Advertisement No. 02 to 13/2026. The all eligible citizens can submit online application form at BTSC official portal btsc.bihar.gov.in from 06th April 2026 to till the application last date 06th May 2026 for Lab Assistant recruitment examination 2026. The post-wise vacancy includes engineering, science, and agriculture related Lab Assistant posts with a combined total of 1091 vacancies.",
+        "howToApply": [
+            "Open the BTSC official portal at btsc.bihar.gov.in.",
+            "Find the Lab Assistant (Prayogshala Sahayak) recruitment link under Advertisement No. 02 to 13/2026.",
+            "Complete registration and use Applicant Login to access the online application form.",
+            "Fill all required details, upload documents, and pay the fee through the available online payment mode once activated.",
+            "Review the form carefully and submit it before 06 May 2026, then save the final printout."
+        ],
+        "beforeYouStart": [
+            "Read Advertisement No. 02 to 13/2026 carefully before applying.",
+            "Keep photo, signature, ID proof, and qualification documents ready.",
+            "Check post-wise vacancy and qualification details before selecting a post.",
+            "Use only the official BTSC portal for apply online and applicant login."
+        ]
     }
 ]

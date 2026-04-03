@@ -53,6 +53,7 @@ const MANUAL_PRESERVE_SLUGS = new Set([
   "bihar-iti-cat-admission-form-2026",
   "bihar-board-class-12th-result-2026",
   "bihar-board-10th-result-2026",
+  "bpsc-aedo-admit-card-2026",
   "download-10th-bseb-result",
   "download-12th-bseb-result",
   "bpsc-school-teacher-tre-4-0-2026"
@@ -593,11 +594,26 @@ function renderTableRows(rows, keyA = "label", keyB = "value") {
 }
 
 function renderVacancyRows(rows) {
+  const detailedRows = rows.filter((row) => cleanText(row.criteria || "") || /^total$/i.test(cleanText(row.post || row.label || "")));
+
+  if (detailedRows.length) {
+    const body = detailedRows
+      .map((row) => {
+        const postName = cleanText(row.post || row.label || "Post");
+        const isTotalRow = /^total$/i.test(postName);
+        const advtNo = isTotalRow ? "" : cleanText(row.criteria || "-").replace(/^Advt\.\s*No\.?\s*/i, "");
+        const total = cleanText(row.total || row.value || "-");
+        return `<tr><td>${escapeHtml(advtNo)}</td><td>${escapeHtml(postName)}</td><td>${escapeHtml(total)}</td></tr>`;
+      })
+      .join("\n");
+
+    return `<thead><tr><th>Advt. No.</th><th>Post Name</th><th>Total Post</th></tr></thead><tbody>${body}</tbody>`;
+  }
+
   return rows
     .map((row) => `<tr><th scope="row">${escapeHtml(cleanText(row.post))}</th><td>${escapeHtml(cleanText([row.total, row.criteria].filter(Boolean).join(" | ")))}<\/td></tr>`)
     .join("\n");
 }
-
 function uniqueUrls(items) {
   const seen = new Set();
   return items.filter((item) => {
@@ -745,7 +761,7 @@ function buildHtml(post, folder) {
     .slice(0, 10);
   const feeRows = (post.applicationFee || []).slice(0, 10);
   const eligibilityRows = (post.eligibility || []).slice(0, 10);
-  const vacancyRows = (post.vacancyDetails || []).slice(0, 12);
+  const vacancyRows = (post.vacancyDetails || []).slice(0, 20);
   const howToApply = defaultHowToApply(post);
   const beforeStart = defaultBeforeStart(post);
   const keywords = buildKeywords(post);
@@ -755,9 +771,10 @@ function buildHtml(post, folder) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/svg+xml" sizes="32x32" href="../../fevicon.svg" />
-  <link rel="icon" type="image/svg+xml" sizes="192x192" href="../../fevicon.svg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../../fevicon.svg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="/fevicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
   <meta name="keywords" content="${escapeHtml(keywords)}" />
@@ -957,7 +974,10 @@ function buildSectionArchiveHtml(folder, folderEntries) {
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="${escapeHtml(sectionUrl(folder))}" />
-  <link rel="icon" type="image/svg+xml" sizes="32x32" href="../../fevicon.svg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="/fevicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="${escapeHtml(meta.socialTitle)}" />
   <meta property="og:description" content="${escapeHtml(meta.socialDescription)}" />
