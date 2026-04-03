@@ -60,14 +60,14 @@ const MANUAL_PRESERVE_SLUGS = new Set([
 
 const SECTION_INDEX_META = {
   "latest-results": {
-    pageTitle: "Bihar Result 2026, Sarkari Result Bihar, Board Result, Direct Links | BiharResult.live",
-    socialTitle: "Bihar Result 2026, Sarkari Result Bihar, Board Result, Direct Links",
-    description: "Check Bihar Result 2026, Sarkari Result Bihar, latest board results, recruitment results, cutoff notices, score card pages, and direct official links on BiharResult.live.",
-    socialDescription: "Browse BiharResult.live latest Bihar result, board result, and recruitment result updates with official links and notices.",
-    keywords: "Bihar Result 2026, Sarkari Result Bihar, latest results Bihar, Bihar board result, Bihar job result, BSEB result, direct result link",
-    heading: "Bihar Result 2026",
-    intro: "Browse official Bihar result updates and open each post for check links, cutoff details, score card guidance, and update timeline.",
-    summary: "This page helps users searching Bihar Result 2026, Sarkari Result Bihar, Bihar Board result, score card updates, and direct result links. Browse every published result post below.",
+    pageTitle: "Sarkari Result Bihar, Fast Result, Bihar Result 2026, Board Result, Direct Links | BiharResult.live",
+    socialTitle: "Sarkari Result Bihar, Fast Result, Bihar Result 2026, Board Result, Direct Links",
+    description: "Check Sarkari Result Bihar, fast result links, Bihar Result 2026, latest board results, recruitment results, cutoff notices, score card pages, and direct official links on BiharResult.live.",
+    socialDescription: "Browse BiharResult.live latest Bihar result, Sarkari Result Bihar, fast result, board result, and recruitment result updates with official links and notices.",
+    keywords: "Sarkari Result Bihar, Fast Result, Result 2026, Bihar Result 2026, latest results Bihar, Bihar board result, Bihar job result, BSEB result, direct result link",
+    heading: "Sarkari Result Bihar and Fast Result 2026",
+    intro: "Browse official Bihar result updates and open each post for fast result links, check links, cutoff details, score card guidance, and update timeline.",
+    summary: "This page helps users searching Sarkari Result Bihar, fast result, Result 2026, Bihar Board result, score card updates, and direct result links. Browse every published result post below.",
     usefulHeading: "Popular Result Links",
     archiveHeading: "Latest Result Archive",
     usefulLinks: [
@@ -229,7 +229,7 @@ function detectCategoryMeta(category) {
   const meta = {
     "Latest Results": {
       suffix: "Direct Link, Result Details",
-      action: "Check result status, cut off, score card details, and official result links",
+      action: "Check result status, cut off, score card details, official result links, and fast result updates",
       badge: "Result Update"
     },
     "Latest Jobs": {
@@ -283,7 +283,10 @@ function buildSeoDescription(post) {
   const action = detectCategoryMeta(post.category).action;
   const intro = cleanText(post.shortInfo || post.longDescription || "");
   const cleanedIntro = intro.toLowerCase().startsWith(title.toLowerCase()) ? intro.slice(title.length).replace(/^[:\-\s]+/, "") : intro;
-  return trimForMeta(`${title}: ${action}. ${cleanedIntro || "Fast student update with official links on BiharResult.live."}`);
+  const keywordTail = post.category === "Latest Results"
+    ? "Useful for Sarkari Result Bihar, fast result, and official result-link searches."
+    : "Fast student update with official links on BiharResult.live.";
+  return trimForMeta(`${title}: ${action}. ${cleanedIntro || keywordTail} ${keywordTail}`);
 }
 
 function buildKeywords(post) {
@@ -294,6 +297,8 @@ function buildKeywords(post) {
     post.department || "",
     `${title} direct link`,
     `${title} official link`,
+    post.category === "Latest Results" ? "Sarkari Result Bihar" : "",
+    post.category === "Latest Results" ? "Fast Result" : "",
     "BiharResult.live"
   ]
     .map(cleanText)
@@ -1035,6 +1040,9 @@ function rebuildSitemap(entries) {
     { loc: "https://biharresult.live/pages/legal/contact.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/privacy-policy.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/guides/guides.html", lastmod: "2026-03-28", changefreq: "weekly", priority: "0.7" },
+    { loc: "https://biharresult.live/pages/guides/sarkari-result-bihar.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
+    { loc: "https://biharresult.live/pages/guides/fast-result-bihar.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
+    { loc: "https://biharresult.live/pages/guides/result-2026-bihar.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
     { loc: "https://biharresult.live/pages/guides/guide-bihar-job-result-admit-card-hub.html", lastmod: "2026-03-28", changefreq: "weekly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/guide-post-matric-scholarship-apply.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/guide-ssc-cgl-2026-books-strategy.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.7" },

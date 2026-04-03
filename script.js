@@ -414,7 +414,7 @@ function buildSeoDescription(post) {
   const title = String(post.title || "Latest update").trim();
   const category = String(post.category || "Sarkari update").trim();
   const actionByCategory = {
-    "Latest Results": "Check result status, cut off, and official result links",
+    "Latest Results": "Check result status, cut off, official result links, and fast result updates",
     "Latest Jobs": "Check eligibility, vacancy, dates, and apply link",
     "Admit Card": "Check exam date, shift details, and admit card download link",
     Scholarship: "Check eligibility, required documents, and apply process",
@@ -422,9 +422,15 @@ function buildSeoDescription(post) {
     "Sarkari Yojana": "Check beneficiary rules, documents, and official apply process",
     Verification: "Check document status, verification process, and official links"
   };
+  const keywordTailByCategory = {
+    "Latest Results": "Useful for Sarkari Result Bihar, fast result, and official result-link searches.",
+    "Latest Jobs": "Useful for Bihar online form, vacancy, and Sarkari job searches.",
+    "Admit Card": "Useful for admit card, exam date, and hall ticket searches."
+  };
 
   const actionText = actionByCategory[category] || "Check important dates, eligibility, and official links";
-  const template = `${title}: ${actionText}. Fast and reliable student update on BiharResult.live.`;
+  const keywordTail = keywordTailByCategory[category] || "Fast and reliable student update on BiharResult.live.";
+  const template = `${title}: ${actionText}. ${keywordTail}`;
   return trimForMeta(template, 158);
 }
 
@@ -481,6 +487,16 @@ function sanitizeUrl(url) {
   return "#";
 }
 
+function toAbsoluteSiteUrl(url) {
+  const safeUrl = sanitizeUrl(url);
+  if (safeUrl === "#") return "https://biharresult.live/";
+  try {
+    return new URL(safeUrl, window.location.origin).toString();
+  } catch (error) {
+    return "https://biharresult.live/";
+  }
+}
+
 function isUsableUrl(url) {
   return sanitizeUrl(url) !== "#";
 }
@@ -527,6 +543,19 @@ function postHref(post) {
   const folder = sectionMap[post.category];
   if (folder) return `sections/${folder}/${encodeURIComponent(post.slug)}.html`;
   return `post.html?slug=${encodeURIComponent(post.slug)}`;
+}
+
+function sectionHrefByCategory(category) {
+  const sectionMap = {
+    "Latest Results": "sections/latest-results/",
+    "Latest Jobs": "sections/latest-jobs/",
+    "Admit Card": "sections/admit-card/",
+    Scholarship: "sections/scholarship/",
+    Admission: "sections/admission/",
+    "Sarkari Yojana": "sections/sarkari-yojana/",
+    Verification: "sections/verification/"
+  };
+  return sectionMap[category] || "";
 }
 
 function formatHomeListTitle(post) {
@@ -984,6 +1013,11 @@ function setupHomeSearchFilters() {
       categorySelect.value = "all";
       onChange();
     });
+  }
+
+  const query = new URLSearchParams(window.location.search).get("q");
+  if (query && !searchInput.value) {
+    searchInput.value = query.trim();
   }
 }
 
@@ -1484,9 +1518,9 @@ function renderBeforeStart(post) {
   fillSimpleList(list, points);
 }
 
-function setPostSchema(post) {
+function setPostSchema(post, canonicalUrl) {
   const isJob = post.category === "Latest Jobs";
-  const schema = isJob
+  const primarySchema = isJob
     ? {
         "@context": "https://schema.org",
         "@type": "JobPosting",
@@ -1499,7 +1533,7 @@ function setPostSchema(post) {
           "@type": "Place",
           address: { "@type": "PostalAddress", addressRegion: post.location, addressCountry: "IN" }
         },
-        url: `https://biharresult.live/${post.slug}`
+        url: canonicalUrl
       }
     : {
         "@context": "https://schema.org",
@@ -1509,8 +1543,35 @@ function setPostSchema(post) {
         dateModified: post.updatedAt,
         description: post.shortInfo,
         publisher: { "@type": "Organization", name: "BiharResult.live" },
-        mainEntityOfPage: `https://biharresult.live/${post.slug}`
+        mainEntityOfPage: canonicalUrl,
+        url: canonicalUrl
       };
+  const breadcrumbItems = [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://biharresult.live/" }
+  ];
+  const sectionHref = sectionHrefByCategory(post.category);
+  if (sectionHref) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: 2,
+      name: post.category,
+      item: toAbsoluteSiteUrl(sectionHref)
+    });
+  }
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    position: breadcrumbItems.length + 1,
+    name: post.title,
+    item: canonicalUrl
+  });
+  const schema = [
+    primarySchema,
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems
+    }
+  ];
 
   const script = document.createElement("script");
   script.type = "application/ld+json";
@@ -1542,7 +1603,7 @@ function renderPost(post) {
   if (description) description.setAttribute("content", seoDescription);
 
   const canonical = document.getElementById("canonical-link");
-  const canonicalUrl = `https://biharresult.live/${post.slug}`;
+  const canonicalUrl = toAbsoluteSiteUrl(postHref(post));
   if (canonical) canonical.setAttribute("href", canonicalUrl);
 
   const ogImage = sanitizeUrl(post.image) !== "#" ? sanitizeUrl(post.image) : "https://biharresult.live/wp-content/uploads/2026/02/cropped_circle_image.png";
@@ -1553,6 +1614,9 @@ function renderPost(post) {
   setMetaContent("twitter-title", post.title);
   setMetaContent("twitter-description", seoDescription);
   setMetaContent("twitter-image", ogImage);
+  setMetaContent("article-published-time", post.publishedAt || "");
+  setMetaContent("article-modified-time", post.updatedAt || post.publishedAt || "");
+  setMetaContent("article-section", post.category || "Latest Update");
 
   renderPostMeta(post);
   renderPostFacts(post);
@@ -1612,7 +1676,7 @@ function renderPost(post) {
   }
   renderHowToApply(post);
 
-  setPostSchema(post);
+  setPostSchema(post, canonicalUrl);
   setupAutoExpandBlocks(document.getElementById("post-root"));
 }
 
