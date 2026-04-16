@@ -757,9 +757,12 @@ function formatHomeListTitle(post) {
 
 function createListItem(post, options = {}) {
   const showSnippet = Boolean(options.showSnippet);
+  const showMeta = Boolean(options.showMeta);
+  const listTitle = formatHomeListTitle(post);
+  const isOutPost = /\(out\)|\bout\b/i.test(listTitle);
   const li = document.createElement("li");
   li.className = "br-item";
-  li.dataset.searchText = `${formatHomeListTitle(post)} ${cleanSnippet(post.shortInfo || post.longDescription || "")} ${post.category || ""}`.toLowerCase();
+  li.dataset.searchText = `${listTitle} ${cleanSnippet(post.shortInfo || post.longDescription || "")} ${post.category || ""}`.toLowerCase();
   li.dataset.filterMatch = "1";
 
   const body = document.createElement("div");
@@ -768,16 +771,18 @@ function createListItem(post, options = {}) {
   const a = document.createElement("a");
   a.className = "br-link";
   a.href = postHref(post);
-  a.textContent = formatHomeListTitle(post);
+  a.textContent = listTitle;
   body.appendChild(a);
 
-  const meta = document.createElement("div");
-  meta.className = "br-item-meta";
-  const metaParts = [];
-  if (post.category) metaParts.push(post.category);
-  if (metaParts.length) {
-    meta.textContent = metaParts.join(" | ");
-    body.appendChild(meta);
+  if (showMeta) {
+    const meta = document.createElement("div");
+    meta.className = "br-item-meta";
+    const metaParts = [];
+    if (post.category) metaParts.push(post.category);
+    if (metaParts.length) {
+      meta.textContent = metaParts.join(" | ");
+      body.appendChild(meta);
+    }
   }
 
   if (showSnippet) {
@@ -790,13 +795,29 @@ function createListItem(post, options = {}) {
   }
   li.appendChild(body);
 
-  if (post.isFeatured) {
+  const tags = document.createElement("div");
+  tags.className = "br-item-tags";
+
+  if (isOutPost) {
     const tag = document.createElement("span");
-    tag.className = "br-new-tag";
-    tag.textContent = "New";
-    li.appendChild(tag);
+    tag.className = "br-item-badge br-item-badge-out";
+    tag.textContent = "\uD83D\uDD25 OUT";
+    tags.appendChild(tag);
   }
 
+  if (post.isFeatured) {
+    const tag = document.createElement("span");
+    tag.className = "br-item-badge br-item-badge-new";
+    tag.textContent = "\uD83D\uDEA8 NEW";
+    tags.appendChild(tag);
+  }
+
+  const directTag = document.createElement("span");
+  directTag.className = "br-item-badge br-item-badge-link";
+  directTag.textContent = "\uD83D\uDCE2 Direct Link";
+  tags.appendChild(directTag);
+
+  body.appendChild(tags);
   return li;
 }
 
@@ -859,6 +880,27 @@ function buildFallbackTickerItems(posts) {
       href: postHref(post),
       text: post.title
     }));
+}
+
+function formatUrgentTickerText(title) {
+  const safeTitle = String(title || "").trim().replace(/\s+/g, " ");
+  if (!safeTitle) return "";
+  const urgentEmoji = /\(out\)|\bout\b/i.test(safeTitle) ? "\uD83D\uDD25" : "\uD83D\uDEA8";
+  return `${urgentEmoji} ${safeTitle}`;
+}
+
+function buildImportantTickerItems(posts) {
+  const latestUpdates = [...posts]
+    .filter((post) => post.category === "Latest Results")
+    .sort(byDate)
+    .slice(0, 3);
+
+  if (!latestUpdates.length) return [];
+
+  return latestUpdates.map((post) => ({
+    href: postHref(post),
+    text: formatUrgentTickerText(post.title)
+  }));
 }
 
 async function loadManualTickerItems() {
@@ -926,28 +968,49 @@ async function renderTicker(posts) {
   if (!Array.isArray(manualTickerItemsCache)) {
     manualTickerItemsCache = manualItems;
   }
-  const baseItems = manualItems.length > 0 ? manualItems : buildFallbackTickerItems(posts);
+  const importantItems = buildImportantTickerItems(posts);
+  const manualUrgentItems = manualItems
+    .slice(0, 3)
+    .map((item) => ({ href: item.href, text: formatUrgentTickerText(item.text) }))
+    .filter((item) => item.text);
+  const fallbackUrgentItems = buildFallbackTickerItems(posts)
+    .slice(0, 3)
+    .map((item) => ({ href: item.href, text: formatUrgentTickerText(item.text) }))
+    .filter((item) => item.text);
+  const baseItems = importantItems.length > 0
+    ? importantItems
+    : (manualUrgentItems.length > 0 ? manualUrgentItems : fallbackUrgentItems);
   if (!baseItems.length) {
     track.innerHTML = "";
     return;
   }
-  const repeatCount = Math.max(10, baseItems.length * 3);
-  const repeated = Array.from({ length: repeatCount }, (_, idx) => baseItems[idx % baseItems.length]).filter(Boolean);
 
   const fragment = document.createDocumentFragment();
-  repeated.forEach((item) => {
+  baseItems.forEach((item) => {
+    const listItem = document.createElement("li");
+    listItem.className = "br-ticker-item";
+
     const link = document.createElement("a");
     link.href = item.href;
     link.className = "br-ticker-link";
-    link.textContent = `| ${item.text}`;
-    fragment.appendChild(link);
+    const text = document.createElement("span");
+    text.className = "br-ticker-text";
+    text.textContent = item.text;
+
+    const cta = document.createElement("span");
+    cta.className = "br-ticker-cta";
+    cta.textContent = "Check Now \u2192";
+
+    link.append(text, cta);
+    listItem.appendChild(link);
+    fragment.appendChild(listItem);
   });
   track.replaceChildren(fragment);
 }
 
 function getHomeHighlightLimit() {
   const width = window.innerWidth || document.documentElement.clientWidth || 1200;
-  if (width <= 768) return 4;
+  if (width <= 820) return 6;
   return 8;
 }
 

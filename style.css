@@ -1019,6 +1019,43 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   animation: br-blink 0.9s infinite alternate;
 }
 
+.br-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.br-item-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 3px 7px;
+  white-space: nowrap;
+}
+
+.br-item-badge-out {
+  background: #ffefdb;
+  color: #b54708;
+  border: 1px solid #ffd6a0;
+}
+
+.br-item-badge-new {
+  background: #ffe3e3;
+  color: #b42318;
+  border: 1px solid #ffb3b3;
+  animation: br-blink 1s infinite alternate;
+}
+
+.br-item-badge-link {
+  background: #e3efff;
+  color: #163a9c;
+  border: 1px solid #bcd2ff;
+}
+
 @keyframes br-blink {
   from { opacity: 1; }
   to { opacity: 0.45; }

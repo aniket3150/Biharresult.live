@@ -771,9 +771,8 @@ function buildHtml(post, folder) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
-  <link rel="icon" type="image/svg+xml" href="/fevicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
@@ -974,9 +973,8 @@ function buildSectionArchiveHtml(folder, folderEntries) {
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="${escapeHtml(sectionUrl(folder))}" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
-  <link rel="icon" type="image/svg+xml" href="/fevicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="${escapeHtml(meta.socialTitle)}" />
