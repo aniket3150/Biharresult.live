@@ -251,6 +251,16 @@ button:focus-visible {
   contain-intrinsic-size: 1px 900px;
 }
 
+.br-aff-section,
+.br-guide-section,
+.br-crawl-hub,
+.br-home-intro,
+.br-main-content > .br-ad-section,
+.br-home-stream > .br-ad-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 640px;
+}
+
 .br-tools-panel {
   background: #fff;
   border: 1px solid #dfe3eb;

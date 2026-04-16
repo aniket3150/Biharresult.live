@@ -2,7 +2,64 @@ const HOME_ASSET_VERSION = resolveHomeAssetVersion();
 const DATA_FILE = withHomeAssetVersion("data.json");
 const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
+const HOME_SEARCH_DEBOUNCE_MS = 120;
 const MANUAL_PRIORITY_POSTS = [
+  {
+    id: "custom-latest-results-cbse-class-10th-results-2026-download-link",
+    wpId: null,
+    slug: "cbse-class-10th-results-2026-download-link",
+    path: "./sections/latest-results/cbse-class-10th-results-2026-download-link.html",
+    title: "CBSE Class 10th Results 2026 Download Link (OUT)",
+    category: "Latest Results",
+    department: "Central Board of Secondary Education (CBSE)",
+    location: "India",
+    shortInfo: "Central Board of Secondary Education (CBSE) has declared online result for class 10th annual examination 2026 for regular and vocational courses. All eligible applicants and their parents can download result online at CBSE official website at cbseresults.nic.in or cbse.gov.in from 15th April 2026 onwards for secondary examination result 2026.",
+    publishedAt: "2026-04-15",
+    updatedAt: "2026-04-16",
+    isFeatured: true,
+    sourceName: "CBSE Results Portal",
+    sourceUrl: "https://cbseresults.nic.in/",
+    image: "",
+    importantDates: [
+      { label: "Board Name", value: "Central Board of Secondary Education" },
+      { label: "Class", value: "10th" },
+      { label: "Total Students", value: "25.08 Lakh (Approx.)" },
+      { label: "Exam Date", value: "17 February 2026 to 11 March 2026" },
+      { label: "Result Status", value: "Released" },
+      { label: "CBSE Result Released Date", value: "15 April 2026" }
+    ],
+    applicationFee: [
+      { label: "Fee", value: "No fee required to check the result." }
+    ],
+    eligibility: [
+      { label: "Who Can Check Result", value: "All eligible applicants / students and their parents for CBSE Class 10th Annual Examination 2026." },
+      { label: "Official Websites", value: "cbseresults.nic.in or cbse.gov.in" },
+      { label: "Helpline Email", value: "info.cbse@gov.in" },
+      { label: "Helpline Number", value: "7669886950, 1800 11 8002" }
+    ],
+    vacancyDetails: [],
+    importantLinks: [
+      { label: "10th Result Download Link-I", url: "https://examinationservices.nic.in/cbseresults/class_x_jj_2026_de/ClassTenth_xy_2026.htm", type: "primary" },
+      { label: "10th Result Download Link-II", url: "https://cnr.nic.in/CBSEResults/class_x_jj_2026_de/ClassTenth_xy_2026.htm", type: "primary" },
+      { label: "10th Result Download Link-III", url: "https://cbseresults.nic.in/class_x_jj_2026_de/ClassTenth_xy_2026.htm", type: "primary" },
+      { label: "CBSE Results Portal", url: "https://cbseresults.nic.in/", type: "secondary" },
+      { label: "CBSE Official Website", url: "https://cbse.gov.in/", type: "secondary" }
+    ],
+    longDescription: "Central Board of Secondary Education (CBSE) has declared online result for class 10th annual examination 2026 for regular and vocational courses. All eligible applicants and their parents can download result online at CBSE official website at cbseresults.nic.in or cbse.gov.in from 15th April 2026 onwards for secondary examination result 2026.",
+    howToApply: [
+      "Open any one of the official CBSE Class 10th result links from the Important Links section.",
+      "Enter the required login details exactly as asked on the official result portal.",
+      "Submit the details to check your CBSE 10th result 2026.",
+      "Verify your marks and result status carefully.",
+      "Download or print the result page for future use."
+    ],
+    beforeYouStart: [
+      "Use only the official CBSE result links given on this page.",
+      "Keep the required login credentials ready before opening the portal.",
+      "Verify all details after downloading the result.",
+      "Save a copy of the result for future use."
+    ]
+  },
   {
     id: "custom-latest-results-ctet-feb-result-2026-download-link",
     wpId: null,
@@ -516,6 +573,21 @@ function trimForMeta(text, max = 158) {
   return `${safe.trim()}...`;
 }
 
+function runWhenBrowserIdle(callback, timeout = 1200) {
+  if (typeof window.requestIdleCallback === "function") {
+    return window.requestIdleCallback(callback, { timeout });
+  }
+  return window.setTimeout(callback, 1);
+}
+
+function debounce(fn, wait = 100) {
+  let timerId = null;
+  return (...args) => {
+    window.clearTimeout(timerId);
+    timerId = window.setTimeout(() => fn(...args), wait);
+  };
+}
+
 function buildSeoDescription(post) {
   const title = String(post.title || "Latest update").trim();
   const category = String(post.category || "Sarkari update").trim();
@@ -542,7 +614,7 @@ function buildSeoDescription(post) {
 
 async function loadData() {
   try {
-    const response = await fetch(DATA_FILE, { cache: "no-store" });
+    const response = await fetch(DATA_FILE, { cache: "default" });
     if (!response.ok) {
       throw new Error(`Failed to load data.json (${response.status})`);
     }
@@ -730,6 +802,7 @@ function createListItem(post, options = {}) {
 
 const MANUAL_TICKER_FILE = withHomeAssetVersion("./ticker-items.html");
 const MANUAL_HIGHLIGHTS_FILE = withHomeAssetVersion("./priority-updates-items.html");
+let manualTickerItemsCache = null;
 
 function resolveHomeAssetVersion() {
   const selectors = [
@@ -790,7 +863,7 @@ function buildFallbackTickerItems(posts) {
 
 async function loadManualTickerItems() {
   try {
-    const response = await fetch(MANUAL_TICKER_FILE, { cache: "no-store" });
+    const response = await fetch(MANUAL_TICKER_FILE, { cache: "default" });
     if (!response.ok) return [];
 
     const html = await response.text();
@@ -812,7 +885,7 @@ async function loadManualTickerItems() {
 
 async function loadManualHighlightItems() {
   try {
-    const response = await fetch(MANUAL_HIGHLIGHTS_FILE, { cache: "no-store" });
+    const response = await fetch(MANUAL_HIGHLIGHTS_FILE, { cache: "default" });
     if (!response.ok) return [];
 
     const html = await response.text();
@@ -841,10 +914,18 @@ async function ensureManualHighlightItemsLoaded() {
   manualHighlightItemsCache = await loadManualHighlightItems();
 }
 
+async function ensureManualTickerItemsLoaded() {
+  if (manualTickerItemsCache !== null) return;
+  manualTickerItemsCache = await loadManualTickerItems();
+}
+
 async function renderTicker(posts) {
   const track = document.getElementById("br-ticker-track");
   if (!track) return;
-  const manualItems = await loadManualTickerItems();
+  const manualItems = Array.isArray(manualTickerItemsCache) ? manualTickerItemsCache : await loadManualTickerItems();
+  if (!Array.isArray(manualTickerItemsCache)) {
+    manualTickerItemsCache = manualItems;
+  }
   const baseItems = manualItems.length > 0 ? manualItems : buildFallbackTickerItems(posts);
   if (!baseItems.length) {
     track.innerHTML = "";
@@ -853,14 +934,15 @@ async function renderTicker(posts) {
   const repeatCount = Math.max(10, baseItems.length * 3);
   const repeated = Array.from({ length: repeatCount }, (_, idx) => baseItems[idx % baseItems.length]).filter(Boolean);
 
-  track.innerHTML = "";
+  const fragment = document.createDocumentFragment();
   repeated.forEach((item) => {
     const link = document.createElement("a");
     link.href = item.href;
     link.className = "br-ticker-link";
     link.textContent = `| ${item.text}`;
-    track.appendChild(link);
+    fragment.appendChild(link);
   });
+  track.replaceChildren(fragment);
 }
 
 function getHomeHighlightLimit() {
@@ -887,7 +969,7 @@ function renderHomeHighlights(posts) {
 
   const manualItems = Array.isArray(manualHighlightItemsCache) ? manualHighlightItemsCache : [];
   if (manualItems.length > 0) {
-    grid.innerHTML = "";
+    const fragment = document.createDocumentFragment();
     manualItems.slice(0, highlightLimit).forEach((item, idx) => {
       const colorClass = colorClasses.includes(item.colorClass)
         ? item.colorClass
@@ -908,8 +990,9 @@ function renderHomeHighlights(posts) {
       title.textContent = item.title;
 
       a.append(category, title);
-      grid.appendChild(a);
+      fragment.appendChild(a);
     });
+    grid.replaceChildren(fragment);
     return;
   }
 
@@ -951,7 +1034,7 @@ function renderHomeHighlights(posts) {
     used.add(post.slug);
   });
 
-  grid.innerHTML = "";
+  const fragment = document.createDocumentFragment();
   selected.slice(0, highlightLimit).forEach((post, idx) => {
     const a = document.createElement("a");
     a.href = postHref(post);
@@ -969,8 +1052,9 @@ function renderHomeHighlights(posts) {
     title.textContent = post.title;
 
     a.append(category, title);
-    grid.appendChild(a);
+    fragment.appendChild(a);
   });
+  grid.replaceChildren(fragment);
 }
 
 function renderHome(posts) {
@@ -981,9 +1065,10 @@ function renderHome(posts) {
     const items = posts
       .filter((post) => post.category === category)
       .sort(category === "Latest Results" ? byFeaturedThenDate : byDate);
-    listEl.innerHTML = "";
+    const fragment = document.createDocumentFragment();
     const showSnippet = false;
-    items.forEach((post) => listEl.appendChild(createListItem(post, { showSnippet })));
+    items.forEach((post) => fragment.appendChild(createListItem(post, { showSnippet })));
+    listEl.replaceChildren(fragment);
 
     const btn = document.querySelector(`.br-view-more[data-target="${listId}"]`);
     if (!btn) return;
@@ -1110,8 +1195,9 @@ function setupHomeSearchFilters() {
   const resetButton = document.getElementById("br-home-filter-reset");
   if (!searchInput || !categorySelect) return;
 
+  const debouncedApply = debounce(() => applyHomeSearchFilter(), HOME_SEARCH_DEBOUNCE_MS);
   const onChange = () => applyHomeSearchFilter();
-  searchInput.addEventListener("input", onChange);
+  searchInput.addEventListener("input", debouncedApply);
   categorySelect.addEventListener("change", onChange);
   if (resetButton) {
     resetButton.addEventListener("click", () => {
@@ -1803,11 +1889,27 @@ async function init() {
   if (!isHome && !isPost) return;
 
   try {
-    const posts = await loadData();
+    const dataPromise = loadData();
+    const homePreloadTasks = [];
+
+    if (isHome) {
+      homePreloadTasks.push(runSafeHomeStep("manual highlight preload", () => ensureManualHighlightItemsLoaded()));
+      homePreloadTasks.push(runSafeHomeStep("manual ticker preload", () => ensureManualTickerItemsLoaded()));
+
+      Promise.allSettled(homePreloadTasks).then(() => {
+        runSafeHomeStep("early ticker render", () => renderTicker([]));
+        runSafeHomeStep("early priority highlights render", () => renderHomeHighlights([]));
+        hardenExternalLinks(document);
+      });
+    }
+
+    const posts = await dataPromise;
     const mergedPosts = mergeManualPriorityPosts(posts);
 
     if (isHome) {
-      await runSafeHomeStep("manual highlight preload", () => ensureManualHighlightItemsLoaded());
+      if (homePreloadTasks.length) {
+        await Promise.allSettled(homePreloadTasks);
+      }
       await runSafeHomeStep("ticker render", () => renderTicker(mergedPosts));
       await runSafeHomeStep("priority highlights render", () => renderHomeHighlights(mergedPosts));
       let currentHighlightLimit = getHomeHighlightLimit();
@@ -1818,10 +1920,14 @@ async function init() {
         runSafeHomeStep("priority highlights resize render", () => renderHomeHighlights(mergedPosts));
       });
       await runSafeHomeStep("home list render", () => renderHome(mergedPosts));
-      await runSafeHomeStep("home tools render", () => renderProFeatures(mergedPosts));
       await runSafeHomeStep("search filter setup", () => setupHomeSearchFilters());
       await runSafeHomeStep("search filter apply", () => applyHomeSearchFilter());
-      await runSafeHomeStep("auto expand setup", () => setupAutoExpandBlocks(document));
+      runWhenBrowserIdle(() => {
+        runSafeHomeStep("home tools render", () => renderProFeatures(mergedPosts));
+      });
+      runWhenBrowserIdle(() => {
+        runSafeHomeStep("auto expand setup", () => setupAutoExpandBlocks(document));
+      });
       hardenExternalLinks(document);
     }
 

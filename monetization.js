@@ -109,11 +109,18 @@ function withMonetizationAssetVersion(url) {
   }
 }
 
+function runMonetizationWhenIdle(callback, timeout = 1500) {
+  if (typeof window.requestIdleCallback === "function") {
+    return window.requestIdleCallback(callback, { timeout });
+  }
+  return window.setTimeout(callback, 1);
+}
+
 async function loadMonetizationConfig() {
   const fallback = DEFAULT_MONETIZATION;
   try {
     const base = getBasePrefix();
-    const res = await fetch(`${base}${MONETIZATION_FILE}`, { cache: "no-store" });
+    const res = await fetch(`${base}${MONETIZATION_FILE}`, { cache: "default" });
     if (!res.ok) return fallback;
     const incoming = await res.json();
     return {
@@ -154,7 +161,7 @@ function categoryToFolder(category) {
 async function loadPostsData() {
   try {
     const base = getBasePrefix();
-    const res = await fetch(`${base}${POSTS_DATA_FILE}`, { cache: "no-store" });
+    const res = await fetch(`${base}${POSTS_DATA_FILE}`, { cache: "default" });
     if (!res.ok) return [];
     const data = await res.json();
     return Array.isArray(data) ? data : [];
@@ -587,5 +594,15 @@ async function initMonetization() {
   syncRailLayoutState();
 }
 
-document.addEventListener("DOMContentLoaded", initMonetization);
+function scheduleMonetizationInit() {
+  runMonetizationWhenIdle(() => {
+    initMonetization();
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", scheduleMonetizationInit, { once: true });
+} else {
+  scheduleMonetizationInit();
+}
 
