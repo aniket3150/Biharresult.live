@@ -1014,29 +1014,44 @@ function getHomeHighlightLimit() {
   return 8;
 }
 
+const HOME_HIGHLIGHT_FALLBACK_COLORS = [
+  "br-home-highlight-red",
+  "br-home-highlight-orange",
+  "br-home-highlight-purple",
+  "br-home-highlight-navy",
+  "br-home-highlight-olive",
+  "br-home-highlight-blue",
+  "br-home-highlight-maroon",
+  "br-home-highlight-green"
+];
+
+const HOME_HIGHLIGHT_COLOR_BY_CATEGORY = {
+  "Latest Results": "br-home-highlight-blue",
+  "Latest Jobs": "br-home-highlight-green",
+  "Admit Card": "br-home-highlight-orange",
+  Scholarship: "br-home-highlight-green",
+  "Sarkari Yojana": "br-home-highlight-orange",
+  Admission: "br-home-highlight-green",
+  Verification: "br-home-highlight-blue"
+};
+
+function getHomeHighlightColorClass(category, idx = 0, explicitColorClass = "") {
+  const byCategory = HOME_HIGHLIGHT_COLOR_BY_CATEGORY[String(category || "").trim()];
+  if (byCategory) return byCategory;
+  if (HOME_HIGHLIGHT_FALLBACK_COLORS.includes(explicitColorClass)) return explicitColorClass;
+  return HOME_HIGHLIGHT_FALLBACK_COLORS[idx % HOME_HIGHLIGHT_FALLBACK_COLORS.length];
+}
+
 function renderHomeHighlights(posts) {
   const grid = document.getElementById("home-highlight-grid");
   if (!grid) return;
   const highlightLimit = getHomeHighlightLimit();
 
-  const colorClasses = [
-    "br-home-highlight-red",
-    "br-home-highlight-orange",
-    "br-home-highlight-purple",
-    "br-home-highlight-navy",
-    "br-home-highlight-olive",
-    "br-home-highlight-blue",
-    "br-home-highlight-maroon",
-    "br-home-highlight-green"
-  ];
-
   const manualItems = Array.isArray(manualHighlightItemsCache) ? manualHighlightItemsCache : [];
   if (manualItems.length > 0) {
     const fragment = document.createDocumentFragment();
     manualItems.slice(0, highlightLimit).forEach((item, idx) => {
-      const colorClass = colorClasses.includes(item.colorClass)
-        ? item.colorClass
-        : colorClasses[idx % colorClasses.length];
+      const colorClass = getHomeHighlightColorClass(item.category, idx, item.colorClass);
       const a = document.createElement("a");
       a.href = item.href;
       a.className = `br-home-highlight-card ${colorClass}`;
@@ -1101,7 +1116,7 @@ function renderHomeHighlights(posts) {
   selected.slice(0, highlightLimit).forEach((post, idx) => {
     const a = document.createElement("a");
     a.href = postHref(post);
-    a.className = `br-home-highlight-card ${colorClasses[idx % colorClasses.length]}`;
+    a.className = `br-home-highlight-card ${getHomeHighlightColorClass(post.category, idx)}`;
     if (/tre\s*4\.?0|44000\+?\s*posts/i.test(post.title || "")) {
       a.classList.add("br-hot-update");
     }
@@ -1193,11 +1208,13 @@ function setupListViewMore() {
 function applyHomeSearchFilter() {
   const searchInput = document.getElementById("br-home-search");
   const categorySelect = document.getElementById("br-home-category");
+  const emptyState = document.getElementById("br-home-search-empty");
   if (!searchInput || !categorySelect || !HOME_SECTIONS.length) return;
 
   const query = searchInput.value.trim().toLowerCase();
   const selected = categorySelect.value || "all";
   const hasQuery = query.length > 0;
+  let totalVisibleMatches = 0;
 
   HOME_SECTIONS.forEach((section) => {
     const rows = Array.from(section.list.children);
@@ -1224,6 +1241,7 @@ function applyHomeSearchFilter() {
     }
 
     const matchedRows = rows.filter((row) => row.dataset.filterMatch === "1");
+    totalVisibleMatches += matchedRows.length;
     const hasMore = matchedRows.length > HOME_SECTION_INITIAL_VISIBLE;
     const isCollapsed = section.list.dataset.collapsed !== "0";
 
@@ -1250,6 +1268,10 @@ function applyHomeSearchFilter() {
 
     rows.filter((row) => row.dataset.filterMatch === "0").forEach((row) => { row.style.display = "none"; });
   });
+
+  if (emptyState) {
+    emptyState.hidden = !(hasQuery && totalVisibleMatches === 0);
+  }
 }
 
 function setupHomeSearchFilters() {
