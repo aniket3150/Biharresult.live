@@ -61,6 +61,55 @@ const MANUAL_PRIORITY_POSTS = [
     ]
   },
   {
+    id: "custom-latest-results-ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
+    wpId: null,
+    slug: "ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
+    path: "./post.html?slug=ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
+    title: "OFSS Bihar 11th Admission 2026 Online Form ofssbihar.net",
+    category: "Latest Results",
+    department: "Bihar School Examination Board (BSEB) - OFSS Bihar",
+    location: "Bihar",
+    shortInfo: "OFSS Bihar under BSEB invites online application for Intermediate (11th) admission 2026-28 in Science, Commerce, and Arts streams. Eligible students can apply at ofssbihar.net from 08 April 2026 to 18 April 2026.",
+    publishedAt: "2026-04-17T23:59:00+05:30",
+    updatedAt: "2026-04-17T23:59:00+05:30",
+    isFeatured: true,
+    sourceName: "OFSS Bihar",
+    sourceUrl: "https://ofssbihar.net/",
+    image: "",
+    importantDates: [
+      { label: "Application Start Date", value: "08-04-2026" },
+      { label: "Application Last Date", value: "18-04-2026" },
+      { label: "1st Merit List Date", value: "To be notified soon" }
+    ],
+    applicationFee: [
+      { label: "Application Fee (All Category)", value: "Rs. 350/-" },
+      { label: "Payment Mode", value: "Debit Card, Credit Card, Internet Banking" }
+    ],
+    eligibility: [
+      { label: "Required Qualification", value: "Students who passed Matriculation / Class 10th from BSEB, CBSE, ICSE, or any recognized state board." },
+      { label: "Admission Session", value: "2026-2028 (Intermediate / 11th Class)" },
+      { label: "Streams", value: "Science, Commerce, Arts" }
+    ],
+    vacancyDetails: [],
+    importantLinks: [
+      { label: "Apply Online (OFSS Bihar)", url: "https://ofssbihar.net/Higher-Education/innerpage.aspx", type: "primary" },
+      { label: "OFSS Bihar Official Website", url: "https://ofssbihar.net/", type: "secondary" }
+    ],
+    longDescription: "OFSS Bihar under BSEB invites online applications for Intermediate (11th class) admission in Science, Commerce, and Arts streams for the academic session 2026-28 through Online Facilitation System For Students (OFSS) in Bihar schools and colleges. Eligible students and parents can submit the online application from 08 April 2026 to 18 April 2026 at ofssbihar.net.",
+    howToApply: [
+      "Open the Apply Online link.",
+      "Register and fill student details carefully.",
+      "Select stream and preferred colleges/schools.",
+      "Pay application fee and submit form.",
+      "Download submitted form copy for records."
+    ],
+    beforeYouStart: [
+      "Keep Class 10th marksheet and personal details ready.",
+      "Check stream and school preference before final submit.",
+      "Use only official OFSS Bihar portal for application."
+    ]
+  },
+  {
     id: "custom-latest-results-ctet-feb-result-2026-download-link",
     wpId: null,
     slug: "ctet-feb-result-2026-download-link",
