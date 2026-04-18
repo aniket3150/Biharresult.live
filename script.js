@@ -110,6 +110,63 @@ const MANUAL_PRIORITY_POSTS = [
     ]
   },
   {
+    id: "custom-latest-results-bcece-application-form-2026-prospectus-apply-online",
+    wpId: null,
+    slug: "bcece-application-form-2026-prospectus-apply-online",
+    path: "./post.html?slug=bcece-application-form-2026-prospectus-apply-online",
+    title: "BCECE Application Form 2026 Prospectus, Apply Online",
+    category: "Latest Results",
+    department: "Bihar Combined Entrance Competitive Examination Board (BCECEB)",
+    location: "Bihar",
+    shortInfo: "BCECE Board (BCECEB) invites online applications for Bihar Combined Entrance Competitive Examination (BCECE) 2026 for admission into Pharmacy stream, medical stream, agriculture stream and engineering stream. All eligible aspirants can fill online application form on the official BCECEB website bceceboard.bihar.gov.in from 15th April 2026 to till the application closing date 05th May 2026 for Bihar Combined Entrance Competitive Examination 2026.",
+    publishedAt: "2026-04-18T00:10:00+05:30",
+    updatedAt: "2026-04-18T00:10:00+05:30",
+    isFeatured: true,
+    sourceName: "BCECEB Official Website",
+    sourceUrl: "https://bceceboard.bihar.gov.in/",
+    image: "",
+    importantDates: [
+      { label: "Application Start Date", value: "15-04-2026" },
+      { label: "Application Last Date", value: "05-05-2026" },
+      { label: "Fee Payment Last Date", value: "06-05-2026 (11:59 PM)" },
+      { label: "Editing of Application", value: "07-05-2026 to 08-05-2026" },
+      { label: "Admit Card Issue Date", value: "22-05-2026" },
+      { label: "Prospectus / Exam Date", value: "30 & 31 May 2026" }
+    ],
+    applicationFee: [
+      { label: "PCMB / PCA / Agriculture Group (Gen/BC/EBC/EWS)", value: "Rs.1000/-" },
+      { label: "PCMB / PCA / Agriculture Group (SC/ST/DQ)", value: "Rs.500/-" },
+      { label: "PCM Group (Gen/BC/EBC/EWS)", value: "Rs.1100/-" },
+      { label: "PCM Group (SC/ST/DQ)", value: "Rs.550/-" },
+      { label: "Payment Mode", value: "Debit Card, Credit Card, Internet Banking, UPI" }
+    ],
+    eligibility: [
+      { label: "Eligibility Heading", value: "Bihar Combined Entrance Competitive Examination Eligibility 2026" },
+      { label: "Engineering And Technology (4 Year Course)", value: "Passed 10+2 examination with Physics/ Mathematics/ Chemistry/ Computer Science/ Electronics/ Information Technology/ Biology/ Informatics Practices/ Biotechnology/ Technical Vocational Subject/ Agriculture / Engineering Graphics / Business Studies / Entrepreneurship as per Annexure-7. Agriculture stream (for Agriculture Engineering) obtained at least 45% marks (40% marks in case of candidates belonging to reserved category) in the above subjects taken together. OR Passed minimum 3 years diploma examination with at least 45% marks (40% marks in case of candidates belonging to reserved category) subject to vacancies in the first year, in case the vacancies at lateral entry are exhausted. (The Universities will offer suitable bridge course such as mathematics physics engineering drawing, etc. for the student coming from diverse backgrounds to prepare level playing field and desired learning outcomes of the programme). Age Limit:- No Limit" },
+      { label: "Pharmacy (4 Year Course)", value: "Pharmacy course requires a pass in 10+2/ equivalent examination with Physics and Chemistry as compulsory subjects and Mathematics/ Biology as one of the elective subjects. Candidates appearing in Intermediate or equivalent examination can also apply, but must have passed 10+2/equivalent examination at the time of interview/counselling. Age Limit:- Minimum 17 Years, age as on 31 December 2026." },
+      { label: "Medical and Similar Professional Courses", value: "i. English (as a language and literature) in 10+2 / Higher Secondary / I.S.C. / equivalent examinations for medical stream courses viz. Physiotherapy, Occupational Therapy, Para Medical Undergraduate courses, Physics, Chemistry, Biology (Botany, Zoology) subjects. ii. For BSc (Nursing) course, it is necessary to pass 10+2 (Physics, Chemistry, Biology and English subjects) with a total of 45% marks. iii. Candidates appearing in Intermediate or equivalent examination in the current session (2026) can also apply, but it will be necessary to pass the examination at the time of interview/ counseling. Age Limit:- Minimum 17 Years, age as on 31 December 2026." },
+      { label: "Agriculture Stream", value: "I.Sc / I.Sc in Agriculture as per college Seat. (For More Details Must See Prospectus In Page No:- 17 (15.4).) Age Limit:- Minimum 16 Years, age as on 31 August 2026." }
+    ],
+    vacancyDetails: [],
+    importantLinks: [
+      { label: "Apply Online", url: "https://admissions.nic.in/Bihar/Applicant/Root/OTHome.aspx?enc=k5U5Gp8NR6abhZ8Lld4oWvvSsCkKcG+Kcizck0pVdCvJE10jNAB9fCwdCq9SngLzpzmEkqSwweByGITZeenPaw==", type: "primary" },
+      { label: "BCECEB Official Website", url: "https://bceceboard.bihar.gov.in/", type: "secondary" }
+    ],
+    longDescription: "BCECE Board (BCECEB) invites online applications for Bihar Combined Entrance Competitive Examination (BCECE) 2026 for admission into Pharmacy stream, medical stream, agriculture stream and engineering stream. All eligible aspirants can fill online application form on the official BCECEB website bceceboard.bihar.gov.in from 15th April 2026 to till the application closing date 05th May 2026 for Bihar Combined Entrance Competitive Examination 2026.",
+    howToApply: [
+      "Open the Apply Online link.",
+      "Complete registration and fill your application details.",
+      "Choose stream/group carefully as per eligibility.",
+      "Pay fee online and submit the form.",
+      "Download final submitted application for future use."
+    ],
+    beforeYouStart: [
+      "Read BCECE 2026 prospectus and stream-wise eligibility carefully.",
+      "Keep personal and educational documents ready before applying.",
+      "Use only official portal for final application submission."
+    ]
+  },
+  {
     id: "custom-latest-results-ctet-feb-result-2026-download-link",
     wpId: null,
     slug: "ctet-feb-result-2026-download-link",
@@ -1630,6 +1687,20 @@ function setupAutoExpandBlocks(scope = document) {
   });
 }
 
+function expandAllAutoBlocks(scope = document) {
+  if (!scope) return;
+  scope.querySelectorAll("[data-auto-expand]").forEach((block) => {
+    block.dataset.expandInit = "1";
+    block.classList.remove("br-auto-collapsed", "br-auto-collapsed-off");
+    block.style.maxHeight = "";
+
+    const next = block.nextElementSibling;
+    if (next && next.classList && next.classList.contains("br-view-more-inline")) {
+      next.remove();
+    }
+  });
+}
+
 function getSlugFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const querySlug = params.get("slug");
@@ -2003,7 +2074,7 @@ function renderPost(post) {
   renderHowToApply(post);
 
   setPostSchema(post, canonicalUrl);
-  setupAutoExpandBlocks(document.getElementById("post-root"));
+  expandAllAutoBlocks(document.getElementById("post-root"));
 }
 
 function renderNotFound() {

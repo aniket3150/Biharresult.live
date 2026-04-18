@@ -2156,12 +2156,100 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 }
 
 @media (max-width: 640px) {
+  .post-topbar {
+    padding: 8px 0;
+  }
+
+  .post-brand {
+    font-size: 19px;
+  }
+
   .post-highlight-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .section-card {
-    padding: 14px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #post-title {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  #post-summary {
+    font-size: 13px;
+    line-height: 1.35;
+    margin-top: 0;
+  }
+
+  .section-card .mt-6 {
+    margin-top: 14px;
+  }
+
+  .table-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    border-left-width: 3px;
+  }
+
+  .post-highlight-box {
+    padding: 8px;
+  }
+
+  .post-highlight-box strong {
+    font-size: 11px;
+  }
+
+  .post-highlight-box span {
+    font-size: 12px;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  .post-detail-copy p {
+    line-height: 1.45;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  #post-root .info-table td,
+  #post-root .info-table th {
+    padding: 8px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  #post-root .post-steps {
+    padding-left: 18px;
+    margin-bottom: 10px;
+  }
+
+  #post-root .post-steps li {
+    margin-bottom: 6px;
+    line-height: 1.45;
+    font-size: 13px;
+  }
+
+  #post-root .post-checklist {
+    padding: 10px 12px 10px 24px;
+    margin-bottom: 10px;
+  }
+
+  #post-root #important-links {
+    gap: 8px;
+  }
+
+  #post-root .link-btn {
+    width: 100%;
+    padding: 10px 11px;
+    font-size: 13px;
+    border-radius: 7px;
   }
 
   .info-table th {
@@ -2915,6 +3003,78 @@ body.br-homepage .br-column[data-home-category="Verification"] .br-item:hover {
     font-size: 11px !important;
     line-height: 1.25 !important;
     -webkit-line-clamp: 5 !important;
+  }
+}
+
+/* Compact hero layout for static section posts */
+@media (max-width: 900px) {
+  :is(.seo-post-hero, .bseb-hero, .cbse-post-hero) {
+    padding: 16px 14px !important;
+  }
+
+  :is(.seo-post-hero, .bseb-hero, .cbse-post-hero) h1 {
+    margin: 0 0 6px !important;
+    font-size: 22px !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  :is(.seo-post-crumb, .bseb-crumb, .cbse-post-crumb) {
+    margin: 0 0 7px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+
+  :is(.seo-post-lead, .bseb-lead, .cbse-post-lead) {
+    font-size: 13px !important;
+    line-height: 1.42 !important;
+    max-width: none !important;
+  }
+
+  :is(.seo-post-meta-row, .bseb-meta-row, .cbse-post-pills) {
+    margin-top: 9px !important;
+    gap: 6px !important;
+  }
+
+  :is(.seo-post-pill, .bseb-pill, .cbse-post-pill) {
+    padding: 5px 9px !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  :is(.seo-post-content, .bseb-content, .cbse-post-content) {
+    padding: 14px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :is(.seo-post-hero, .bseb-hero, .cbse-post-hero) {
+    padding: 12px 10px !important;
+  }
+
+  :is(.seo-post-hero, .bseb-hero, .cbse-post-hero) h1 {
+    font-size: 18px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 5px !important;
+  }
+
+  :is(.seo-post-lead, .bseb-lead, .cbse-post-lead) {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
+
+  :is(.seo-post-meta-row, .bseb-meta-row, .cbse-post-pills) {
+    margin-top: 7px !important;
+    gap: 5px !important;
+  }
+
+  :is(.seo-post-pill, .bseb-pill, .cbse-post-pill) {
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+  }
+
+  :is(.seo-post-content, .bseb-content, .cbse-post-content) {
+    padding: 10px !important;
   }
 }
 
