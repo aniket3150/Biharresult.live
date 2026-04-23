@@ -118,7 +118,7 @@ const MANUAL_PRIORITY_POSTS = [
     id: "custom-latest-results-ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
     wpId: null,
     slug: "ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
-    path: "./post.html?slug=ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
+    path: "./sections/latest-results/ofss-bihar-11th-admission-2026-online-form-ofssbihar-net.html",
     title: "OFSS Bihar 11th Admission 2026 Online Form ofssbihar.net",
     category: "Latest Results",
     department: "Bihar School Examination Board (BSEB) - OFSS Bihar",
@@ -167,7 +167,7 @@ const MANUAL_PRIORITY_POSTS = [
     id: "custom-latest-results-bcece-application-form-2026-prospectus-apply-online",
     wpId: null,
     slug: "bcece-application-form-2026-prospectus-apply-online",
-    path: "./post.html?slug=bcece-application-form-2026-prospectus-apply-online",
+    path: "./sections/latest-results/bcece-application-form-2026-prospectus-apply-online.html",
     title: "BCECE Application Form 2026 Prospectus, Apply Online",
     category: "Latest Results",
     department: "Bihar Combined Entrance Competitive Examination Board (BCECEB)",
@@ -224,7 +224,7 @@ const MANUAL_PRIORITY_POSTS = [
     id: "custom-latest-results-ctet-feb-result-2026-download-link",
     wpId: null,
     slug: "ctet-feb-result-2026-download-link",
-    path: "./post.html?slug=ctet-feb-result-2026-download-link",
+    path: "./sections/latest-results/ctet-feb-result-2026-download-link.html",
     title: "CTET Feb Result 2026 Download Link ctet.nic.in (OUT)",
     category: "Latest Results",
     department: "Central Board of Secondary Education (CBSE)",
@@ -1304,13 +1304,16 @@ function renderHome(posts) {
       .filter((post) => post.category === category)
       .sort(category === "Latest Results" ? byFeaturedThenDate : byDate);
     const fragment = document.createDocumentFragment();
+    
+    // Capping DOM creation prevents main thread blocking & improves INP
+    const itemsToRender = items.slice(0, 60);
     const showSnippet = false;
-    items.forEach((post) => fragment.appendChild(createListItem(post, { showSnippet })));
+    itemsToRender.forEach((post) => fragment.appendChild(createListItem(post, { showSnippet })));
     listEl.replaceChildren(fragment);
 
     const btn = document.querySelector(`.br-view-more[data-target="${listId}"]`);
     if (!btn) return;
-    const hasMore = items.length > HOME_SECTION_INITIAL_VISIBLE;
+    const hasMore = itemsToRender.length > HOME_SECTION_INITIAL_VISIBLE;
     btn.style.display = hasMore ? "block" : "none";
     btn.textContent = "View More +";
     listEl.classList.remove(MAX_COLLAPSED_HEIGHT_CLASS);
