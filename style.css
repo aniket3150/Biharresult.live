@@ -1050,6 +1050,13 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   animation: br-blink 1s infinite alternate;
 }
 
+.br-item-badge-top-live {
+  background: #fff1f2;
+  color: #9f1239;
+  border: 1px solid #fecdd3;
+  animation: br-blink 0.85s infinite alternate;
+}
+
 .br-item-badge-link {
   background: #e3efff;
   color: #163a9c;

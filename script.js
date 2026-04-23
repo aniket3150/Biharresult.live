@@ -118,7 +118,7 @@ const MANUAL_PRIORITY_POSTS = [
     id: "custom-latest-results-ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
     wpId: null,
     slug: "ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
-    path: "./sections/latest-results/ofss-bihar-11th-admission-2026-online-form-ofssbihar-net.html",
+    path: "./post.html?slug=ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
     title: "OFSS Bihar 11th Admission 2026 Online Form ofssbihar.net",
     category: "Latest Results",
     department: "Bihar School Examination Board (BSEB) - OFSS Bihar",
@@ -167,7 +167,7 @@ const MANUAL_PRIORITY_POSTS = [
     id: "custom-latest-results-bcece-application-form-2026-prospectus-apply-online",
     wpId: null,
     slug: "bcece-application-form-2026-prospectus-apply-online",
-    path: "./sections/latest-results/bcece-application-form-2026-prospectus-apply-online.html",
+    path: "./post.html?slug=bcece-application-form-2026-prospectus-apply-online",
     title: "BCECE Application Form 2026 Prospectus, Apply Online",
     category: "Latest Results",
     department: "Bihar Combined Entrance Competitive Examination Board (BCECEB)",
@@ -224,7 +224,7 @@ const MANUAL_PRIORITY_POSTS = [
     id: "custom-latest-results-ctet-feb-result-2026-download-link",
     wpId: null,
     slug: "ctet-feb-result-2026-download-link",
-    path: "./sections/latest-results/ctet-feb-result-2026-download-link.html",
+    path: "./post.html?slug=ctet-feb-result-2026-download-link",
     title: "CTET Feb Result 2026 Download Link ctet.nic.in (OUT)",
     category: "Latest Results",
     department: "Central Board of Secondary Education (CBSE)",
@@ -695,9 +695,9 @@ const HOME_MAP = {
   "Latest Jobs": "jobs-list",
   "Admit Card": "admit-list",
   "Scholarship": "scholarship-list",
-  "Sarkari Yojana": "yojana-list",
-  "Verification": "verification-list"
+  "Sarkari Yojana": "yojana-list"
 };
+const HOME_EXCLUDED_CATEGORIES = new Set(["Verification"]);
 let HOME_SECTIONS = [];
 
 function setTodayDate() {
@@ -918,8 +918,8 @@ function formatHomeListTitle(post) {
 function createListItem(post, options = {}) {
   const showSnippet = Boolean(options.showSnippet);
   const showMeta = Boolean(options.showMeta);
+  const isPriorityFlash = Boolean(options.isPriorityFlash);
   const listTitle = formatHomeListTitle(post);
-  const isOutPost = /\(out\)|\bout\b/i.test(listTitle);
   const li = document.createElement("li");
   li.className = "br-item";
   li.dataset.searchText = `${listTitle} ${cleanSnippet(post.shortInfo || post.longDescription || "")} ${post.category || ""}`.toLowerCase();
@@ -955,29 +955,15 @@ function createListItem(post, options = {}) {
   }
   li.appendChild(body);
 
-  const tags = document.createElement("div");
-  tags.className = "br-item-tags";
-
-  if (isOutPost) {
-    const tag = document.createElement("span");
-    tag.className = "br-item-badge br-item-badge-out";
-    tag.textContent = "\uD83D\uDD25 OUT";
-    tags.appendChild(tag);
-  }
-
-  if (post.isFeatured) {
+  if (isPriorityFlash) {
+    const tags = document.createElement("div");
+    tags.className = "br-item-tags";
     const tag = document.createElement("span");
     tag.className = "br-item-badge br-item-badge-new";
-    tag.textContent = "\uD83D\uDEA8 NEW";
+    tag.textContent = "\uD83C\uDD95 NEW";
     tags.appendChild(tag);
+    body.appendChild(tags);
   }
-
-  const directTag = document.createElement("span");
-  directTag.className = "br-item-badge br-item-badge-link";
-  directTag.textContent = "\uD83D\uDCE2 Direct Link";
-  tags.appendChild(directTag);
-
-  body.appendChild(tags);
   return li;
 }
 
@@ -1206,8 +1192,13 @@ function renderHomeHighlights(posts) {
   const grid = document.getElementById("home-highlight-grid");
   if (!grid) return;
   const highlightLimit = getHomeHighlightLimit();
+  const visiblePosts = Array.isArray(posts)
+    ? posts.filter((post) => !HOME_EXCLUDED_CATEGORIES.has(String(post?.category || "").trim()))
+    : [];
 
-  const manualItems = Array.isArray(manualHighlightItemsCache) ? manualHighlightItemsCache : [];
+  const manualItems = Array.isArray(manualHighlightItemsCache)
+    ? manualHighlightItemsCache.filter((item) => !HOME_EXCLUDED_CATEGORIES.has(String(item?.category || "").trim()))
+    : [];
   if (manualItems.length > 0) {
     const fragment = document.createDocumentFragment();
     manualItems.slice(0, highlightLimit).forEach((item, idx) => {
@@ -1240,11 +1231,10 @@ function renderHomeHighlights(posts) {
     "Admit Card",
     "Scholarship",
     "Sarkari Yojana",
-    "Admission",
-    "Verification"
+    "Admission"
   ];
 
-  const sorted = [...posts].sort(byDate);
+  const sorted = [...visiblePosts].sort(byDate);
   const selected = [];
   const used = new Set();
 
@@ -1308,7 +1298,12 @@ function renderHome(posts) {
     // Capping DOM creation prevents main thread blocking & improves INP
     const itemsToRender = items.slice(0, 60);
     const showSnippet = false;
-    itemsToRender.forEach((post) => fragment.appendChild(createListItem(post, { showSnippet })));
+    itemsToRender.forEach((post, idx) => {
+      fragment.appendChild(createListItem(post, {
+        showSnippet,
+        isPriorityFlash: idx < 5
+      }));
+    });
     listEl.replaceChildren(fragment);
 
     const btn = document.querySelector(`.br-view-more[data-target="${listId}"]`);
