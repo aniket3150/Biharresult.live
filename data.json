@@ -1,5 +1,128 @@
 [
     {
+        "id": "custom-latest-jobs-railway-rrb-alp-recruitment-2026",
+        "wpId": null,
+        "slug": "railway-rrb-alp-recruitment-2026",
+        "path": "./sections/latest-jobs/railway-rrb-alp-recruitment-2026.html",
+        "title": "Railway RRB ALP Recruitment 2026 (Approx. 11,127 Posts)",
+        "category": "Latest Jobs",
+        "department": "Railway Recruitment Board (RRB)",
+        "location": "India",
+        "shortInfo": "Railway Recruitment Board (RRB) has released short notice for Assistant Loco Pilot (ALP) recruitment 2026 for approximately 11,127 posts. Application is expected from 15 May 2026 to 14 June 2026.",
+        "publishedAt": "2026-04-24",
+        "updatedAt": "2026-04-24",
+        "isFeatured": true,
+        "sourceName": "Railway Recruitment Board (RRB)",
+        "sourceUrl": "https://www.rrbapply.gov.in/#/auth/landing",
+        "image": "",
+        "importantDates": [
+            {
+                "label": "Short Notice Date",
+                "value": "16 March 2026"
+            },
+            {
+                "label": "Online Apply Start Date",
+                "value": "15 May 2026 (Tentative)"
+            },
+            {
+                "label": "Last Date to Apply",
+                "value": "14 June 2026 (Tentative)"
+            },
+            {
+                "label": "Last Date Fee Payment",
+                "value": "14 June 2026 (Tentative)"
+            },
+            {
+                "label": "Admit Card",
+                "value": "04 Days Before Exam"
+            },
+            {
+                "label": "Exam Date",
+                "value": "Notify Later"
+            }
+        ],
+        "applicationFee": [
+            {
+                "label": "General / OBC",
+                "value": "Rs. 500/- (Tentative)"
+            },
+            {
+                "label": "SC / ST / PwBD / Ex-Serviceman",
+                "value": "Rs. 250/- (Tentative)"
+            },
+            {
+                "label": "Payment Mode",
+                "value": "Debit Card, Credit Card, Internet Banking, UPI / Wallet"
+            }
+        ],
+        "eligibility": [
+            {
+                "label": "Post Name",
+                "value": "Assistant Loco Pilot (ALP)"
+            },
+            {
+                "label": "Total Posts",
+                "value": "11,127 (Approx.)"
+            },
+            {
+                "label": "Eligibility",
+                "value": "10th Pass + ITI OR Diploma / Engineering Degree"
+            },
+            {
+                "label": "Age Limit",
+                "value": "18 to 30 Years as on 01 July 2026 (age relaxation as per rules)"
+            }
+        ],
+        "vacancyDetails": [
+            {
+                "label": "Assistant Loco Pilot (ALP)",
+                "value": "11,127 (Approx.)"
+            }
+        ],
+        "ageLimit": [
+            {
+                "label": "Minimum Age",
+                "value": "18 Years"
+            },
+            {
+                "label": "Maximum Age",
+                "value": "30 Years"
+            }
+        ],
+        "importantLinks": [
+            {
+                "label": "Apply Online (Expected)",
+                "url": "https://www.rrbapply.gov.in/#/auth/landing",
+                "type": "primary"
+            },
+            {
+                "label": "RRB Notification / Short Notice",
+                "url": "https://indianrailways.gov.in/",
+                "type": "secondary"
+            },
+            {
+                "label": "Indian Railways Official Website",
+                "url": "https://indianrailways.gov.in/",
+                "type": "secondary"
+            }
+        ],
+        "longDescription": "Railway Recruitment Board (RRB) has released short notice for Assistant Loco Pilot (ALP) Recruitment 2026 for approximately 11,127 posts. Candidates can apply online from 15 May 2026 to 14 June 2026 (tentative). The age limit is 18 to 30 years as on 01 July 2026. Candidates should check detailed zone-wise eligibility and official instructions before applying.",
+        "howToApply": [
+            "Visit the official portal from the Important Links section.",
+            "Click on Railway RRB ALP Recruitment 2026.",
+            "Read full notification and eligibility criteria.",
+            "Fill online application form and upload required documents.",
+            "Pay application fee through online mode.",
+            "Submit the form and print final application copy."
+        ],
+        "beforeYouStart": [
+            "Keep personal, educational, and category documents ready.",
+            "Check age limit, qualification, and eligibility before applying.",
+            "Use only official links for application and updates.",
+            "Verify all entered details before final submission."
+        ]
+    },
+    {
         "id": "custom-latest-results-up-board-class-10th-12th-result-2026",
         "wpId": null,
         "slug": "up-board-class-10th-12th-result-2026",
@@ -1926,7 +2049,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -2009,7 +2132,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -2092,7 +2215,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4368,7 +4491,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4451,7 +4574,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4534,7 +4657,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4617,7 +4740,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4700,7 +4823,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4783,7 +4906,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4866,7 +4989,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -4949,7 +5072,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -5116,7 +5239,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -5199,7 +5322,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -5282,7 +5405,7 @@
         "updatedAt": "2026-02-18",
         "isFeatured": false,
         "sourceName": "www.Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/",
+        "sourceUrl": "https://biharresult.live/",
         "image": "",
         "importantDates": [
             {
@@ -5602,21 +5725,25 @@
         "category": "Latest Jobs",
         "department": "Sarkari Exam",
         "location": "Bihar",
-        "shortInfo": "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts) recruitment update for Bihar aspirants. Check eligibility, important dates, fee details, and apply link below.",
-        "publishedAt": "2026-02-18",
-        "updatedAt": "2026-02-18",
-        "isFeatured": false,
-        "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-school-teacher-tre-4-0-2026/",
+        "shortInfo": "Latest update (24 April 2026): candidates should avoid viral TRE 4.0 application-date notices and rely only on official BPSC channels for final schedule and recruitment advertisement.",
+        "publishedAt": "2026-04-24T23:59:00+05:30",
+        "updatedAt": "2026-04-24",
+        "isFeatured": true,
+        "sourceName": "BPSC Official Website",
+        "sourceUrl": "https://bpsc.bihar.gov.in/",
         "image": "",
         "importantDates": [
             {
-                "value": "18 February 2026",
+                "value": "24 April 2026",
                 "label": "Arrival Date"
             },
             {
-                "value": "18 February 2026",
+                "value": "24 April 2026",
                 "label": "Updated Date"
+            },
+            {
+                "value": "21 April 2026",
+                "label": "Latest Clarification News"
             },
             {
                 "value": "To Be Announced",
@@ -5702,22 +5829,27 @@
         ],
         "importantLinks": [
             {
-                "label": "Open Biharresult.Live Post",
-                "url": "https://biharresult.live/bpsc-school-teacher-tre-4-0-2026",
+                "label": "BPSC Official Website",
+                "url": "https://bpsc.bihar.gov.in/",
                 "type": "primary"
             },
             {
-                "label": "Biharresult.Live Homepage",
-                "url": "https://biharresult.live/",
+                "label": "BPSC Online Portal",
+                "url": "https://bpsconline.bihar.gov.in/",
                 "type": "secondary"
             },
             {
-                "label": "Official Department Link",
-                "url": "https://bpsc.bihar.gov.in/",
+                "label": "BPSC What's New",
+                "url": "https://bpsc.bihar.gov.in/whats-new/",
+                "type": "secondary"
+            },
+            {
+                "label": "Latest Clarification News",
+                "url": "https://timesofindia.indiatimes.com/education/news/bpsc-clarifies-fake-tre-4-0-recruitment-notice-circulating-on-social-media-with-false-application-dates-claims/articleshow/130409976.cms",
                 "type": "secondary"
             }
         ],
-        "longDescription": "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts) is an important recruitment update for job aspirants. This post covers vacancy overview, eligibility, age criteria, fee details, and application steps. Published on 18 Feb 2026 and updated on 18 Feb 2026. Candidates should read the official notification before final submission.",
+        "longDescription": "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts) remains a high-priority recruitment update. Latest status dated 24 April 2026 indicates candidates should wait for official detailed notification and final application dates from BPSC channels only, and avoid unverified social-media notices.",
         "howToApply": [
             "Read the official BPSC TRE 4.0 notification carefully before applying.",
             "Check post-wise eligibility, required marks, and STET/CTET requirement for your target post.",
@@ -6135,7 +6267,7 @@
         "updatedAt": "2026-02-17",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-police-bpssc-si-prohibition-2025/",
+        "sourceUrl": "https://biharresult.live/bihar-police-bpssc-si-prohibition-2025/",
         "image": "",
         "importantDates": [
             {
@@ -6211,7 +6343,7 @@
         "updatedAt": "2026-02-17",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-ldc-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-ldc-2026/",
         "image": "",
         "importantDates": [
             {
@@ -6287,7 +6419,7 @@
         "updatedAt": "2026-02-17",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/wbssc-group-c-and-d-2025/",
+        "sourceUrl": "https://biharresult.live/wbssc-group-c-and-d-2025/",
         "image": "",
         "importantDates": [
             {
@@ -6353,16 +6485,16 @@
         "id": "se-685746",
         "wpId": 685746,
         "slug": "bpsc-aso-mains-2026",
-        "title": "BPSC ASO Mains Admit Card 2026 � Soon",
+        "title": "BPSC ASO Mains Admit Card 2026 - Soon",
         "category": "Admit Card",
         "department": "Sarkari Exam",
         "location": "Bihar",
-        "shortInfo": "BPSC ASO Mains Admit Card 2026 � Soon admit card update is available. Download hall ticket and verify exam date, shift, and center details.",
+        "shortInfo": "BPSC ASO Mains Admit Card 2026 - Soon admit card update is available. Download hall ticket and verify exam date, shift, and center details.",
         "publishedAt": "2026-02-16",
         "updatedAt": "2026-02-16",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-aso-mains-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-aso-mains-2026/",
         "image": "",
         "importantDates": [
             {
@@ -6420,7 +6552,7 @@
                 "type": "secondary"
             }
         ],
-        "longDescription": "BPSC ASO Mains Admit Card 2026 � Soon admit card update has been listed for candidates. This page includes exam-related dates and instructions to download hall ticket from official links. Published on 16 Feb 2026 and updated on 16 Feb 2026. Verify exam center, shift timing, and reporting instructions after download.",
+        "longDescription": "BPSC ASO Mains Admit Card 2026 - Soon admit card update has been listed for candidates. This page includes exam-related dates and instructions to download hall ticket from official links. Published on 16 Feb 2026 and updated on 16 Feb 2026. Verify exam center, shift timing, and reporting instructions after download.",
         "howToApply": [
             "Open the admit card download link from Important Links section.",
             "Login with registration number/date of birth/password as required.",
@@ -6433,16 +6565,16 @@
         "id": "se-691739",
         "wpId": 691739,
         "slug": "bihar-bssc-inter-level-2026",
-        "title": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) � Last Date Today",
+        "title": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) - Last Date Today",
         "category": "Latest Jobs",
         "department": "Sarkari Exam",
         "location": "Bihar",
-        "shortInfo": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) � Last Date Today recruitment update for Bihar aspirants. Check eligibility, important dates, fee details, and apply link below.",
+        "shortInfo": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) - Last Date Today recruitment update for Bihar aspirants. Check eligibility, important dates, fee details, and apply link below.",
         "publishedAt": "2026-02-16",
         "updatedAt": "2026-02-17",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-bssc-inter-level-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-bssc-inter-level-2026/",
         "image": "",
         "importantDates": [
             {
@@ -6492,7 +6624,7 @@
         ],
         "vacancyDetails": [
             {
-                "post": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) � Last Date Today",
+                "post": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) - Last Date Today",
                 "total": "25,311",
                 "criteria": "Check post-wise eligibility in official notification"
             },
@@ -6519,7 +6651,7 @@
                 "type": "secondary"
             }
         ],
-        "longDescription": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) � Last Date Today is an important recruitment update for job aspirants. This post covers vacancy overview, eligibility, age criteria, fee details, and application steps. Published on 16 Feb 2026 and updated on 17 Feb 2026. Candidates should read the official notification before final submission.",
+        "longDescription": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) - Last Date Today is an important recruitment update for job aspirants. This post covers vacancy overview, eligibility, age criteria, fee details, and application steps. Published on 16 Feb 2026 and updated on 17 Feb 2026. Candidates should read the official notification before final submission.",
         "ageLimit": [
             "Minimum age and maximum age will be as per official notification.",
             "Reserved categories will get age relaxation as per Bihar Government rules.",
@@ -6539,16 +6671,16 @@
         "id": "se-688084",
         "wpId": 688084,
         "slug": "bihar-police-csbc-driver-constable-2026",
-        "title": "Bihar Police CSBC Driver Constable PET Admit Card 2026 � Out",
+        "title": "Bihar Police CSBC Driver Constable PET Admit Card 2026 - Out",
         "category": "Admit Card",
         "department": "Sarkari Exam",
         "location": "Bihar",
-        "shortInfo": "Bihar Police CSBC Driver Constable PET Admit Card 2026 � Out admit card update is available. Download hall ticket and verify exam date, shift, and center details.",
+        "shortInfo": "Bihar Police CSBC Driver Constable PET Admit Card 2026 - Out admit card update is available. Download hall ticket and verify exam date, shift, and center details.",
         "publishedAt": "2026-02-15",
         "updatedAt": "2026-02-16",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-police-csbc-driver-constable-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-police-csbc-driver-constable-2026/",
         "image": "",
         "importantDates": [
             {
@@ -6606,7 +6738,7 @@
                 "type": "secondary"
             }
         ],
-        "longDescription": "Bihar Police CSBC Driver Constable PET Admit Card 2026 � Out admit card update has been listed for candidates. This page includes exam-related dates and instructions to download hall ticket from official links. Published on 15 Feb 2026 and updated on 16 Feb 2026. Verify exam center, shift timing, and reporting instructions after download.",
+        "longDescription": "Bihar Police CSBC Driver Constable PET Admit Card 2026 - Out admit card update has been listed for candidates. This page includes exam-related dates and instructions to download hall ticket from official links. Published on 15 Feb 2026 and updated on 16 Feb 2026. Verify exam center, shift timing, and reporting instructions after download.",
         "howToApply": [
             "Open the admit card download link from Important Links section.",
             "Login with registration number/date of birth/password as required.",
@@ -6628,7 +6760,7 @@
         "updatedAt": "2026-02-14",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-btsc-dairy-field-officer-dairy-technical-officer-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-btsc-dairy-field-officer-dairy-technical-officer-2026/",
         "image": "",
         "importantDates": [
             {
@@ -6734,7 +6866,7 @@
         "updatedAt": "2026-02-14",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpssc-bihar-police-enforcement-si-2026/",
+        "sourceUrl": "https://biharresult.live/bpssc-bihar-police-enforcement-si-2026/",
         "image": "",
         "importantDates": [
             {
@@ -6814,7 +6946,7 @@
         "updatedAt": "2026-02-12",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-jeevika-2025/",
+        "sourceUrl": "https://biharresult.live/bihar-jeevika-2025/",
         "image": "",
         "importantDates": [
             {
@@ -6885,7 +7017,7 @@
         "updatedAt": "2026-02-11",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bsnl-senior-executive-trainee-set-2026/",
+        "sourceUrl": "https://biharresult.live/bsnl-senior-executive-trainee-set-2026/",
         "image": "",
         "importantDates": [
             {
@@ -6986,7 +7118,7 @@
         "updatedAt": "2026-02-11",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-police-csbc-constable-gd-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-police-csbc-constable-gd-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7083,16 +7215,16 @@
         "id": "se-696880",
         "wpId": 696880,
         "slug": "bihar-bcece-junior-resident-2026",
-        "title": "Bihar BCECE Junior Resident Online Form 2026 � Last Date",
+        "title": "Bihar BCECE Junior Resident Online Form 2026 - Last Date",
         "category": "Latest Jobs",
         "department": "Sarkari Exam",
         "location": "Bihar",
-        "shortInfo": "Bihar BCECE Junior Resident Online Form 2026 � Last Date recruitment update for Bihar aspirants. Check eligibility, important dates, fee details, and apply link below.",
+        "shortInfo": "Bihar BCECE Junior Resident Online Form 2026 - Last Date recruitment update for Bihar aspirants. Check eligibility, important dates, fee details, and apply link below.",
         "publishedAt": "2026-02-06",
         "updatedAt": "2026-02-07",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-bcece-junior-resident-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-bcece-junior-resident-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7142,7 +7274,7 @@
         ],
         "vacancyDetails": [
             {
-                "post": "Bihar BCECE Junior Resident Online Form 2026 � Last Date",
+                "post": "Bihar BCECE Junior Resident Online Form 2026 - Last Date",
                 "total": "As per official notification",
                 "criteria": "Check post-wise eligibility in official notification"
             },
@@ -7169,7 +7301,7 @@
                 "type": "secondary"
             }
         ],
-        "longDescription": "Bihar BCECE Junior Resident Online Form 2026 � Last Date is an important recruitment update for job aspirants. This post covers vacancy overview, eligibility, age criteria, fee details, and application steps. Published on 06 Feb 2026 and updated on 07 Feb 2026. Candidates should read the official notification before final submission.",
+        "longDescription": "Bihar BCECE Junior Resident Online Form 2026 - Last Date is an important recruitment update for job aspirants. This post covers vacancy overview, eligibility, age criteria, fee details, and application steps. Published on 06 Feb 2026 and updated on 07 Feb 2026. Candidates should read the official notification before final submission.",
         "ageLimit": [
             "Minimum age and maximum age will be as per official notification.",
             "Reserved categories will get age relaxation as per Bihar Government rules.",
@@ -7198,7 +7330,7 @@
         "updatedAt": "2026-02-12",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bseb-bihar-d-el-ed-2026-28/",
+        "sourceUrl": "https://biharresult.live/bseb-bihar-d-el-ed-2026-28/",
         "image": "",
         "importantDates": [
             {
@@ -7278,7 +7410,7 @@
         "updatedAt": "2026-02-06",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-atps-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-atps-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7384,7 +7516,7 @@
         "updatedAt": "2026-02-06",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpssc-bihar-home-guard-havildar-clerk-2026/",
+        "sourceUrl": "https://biharresult.live/bpssc-bihar-home-guard-havildar-clerk-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7490,7 +7622,7 @@
         "updatedAt": "2026-02-03",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-exam-calendar-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-exam-calendar-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7566,7 +7698,7 @@
         "updatedAt": "2026-02-04",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-boiler-inspector-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-boiler-inspector-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7672,7 +7804,7 @@
         "updatedAt": "2026-02-03",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpssc-bihar-police-range-officer-of-forest-2025/",
+        "sourceUrl": "https://biharresult.live/bpssc-bihar-police-range-officer-of-forest-2025/",
         "image": "",
         "importantDates": [
             {
@@ -7748,7 +7880,7 @@
         "updatedAt": "2026-02-03",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/ecgc-po-2026/",
+        "sourceUrl": "https://biharresult.live/ecgc-po-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7819,7 +7951,7 @@
         "updatedAt": "2026-02-17",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-police-bpssc-asi-operation-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-police-bpssc-asi-operation-2026/",
         "image": "",
         "importantDates": [
             {
@@ -7925,7 +8057,7 @@
         "updatedAt": "2026-02-04",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-deputy-director-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-deputy-director-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8031,7 +8163,7 @@
         "updatedAt": "2026-02-03",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-acf-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-acf-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8137,7 +8269,7 @@
         "updatedAt": "2026-02-03",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-stenographer-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-stenographer-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8234,16 +8366,16 @@
         "id": "se-696676",
         "wpId": 696676,
         "slug": "bpsc-factory-inspector-2026",
-        "title": "Bihar BPSC Factory Inspector Online Form 2026 � Last Date",
+        "title": "Bihar BPSC Factory Inspector Online Form 2026 - Last Date",
         "category": "Latest Jobs",
         "department": "Sarkari Exam",
         "location": "Bihar",
-        "shortInfo": "Bihar BPSC Factory Inspector Online Form 2026 � Last Date recruitment update for Bihar aspirants. Check eligibility, important dates, fee details, and apply link below.",
+        "shortInfo": "Bihar BPSC Factory Inspector Online Form 2026 - Last Date recruitment update for Bihar aspirants. Check eligibility, important dates, fee details, and apply link below.",
         "publishedAt": "2026-02-02",
         "updatedAt": "2026-02-03",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-factory-inspector-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-factory-inspector-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8293,7 +8425,7 @@
         ],
         "vacancyDetails": [
             {
-                "post": "Bihar BPSC Factory Inspector Online Form 2026 � Last Date",
+                "post": "Bihar BPSC Factory Inspector Online Form 2026 - Last Date",
                 "total": "As per official notification",
                 "criteria": "Check post-wise eligibility in official notification"
             },
@@ -8320,7 +8452,7 @@
                 "type": "secondary"
             }
         ],
-        "longDescription": "Bihar BPSC Factory Inspector Online Form 2026 � Last Date is an important recruitment update for job aspirants. This post covers vacancy overview, eligibility, age criteria, fee details, and application steps. Published on 02 Feb 2026 and updated on 03 Feb 2026. Candidates should read the official notification before final submission.",
+        "longDescription": "Bihar BPSC Factory Inspector Online Form 2026 - Last Date is an important recruitment update for job aspirants. This post covers vacancy overview, eligibility, age criteria, fee details, and application steps. Published on 02 Feb 2026 and updated on 03 Feb 2026. Candidates should read the official notification before final submission.",
         "ageLimit": [
             "Minimum age and maximum age will be as per official notification.",
             "Reserved categories will get age relaxation as per Bihar Government rules.",
@@ -8349,7 +8481,7 @@
         "updatedAt": "2026-01-31",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/patna-high-court-stenographer-result-2026/",
+        "sourceUrl": "https://biharresult.live/patna-high-court-stenographer-result-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8425,7 +8557,7 @@
         "updatedAt": "2026-01-29",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/beltron-programmer-result-cutoff-2026/",
+        "sourceUrl": "https://biharresult.live/beltron-programmer-result-cutoff-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8501,7 +8633,7 @@
         "updatedAt": "2026-01-28",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-mvi-final-result-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-mvi-final-result-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8577,7 +8709,7 @@
         "updatedAt": "2026-01-28",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-aee-other-post-result-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-aee-other-post-result-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8653,7 +8785,7 @@
         "updatedAt": "2026-01-28",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-btsc-pharmacist-dv-schedule-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-btsc-pharmacist-dv-schedule-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8733,7 +8865,7 @@
         "updatedAt": "2026-01-27",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/patna-high-court-mazdoor-interview-letter-2026/",
+        "sourceUrl": "https://biharresult.live/patna-high-court-mazdoor-interview-letter-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8813,7 +8945,7 @@
         "updatedAt": "2026-01-23",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-shs-anm-result-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-shs-anm-result-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8889,7 +9021,7 @@
         "updatedAt": "2026-01-22",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-bpsc-special-school-teacher-admit-card-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-bpsc-special-school-teacher-admit-card-2026/",
         "image": "",
         "importantDates": [
             {
@@ -8969,7 +9101,7 @@
         "updatedAt": "2026-01-22",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-dso-ad-mains-admit-card-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-dso-ad-mains-admit-card-2026/",
         "image": "",
         "importantDates": [
             {
@@ -9049,7 +9181,7 @@
         "updatedAt": "2026-01-22",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-dso-admit-card-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-dso-admit-card-2026/",
         "image": "",
         "importantDates": [
             {
@@ -9129,7 +9261,7 @@
         "updatedAt": "2026-01-23",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bssc-field-assistant-pre-result-2026/",
+        "sourceUrl": "https://biharresult.live/bssc-field-assistant-pre-result-2026/",
         "image": "",
         "importantDates": [
             {
@@ -9205,7 +9337,7 @@
         "updatedAt": "2026-01-22",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpssc-bihar-police-si-pre-admit-card-2026/",
+        "sourceUrl": "https://biharresult.live/bpssc-bihar-police-si-pre-admit-card-2026/",
         "image": "",
         "importantDates": [
             {
@@ -9285,7 +9417,7 @@
         "updatedAt": "2026-01-19",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-70th-interview-letter-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-70th-interview-letter-2026/",
         "image": "",
         "importantDates": [
             {
@@ -9365,7 +9497,7 @@
         "updatedAt": "2026-01-19",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-71st-mains-exam-date-2026/",
+        "sourceUrl": "https://biharresult.live/bpsc-71st-mains-exam-date-2026/",
         "image": "",
         "importantDates": [
             {
@@ -9445,7 +9577,7 @@
         "updatedAt": "2026-01-14",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bihar-btsc-tutor-nursing-result-2026/",
+        "sourceUrl": "https://biharresult.live/bihar-btsc-tutor-nursing-result-2026/",
         "image": "",
         "importantDates": [
             {
@@ -9521,7 +9653,7 @@
         "updatedAt": "2026-01-07",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/ukpsc-upper-pcs-pre-revised-result-2025/",
+        "sourceUrl": "https://biharresult.live/ukpsc-upper-pcs-pre-revised-result-2025/",
         "image": "",
         "importantDates": [
             {
@@ -9597,7 +9729,7 @@
         "updatedAt": "2026-01-07",
         "isFeatured": false,
         "sourceName": "Biharresult.live",
-        "sourceUrl": "https://www.Biharresult.live/bpsc-mdo-final-result-2025/",
+        "sourceUrl": "https://biharresult.live/bpsc-mdo-final-result-2025/",
         "image": "",
         "importantDates": [
             {

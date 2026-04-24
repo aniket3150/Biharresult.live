@@ -645,7 +645,7 @@ const MANUAL_PRIORITY_POSTS = [
     updatedAt: "2026-03-25",
     isFeatured: true,
     sourceName: "BiharResult.live",
-    sourceUrl: "https://www.biharresult.live/bpsc-school-teacher-tre-4-0-2026/",
+    sourceUrl: "https://biharresult.live/bpsc-school-teacher-tre-4-0-2026/",
     image: "",
     importantDates: [
       { label: "Current Status", value: "Mixed final update with latest tracking" },
