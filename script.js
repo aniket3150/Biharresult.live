@@ -864,6 +864,70 @@ function hardenExternalLinks(scope = document) {
   });
 }
 
+function normalizeHashValue(value) {
+  const raw = String(value || "").trim().toLowerCase();
+  if (!raw) return "";
+  return raw.startsWith("#") ? raw : `#${raw}`;
+}
+
+function setPrimaryNavCurrentState(links) {
+  if (!Array.isArray(links) || !links.length) return;
+
+  const currentHash = normalizeHashValue(window.location.hash);
+  links.forEach((link) => {
+    const href = String(link.getAttribute("href") || "").trim();
+    const hashIndex = href.indexOf("#");
+    const linkHash = hashIndex >= 0 ? normalizeHashValue(href.slice(hashIndex)) : "";
+    const isHomeLink = /^(?:\.\/)?(?:index\.html)?$/i.test(href) || href === "/";
+    const isCurrent = currentHash ? Boolean(linkHash && linkHash === currentHash) : isHomeLink;
+
+    if (isCurrent) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+function initPrimaryNavigation() {
+  const navRoot = document.getElementById("site-primary-navigation") || document.querySelector(".br-nav-wrapper");
+  if (!navRoot) return;
+
+  const navLinks = Array.from(navRoot.querySelectorAll(".br-nav-menu a[href]"));
+  if (!navLinks.length) return;
+
+  setPrimaryNavCurrentState(navLinks);
+  window.addEventListener("hashchange", () => {
+    setPrimaryNavCurrentState(navLinks);
+  }, { passive: true });
+
+  navLinks.forEach((link) => {
+    const href = String(link.getAttribute("href") || "").trim();
+    if (!href.startsWith("#")) return;
+
+    const targetId = href.slice(1);
+    if (!targetId) return;
+
+    link.addEventListener("click", (event) => {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      event.preventDefault();
+      const prefersReducedMotion = window.matchMedia
+        && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "start"
+      });
+
+      window.history.replaceState(null, "", `#${targetId}`);
+      if (!target.hasAttribute("tabindex")) {
+        target.setAttribute("tabindex", "-1");
+      }
+      target.focus({ preventScroll: true });
+      setPrimaryNavCurrentState(navLinks);
+    });
+  });
+}
+
 function postHref(post) {
   if (post?.path && isUsableUrl(post.path)) {
     return sanitizeUrl(post.path);
@@ -894,6 +958,133 @@ function sectionHrefByCategory(category) {
     Verification: "sections/verification/"
   };
   return sectionMap[category] || "";
+}
+
+function toIsoDateOrEmpty(value) {
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return "";
+  return dt.toISOString();
+}
+
+function buildHomeSchemaPosts(posts) {
+  const input = Array.isArray(posts) ? posts : [];
+  if (!input.length) return [];
+
+  const categoryOrder = [
+    "Latest Results",
+    "Latest Jobs",
+    "Admit Card",
+    "Scholarship",
+    "Admission",
+    "Sarkari Yojana",
+    "Verification"
+  ];
+
+  const dedupe = new Set();
+  const selected = [];
+  const maxPerCategory = 3;
+  const maxTotal = 21;
+
+  categoryOrder.forEach((category) => {
+    const rows = input
+      .filter((post) => post?.category === category && String(post?.title || "").trim())
+      .sort(byDate)
+      .slice(0, maxPerCategory);
+    rows.forEach((post) => {
+      const key = post.slug || `${category}-${post.title}`;
+      if (dedupe.has(key) || selected.length >= maxTotal) return;
+      dedupe.add(key);
+      selected.push(post);
+    });
+  });
+
+  if (selected.length >= maxTotal) return selected;
+
+  input
+    .filter((post) => String(post?.title || "").trim())
+    .sort(byDate)
+    .forEach((post) => {
+      const key = post.slug || `${post.category || "misc"}-${post.title}`;
+      if (dedupe.has(key) || selected.length >= maxTotal) return;
+      dedupe.add(key);
+      selected.push(post);
+    });
+
+  return selected;
+}
+
+function setHomeDynamicSchema(posts) {
+  const schemaScript = document.getElementById("home-dynamic-schema");
+  if (!schemaScript) return;
+
+  const topPosts = buildHomeSchemaPosts(posts);
+  if (!topPosts.length) return;
+
+  const websiteUrl = "https://biharresult.live/";
+  const metaDescription = cleanSnippet(
+    document.querySelector('meta[name="description"]')?.getAttribute("content") || ""
+  );
+
+  const listItems = topPosts.map((post, index) => {
+    const absoluteUrl = toAbsoluteSiteUrl(postHref(post));
+    const datePublished = toIsoDateOrEmpty(post.publishedAt);
+    const dateModified = toIsoDateOrEmpty(post.updatedAt || post.publishedAt);
+
+    const item = {
+      "@type": "WebPage",
+      name: post.title,
+      url: absoluteUrl
+    };
+    if (datePublished) item.datePublished = datePublished;
+    if (dateModified) item.dateModified = dateModified;
+
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+      name: post.title,
+      url: absoluteUrl,
+      item
+    };
+  });
+
+  const latestDate = topPosts
+    .map((post) => toIsoDateOrEmpty(post.updatedAt || post.publishedAt))
+    .filter(Boolean)
+    .sort()
+    .pop();
+
+  const payload = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "BiharResult.live Latest Updates",
+    url: websiteUrl,
+    inLanguage: "en-IN",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "BiharResult.live",
+      url: websiteUrl
+    },
+    about: [
+      "Latest Results",
+      "Latest Jobs",
+      "Admit Card",
+      "Scholarship",
+      "Admission",
+      "Sarkari Yojana",
+      "Verification Services"
+    ],
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Latest Posts on BiharResult.live",
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      numberOfItems: listItems.length,
+      itemListElement: listItems
+    }
+  };
+
+  if (metaDescription) payload.description = metaDescription;
+  if (latestDate) payload.dateModified = latestDate;
+  schemaScript.textContent = JSON.stringify(payload);
 }
 
 function formatHomeListTitle(post) {
@@ -1850,6 +2041,93 @@ function renderPostFacts(post) {
   if (lastDateEl) lastDateEl.textContent = findLastDate(post);
 }
 
+function getPostActionCopy(category) {
+  const key = String(category || "").trim();
+  const map = {
+    "Latest Results": {
+      hi: "रिजल्ट चेक करने",
+      hinglish: "result check karne"
+    },
+    "Latest Jobs": {
+      hi: "ऑनलाइन फॉर्म भरने",
+      hinglish: "online form apply karne"
+    },
+    "Admit Card": {
+      hi: "एडमिट कार्ड डाउनलोड करने",
+      hinglish: "admit card download karne"
+    },
+    Scholarship: {
+      hi: "स्कॉलरशिप आवेदन करने",
+      hinglish: "scholarship apply karne"
+    },
+    Admission: {
+      hi: "एडमिशन प्रक्रिया पूरी करने",
+      hinglish: "admission process complete karne"
+    },
+    "Sarkari Yojana": {
+      hi: "योजना जानकारी या आवेदन करने",
+      hinglish: "yojana details ya apply karne"
+    },
+    Verification: {
+      hi: "वेरिफिकेशन करने",
+      hinglish: "verification karne"
+    }
+  };
+
+  return map[key] || {
+    hi: "अगला स्टेप पूरा करने",
+    hinglish: "next step complete karne"
+  };
+}
+
+function buildLocalizedPostSummaries(post) {
+  const title = cleanSnippet(post?.title || "यह अपडेट");
+  const department = cleanSnippet(post?.department || "official department");
+  const category = cleanSnippet(post?.category || "Latest Update");
+  const lastDate = cleanSnippet(findLastDate(post));
+  const action = getPostActionCopy(category);
+
+  const hindi = `${title} ${department} द्वारा जारी ${category} अपडेट है। अंतिम तिथि: ${lastDate}। पात्रता, जरूरी तिथियां और महत्वपूर्ण लिंक नीचे दिए गए हैं। ${action.hi} के लिए नीचे दिया गया Official Link उपयोग करें।`;
+  const hinglish = `${title} ${department} ke taraf se ${category} ka latest update hai. Last Date: ${lastDate}. Eligibility, important dates aur zaruri links niche diye gaye hain. ${action.hinglish} ke liye niche diya gaya official link use karein.`;
+
+  return { hindi, hinglish };
+}
+
+function pickSummaryValue(post, keys) {
+  if (!post || !Array.isArray(keys)) return "";
+  for (const key of keys) {
+    const value = cleanSnippet(post[key]);
+    if (value) return value;
+  }
+  return "";
+}
+
+function renderLocalizedPostSummary(post) {
+  const section = document.getElementById("post-local-summary");
+  const hindiEl = document.getElementById("post-summary-hindi");
+  const hinglishEl = document.getElementById("post-summary-hinglish");
+  if (!section || !hindiEl || !hinglishEl) return;
+
+  const autoSummary = buildLocalizedPostSummaries(post);
+
+  const hindiManual = pickSummaryValue(post, [
+    "summaryHindi",
+    "hindiSummary",
+    "shortInfoHindi",
+    "shortInfoHi"
+  ]);
+  const hinglishManual = pickSummaryValue(post, [
+    "summaryHinglish",
+    "hinglishSummary",
+    "shortInfoHinglish",
+    "shortInfoHl"
+  ]);
+
+  hindiEl.textContent = hindiManual || autoSummary.hindi;
+  hinglishEl.textContent = hinglishManual || autoSummary.hinglish;
+  section.hidden = false;
+}
+
 function renderPostExplanation(post) {
   const el = document.getElementById("post-explanation");
   if (!el) return;
@@ -2045,6 +2323,7 @@ function renderPost(post) {
 
   titleEl.textContent = post.title;
   document.getElementById("post-summary").textContent = cleanSnippet(post.shortInfo) || "";
+  renderLocalizedPostSummary(post);
   document.title = `${post.title} | BiharResult.live`;
 
   const seoDescription = buildSeoDescription(post);
@@ -2139,6 +2418,7 @@ async function init() {
   setTodayDate();
   setupListViewMore();
   hardenExternalLinks(document);
+  initPrimaryNavigation();
 
   const isHome = document.getElementById("results-list") !== null;
   const isPost = document.getElementById("post-title") !== null;
@@ -2179,6 +2459,7 @@ async function init() {
       await runSafeHomeStep("home list render", () => renderHome(mergedPosts));
       await runSafeHomeStep("search filter setup", () => setupHomeSearchFilters());
       await runSafeHomeStep("search filter apply", () => applyHomeSearchFilter());
+      await runSafeHomeStep("home dynamic schema", () => setHomeDynamicSchema(mergedPosts));
       runWhenBrowserIdle(() => {
         runSafeHomeStep("home tools render", () => renderProFeatures(mergedPosts));
       });

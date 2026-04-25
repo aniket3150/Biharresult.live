@@ -28,7 +28,7 @@
   <meta property="article:published_time" id="article-published-time" content="" />
   <meta property="article:modified_time" id="article-modified-time" content="" />
   <meta property="article:section" id="article-section" content="Latest Update" />
-  <link rel="canonical" href="https://biharresult.live/post.html" />
+  <link rel="canonical" id="canonical-link" href="https://biharresult.live/post.html" />
   <link rel="stylesheet" href="/style.css?v=20260416" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
@@ -41,13 +41,15 @@
 </head>
 <body>
   <a class="br-skip-link" href="#post-root">Skip to main content</a>
-  <header class="post-topbar">
+  <header class="post-topbar" role="banner" aria-label="Post Header">
     <div class="br-wrap">
-      <a href="index.html" class="post-brand">BiharResult.live</a>
+      <nav aria-label="Post Navigation">
+        <a href="index.html" class="post-brand" aria-label="Go to BiharResult.live Home">BiharResult.live</a>
+      </nav>
     </div>
   </header>
 
-  <main class="br-wrap br-main-content" id="post-root" tabindex="-1">
+  <main class="br-wrap br-main-content" id="post-root" tabindex="-1" aria-label="Post Content">
     <section class="br-ad-section" aria-label="Top Advertisement">
       <div class="br-ad-head">Advertisement</div>
       <div class="br-ad-slot">
@@ -55,9 +57,24 @@
       </div>
     </section>
 
-    <article class="section-card">
+    <article class="section-card" aria-labelledby="post-title">
       <h1 id="post-title" class="text-2xl font-extrabold text-slate-900"></h1>
       <p id="post-summary" class="mt-2 text-slate-700"></p>
+
+      <section class="mt-6 br-local-summary" id="post-local-summary" aria-label="Hindi and Hinglish Quick Summary" hidden>
+        <h2 class="table-title">Hindi + Hinglish Quick Summary</h2>
+        <div class="br-local-summary-grid">
+          <div class="br-local-summary-card" lang="hi">
+            <div class="br-local-summary-label">Hindi Summary</div>
+            <p id="post-summary-hindi"></p>
+          </div>
+          <div class="br-local-summary-card">
+            <div class="br-local-summary-label">Hinglish Summary</div>
+            <p id="post-summary-hinglish"></p>
+          </div>
+        </div>
+      </section>
+
       <div class="post-highlight-grid mt-6">
         <div class="post-highlight-box">
           <strong>Post Name</strong>
@@ -158,7 +175,7 @@
         <div class="br-ad-slot-code" id="ad-post-bottom"></div>
       </div>
     </section>
-    <footer class="br-legal-links" aria-label="Legal Links">
+    <footer class="br-legal-links" aria-label="Legal Links" role="contentinfo">
       <a href="pages/legal/about.html">About Us</a>
       <a href="pages/legal/contact.html">Contact Us</a>
       <a href="pages/legal/privacy-policy.html">Privacy Policy</a>

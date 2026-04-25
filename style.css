@@ -37,6 +37,18 @@ body {
   top: 10px;
 }
 
+.br-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid #ff8c00;
@@ -145,6 +157,10 @@ button:focus-visible {
 }
 
 .br-nav-menu a:hover {
+  background: #0b0b9a;
+}
+
+.br-nav-menu a:focus-visible {
   background: #0b0b9a;
 }
 
@@ -2098,6 +2114,35 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   text-decoration: none;
 }
 
+.br-local-summary-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.br-local-summary-card {
+  background: #f8fbff;
+  border: 1px solid #d8e5f7;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.br-local-summary-label {
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+#post-summary-hindi,
+#post-summary-hinglish {
+  color: #1f2937;
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0;
+}
+
 .post-highlight-grid {
   display: grid;
   gap: 10px;
@@ -2176,6 +2221,11 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
     gap: 8px;
   }
 
+  .br-local-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
   .section-card {
     padding: 10px;
     border-radius: 10px;
@@ -2192,6 +2242,12 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
     font-size: 13px;
     line-height: 1.35;
     margin-top: 0;
+  }
+
+  #post-summary-hindi,
+  #post-summary-hinglish {
+    font-size: 13px;
+    line-height: 1.45;
   }
 
   .section-card .mt-6 {
