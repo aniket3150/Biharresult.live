@@ -1521,6 +1521,22 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   padding: 22px;
 }
 
+body.br-post-page {
+  background:
+    radial-gradient(900px 220px at 0% 0%, rgba(255, 143, 31, 0.14), transparent 52%),
+    linear-gradient(180deg, #eef5ff 0%, #f7f9fd 180px, #f5f7fb 100%);
+}
+
+.br-post-page .br-main-content {
+  padding-top: 12px;
+  padding-bottom: 26px;
+}
+
+.br-post-article {
+  box-shadow: 0 18px 38px rgba(11, 31, 67, 0.1);
+  overflow: hidden;
+}
+
 .section-card h1 {
   line-height: 1.25;
   margin: 0 0 10px;
@@ -1741,6 +1757,89 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   margin: 0 0 12px;
   padding-left: 10px;
   border-left: 4px solid var(--orange);
+}
+
+.table-title[class*="table-title--"] {
+  align-items: center;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-weight: 800;
+  gap: 10px;
+  justify-content: space-between;
+  letter-spacing: 0.1px;
+  margin-bottom: 12px;
+  min-height: 52px;
+  padding: 12px 16px;
+  position: relative;
+}
+
+.table-title[class*="table-title--"]::after {
+  content: "";
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  flex: 0 0 auto;
+}
+
+.table-title--summary {
+  background: linear-gradient(135deg, #0a3f96 0%, #1468d8 100%);
+}
+
+.table-title--local {
+  background: linear-gradient(135deg, #0b4b74 0%, #0f9eb3 100%);
+}
+
+.table-title--student {
+  background: linear-gradient(135deg, #ba2e12 0%, #ff8a24 100%);
+}
+
+.table-title--age {
+  background: linear-gradient(135deg, #7a2f00 0%, #c96a00 100%);
+}
+
+.table-title--dates {
+  background: linear-gradient(135deg, #d94a00 0%, #ff8f1f 100%);
+}
+
+.table-title--fee {
+  background: linear-gradient(135deg, #087443 0%, #18a96a 100%);
+}
+
+.table-title--eligibility {
+  background: linear-gradient(135deg, #004f86 0%, #17a0d8 100%);
+}
+
+.table-title--vacancy {
+  background: linear-gradient(135deg, #9a1d3f 0%, #e85d75 100%);
+}
+
+.table-title--links {
+  background: linear-gradient(135deg, #102c7a 0%, #315dce 100%);
+}
+
+.table-title--before {
+  background: linear-gradient(135deg, #8a4d00 0%, #d38a11 100%);
+}
+
+.table-title--process {
+  background: linear-gradient(135deg, #0f6e5f 0%, #0fa38d 100%);
+}
+
+.table-title--faq {
+  background: linear-gradient(135deg, #7c1939 0%, #c63b67 100%);
+}
+
+.table-title--source {
+  background: linear-gradient(135deg, #314155 0%, #5f7288 100%);
+}
+
+.table-title--related {
+  background: linear-gradient(135deg, #0a5f74 0%, #2563eb 100%);
 }
 
 .info-table {
@@ -2102,29 +2201,31 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 }
 
 .post-topbar {
-  background: var(--navy);
+  background: linear-gradient(90deg, #03114a 0%, #0a3ba5 100%);
   border-bottom: 3px solid var(--orange);
-  padding: 10px 0;
+  box-shadow: 0 8px 18px rgba(3, 17, 74, 0.18);
+  padding: 8px 0;
 }
 
 .post-brand {
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 800;
   text-decoration: none;
 }
 
 .br-local-summary-grid {
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  grid-template-columns: 1fr;
 }
 
 .br-local-summary-card {
-  background: #f8fbff;
+  background: linear-gradient(180deg, #f8fbff 0%, #f2f7ff 100%);
   border: 1px solid #d8e5f7;
-  border-radius: 8px;
-  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 18px rgba(13, 34, 71, 0.05);
+  padding: 11px 12px;
 }
 
 .br-local-summary-label {
@@ -2145,15 +2246,16 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 
 .post-highlight-grid {
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  grid-template-columns: 1fr;
 }
 
 .post-highlight-box {
   border: 1px solid #dbe3ef;
-  border-radius: 8px;
-  padding: 10px;
-  background: #f8fbff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+  padding: 11px 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
 }
 
 .post-highlight-box strong {
@@ -2170,24 +2272,27 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 }
 
 .post-detail-copy p {
-  line-height: 1.6;
+  color: #1e293b;
+  line-height: 1.72;
   margin: 0 0 14px;
 }
 
 .post-steps {
   margin: 0 0 16px;
-  padding-left: 24px;
+  padding-left: 20px;
 }
 
 .post-steps li {
-  line-height: 1.65;
+  color: #1e293b;
+  line-height: 1.7;
   margin-bottom: 10px;
 }
 
 .post-checklist {
-  background: #f8fbff;
+  background: linear-gradient(180deg, #f8fbff 0%, #f2f7ff 100%);
   border: 1px solid #d8e5f7;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 10px 18px rgba(13, 34, 71, 0.05);
   list-style: disc;
   margin: 0 0 14px;
   padding: 12px 16px 12px 30px;
@@ -2199,33 +2304,87 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
   margin-bottom: 8px;
 }
 
+.post-checklist--student {
+  background: linear-gradient(180deg, #fff9f3 0%, #fff2e2 100%);
+  border-color: #f8c78c;
+  box-shadow: 0 10px 20px rgba(186, 46, 18, 0.08);
+}
+
+.post-checklist--student li {
+  color: #7a2d00;
+  font-weight: 600;
+}
+
+.post-checklist--student li::marker {
+  color: #d94a00;
+}
+
 #important-links {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
   margin-top: 4px;
 }
 
 #important-links .link-btn {
-  margin-top: 2px;
+  margin-top: 0;
+}
+
+.br-post-page .info-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.br-post-page .info-table th {
+  background: #f7faff;
+}
+
+@media (max-width: 639px) {
+  .br-post-page .info-table,
+  .br-post-page .info-table tbody,
+  .br-post-page .info-table thead,
+  .br-post-page .info-table tr,
+  .br-post-page .info-table th,
+  .br-post-page .info-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .br-post-page .info-table thead {
+    display: none;
+  }
+
+  .br-post-page .info-table tr {
+    background: #fff;
+    border: 1px solid #dbe3ef;
+    border-radius: 12px;
+    box-shadow: 0 10px 18px rgba(15, 23, 42, 0.05);
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .br-post-page .info-table th,
+  .br-post-page .info-table td {
+    border: 0;
+    padding: 10px 12px;
+  }
+
+  .br-post-page .info-table th {
+    background: #f5f9ff;
+    border-bottom: 1px solid #dbe3ef;
+    color: #0f172a;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .br-post-page .info-table td {
+    color: #1e293b;
+    font-size: 13px;
+    line-height: 1.55;
+  }
 }
 
 @media (max-width: 640px) {
-  .post-topbar {
-    padding: 8px 0;
-  }
-
-  .post-brand {
-    font-size: 19px;
-  }
-
-  .post-highlight-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .br-local-summary-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
   .section-card {
     padding: 10px;
     border-radius: 10px;
@@ -2259,6 +2418,18 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
     margin-bottom: 8px;
     padding-left: 8px;
     border-left-width: 3px;
+  }
+
+  .table-title[class*="table-title--"] {
+    font-size: 16px;
+    min-height: 46px;
+    padding: 10px 12px;
+  }
+
+  .table-title[class*="table-title--"]::after {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
   }
 
   .post-highlight-box {
@@ -2326,6 +2497,48 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 
   .result-link-btn {
     width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .post-brand {
+    font-size: 21px;
+  }
+
+  .br-post-page .br-main-content {
+    padding-top: 14px;
+  }
+
+  .br-local-summary-grid,
+  .post-highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  #important-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .br-post-article {
+    border-radius: 16px;
+  }
+
+  .section-card {
+    padding: 18px;
+  }
+}
+
+@media (min-width: 960px) {
+  .br-post-page .br-main-content {
+    padding-top: 18px;
+  }
+
+  .post-highlight-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .section-card {
+    padding: 22px;
   }
 }
 

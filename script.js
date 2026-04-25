@@ -699,6 +699,34 @@ const HOME_MAP = {
 };
 const HOME_EXCLUDED_CATEGORIES = new Set(["Verification"]);
 let HOME_SECTIONS = [];
+const HOME_PRIORITY_SLUG_ORDER = [
+  "nta-cuet-pg-result-2026-declaration-update",
+  "nta-jee-main-paper-1-result-2026-session1-2-update",
+  "nta-nchm-jee-admit-card-2026-update",
+  "upsc-nda-na-2-2026-forthcoming-exam-update",
+  "ibps-po-mt-xvi-2026-27-exam-calendar",
+  "tnpsc-group-1-notification-date-2026-planner",
+  "jkpsc-lecturer-botany-provisional-selection-list-april-2026",
+  "nta-ntet-admit-card-2026-update",
+  "upsc-cbi-dsp-ldce-forthcoming-exam-2026",
+  "tnpsc-group-4-physical-certificate-verification-counselling-2026",
+  "sbi-lead-business-analyst-recruitment-2026",
+  "upsc-civil-services-prelims-2026-active-update",
+  "jee-main-session-2-admit-card-2026-april",
+  "jee-main-session-2-score-card-2026",
+  "karnataka-sslc-exam-1-result-2026",
+  "neet-ug-2026-application-correction-extension-update",
+  "ibps-crp-calendar-2026-27-update",
+  "cuet-ug-2026-registration-reopening-update",
+  "btsc-iti-instructor-recruitment-2026-advt-14-23",
+  "csbc-constable-operator-online-form-2026",
+  "csbc-driver-constable-pet-e-admit-card-2026",
+  "bceceb-junior-resident-revised-eligible-list-2026",
+  "bseb-intermediate-special-compartment-scrutiny-2026",
+  "bceceb-senior-resident-tutor-online-form-2026",
+  "csbc-special-branch-constable-online-form-2026",
+  "csbc-driver-constable-written-result-2025-26"
+];
 
 function setTodayDate() {
   const dateElement = document.getElementById("br-date");
@@ -751,6 +779,7 @@ function debounce(fn, wait = 100) {
 function buildSeoDescription(post) {
   const title = String(post.title || "Latest update").trim();
   const category = String(post.category || "Sarkari update").trim();
+  const department = cleanSnippet(post.department || "");
   const actionByCategory = {
     "Latest Results": "Check result status, cut off, official result links, and fast result updates",
     "Latest Jobs": "Check eligibility, vacancy, dates, and apply link",
@@ -761,14 +790,15 @@ function buildSeoDescription(post) {
     Verification: "Check document status, verification process, and official links"
   };
   const keywordTailByCategory = {
-    "Latest Results": "Useful for Sarkari Result Bihar, fast result, and official result-link searches.",
-    "Latest Jobs": "Useful for Bihar online form, vacancy, and Sarkari job searches.",
-    "Admit Card": "Useful for admit card, exam date, and hall ticket searches."
+    "Latest Results": "Useful for Sarkari Result India, board and exam score updates, and official result-link searches.",
+    "Latest Jobs": "Useful for all India online form, vacancy, and Sarkari Naukri job searches.",
+    "Admit Card": "Useful for admit card download, exam city updates, and hall ticket searches across India."
   };
 
   const actionText = actionByCategory[category] || "Check important dates, eligibility, and official links";
-  const keywordTail = keywordTailByCategory[category] || "Fast and reliable student update on BiharResult.live.";
-  const template = `${title}: ${actionText}. ${keywordTail}`;
+  const keywordTail = keywordTailByCategory[category] || "Fast and reliable all India student update on BiharResult.live.";
+  const keyLine = cleanSnippet(findLastDate(post));
+  const template = `${title}: ${actionText}. ${department ? `${department} official update. ` : ""}${keyLine ? `Key detail: ${keyLine}. ` : ""}${keywordTail}`;
   return trimForMeta(template, 158);
 }
 
@@ -812,6 +842,15 @@ function byFeaturedThenDate(a, b) {
   const featuredDiff = Number(Boolean(b.isFeatured)) - Number(Boolean(a.isFeatured));
   if (featuredDiff !== 0) return featuredDiff;
   return byDate(a, b);
+}
+
+function byHomePriorityThenDate(a, b, category = "") {
+  const rankA = HOME_PRIORITY_SLUG_ORDER.indexOf(String(a?.slug || ""));
+  const rankB = HOME_PRIORITY_SLUG_ORDER.indexOf(String(b?.slug || ""));
+  const safeRankA = rankA === -1 ? Number.MAX_SAFE_INTEGER : rankA;
+  const safeRankB = rankB === -1 ? Number.MAX_SAFE_INTEGER : rankB;
+  if (safeRankA !== safeRankB) return safeRankA - safeRankB;
+  return category === "Latest Results" ? byFeaturedThenDate(a, b) : byDate(a, b);
 }
 
 function sanitizeUrl(url) {
@@ -1314,9 +1353,9 @@ async function renderTicker(posts) {
     .slice(0, 3)
     .map((item) => ({ href: item.href, text: formatUrgentTickerText(item.text) }))
     .filter((item) => item.text);
-  const baseItems = importantItems.length > 0
-    ? importantItems
-    : (manualUrgentItems.length > 0 ? manualUrgentItems : fallbackUrgentItems);
+  const baseItems = manualUrgentItems.length > 0
+    ? manualUrgentItems
+    : (importantItems.length > 0 ? importantItems : fallbackUrgentItems);
   if (!baseItems.length) {
     track.innerHTML = "";
     return;
@@ -1483,7 +1522,7 @@ function renderHome(posts) {
 
     const items = posts
       .filter((post) => post.category === category)
-      .sort(category === "Latest Results" ? byFeaturedThenDate : byDate);
+      .sort((a, b) => byHomePriorityThenDate(a, b, category));
     const fragment = document.createDocumentFragment();
     
     // Capping DOM creation prevents main thread blocking & improves INP
@@ -1991,25 +2030,33 @@ function buildVacancyRows(tableEl, rows) {
     return;
   }
   tableEl.textContent = "";
+  const normalizedRows = rows.map((row) => ({
+    post: row.post || row.label || "-",
+    total: row.total || row.value || "-",
+    criteria: row.criteria || ""
+  }));
+  const hasCriteria = normalizedRows.some((row) => String(row.criteria || "").trim());
   const headerRow = document.createElement("tr");
-  ["Post Name", "Total Post", "Eligibility"].forEach((name) => {
+  (hasCriteria ? ["Post Name", "Total Post", "Eligibility"] : ["Post Name", "Total Post / Seats"]).forEach((name) => {
     const th = document.createElement("th");
     th.textContent = name;
     headerRow.appendChild(th);
   });
   tableEl.appendChild(headerRow);
 
-  rows.forEach((row) => {
+  normalizedRows.forEach((row) => {
     const tr = document.createElement("tr");
     const tdPost = document.createElement("td");
     const tdTotal = document.createElement("td");
-    const tdCriteria = document.createElement("td");
     tdPost.textContent = row.post || "-";
     tdTotal.textContent = row.total || "-";
-    tdCriteria.textContent = row.criteria || "-";
     tr.appendChild(tdPost);
     tr.appendChild(tdTotal);
-    tr.appendChild(tdCriteria);
+    if (hasCriteria) {
+      const tdCriteria = document.createElement("td");
+      tdCriteria.textContent = row.criteria || "-";
+      tr.appendChild(tdCriteria);
+    }
     tableEl.appendChild(tr);
   });
 }
@@ -2019,6 +2066,266 @@ function findLastDate(post) {
   const found = dates.find((d) => /last date|last|closing|close/i.test(d.label || ""));
   if (found && found.value) return found.value;
   return "As per official notification";
+}
+
+function findRowValue(rows, pattern) {
+  const found = (rows || []).find((row) => pattern.test(String(row?.label || "").trim()));
+  return found?.value || "";
+}
+
+function mergeRows(baseRows, extraRows, limit = 10) {
+  const merged = [];
+  const seen = new Set();
+
+  [...(baseRows || []), ...(extraRows || [])].forEach((row) => {
+    const label = cleanSnippet(row?.label || "");
+    const value = cleanSnippet(row?.value || "");
+    if (!label || !value) return;
+    const key = label.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    merged.push({ label, value });
+  });
+
+  return merged.slice(0, limit);
+}
+
+function buildAgeSummaryText(post) {
+  const ageRows = Array.isArray(post.ageLimit) ? post.ageLimit : [];
+  if (ageRows.length) {
+    return ageRows
+      .map((row) => `${cleanSnippet(row.label || "Age")}: ${cleanSnippet(row.value || "As per rules")}`)
+      .filter(Boolean)
+      .join(" | ");
+  }
+
+  return cleanSnippet(findRowValue(post.eligibility, /age/i) || "Check official age rules and relaxation details.");
+}
+
+function buildDetailedDateRows(post) {
+  const baseRows = (post.importantDates || []).filter((item) => {
+    const label = String(item?.label || "").trim();
+    return !/^(updated(?:\s+date)?|arrival(?:\s+date)?)$/i.test(label);
+  });
+  const primary = getPrimaryAction(post);
+  const primaryLabel = cleanSnippet(primary?.label || "Official Link");
+  const extras = [];
+
+  switch (post.category) {
+    case "Latest Jobs":
+      extras.push(
+        { label: "Application Start", value: findRowValue(post.importantDates, /apply start|online apply start|start date/i) || "Check official notification" },
+        { label: "Last Date", value: findLastDate(post) || "Check official notification" },
+        { label: "Fee Payment Last Date", value: findRowValue(post.importantDates, /fee payment|payment last date/i) || "Same as last date / official notice" },
+        { label: "Exam / Merit / Interview", value: findRowValue(post.importantDates, /exam|interview|merit|result/i) || "Will be notified later" }
+      );
+      break;
+    case "Latest Results":
+      extras.push(
+        { label: "Result Status", value: findRowValue(post.importantDates, /result declared|result date|result/i) || `${primaryLabel} section is available below` },
+        { label: "Exam / Session", value: findRowValue(post.importantDates, /exam date|session|paper/i) || "Check official exam schedule" },
+        { label: "Score Card / Marksheet", value: "Download after checking the result if provided on the official portal." }
+      );
+      break;
+    case "Admit Card":
+      extras.push(
+        { label: "Admit Card Status", value: findRowValue(post.importantDates, /admit card|call letter|hall ticket/i) || "Check official portal" },
+        { label: "Exam / DV Date", value: findRowValue(post.importantDates, /exam|dv|verification|interview/i) || "See official schedule" },
+        { label: "Reporting Advice", value: "Reach the center or venue as per the timing mentioned on admit card or notice." }
+      );
+      break;
+    case "Admission":
+      extras.push(
+        { label: "Application Start", value: findRowValue(post.importantDates, /apply start|start date|registration start/i) || "Check official notice" },
+        { label: "Last Date", value: findLastDate(post) || "Check official notice" },
+        { label: "Merit / Counselling", value: findRowValue(post.importantDates, /merit|counselling|seat allotment/i) || "Will be updated by the institution" }
+      );
+      break;
+    case "Scholarship":
+      extras.push(
+        { label: "Application Window", value: findRowValue(post.importantDates, /apply|start|last date/i) || "Check scholarship portal notice" },
+        { label: "Verification / Approval", value: findRowValue(post.importantDates, /verification|approval/i) || "As per official portal process" },
+        { label: "Payment / Benefit Status", value: findRowValue(post.importantDates, /payment|benefit/i) || "Track from official portal if available" }
+      );
+      break;
+    case "Sarkari Yojana":
+      extras.push(
+        { label: "Scheme Status", value: findRowValue(post.importantDates, /status|start|last date/i) || "Refer official scheme notice" },
+        { label: "Benefit Processing", value: "Benefit release timeline is subject to official departmental approval." },
+        { label: "Important Note", value: "Check district and category-specific rules before applying or verifying status." }
+      );
+      break;
+    case "Verification":
+      extras.push(
+        { label: "Service Status", value: "Online verification or check link is available in the Important Links section." },
+        { label: "Processing Time", value: "Response time depends on the official portal or department service flow." },
+        { label: "Best Time To Check", value: "Keep reference details ready and use the official portal during normal working hours if the service is busy." }
+      );
+      break;
+    default:
+      extras.push({ label: "Latest Status", value: "Check the official notice and important links below." });
+      break;
+  }
+
+  return mergeRows(baseRows, extras, 10);
+}
+
+function buildDetailedFeeRows(post) {
+  const baseRows = post.applicationFee || [];
+  const extras = [];
+
+  switch (post.category) {
+    case "Latest Jobs":
+    case "Admission":
+      extras.push(
+        { label: "Service Note", value: "Fill payment details only on the official portal and keep the payment receipt safe." },
+        { label: "Refund / Correction", value: "Fee refund or correction facility is available only if mentioned in the official notice." }
+      );
+      break;
+    case "Latest Results":
+      extras.push(
+        { label: "Service Fee", value: "Usually no fee is required to check the result online unless the official portal mentions a paid copy or service." },
+        { label: "Marksheet Note", value: "Original marksheet or certificate collection rules will follow board or university instructions." }
+      );
+      break;
+    case "Admit Card":
+      extras.push(
+        { label: "Download Fee", value: "Admit card download is normally free unless the department mentions a separate service charge." },
+        { label: "Print Advice", value: "Candidates should keep a clear printed copy for exam or document verification." }
+      );
+      break;
+    case "Scholarship":
+      extras.push(
+        { label: "Application Fee", value: "Most scholarship portals do not charge a form fee unless specifically mentioned in the notice." },
+        { label: "Banking Note", value: "Keep bank account and Aadhaar-linked details ready for scholarship payment processing." }
+      );
+      break;
+    case "Sarkari Yojana":
+    case "Verification":
+      extras.push(
+        { label: "Service Fee", value: "Service fee, if any, depends on the official portal or CSC/service-center rules." },
+        { label: "Official Advice", value: "Do not pay unofficial charges beyond the amount shown on the government portal." }
+      );
+      break;
+    default:
+      extras.push({ label: "Fee Note", value: "Check the official notification for exact fee or service-charge details." });
+      break;
+  }
+
+  return mergeRows(baseRows, extras, 10);
+}
+
+function buildDetailedEligibilityRows(post) {
+  const baseRows = post.eligibility || [];
+  const loginDetails = cleanSnippet(
+    findRowValue(post.eligibility, /required details|login|roll number|registration|captcha|document/i) ||
+    findRowValue(post.importantDates, /login/i)
+  );
+  const ageSummary = buildAgeSummaryText(post);
+  const extras = [];
+
+  switch (post.category) {
+    case "Latest Jobs":
+      extras.push(
+        { label: "Who Can Apply", value: findRowValue(post.eligibility, /eligibility|who can apply|who should check/i) || "Candidates meeting the post-wise qualification and age rules can apply." },
+        { label: "Qualification", value: findRowValue(post.eligibility, /qualification|education|eligibility/i) || "Refer official post-wise educational qualification in the notification." },
+        { label: "Age Rule", value: ageSummary },
+        { label: "Documents Needed", value: "Keep photo, signature, ID proof, qualification certificates, category certificate, and mobile/email details ready." }
+      );
+      break;
+    case "Latest Results":
+      extras.push(
+        { label: "Who Can Check", value: findRowValue(post.eligibility, /who can check|candidate|student/i) || "Students or candidates who appeared in the examination can check the result." },
+        { label: "Login Details", value: loginDetails || "Keep roll number, registration details, and captcha or login information ready." },
+        { label: "Student Advice", value: "Verify name, subject-wise marks, division, and category details after result download." }
+      );
+      break;
+    case "Admit Card":
+      extras.push(
+        { label: "Who Can Download", value: findRowValue(post.eligibility, /who can download|who should check|candidate/i) || "Registered candidates can download the admit card or call letter." },
+        { label: "Login Details", value: loginDetails || "Keep registration number, date of birth, password, or roll number ready." },
+        { label: "What To Verify", value: "Check exam center, exam date, shift timing, photo, signature, and reporting instructions." }
+      );
+      break;
+    case "Admission":
+      extras.push(
+        { label: "Who Can Apply", value: findRowValue(post.eligibility, /eligibility|who can apply/i) || "Students who meet the course-wise admission criteria can apply." },
+        { label: "Academic Requirement", value: findRowValue(post.eligibility, /qualification|required details|course/i) || "Check course-wise qualification and subject requirement in the official notice." },
+        { label: "Documents Needed", value: "Keep marksheet, transfer certificate, category certificate, ID proof, photo, and valid contact details ready." }
+      );
+      break;
+    case "Scholarship":
+      extras.push(
+        { label: "Eligible Students", value: findRowValue(post.eligibility, /eligibility|beneficiary|student/i) || "Eligible students as per class, category, income, and domicile rules can apply." },
+        { label: "Required Documents", value: "Prepare income certificate, caste certificate, Aadhaar, bank passbook, marksheet, and institution details." },
+        { label: "Bank / Aadhaar Note", value: "Student bank details should match the information submitted on the official portal." }
+      );
+      break;
+    case "Sarkari Yojana":
+      extras.push(
+        { label: "Eligible Beneficiary", value: findRowValue(post.eligibility, /eligibility|beneficiary/i) || "Only eligible beneficiaries under the official scheme rules should apply or check status." },
+        { label: "Document Requirement", value: "Keep Aadhaar, address proof, income/category documents, and scheme-specific supporting papers ready." },
+        { label: "Local Rule", value: "District, category, or income conditions may apply as per the official guidelines." }
+      );
+      break;
+    case "Verification":
+      extras.push(
+        { label: "Who Can Use Service", value: findRowValue(post.eligibility, /eligibility|who can/i) || "Citizens or candidates with valid reference details can use this verification service." },
+        { label: "Required Details", value: loginDetails || "Keep application number, certificate number, mobile number, or service reference ID ready." },
+        { label: "Matching Data", value: "Submitted details should exactly match the official document or application record." }
+      );
+      break;
+    default:
+      extras.push({ label: "Eligibility Note", value: "Refer official instructions for exact eligibility and document requirements." });
+      break;
+  }
+
+  return mergeRows(baseRows, extras, 10);
+}
+
+function buildStudentGuideItems(post, summaryRows, feeRows, eligibilityRows) {
+  const primary = getPrimaryAction(post);
+  const primaryLabel = cleanSnippet(primary?.label || "Official Link");
+  const keyDate = summaryRows[0]
+    ? `${cleanSnippet(summaryRows[0].label)}: ${cleanSnippet(summaryRows[0].value)}`
+    : `Last Date / Status: ${cleanSnippet(findLastDate(post)) || "Check official update"}`;
+  const eligibilityNote = eligibilityRows[0]
+    ? `${cleanSnippet(eligibilityRows[0].label)}: ${cleanSnippet(eligibilityRows[0].value)}`
+    : "Eligibility: Check official notification for exact rules.";
+  const feeNote = feeRows[0]
+    ? `${cleanSnippet(feeRows[0].label)}: ${cleanSnippet(feeRows[0].value)}`
+    : "Fee / Service Note: Check official portal before making any payment.";
+
+  return [
+    `Students should first note this key update: ${keyDate}.`,
+    `Eligibility focus: ${eligibilityNote}`,
+    `Fee and service reminder: ${feeNote}`,
+    `Next official step: use ${primaryLabel} from the Important Links section and cross-check every detail before applying, downloading, or checking status.`
+  ];
+}
+
+function buildDetailedExplanationParagraphs(post, summaryRows, feeRows, eligibilityRows) {
+  const deptText = cleanSnippet(post.department || "official department");
+  const categoryText = cleanSnippet(post.category || "Latest Update");
+  const primary = getPrimaryAction(post);
+  const primaryLabel = cleanSnippet(primary?.label || "Official Link");
+  const keyDate = summaryRows[0]
+    ? `${cleanSnippet(summaryRows[0].label)}: ${cleanSnippet(summaryRows[0].value)}`
+    : `Last Date / Status: ${cleanSnippet(findLastDate(post)) || "Check official update"}`;
+  const feeLine = feeRows[0]
+    ? `${cleanSnippet(feeRows[0].label)}: ${cleanSnippet(feeRows[0].value)}`
+    : "Fee details should be verified from the official notice.";
+  const eligibilityLine = eligibilityRows[0]
+    ? `${cleanSnippet(eligibilityRows[0].label)}: ${cleanSnippet(eligibilityRows[0].value)}`
+    : "Check the official notification for exact eligibility rules.";
+
+  return [
+    `${cleanSnippet(post.title)} is listed under ${categoryText} as a student-friendly update page.`,
+    `This post gathers the main schedule, eligibility points, fee or service note, and official action link shared by ${deptText} so candidates can review the process quickly in one place.`,
+    cleanSnippet(post.longDescription || post.shortInfo || ""),
+    `Key details right now: ${keyDate} ${feeLine} ${eligibilityLine}`,
+    `Use ${primaryLabel} from the Important Links section for the next official step, and always verify final rules from the original department notice before taking action.`
+  ].filter(Boolean);
 }
 
 function getPrimaryAction(post) {
@@ -2132,15 +2439,13 @@ function renderPostExplanation(post) {
   const el = document.getElementById("post-explanation");
   if (!el) return;
 
-  const lastDate = findLastDate(post);
-  const categoryText = post.category || "Latest Update";
-  const deptText = post.department || "official department";
-  const p1 = `${post.title} is listed under ${categoryText}. This page provides a structured summary for candidates to quickly understand the main process and timeline.`;
-  const p2 = `As per the latest update from ${deptText}, applicants should verify eligibility, age rules, document requirements, and deadline before proceeding. Last date reference: ${lastDate}.`;
-  const p3 = "Use the verified links section below for application, admit card, result, or official notice access. Always cross-check final details from the official source.";
+  const dateRows = buildDetailedDateRows(post);
+  const feeRows = buildDetailedFeeRows(post);
+  const eligibilityRows = buildDetailedEligibilityRows(post);
+  const paragraphs = buildDetailedExplanationParagraphs(post, dateRows, feeRows, eligibilityRows);
 
   el.textContent = "";
-  [p1, p2, p3].forEach((text) => {
+  paragraphs.forEach((text) => {
     const p = document.createElement("p");
     p.textContent = text;
     el.appendChild(p);
@@ -2217,7 +2522,22 @@ function renderAgeLimit(post) {
   }
 
   section.hidden = false;
-  fillSimpleList(list, limits);
+  fillSimpleList(list, limits.map((item) => `${cleanSnippet(item.label || "Age")}: ${cleanSnippet(item.value || "As per rules")}`));
+}
+
+function renderStudentGuide(post, summaryRows, feeRows, eligibilityRows) {
+  const section = document.getElementById("student-guide-section");
+  const list = document.getElementById("student-guide-list");
+  if (!section || !list) return;
+
+  const points = buildStudentGuideItems(post, summaryRows, feeRows, eligibilityRows);
+  if (!points.length) {
+    section.hidden = true;
+    return;
+  }
+
+  section.hidden = false;
+  fillSimpleList(list, points);
 }
 
 function renderBeforeStart(post) {
@@ -2247,30 +2567,64 @@ function renderBeforeStart(post) {
 
 function setPostSchema(post, canonicalUrl) {
   const isJob = post.category === "Latest Jobs";
+  const description = buildSeoDescription(post);
+  const organization = {
+    "@type": "Organization",
+    name: "BiharResult.live",
+    url: "https://biharresult.live/",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://biharresult.live/favicon.png"
+    }
+  };
+  const webPageSchema = {
+    "@type": "WebPage",
+    name: post.title,
+    url: canonicalUrl,
+    description,
+    inLanguage: "en-IN",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "BiharResult.live",
+      url: "https://biharresult.live/"
+    },
+    about: [post.category, post.department, post.location].filter(Boolean)
+  };
   const primarySchema = isJob
     ? {
-        "@context": "https://schema.org",
         "@type": "JobPosting",
         title: post.title,
-        description: post.shortInfo,
+        description,
         datePosted: post.publishedAt,
-        validThrough: post.updatedAt,
+        validThrough: post.updatedAt || post.publishedAt,
         hiringOrganization: { "@type": "Organization", name: post.department },
         jobLocation: {
           "@type": "Place",
           address: { "@type": "PostalAddress", addressRegion: post.location, addressCountry: "IN" }
         },
+        applicantLocationRequirements: {
+          "@type": "Country",
+          name: "India"
+        },
+        inLanguage: "en-IN",
+        isAccessibleForFree: true,
         url: canonicalUrl
       }
     : {
-        "@context": "https://schema.org",
         "@type": "NewsArticle",
         headline: post.title,
         datePublished: post.publishedAt,
-        dateModified: post.updatedAt,
-        description: post.shortInfo,
-        publisher: { "@type": "Organization", name: "BiharResult.live" },
-        mainEntityOfPage: canonicalUrl,
+        dateModified: post.updatedAt || post.publishedAt,
+        description,
+        publisher: organization,
+        author: { "@type": "Organization", name: "BiharResult.live" },
+        inLanguage: "en-IN",
+        isAccessibleForFree: true,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        },
+        about: [post.category, post.department, post.location].filter(Boolean),
         url: canonicalUrl
       };
   const breadcrumbItems = [
@@ -2292,17 +2646,36 @@ function setPostSchema(post, canonicalUrl) {
     item: canonicalUrl
   });
   const schema = [
+    webPageSchema,
     primarySchema,
     {
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: breadcrumbItems
     }
   ];
 
+  const howToApply = Array.isArray(post.howToApply) ? post.howToApply.filter(Boolean) : [];
+  if (howToApply.length) {
+    schema.push({
+      "@type": "HowTo",
+      name: `${post.title} - How to Proceed`,
+      description: `Step-by-step guidance for ${post.title} on BiharResult.live.`,
+      inLanguage: "en-IN",
+      step: howToApply.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        name: `Step ${index + 1}`,
+        text: cleanSnippet(step)
+      }))
+    });
+  }
+
   const script = document.createElement("script");
   script.type = "application/ld+json";
-  script.textContent = JSON.stringify(schema);
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": schema
+  });
   document.head.appendChild(script);
 }
 
@@ -2333,15 +2706,21 @@ function renderPost(post) {
   const canonical = document.getElementById("canonical-link");
   const canonicalUrl = toAbsoluteSiteUrl(postHref(post));
   if (canonical) canonical.setAttribute("href", canonicalUrl);
+  const alternateEn = document.getElementById("alternate-en-in");
+  if (alternateEn) alternateEn.setAttribute("href", canonicalUrl);
+  const alternateDefault = document.getElementById("alternate-x-default");
+  if (alternateDefault) alternateDefault.setAttribute("href", canonicalUrl);
 
   const ogImage = sanitizeUrl(post.image) !== "#" ? sanitizeUrl(post.image) : "https://biharresult.live/wp-content/uploads/2026/02/cropped_circle_image.png";
   setMetaContent("og-title", post.title);
   setMetaContent("og-description", seoDescription);
   setMetaContent("og-url", canonicalUrl);
   setMetaContent("og-image", ogImage);
+  setMetaContent("og-image-alt", `${post.title} on BiharResult.live`);
   setMetaContent("twitter-title", post.title);
   setMetaContent("twitter-description", seoDescription);
   setMetaContent("twitter-image", ogImage);
+  setMetaContent("twitter-image-alt", `${post.title} on BiharResult.live`);
   setMetaContent("article-published-time", post.publishedAt || "");
   setMetaContent("article-modified-time", post.updatedAt || post.publishedAt || "");
   setMetaContent("article-section", post.category || "Latest Update");
@@ -2351,27 +2730,19 @@ function renderPost(post) {
   renderPostExplanation(post);
   renderAgeLimit(post);
   renderBeforeStart(post);
-  const filteredImportantDates = (post.importantDates || []).filter((item) => {
-    const label = String(item?.label || "").trim();
-    return !/^(updated(?:\s+date)?|arrival(?:\s+date)?)$/i.test(label);
-  });
+  const detailedDates = buildDetailedDateRows(post);
+  const detailedFee = buildDetailedFeeRows(post);
+  const detailedEligibility = buildDetailedEligibilityRows(post);
 
-  const fallbackDates = filteredImportantDates.length
-    ? filteredImportantDates
-    : [
-        { label: "Last Date", value: findLastDate(post) }
-      ];
-  const fallbackFee = post.applicationFee?.length
-    ? post.applicationFee
-    : [{ label: "Fee", value: "Refer official notification" }];
-  const fallbackEligibility = post.eligibility?.length
-    ? post.eligibility
-    : [{ label: "Eligibility", value: "Refer official notification" }];
-
-  buildSimpleRows(document.getElementById("dates-table"), fallbackDates);
-  buildSimpleRows(document.getElementById("fee-table"), fallbackFee);
-  buildSimpleRows(document.getElementById("eligibility-table"), fallbackEligibility);
+  buildSimpleRows(document.getElementById("dates-table"), detailedDates);
+  buildSimpleRows(document.getElementById("fee-table"), detailedFee);
+  buildSimpleRows(document.getElementById("eligibility-table"), detailedEligibility);
+  renderStudentGuide(post, detailedDates, detailedFee, detailedEligibility);
   buildVacancyRows(document.getElementById("vacancy-table"), post.vacancyDetails);
+  const vacancySection = document.getElementById("vacancy-section");
+  if (vacancySection) {
+    vacancySection.hidden = !Array.isArray(post.vacancyDetails) || post.vacancyDetails.length === 0;
+  }
 
   const linksEl = document.getElementById("important-links");
   if (linksEl) {

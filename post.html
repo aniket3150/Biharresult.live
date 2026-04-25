@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b3ab2" />
   
   
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -17,18 +18,23 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="BiharResult.live" />
+  <meta property="og:locale" content="en_IN" />
   <meta property="og:title" id="og-title" content="Post | BiharResult.live" />
   <meta property="og:description" id="og-description" content="Check important dates, eligibility, fee details, and official links. Fast, reliable student updates on BiharResult.live." />
   <meta property="og:url" id="og-url" content="https://biharresult.live/post.html" />
   <meta property="og:image" id="og-image" content="https://biharresult.live/wp-content/uploads/2026/02/cropped_circle_image.png" />
+  <meta property="og:image:alt" id="og-image-alt" content="BiharResult.live post image" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" id="twitter-title" content="Post | BiharResult.live" />
   <meta name="twitter:description" id="twitter-description" content="Check important dates, eligibility, fee details, and official links. Fast, reliable student updates on BiharResult.live." />
   <meta name="twitter:image" id="twitter-image" content="https://biharresult.live/wp-content/uploads/2026/02/cropped_circle_image.png" />
+  <meta name="twitter:image:alt" id="twitter-image-alt" content="BiharResult.live post image" />
   <meta property="article:published_time" id="article-published-time" content="" />
   <meta property="article:modified_time" id="article-modified-time" content="" />
   <meta property="article:section" id="article-section" content="Latest Update" />
   <link rel="canonical" id="canonical-link" href="https://biharresult.live/post.html" />
+  <link rel="alternate" hreflang="en-IN" id="alternate-en-in" href="https://biharresult.live/post.html" />
+  <link rel="alternate" hreflang="x-default" id="alternate-x-default" href="https://biharresult.live/post.html" />
   <link rel="stylesheet" href="/style.css?v=20260416" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
@@ -39,7 +45,7 @@
     gtag("config", "G-YVN84V93Z6");
   </script>
 </head>
-<body>
+<body class="br-post-page">
   <a class="br-skip-link" href="#post-root">Skip to main content</a>
   <header class="post-topbar" role="banner" aria-label="Post Header">
     <div class="br-wrap">
@@ -57,12 +63,12 @@
       </div>
     </section>
 
-    <article class="section-card" aria-labelledby="post-title">
+    <article class="section-card br-post-article" aria-labelledby="post-title">
       <h1 id="post-title" class="text-2xl font-extrabold text-slate-900"></h1>
       <p id="post-summary" class="mt-2 text-slate-700"></p>
 
       <section class="mt-6 br-local-summary" id="post-local-summary" aria-label="Hindi and Hinglish Quick Summary" hidden>
-        <h2 class="table-title">Hindi + Hinglish Quick Summary</h2>
+        <h2 class="table-title table-title--local">Hindi + Hinglish Quick Summary</h2>
         <div class="br-local-summary-grid">
           <div class="br-local-summary-card" lang="hi">
             <div class="br-local-summary-label">Hindi Summary</div>
@@ -95,50 +101,55 @@
       </div>
 
       <section class="mt-6">
-        <h2 class="table-title">Post Details</h2>
+        <h2 class="table-title table-title--summary">Post Details</h2>
         <div class="post-detail-copy" id="post-explanation"></div>
       </section>
 
+      <section class="mt-6" id="student-guide-section" hidden>
+        <h2 class="table-title table-title--student">Student Quick Guide</h2>
+        <ul class="post-checklist post-checklist--student" id="student-guide-list"></ul>
+      </section>
+
       <section class="mt-6" id="age-limit-section" hidden>
-        <h2 class="table-title">Age Limit</h2>
+        <h2 class="table-title table-title--age">Age Limit</h2>
         <ul class="post-steps" id="age-limit-list"></ul>
       </section>
 
       <section class="mt-6">
-        <h2 class="table-title">Important Dates</h2>
+        <h2 class="table-title table-title--dates">Important Dates and Key Details</h2>
         <div class="overflow-x-auto" data-auto-expand data-expand-height="220">
           <table class="info-table" id="dates-table"></table>
         </div>
       </section>
 
       <section class="mt-6">
-        <h2 class="table-title">Application Fee</h2>
+        <h2 class="table-title table-title--fee">Application Fee / Service Fee</h2>
         <div class="overflow-x-auto" data-auto-expand data-expand-height="220">
           <table class="info-table" id="fee-table"></table>
         </div>
       </section>
 
       <section class="mt-6">
-        <h2 class="table-title">Eligibility Details</h2>
+        <h2 class="table-title table-title--eligibility">Eligibility Details</h2>
         <div class="overflow-x-auto" data-auto-expand data-expand-height="220">
           <table class="info-table" id="eligibility-table"></table>
         </div>
       </section>
 
-      <section class="mt-6">
-        <h2 class="table-title">Vacancy Details</h2>
+      <section class="mt-6" id="vacancy-section" hidden>
+        <h2 class="table-title table-title--vacancy">Vacancy / Seat / Category Details</h2>
         <div class="overflow-x-auto" data-auto-expand data-expand-height="230">
           <table class="info-table" id="vacancy-table"></table>
         </div>
       </section>
 
       <section class="mt-6">
-        <h2 class="table-title">Important Links</h2>
+        <h2 class="table-title table-title--links">Important Links</h2>
         <div id="important-links" class="grid gap-3 sm:grid-cols-2" data-auto-expand data-expand-height="190"></div>
       </section>
 
       <section class="mt-6" aria-label="Search Hubs">
-        <h2 class="table-title">Search Hubs</h2>
+        <h2 class="table-title table-title--related">Search Hubs</h2>
         <div class="result-link-actions">
           <a class="link-btn secondary" href="pages/guides/sarkari-result-bihar.html">Sarkari Result Bihar Hub</a>
           <a class="link-btn secondary" href="pages/guides/fast-result-bihar.html">Fast Result Hub</a>
@@ -153,16 +164,16 @@
       </section>
 
       <section class="mt-6" id="before-start-section" hidden>
-        <h2 class="table-title">Before You Start</h2>
+        <h2 class="table-title table-title--before">Before You Start</h2>
         <ul class="post-checklist" id="before-start-list"></ul>
       </section>
 
       <section class="mt-6">
-        <h2 class="table-title">How To Fill Form / Check Update</h2>
+        <h2 class="table-title table-title--process">How To Fill Form / Check Update</h2>
         <ol class="post-steps" id="how-to-apply"></ol>
       </section>
       <section class="mt-6" id="direct-fill-section" hidden>
-        <h2 class="table-title">Direct Fill Form</h2>
+        <h2 class="table-title table-title--links">Direct Fill Form</h2>
         <a id="direct-fill-btn" class="link-btn" href="#" target="_blank" rel="noopener noreferrer">Fill Form Now</a>
       </section>
 

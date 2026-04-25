@@ -281,25 +281,34 @@ function buildSeoTitle(post) {
 
 function buildSeoDescription(post) {
   const title = cleanText(post.title || "Latest update");
+  const department = cleanText(post.department || "");
   const action = detectCategoryMeta(post.category).action;
   const intro = cleanText(post.shortInfo || post.longDescription || "");
   const cleanedIntro = intro.toLowerCase().startsWith(title.toLowerCase()) ? intro.slice(title.length).replace(/^[:\-\s]+/, "") : intro;
+  const summaryRows = buildDetailedDateRows(post);
+  const keyLine = summaryRows[0]
+    ? `${cleanText(summaryRows[0].label)}: ${cleanText(summaryRows[0].value)}`
+    : "";
   const keywordTail = post.category === "Latest Results"
-    ? "Useful for Sarkari Result Bihar, fast result, and official result-link searches."
-    : "Fast student update with official links on BiharResult.live.";
-  return trimForMeta(`${title}: ${action}. ${cleanedIntro || keywordTail} ${keywordTail}`);
+    ? "Useful for Sarkari Result India, fast result checks, and official result-link searches."
+    : "Fast all India student update with official links on BiharResult.live.";
+  const departmentLine = department ? `${department} official update.` : "";
+  const body = cleanedIntro || keywordTail;
+  return trimForMeta(`${title}: ${action}. ${departmentLine} ${keyLine ? `${keyLine}. ` : ""}${body} ${keywordTail}`);
 }
 
 function buildKeywords(post) {
   const title = cleanText(post.title || "");
   const parts = [
     title,
-    `${post.category || "Bihar update"} 2026`,
+    `${post.category || "India Sarkari update"} 2026`,
     post.department || "",
     `${title} direct link`,
     `${title} official link`,
-    post.category === "Latest Results" ? "Sarkari Result Bihar" : "",
-    post.category === "Latest Results" ? "Fast Result" : "",
+    post.category === "Latest Results" ? "Sarkari Result India" : "",
+    post.category === "Latest Results" ? "Fast Result India" : "",
+    post.category === "Latest Jobs" ? "Sarkari Naukri India" : "",
+    post.category === "Admit Card" ? "Admit Card India" : "",
     "BiharResult.live"
   ]
     .map(cleanText)
@@ -345,6 +354,242 @@ function normalizeIsoDate(value) {
 
 function findDateValue(rows, pattern) {
   return (rows || []).find((row) => pattern.test(String(row?.label || "")))?.value || "";
+}
+
+function findRowValue(rows, pattern) {
+  return (rows || []).find((row) => pattern.test(cleanText(row?.label || "")))?.value || "";
+}
+
+function mergeRows(baseRows, extraRows, limit = 10) {
+  const merged = [];
+  const seen = new Set();
+
+  [...(baseRows || []), ...(extraRows || [])].forEach((row) => {
+    const label = cleanText(row?.label || "");
+    const value = cleanText(row?.value || "");
+    if (!label || !value) return;
+    const key = label.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    merged.push({ label, value });
+  });
+
+  return merged.slice(0, limit);
+}
+
+function buildAgeSummary(post) {
+  const ageRows = Array.isArray(post.ageLimit) ? post.ageLimit : [];
+  if (ageRows.length) {
+    return ageRows
+      .map((row) => `${cleanText(row.label || "Age")}: ${cleanText(row.value || "As per rules")}`)
+      .filter(Boolean)
+      .join(" | ");
+  }
+
+  return firstNonEmpty([
+    findRowValue(post.eligibility, /age/i),
+    "Check official age rules and relaxation details."
+  ]);
+}
+
+function buildDetailedDateRows(post) {
+  const baseRows = (post.importantDates || [])
+    .filter((row) => !/^(updated(?:\s+date)?|arrival(?:\s+date)?)$/i.test(cleanText(row?.label || "")));
+  const primary = getPrimaryLink(post);
+  const primaryLabel = cleanText(primary?.label || "Official Link");
+  const extras = [];
+
+  switch (post.category) {
+    case "Latest Jobs":
+      extras.push(
+        { label: "Application Start", value: firstNonEmpty([findDateValue(post.importantDates, /apply start|online apply start|start date/i), "Check official notification"]) },
+        { label: "Last Date", value: cleanText(findLastDate(post)) || "Check official notification" },
+        { label: "Fee Payment Last Date", value: firstNonEmpty([findDateValue(post.importantDates, /fee payment|payment last date/i), "Same as last date / official notice"]) },
+        { label: "Exam / Merit / Interview", value: firstNonEmpty([findDateValue(post.importantDates, /exam|interview|merit|result/i), "Will be notified later"]) }
+      );
+      break;
+    case "Latest Results":
+      extras.push(
+        { label: "Result Status", value: firstNonEmpty([findDateValue(post.importantDates, /result declared|result date|result/i), `${primaryLabel} section is available below`]) },
+        { label: "Exam / Session", value: firstNonEmpty([findDateValue(post.importantDates, /exam date|session|paper/i), "Check official exam schedule"]) },
+        { label: "Score Card / Marksheet", value: "Download after checking the result if provided on the official portal." }
+      );
+      break;
+    case "Admit Card":
+      extras.push(
+        { label: "Admit Card Status", value: firstNonEmpty([findDateValue(post.importantDates, /admit card|call letter|hall ticket/i), "Check official portal"]) },
+        { label: "Exam / DV Date", value: firstNonEmpty([findDateValue(post.importantDates, /exam|dv|verification|interview/i), "See official schedule"]) },
+        { label: "Reporting Advice", value: "Reach the center/venue as per the timing mentioned on admit card or notice." }
+      );
+      break;
+    case "Admission":
+      extras.push(
+        { label: "Application Start", value: firstNonEmpty([findDateValue(post.importantDates, /apply start|start date|registration start/i), "Check official notice"]) },
+        { label: "Last Date", value: cleanText(findLastDate(post)) || "Check official notice" },
+        { label: "Merit / Counselling", value: firstNonEmpty([findDateValue(post.importantDates, /merit|counselling|seat allotment/i), "Will be updated by the institution"]) }
+      );
+      break;
+    case "Scholarship":
+      extras.push(
+        { label: "Application Window", value: firstNonEmpty([findDateValue(post.importantDates, /apply|start|last date/i), "Check scholarship portal notice"]) },
+        { label: "Verification / Approval", value: firstNonEmpty([findDateValue(post.importantDates, /verification|approval/i), "As per official portal process"]) },
+        { label: "Payment / Benefit Status", value: firstNonEmpty([findDateValue(post.importantDates, /payment|benefit/i), "Track from official portal if available"]) }
+      );
+      break;
+    case "Sarkari Yojana":
+      extras.push(
+        { label: "Scheme Status", value: firstNonEmpty([findDateValue(post.importantDates, /status|start|last date/i), "Refer official scheme notice"]) },
+        { label: "Benefit Processing", value: "Benefit release timeline is subject to official departmental approval." },
+        { label: "Important Note", value: "Check district/category-specific rules before applying or verifying status." }
+      );
+      break;
+    case "Verification":
+      extras.push(
+        { label: "Service Status", value: "Online verification/check link is available in the Important Links section." },
+        { label: "Processing Time", value: "Response time depends on the official portal or department service flow." },
+        { label: "Best Time To Check", value: "Keep reference details ready and use the official portal during normal working hours if the service is busy." }
+      );
+      break;
+    default:
+      extras.push({ label: "Latest Status", value: "Check the official notice and important links below." });
+      break;
+  }
+
+  return mergeRows(baseRows, extras, 10);
+}
+
+function buildDetailedFeeRows(post) {
+  const baseRows = post.applicationFee || [];
+  const extras = [];
+
+  switch (post.category) {
+    case "Latest Jobs":
+    case "Admission":
+      extras.push(
+        { label: "Service Note", value: "Fill payment details only on the official portal and keep the payment receipt safe." },
+        { label: "Refund / Correction", value: "Fee refund or correction facility is available only if mentioned in the official notice." }
+      );
+      break;
+    case "Latest Results":
+      extras.push(
+        { label: "Service Fee", value: "Usually no fee is required to check the result online unless the official portal mentions a paid copy/service." },
+        { label: "Marksheet Note", value: "Original marksheet or certificate collection rules will follow board/university instructions." }
+      );
+      break;
+    case "Admit Card":
+      extras.push(
+        { label: "Download Fee", value: "Admit card download is normally free unless the department mentions a separate service charge." },
+        { label: "Print Advice", value: "Candidates should keep a clear printed copy for exam or document verification." }
+      );
+      break;
+    case "Scholarship":
+      extras.push(
+        { label: "Application Fee", value: "Most scholarship portals do not charge a form fee unless specifically mentioned in the notice." },
+        { label: "Banking Note", value: "Keep bank account and Aadhaar-linked details ready for scholarship payment processing." }
+      );
+      break;
+    case "Sarkari Yojana":
+    case "Verification":
+      extras.push(
+        { label: "Service Fee", value: "Service fee, if any, depends on the official portal or CSC/service-center rules." },
+        { label: "Official Advice", value: "Do not pay unofficial charges beyond the amount shown on the government portal." }
+      );
+      break;
+    default:
+      extras.push({ label: "Fee Note", value: "Check the official notification for exact fee or service-charge details." });
+      break;
+  }
+
+  return mergeRows(baseRows, extras, 10);
+}
+
+function buildDetailedEligibilityRows(post) {
+  const baseRows = post.eligibility || [];
+  const loginDetails = firstNonEmpty([
+    findRowValue(post.eligibility, /required details|login|roll number|registration|captcha|document/i),
+    findRowValue(post.importantDates, /login/i)
+  ]);
+  const ageSummary = buildAgeSummary(post);
+  const extras = [];
+
+  switch (post.category) {
+    case "Latest Jobs":
+      extras.push(
+        { label: "Who Can Apply", value: firstNonEmpty([findRowValue(post.eligibility, /eligibility|who can apply|who should check/i), "Candidates meeting the post-wise qualification and age rules can apply."]) },
+        { label: "Qualification", value: firstNonEmpty([findRowValue(post.eligibility, /qualification|education|eligibility/i), "Refer official post-wise educational qualification in the notification."]) },
+        { label: "Age Rule", value: ageSummary },
+        { label: "Documents Needed", value: "Keep photo, signature, ID proof, qualification certificates, category certificate, and mobile/email details ready." }
+      );
+      break;
+    case "Latest Results":
+      extras.push(
+        { label: "Who Can Check", value: firstNonEmpty([findRowValue(post.eligibility, /who can check|candidate|student/i), "Students/candidates who appeared in the examination can check the result."]) },
+        { label: "Login Details", value: loginDetails || "Keep roll number, registration details, and captcha/login information ready." },
+        { label: "Student Advice", value: "Verify name, subject-wise marks, division, and category details after result download." }
+      );
+      break;
+    case "Admit Card":
+      extras.push(
+        { label: "Who Can Download", value: firstNonEmpty([findRowValue(post.eligibility, /who can download|who should check|candidate/i), "Registered candidates can download the admit card or call letter."]) },
+        { label: "Login Details", value: loginDetails || "Keep registration number, date of birth, password, or roll number ready." },
+        { label: "What To Verify", value: "Check exam center, exam date, shift timing, photo, signature, and reporting instructions." }
+      );
+      break;
+    case "Admission":
+      extras.push(
+        { label: "Who Can Apply", value: firstNonEmpty([findRowValue(post.eligibility, /eligibility|who can apply/i), "Students who meet the course-wise admission criteria can apply."]) },
+        { label: "Academic Requirement", value: firstNonEmpty([findRowValue(post.eligibility, /qualification|required details|course/i), "Check course-wise qualification and subject requirement in the official notice."]) },
+        { label: "Documents Needed", value: "Keep marksheet, transfer certificate, category certificate, ID proof, photo, and valid contact details ready." }
+      );
+      break;
+    case "Scholarship":
+      extras.push(
+        { label: "Eligible Students", value: firstNonEmpty([findRowValue(post.eligibility, /eligibility|beneficiary|student/i), "Eligible students as per class, category, income, and domicile rules can apply."]) },
+        { label: "Required Documents", value: "Prepare income certificate, caste certificate, Aadhaar, bank passbook, marksheet, and institution details." },
+        { label: "Bank / Aadhaar Note", value: "Student bank details should match the information submitted on the official portal." }
+      );
+      break;
+    case "Sarkari Yojana":
+      extras.push(
+        { label: "Eligible Beneficiary", value: firstNonEmpty([findRowValue(post.eligibility, /eligibility|beneficiary/i), "Only eligible beneficiaries under the official scheme rules should apply/check status."]) },
+        { label: "Document Requirement", value: "Keep Aadhaar, address proof, income/category documents, and scheme-specific supporting papers ready." },
+        { label: "Local Rule", value: "District, category, or income conditions may apply as per the official guidelines." }
+      );
+      break;
+    case "Verification":
+      extras.push(
+        { label: "Who Can Use Service", value: firstNonEmpty([findRowValue(post.eligibility, /eligibility|who can/i), "Citizens/candidates with valid reference details can use this verification service."]) },
+        { label: "Required Details", value: loginDetails || "Keep application number, certificate number, mobile number, or service reference ID ready." },
+        { label: "Matching Data", value: "Submitted details should exactly match the official document or application record." }
+      );
+      break;
+    default:
+      extras.push({ label: "Eligibility Note", value: "Refer official instructions for exact eligibility and document requirements." });
+      break;
+  }
+
+  return mergeRows(baseRows, extras, 10);
+}
+
+function buildStudentGuide(post, summaryRows, feeRows, eligibilityRows) {
+  const primary = getPrimaryLink(post);
+  const primaryLabel = cleanText(primary?.label || "Official Link");
+  const keyDate = summaryRows[0]
+    ? `${cleanText(summaryRows[0].label)}: ${cleanText(summaryRows[0].value)}`
+    : `Last Date / Status: ${cleanText(findLastDate(post)) || "Check official update"}`;
+  const eligibilityNote = eligibilityRows[0]
+    ? `${cleanText(eligibilityRows[0].label)}: ${cleanText(eligibilityRows[0].value)}`
+    : "Eligibility: Check official notification for exact rules.";
+  const feeNote = feeRows[0]
+    ? `${cleanText(feeRows[0].label)}: ${cleanText(feeRows[0].value)}`
+    : "Fee / Service Note: Check official portal before making any payment.";
+
+  return [
+    `Students should first note this key update: ${keyDate}.`,
+    `Eligibility focus: ${eligibilityNote}`,
+    `Fee and service reminder: ${feeNote}`,
+    `Next official step: use ${primaryLabel} from the Important Links section and cross-check every detail before applying, downloading, or checking status.`
+  ];
 }
 
 function findLastDate(post) {
@@ -438,6 +683,7 @@ function defaultFaq(post) {
   const primaryLabel = cleanText(primary?.label || "official link");
   const lastDate = cleanText(findLastDate(post));
   const eligibilityLine = firstNonEmpty([
+    findRowValue(post.eligibility, /eligibility|qualification|who can apply|who should check/i),
     (post.eligibility || [])[0]?.value,
     post.shortInfo,
     post.longDescription
@@ -594,15 +840,21 @@ function renderTableRows(rows, keyA = "label", keyB = "value") {
 }
 
 function renderVacancyRows(rows) {
-  const detailedRows = rows.filter((row) => cleanText(row.criteria || "") || /^total$/i.test(cleanText(row.post || row.label || "")));
+  const normalizedRows = rows.map((row) => ({
+    post: cleanText(row.post || row.label || "Post"),
+    total: cleanText(row.total || row.value || ""),
+    criteria: cleanText(row.criteria || "")
+  }));
+  const hasCriteria = normalizedRows.some((row) => row.criteria);
+  const detailedRows = normalizedRows.filter((row) => row.criteria || /^total$/i.test(row.post));
 
-  if (detailedRows.length) {
+  if (hasCriteria && detailedRows.length) {
     const body = detailedRows
       .map((row) => {
-        const postName = cleanText(row.post || row.label || "Post");
+        const postName = row.post;
         const isTotalRow = /^total$/i.test(postName);
         const advtNo = isTotalRow ? "" : cleanText(row.criteria || "-").replace(/^Advt\.\s*No\.?\s*/i, "");
-        const total = cleanText(row.total || row.value || "-");
+        const total = row.total || "-";
         return `<tr><td>${escapeHtml(advtNo)}</td><td>${escapeHtml(postName)}</td><td>${escapeHtml(total)}</td></tr>`;
       })
       .join("\n");
@@ -610,8 +862,8 @@ function renderVacancyRows(rows) {
     return `<thead><tr><th>Advt. No.</th><th>Post Name</th><th>Total Post</th></tr></thead><tbody>${body}</tbody>`;
   }
 
-  return rows
-    .map((row) => `<tr><th scope="row">${escapeHtml(cleanText(row.post))}</th><td>${escapeHtml(cleanText([row.total, row.criteria].filter(Boolean).join(" | ")))}<\/td></tr>`)
+  return normalizedRows
+    .map((row) => `<tr><th scope="row">${escapeHtml(row.post)}</th><td>${escapeHtml(row.total || row.criteria || "-")}<\/td></tr>`)
     .join("\n");
 }
 function uniqueUrls(items) {
@@ -641,14 +893,33 @@ function buildHeroLead(post) {
   return cleanText(post.shortInfo || post.longDescription || `${post.title} is listed on BiharResult.live with important details and official links.`);
 }
 
-function buildSummaryCopy(post) {
+function buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows) {
   const dept = cleanText(post.department || "the concerned department");
   const category = cleanText(post.category || "official update");
-  return [
-    `${cleanText(post.title)} is listed under ${category} on BiharResult.live.`,
-    `This page is designed to help students and candidates quickly understand the main process, official links, and key instructions shared by ${dept}.`,
-    "Always verify final details from the official website or notification before taking action."
-  ].join(" ");
+  const primary = getPrimaryLink(post);
+  const primaryLabel = cleanText(primary?.label || "Official Link");
+  const keyDate = summaryRows[0]
+    ? `${cleanText(summaryRows[0].label)}: ${cleanText(summaryRows[0].value)}`
+    : `Last Date / Status: ${cleanText(findLastDate(post)) || "Check official update"}`;
+  const feeLine = feeRows[0]
+    ? `${cleanText(feeRows[0].label)}: ${cleanText(feeRows[0].value)}`
+    : "Fee details should be verified from the official notice.";
+  const eligibilityLine = eligibilityRows[0]
+    ? `${cleanText(eligibilityRows[0].label)}: ${cleanText(eligibilityRows[0].value)}`
+    : "Check the official notification for exact eligibility rules.";
+  const paragraphs = [
+    `${cleanText(post.title)} is listed under ${category} on BiharResult.live as a student-friendly update page.`,
+    `This post gathers the main schedule, eligibility points, fee or service note, and official action link shared by ${dept} so candidates can review the process quickly in one place.`,
+    `Key details right now: ${keyDate} ${feeLine} ${eligibilityLine}`,
+    `Use ${primaryLabel} from the Important Links section for the next official step, and always verify final rules from the original department notice before taking action.`
+  ];
+
+  const descriptiveCopy = cleanText(post.longDescription || post.shortInfo || "");
+  if (descriptiveCopy) {
+    paragraphs.splice(2, 0, descriptiveCopy);
+  }
+
+  return paragraphs;
 }
 
 function buildSectionTitle(post) {
@@ -672,32 +943,67 @@ function buildSectionTitle(post) {
   }
 }
 
-function buildSchema(post, folder, canonicalUrl, faq) {
+function buildSchema(post, folder, canonicalUrl, faq, howToApply) {
   const publisher = {
     "@type": "Organization",
     name: "BiharResult.live",
+    url: "https://biharresult.live/",
     logo: {
       "@type": "ImageObject",
       url: "https://biharresult.live/favicon.png"
     }
   };
 
+  const webPage = {
+    "@type": "WebPage",
+    name: cleanText(post.title),
+    url: canonicalUrl,
+    description: buildSeoDescription(post),
+    inLanguage: "en-IN",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "BiharResult.live",
+      url: "https://biharresult.live/"
+    },
+    about: [
+      cleanText(post.category || "Latest Update"),
+      cleanText(post.department || "Official Department"),
+      cleanText(post.location || "India")
+    ].filter(Boolean),
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: "https://biharresult.live/favicon.png"
+    }
+  };
+
   const baseArticle = {
-    "@context": "https://schema.org",
     "@type": post.category === "Latest Jobs" ? "JobPosting" : "NewsArticle",
     headline: cleanText(post.title),
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
     description: buildSeoDescription(post),
     image: "https://biharresult.live/favicon.png",
+    inLanguage: "en-IN",
+    isAccessibleForFree: true,
     publisher,
     author: { "@type": "Organization", name: "BiharResult.live" },
-    mainEntityOfPage: canonicalUrl
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    url: canonicalUrl,
+    about: [
+      cleanText(post.category || "Latest Update"),
+      cleanText(post.department || "Official Department"),
+      cleanText(post.location || "India")
+    ].filter(Boolean),
+    keywords: buildKeywords(post)
   };
 
   if (post.category === "Latest Jobs") {
     baseArticle.title = cleanText(post.title);
     baseArticle.datePosted = post.publishedAt;
+    baseArticle.validThrough = post.updatedAt || post.publishedAt;
     baseArticle.hiringOrganization = {
       "@type": "Organization",
       name: cleanText(post.department || "Official Department")
@@ -723,22 +1029,41 @@ function buildSchema(post, folder, canonicalUrl, faq) {
     ]
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((item) => ({
-      "@type": "Question",
-      name: cleanText(item.q),
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: cleanText(item.a)
-      }
-    }))
-  };
+  const graph = [webPage, baseArticle, breadcrumb];
 
-  return [baseArticle, breadcrumb, faqSchema]
-    .map((item) => `<script type="application/ld+json">\n${JSON.stringify(item, null, 2)}\n</script>`)
-    .join("\n");
+  if (Array.isArray(faq) && faq.length) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: cleanText(item.q),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: cleanText(item.a)
+        }
+      }))
+    });
+  }
+
+  if (Array.isArray(howToApply) && howToApply.length) {
+    graph.push({
+      "@type": "HowTo",
+      name: `${cleanText(post.title)} - How to Proceed`,
+      description: `Step-by-step guidance for ${cleanText(post.title)} on BiharResult.live.`,
+      inLanguage: "en-IN",
+      step: howToApply.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        name: `Step ${index + 1}`,
+        text: cleanText(step)
+      }))
+    });
+  }
+
+  return `<script type="application/ld+json">\n${JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": graph
+  }, null, 2)}\n</script>`;
 }
 
 function buildHtml(post, folder) {
@@ -756,24 +1081,25 @@ function buildHtml(post, folder) {
     { label: "Department", value: cleanText(post.department || "Official Update") },
     { label: "Key Point", value: lastDate || primaryLabel || "Official update" }
   ];
-  const summaryRows = (post.importantDates || [])
-    .filter((row) => !/^(updated(?:\s+date)?|arrival(?:\s+date)?)$/i.test(cleanText(row?.label || "")))
-    .slice(0, 10);
-  const feeRows = (post.applicationFee || []).slice(0, 10);
-  const eligibilityRows = (post.eligibility || []).slice(0, 10);
+  const summaryRows = buildDetailedDateRows(post);
+  const feeRows = buildDetailedFeeRows(post);
+  const eligibilityRows = buildDetailedEligibilityRows(post);
   const vacancyRows = (post.vacancyDetails || []).slice(0, 20);
   const howToApply = defaultHowToApply(post);
   const beforeStart = defaultBeforeStart(post);
+  const studentGuide = buildStudentGuide(post, summaryRows, feeRows, eligibilityRows);
+  const summaryParagraphs = buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows);
   const keywords = buildKeywords(post);
 
   return `<!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+  <meta name="theme-color" content="#0b3ab2" />
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
   <meta name="keywords" content="${escapeHtml(keywords)}" />
@@ -787,6 +1113,7 @@ function buildHtml(post, folder) {
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
   <meta property="og:image" content="https://biharresult.live/favicon.png" />
+  <meta property="og:image:alt" content="${escapeHtml(`${cleanText(post.title)} on BiharResult.live`)}" />
   <meta property="article:published_time" content="${escapeHtml(cleanText(post.publishedAt || post.updatedAt || "2026-02-18"))}" />
   <meta property="article:modified_time" content="${escapeHtml(cleanText(post.updatedAt || post.publishedAt || "2026-02-18"))}" />
   <meta property="article:section" content="${escapeHtml(cleanText(post.category || "Latest Update"))}" />
@@ -794,40 +1121,59 @@ function buildHtml(post, folder) {
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="https://biharresult.live/favicon.png" />
+  <meta name="twitter:image:alt" content="${escapeHtml(`${cleanText(post.title)} on BiharResult.live`)}" />
   <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+  <link rel="alternate" hreflang="en-IN" href="${escapeHtml(canonicalUrl)}" />
+  <link rel="alternate" hreflang="x-default" href="${escapeHtml(canonicalUrl)}" />
   <link rel="stylesheet" href="/style.css" />
   <style>
     .seo-post-card { padding: 0; overflow: hidden; }
-    .seo-post-hero { background: linear-gradient(120deg, #02124d 0%, #0b2f9b 52%, #0c44d5 100%); color: #fff; padding: 24px 22px; }
-    .seo-post-crumb { margin: 0 0 10px; font-size: 12px; font-weight: 700; opacity: 0.95; }
+    .seo-post-hero { background: radial-gradient(120% 140% at 0% 0%, rgba(255, 255, 255, 0.18), transparent 42%), linear-gradient(135deg, #03114a 0%, #0a3ba5 54%, #1183d6 100%); color: #fff; padding: 16px 14px; }
+    .seo-post-crumb { margin: 0 0 8px; font-size: 11px; font-weight: 700; opacity: 0.95; }
     .seo-post-crumb a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
-    .seo-post-hero h1 { margin: 0 0 10px; line-height: 1.2; font-size: 29px; letter-spacing: -0.2px; }
-    .seo-post-lead { margin: 0; max-width: 920px; line-height: 1.65; font-size: 15px; color: #e4ebff; }
-    .seo-post-meta-row { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .seo-post-pill { display: inline-flex; align-items: center; border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.25px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.12); }
+    .seo-post-hero h1 { margin: 0 0 8px; line-height: 1.14; font-size: 21px; letter-spacing: 0; }
+    .seo-post-lead { margin: 0; max-width: 920px; line-height: 1.55; font-size: 13px; color: #e4ebff; }
+    .seo-post-meta-row { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .seo-post-pill { display: inline-flex; align-items: center; border-radius: 999px; padding: 5px 9px; font-size: 11px; font-weight: 800; letter-spacing: 0.15px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.12); }
     .seo-post-pill.live { background: #09a244; border-color: #09a244; color: #fff; }
-    .seo-post-content { padding: 22px; background: #fff; }
-    .seo-post-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 0 0 18px; }
-    .seo-post-box { border: 1px solid #dbe3ef; border-radius: 10px; padding: 12px; background: linear-gradient(160deg, #f8fbff 0%, #f2f6ff 100%); }
+    .seo-post-content { padding: 14px; background: #fff; }
+    .seo-post-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 0 0 14px; }
+    .seo-post-box { border: 1px solid #dbe3ef; border-radius: 10px; padding: 10px; background: linear-gradient(160deg, #f8fbff 0%, #f2f6ff 100%); }
     .seo-post-box strong { display: block; color: #0f172a; font-size: 12px; margin-bottom: 6px; text-transform: uppercase; }
     .seo-post-box span { display: block; color: #0b2f9b; font-size: 13px; font-weight: 800; line-height: 1.4; }
-    .seo-post-note { border: 1px solid #cfe0ff; border-left: 5px solid #0b34d0; border-radius: 10px; padding: 13px 14px; margin-bottom: 16px; background: #f5f9ff; color: #0f172a; line-height: 1.6; font-size: 14px; }
-    .seo-post-copy { margin-bottom: 18px; color: #0f172a; font-size: 14px; line-height: 1.75; }
-    .seo-post-copy p { margin: 0 0 12px; }
+    .seo-post-note { border: 1px solid #cfe0ff; border-left: 5px solid #0b34d0; border-radius: 10px; padding: 11px 12px; margin-bottom: 14px; background: #f5f9ff; color: #0f172a; line-height: 1.55; font-size: 13px; }
+    .seo-post-copy { margin-bottom: 14px; color: #0f172a; font-size: 13px; line-height: 1.7; }
+    .seo-post-copy p { margin: 0 0 10px; }
     .seo-post-links { display: grid; gap: 10px; }
-    .seo-post-link-card { border: 1px solid #dae4f3; border-radius: 10px; padding: 12px 14px; background: #fff; display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .seo-post-link-card { border: 1px solid #dae4f3; border-radius: 10px; padding: 12px; background: #fff; display: grid; gap: 10px; }
     .seo-post-link-card strong { color: #0f172a; font-size: 14px; display: block; }
     .seo-post-link-card small { display: block; color: #475569; margin-top: 2px; font-size: 12px; }
     .seo-post-faq { display: grid; gap: 12px; }
-    .seo-post-faq-item { border: 1px solid #dae4f3; border-radius: 10px; padding: 14px; background: #f8fbff; }
-    .seo-post-faq-item h3 { margin: 0 0 8px; color: #0f172a; font-size: 15px; }
-    .seo-post-faq-item p { margin: 0; color: #334155; font-size: 14px; line-height: 1.7; }
-    .seo-post-source-list { margin: 0; padding-left: 18px; color: #0f172a; line-height: 1.7; font-size: 14px; }
+    .seo-post-faq-item { border: 1px solid #dae4f3; border-radius: 10px; padding: 12px; background: #f8fbff; }
+    .seo-post-faq-item h3 { margin: 0 0 8px; color: #0f172a; font-size: 14px; }
+    .seo-post-faq-item p { margin: 0; color: #334155; font-size: 13px; line-height: 1.65; }
+    .seo-post-source-list { margin: 0; padding-left: 18px; color: #0f172a; line-height: 1.65; font-size: 13px; }
     .seo-post-source-list a { color: #0b34d0; }
-    @media (max-width: 900px) { .seo-post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .seo-post-hero h1 { font-size: 24px; } }
-    @media (max-width: 640px) { .seo-post-hero, .seo-post-content { padding: 15px; } .seo-post-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 640px) {
+      .seo-post-hero { padding: 20px 18px; }
+      .seo-post-hero h1 { font-size: 25px; }
+      .seo-post-lead { font-size: 14px; }
+      .seo-post-content { padding: 18px; }
+      .seo-post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .seo-post-link-card { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+    }
+    @media (min-width: 900px) {
+      .seo-post-hero { padding: 24px 22px; }
+      .seo-post-hero h1 { font-size: 29px; }
+      .seo-post-lead { font-size: 15px; line-height: 1.65; }
+      .seo-post-content { padding: 22px; }
+      .seo-post-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
+      .seo-post-copy { font-size: 14px; }
+      .seo-post-faq-item p,
+      .seo-post-source-list { font-size: 14px; }
+    }
   </style>
-${buildSchema(post, folder, canonicalUrl, faq)}
+${buildSchema(post, folder, canonicalUrl, faq, howToApply)}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -836,11 +1182,11 @@ ${buildSchema(post, folder, canonicalUrl, faq)}
     gtag("config", "G-YVN84V93Z6");
   </script>
 </head>
-<body>
+<body class="br-post-page">
   <header class="post-topbar"><div class="br-wrap"><a href="../../index.html" class="post-brand">BiharResult.live</a></div></header>
   <main class="br-wrap br-main-content">
     <section class="br-ad-section" aria-label="Top Advertisement"><div class="br-ad-head">Advertisement</div><div class="br-ad-slot"><div class="br-ad-slot-code"></div></div></section>
-    <article class="section-card seo-post-card">
+    <article class="section-card seo-post-card br-post-article">
       <section class="seo-post-hero">
         <nav class="seo-post-crumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a> / <a href="./">${escapeHtml(SECTION_LABELS[post.category] || post.category)}</a> / ${escapeHtml(cleanText(post.title))}</nav>
         <h1>${escapeHtml(cleanText(post.title))}</h1>
@@ -854,17 +1200,18 @@ ${buildSchema(post, folder, canonicalUrl, faq)}
       <div class="seo-post-content">
         <div class="seo-post-grid">${quickFacts.map((item) => `<div class="seo-post-box"><strong>${escapeHtml(item.label)}</strong><span>${escapeHtml(item.value)}</span></div>`).join("\n")}</div>
         <div class="seo-post-note"><strong>Accuracy Note:</strong> Always verify final details from the official website before taking action.</div>
-        <section><h2 class="table-title">${escapeHtml(buildSectionTitle(post))}</h2><div class="seo-post-copy"><p>${escapeHtml(buildSummaryCopy(post))}</p><p>${escapeHtml(cleanText(post.longDescription || post.shortInfo || ""))}</p></div></section>
-        ${summaryRows.length ? `<section class="mt-6"><h2 class="table-title">Important Dates and Key Details</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(summaryRows)}</table></div></section>` : ""}
-        ${feeRows.length ? `<section class="mt-6"><h2 class="table-title">Application Fee / Service Fee</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(feeRows)}</table></div></section>` : ""}
-        ${eligibilityRows.length ? `<section class="mt-6"><h2 class="table-title">Eligibility Details</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(eligibilityRows)}</table></div></section>` : ""}
-        ${vacancyRows.length ? `<section class="mt-6"><h2 class="table-title">Vacancy / Seat / Category Details</h2><div class="overflow-x-auto"><table class="info-table">${renderVacancyRows(vacancyRows)}</table></div></section>` : ""}
-        ${(post.importantLinks || []).length ? `<section class="mt-6"><h2 class="table-title">Important Links</h2><div class="seo-post-links">${(post.importantLinks || []).slice(0, 6).map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(cleanText(item.label || "Official Link"))}</strong><small>${escapeHtml(cleanText(post.title || ""))}</small></div><a href="${escapeHtml(cleanText(item.url || "#"))}" target="_blank" rel="noopener noreferrer" class="link-btn result-link-btn${item.type === "secondary" ? " secondary" : ""}">Open Link</a></div>`).join("\n")}</div></section>` : ""}
-        ${beforeStart.length ? `<section class="mt-6"><h2 class="table-title">Before You Start</h2><ul class="post-checklist">${beforeStart.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ul></section>` : ""}
-        ${howToApply.length ? `<section class="mt-6"><h2 class="table-title">How To Proceed</h2><ol class="post-steps">${howToApply.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ol></section>` : ""}
-        <section class="mt-6"><h2 class="table-title">Frequently Asked Questions</h2><div class="seo-post-faq">${faq.map((item) => `<div class="seo-post-faq-item"><h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p></div>`).join("\n")}</div></section>
-        ${sourceItems.length ? `<section class="mt-6"><h2 class="table-title">Source References</h2><ul class="seo-post-source-list">${sourceItems.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.label || item.url)}</a></li>`).join("\n")}</ul></section>` : ""}
-        <section class="mt-6"><h2 class="table-title">Related Links</h2><div class="result-link-actions"><a href="../../index.html" class="link-btn result-link-btn secondary">Home Page</a><a href="./" class="link-btn result-link-btn">Open ${escapeHtml(SECTION_LABELS[post.category] || post.category)} Archive</a></div></section>
+        <section><h2 class="table-title table-title--summary">${escapeHtml(buildSectionTitle(post))}</h2><div class="seo-post-copy">${summaryParagraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}</div></section>
+        ${studentGuide.length ? `<section class="mt-6"><h2 class="table-title table-title--student">Student Quick Guide</h2><ul class="post-checklist post-checklist--student">${studentGuide.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ul></section>` : ""}
+        ${summaryRows.length ? `<section class="mt-6"><h2 class="table-title table-title--dates">Important Dates and Key Details</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(summaryRows)}</table></div></section>` : ""}
+        ${feeRows.length ? `<section class="mt-6"><h2 class="table-title table-title--fee">Application Fee / Service Fee</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(feeRows)}</table></div></section>` : ""}
+        ${eligibilityRows.length ? `<section class="mt-6"><h2 class="table-title table-title--eligibility">Eligibility Details</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(eligibilityRows)}</table></div></section>` : ""}
+        ${vacancyRows.length ? `<section class="mt-6"><h2 class="table-title table-title--vacancy">Vacancy / Seat / Category Details</h2><div class="overflow-x-auto"><table class="info-table">${renderVacancyRows(vacancyRows)}</table></div></section>` : ""}
+        ${(post.importantLinks || []).length ? `<section class="mt-6"><h2 class="table-title table-title--links">Important Links</h2><div class="seo-post-links">${(post.importantLinks || []).slice(0, 6).map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(cleanText(item.label || "Official Link"))}</strong><small>${escapeHtml(cleanText(post.title || ""))}</small></div><a href="${escapeHtml(cleanText(item.url || "#"))}" target="_blank" rel="noopener noreferrer" class="link-btn result-link-btn${item.type === "secondary" ? " secondary" : ""}">Open Link</a></div>`).join("\n")}</div></section>` : ""}
+        ${beforeStart.length ? `<section class="mt-6"><h2 class="table-title table-title--before">Before You Start</h2><ul class="post-checklist">${beforeStart.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ul></section>` : ""}
+        ${howToApply.length ? `<section class="mt-6"><h2 class="table-title table-title--process">How To Proceed</h2><ol class="post-steps">${howToApply.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ol></section>` : ""}
+        <section class="mt-6"><h2 class="table-title table-title--faq">Frequently Asked Questions</h2><div class="seo-post-faq">${faq.map((item) => `<div class="seo-post-faq-item"><h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p></div>`).join("\n")}</div></section>
+        ${sourceItems.length ? `<section class="mt-6"><h2 class="table-title table-title--source">Source References</h2><ul class="seo-post-source-list">${sourceItems.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.label || item.url)}</a></li>`).join("\n")}</ul></section>` : ""}
+        <section class="mt-6"><h2 class="table-title table-title--related">Related Links</h2><div class="result-link-actions"><a href="../../index.html" class="link-btn result-link-btn secondary">Home Page</a><a href="./" class="link-btn result-link-btn">Open ${escapeHtml(SECTION_LABELS[post.category] || post.category)} Archive</a></div></section>
         <div class="br-post-mini-footer">BiharResult.live</div>
       </div>
     </article>
@@ -919,23 +1266,42 @@ function buildSectionEntries(sectionFiles, dataMap) {
 }
 
 function buildSectionArchiveSchema(folder, meta, entries) {
+  const collectionUrl = sectionUrl(folder);
   return JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: meta.heading,
-    description: meta.description,
-    url: sectionUrl(folder),
-    mainEntity: {
-      "@type": "ItemList",
-      itemListOrder: "https://schema.org/ItemListOrderDescending",
-      numberOfItems: entries.length,
-      itemListElement: entries.map((entry, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        url: pageUrl(folder, entry.slug),
-        name: entry.title
-      }))
-    }
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        name: meta.heading,
+        description: meta.description,
+        url: collectionUrl,
+        inLanguage: "en-IN",
+        isPartOf: {
+          "@type": "WebSite",
+          name: "BiharResult.live",
+          url: "https://biharresult.live/"
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: `${meta.heading} Archive`,
+          itemListOrder: "https://schema.org/ItemListOrderDescending",
+          numberOfItems: entries.length,
+          itemListElement: entries.map((entry, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: pageUrl(folder, entry.slug),
+            name: entry.title
+          }))
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://biharresult.live/" },
+          { "@type": "ListItem", position: 2, name: meta.heading, item: collectionUrl }
+        ]
+      }
+    ]
   });
 }
 
@@ -963,27 +1329,35 @@ function buildSectionArchiveHtml(folder, folderEntries) {
   const archiveList = renderSectionArchiveList(sortedEntries);
 
   return `<!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b3ab2" />
   <title>${escapeHtml(meta.pageTitle)}</title>
   <meta name="description" content="${escapeHtml(meta.description)}" />
   <meta name="keywords" content="${escapeHtml(meta.keywords)}" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="${escapeHtml(sectionUrl(folder))}" />
+  <link rel="alternate" hreflang="en-IN" href="${escapeHtml(sectionUrl(folder))}" />
+  <link rel="alternate" hreflang="x-default" href="${escapeHtml(sectionUrl(folder))}" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BiharResult.live" />
+  <meta property="og:locale" content="en_IN" />
   <meta property="og:title" content="${escapeHtml(meta.socialTitle)}" />
   <meta property="og:description" content="${escapeHtml(meta.socialDescription)}" />
   <meta property="og:url" content="${escapeHtml(sectionUrl(folder))}" />
   <meta property="og:image" content="https://biharresult.live/favicon.png" />
+  <meta property="og:image:alt" content="${escapeHtml(`${meta.heading} archive on BiharResult.live`)}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(meta.socialTitle)}" />
   <meta name="twitter:description" content="${escapeHtml(meta.socialDescription)}" />
+  <meta name="twitter:image" content="https://biharresult.live/favicon.png" />
+  <meta name="twitter:image:alt" content="${escapeHtml(`${meta.heading} archive on BiharResult.live`)}" />
   <link rel="stylesheet" href="/style.css" />
   <script type="application/ld+json">${schema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
@@ -1058,6 +1432,7 @@ function rebuildSitemap(entries) {
     { loc: "https://biharresult.live/pages/legal/contact.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/privacy-policy.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/guides/guides.html", lastmod: "2026-03-28", changefreq: "weekly", priority: "0.7" },
+    { loc: "https://biharresult.live/pages/guides/india-result-latest-result.html", lastmod: "2026-04-17", changefreq: "weekly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/sarkari-result-bihar.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
     { loc: "https://biharresult.live/pages/guides/fast-result-bihar.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
     { loc: "https://biharresult.live/pages/guides/result-2026-bihar.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
