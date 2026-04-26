@@ -1013,7 +1013,9 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 
 .br-link {
   color: #0b34d0;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.14em;
   font-size: 12.5px;
   font-weight: 700;
   line-height: 1.4;
@@ -1022,6 +1024,12 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 .br-link:hover {
   color: #cc0000;
   text-decoration: underline;
+}
+
+.br-home-highlight-card-title {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.16em;
 }
 
 .br-new-tag {
@@ -1535,6 +1543,12 @@ body.br-post-page {
 .br-post-article {
   box-shadow: 0 18px 38px rgba(11, 31, 67, 0.1);
   overflow: hidden;
+}
+
+.br-post-article :is(h1, h2, h3) {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.16em;
 }
 
 .section-card h1 {
@@ -2191,6 +2205,10 @@ body.br-post-page {
   margin-top: 8px;
 }
 
+.post-meta-line strong {
+  color: #0f172a;
+}
+
 .post-meta-line a {
   color: #0b34d0;
   text-decoration: none;
@@ -2316,6 +2334,14 @@ body.br-post-page {
 }
 
 .post-checklist--student li::marker {
+  color: #d94a00;
+}
+
+.br-post-article ul {
+  list-style: disc;
+}
+
+.br-post-article ul li::marker {
   color: #d94a00;
 }
 

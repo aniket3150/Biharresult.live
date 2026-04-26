@@ -737,7 +737,13 @@ function setTodayDate() {
 }
 
 function formatDate(value) {
-  const dt = new Date(value);
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+
+  const simpleDateMatch = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const dt = simpleDateMatch
+    ? new Date(`${simpleDateMatch[1]}-${simpleDateMatch[2]}-${simpleDateMatch[3]}T00:00:00+05:30`)
+    : new Date(raw);
   if (Number.isNaN(dt.getTime())) return value || "";
   return dt.toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" });
 }
@@ -2686,8 +2692,19 @@ function setMetaContent(id, content) {
 }
 
 function renderPostMeta(post) {
+  const lineEl = document.getElementById("post-meta-line");
+  const publishedEl = document.getElementById("post-meta-published");
   const updatedEl = document.getElementById("post-meta-updated");
-  if (updatedEl) updatedEl.remove();
+  if (!lineEl || !publishedEl || !updatedEl) return;
+
+  const publishedText = post.publishedAt ? `Posted: ${formatDate(post.publishedAt)}` : "";
+  const updatedText = (post.updatedAt || post.publishedAt) ? `Modified: ${formatDate(post.updatedAt || post.publishedAt)}` : "";
+
+  publishedEl.textContent = publishedText;
+  publishedEl.hidden = !publishedText;
+  updatedEl.textContent = updatedText;
+  updatedEl.hidden = !updatedText;
+  lineEl.hidden = !publishedText && !updatedText;
 }
 
 function renderPost(post) {

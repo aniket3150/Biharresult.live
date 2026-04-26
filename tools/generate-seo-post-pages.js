@@ -352,6 +352,25 @@ function normalizeIsoDate(value) {
   return match ? match[0] : "";
 }
 
+function formatDisplayDate(value) {
+  const text = cleanText(value);
+  if (!text) return "";
+
+  const simpleDateMatch = text.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const date = simpleDateMatch
+    ? new Date(`${simpleDateMatch[1]}-${simpleDateMatch[2]}-${simpleDateMatch[3]}T00:00:00+05:30`)
+    : new Date(text);
+
+  if (Number.isNaN(date.getTime())) return text;
+
+  return new Intl.DateTimeFormat("en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    timeZone: "Asia/Kolkata"
+  }).format(date);
+}
+
 function findDateValue(rows, pattern) {
   return (rows || []).find((row) => pattern.test(String(row?.label || "")))?.value || "";
 }
@@ -1072,6 +1091,8 @@ function buildHtml(post, folder) {
   const description = buildSeoDescription(post);
   const title = buildSeoTitle(post);
   const lastDate = cleanText(findLastDate(post));
+  const publishedLabel = formatDisplayDate(post.publishedAt || post.updatedAt || "");
+  const modifiedLabel = formatDisplayDate(post.updatedAt || post.publishedAt || "");
   const primary = getPrimaryLink(post);
   const primaryLabel = cleanText(primary?.label || detectCategoryMeta(post.category).badge);
   const sourceItems = buildSourceList(post);
@@ -1198,6 +1219,7 @@ ${buildSchema(post, folder, canonicalUrl, faq, howToApply)}
         </div>
       </section>
       <div class="seo-post-content">
+        ${(publishedLabel || modifiedLabel) ? `<div class="post-meta-line">${publishedLabel ? `<span><strong>Posted:</strong> ${escapeHtml(publishedLabel)}</span>` : ""}${modifiedLabel ? `<span><strong>Modified:</strong> ${escapeHtml(modifiedLabel)}</span>` : ""}</div>` : ""}
         <div class="seo-post-grid">${quickFacts.map((item) => `<div class="seo-post-box"><strong>${escapeHtml(item.label)}</strong><span>${escapeHtml(item.value)}</span></div>`).join("\n")}</div>
         <div class="seo-post-note"><strong>Accuracy Note:</strong> Always verify final details from the official website before taking action.</div>
         <section><h2 class="table-title table-title--summary">${escapeHtml(buildSectionTitle(post))}</h2><div class="seo-post-copy">${summaryParagraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}</div></section>

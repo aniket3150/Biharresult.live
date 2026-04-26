@@ -10190,16 +10190,16 @@
         "wpId": null,
         "slug": "btsc-iti-instructor-recruitment-2026-advt-14-23",
         "path": "./post.html?slug=btsc-iti-instructor-recruitment-2026-advt-14-23",
-        "title": "BTSC ITI Instructor Recruitment 2026 (Advt No. 14/2026 to 23/2026)",
+        "title": "BTSC ITI Instructor Recruitment 2026 Apply Online (Advt No. 14/2026 to 23/2026)",
         "category": "Latest Jobs",
         "department": "Bihar Technical Service Commission (BTSC)",
         "location": "Bihar",
-        "shortInfo": "BTSC recruitment page lists multiple Instructor advertisements (Advt. No. 14/2026 to 23/2026) with registration from 15 April 2026 to 15 May 2026.",
+        "shortInfo": "BTSC recruitment listing shows ITI Instructor advertisements 14/2026 to 23/2026 for multiple trades. Registration started on 15 April 2026 and the online application window is open up to 15 May 2026 on the official BTSC portal.",
         "publishedAt": "2026-04-15",
-        "updatedAt": "2026-04-25",
+        "updatedAt": "2026-04-26",
         "isFeatured": true,
-        "sourceName": "BTSC Recruitment Portal",
-        "sourceUrl": "https://btsc.bihar.gov.in/index.php/recruitment",
+        "sourceName": "BTSC Recruitment Portal and Advt. 23/2026 Page",
+        "sourceUrl": "https://btsc.bihar.gov.in/node/1150",
         "image": "",
         "importantDates": [
             {
@@ -10217,12 +10217,20 @@
             {
                 "label": "Payment Last Date",
                 "value": "15 May 2026"
+            },
+            {
+                "label": "BTSC Page Last Updated",
+                "value": "15 April 2026 12:57 PM"
             }
         ],
         "applicationFee": [
             {
                 "label": "Application Fee",
-                "value": "Check category-wise fee in BTSC advertisement PDF."
+                "value": "Check category-wise fee in the respective BTSC trade advertisement PDF before payment."
+            },
+            {
+                "label": "Payment Mode",
+                "value": "Online payment through the BTSC application portal."
             }
         ],
         "eligibility": [
@@ -10232,7 +10240,11 @@
             },
             {
                 "label": "Qualification",
-                "value": "Trade-wise eligibility and technical qualification as per each BTSC advertisement."
+                "value": "Trade-wise technical qualification, certification, and experience conditions are given separately in each official BTSC advertisement PDF."
+            },
+            {
+                "label": "Trades Listed on BTSC Page",
+                "value": "Surveyor, Machinist, Automobile Engineering/Mechanics, Leather Technology, Welder, Mechanic Tractor, Agriculture and Machinery, Fitter, Electronics Mechanic/Mechanic Radio and TV, and Electrician/Wireman/Electrician."
             }
         ],
         "vacancyDetails": [],
@@ -10246,23 +10258,30 @@
                 "type": "primary"
             },
             {
+                "label": "BTSC Advt. 23/2026 Page",
+                "url": "https://btsc.bihar.gov.in/node/1150",
+                "type": "secondary"
+            },
+            {
                 "label": "BTSC Recruitment Page",
                 "url": "https://btsc.bihar.gov.in/index.php/recruitment",
                 "type": "secondary"
             }
         ],
-        "longDescription": "BTSC ITI Instructor Recruitment 2026 includes multiple trade-wise advertisements from 14/2026 to 23/2026. Official schedule on BTSC recruitment page shows registration and application timeline from 15 April 2026 to 15 May 2026. Candidates should read the relevant trade advertisement carefully before applying.",
+        "longDescription": "BTSC ITI Instructor Recruitment 2026 is one of the latest Bihar government job updates available on the BTSC recruitment portal. The commission has listed Instructor advertisements from 14/2026 to 23/2026 with online registration from 15 April 2026 to 15 May 2026. The listing currently highlights multiple ITI teaching trades including Surveyor, Machinist, Automobile Engineering/Mechanics, Leather Technology, Welder, Mechanic Tractor, Agriculture and Machinery, Fitter, Electronics Mechanic/Mechanic Radio and TV, and Electrician/Wireman/Electrician. Candidates should open the relevant advertisement number, read trade-wise qualification and reservation rules carefully, and then submit the application only through the official BTSC portal.",
         "howToApply": [
-            "Visit BTSC recruitment page and open relevant advertisement.",
-            "Go to apply portal and complete registration.",
-            "Fill application form with trade-specific details.",
-            "Upload required documents and submit payment.",
-            "Submit final form and keep printout for future reference."
+            "Open the BTSC recruitment page or the trade-specific advertisement page from the Important Links section.",
+            "Identify the correct Instructor trade and advertisement number between 14/2026 and 23/2026 before starting the form.",
+            "Go to the official apply portal, complete registration, and log in with the generated credentials.",
+            "Fill the application form carefully with personal details, category details, and trade-specific qualification information.",
+            "Upload the required documents, pay the fee if applicable for your category, and submit the form before 15 May 2026.",
+            "Download the final submitted application and payment receipt for future recruitment stages."
         ],
         "beforeYouStart": [
-            "Check your trade-specific advertisement number before filling the form.",
-            "Keep qualification, caste, and ID documents ready.",
-            "Cross-check registration end date to avoid last-minute issues."
+            "Check your exact trade name and advertisement number before choosing the application link.",
+            "Keep qualification certificates, identity proof, caste or category documents, and a working mobile number ready.",
+            "Read the trade-specific advertisement PDF because eligibility and fee details may differ by post.",
+            "Do not wait for the last day because payment and final submission issues are common near deadline."
         ]
     },
     {
@@ -14230,25 +14249,33 @@
         "wpId": null,
         "slug": "nta-nchm-jee-admit-card-2026-update",
         "path": "./post.html?slug=nta-nchm-jee-admit-card-2026-update",
-        "title": "NTA NCHM JEE 2026 Admit Card Download Update",
+        "title": "NTA NCHM JEE 2026 Admit Card Released, Exam on 25 April",
         "category": "Admit Card",
         "department": "National Testing Agency (NTA)",
         "location": "India",
-        "shortInfo": "NTA latest notice includes release of admit card for National Council for Hotel Management Joint Entrance Examination (NCHM JEE) 2026.",
+        "shortInfo": "NTA public notice dated 22 April 2026 confirms that the NCHM JEE 2026 admit card has been hosted online for the entrance exam scheduled on 25 April 2026 for admission to the B.Sc. Hospitality and Hotel Administration course.",
         "publishedAt": "2026-04-22",
-        "updatedAt": "2026-04-25",
-        "isFeatured": false,
-        "sourceName": "NTA Latest Notice",
+        "updatedAt": "2026-04-26",
+        "isFeatured": true,
+        "sourceName": "NTA NCHM JEE Admit Card Notice",
         "sourceUrl": "https://nta.ac.in/Download/Notice/Notice_20260422192859.pdf",
         "image": "",
         "importantDates": [
             {
-                "label": "Admit Card Notice Date",
+                "label": "Public Notice Date",
                 "value": "22 April 2026"
             },
             {
-                "label": "Exam",
-                "value": "NCHM JEE 2026"
+                "label": "Exam Date",
+                "value": "25 April 2026 (Saturday)"
+            },
+            {
+                "label": "Exam Name",
+                "value": "National Council for Hotel Management Joint Entrance Examination (NCHM JEE) 2026"
+            },
+            {
+                "label": "Admission Session",
+                "value": "Academic Year 2026-27"
             }
         ],
         "applicationFee": [
@@ -14261,6 +14288,14 @@
             {
                 "label": "Who Can Download",
                 "value": "Registered NCHM JEE 2026 applicants."
+            },
+            {
+                "label": "Course Relevance",
+                "value": "Candidates seeking admission to the B.Sc. Hospitality and Hotel Administration course at IHMs affiliated with NCHMCT."
+            },
+            {
+                "label": "Login Details Needed",
+                "value": "Application number, date of birth, and the credentials required on the official NCHM JEE portal."
             }
         ],
         "vacancyDetails": [],
@@ -14272,20 +14307,29 @@
                 "type": "primary"
             },
             {
+                "label": "NCHM JEE Exam Portal",
+                "url": "https://exams.nta.nic.in/nchm-jee/",
+                "type": "secondary"
+            },
+            {
                 "label": "NTA Official Website",
                 "url": "https://nta.ac.in/",
                 "type": "secondary"
             }
         ],
-        "longDescription": "NTA has issued NCHM JEE 2026 admit card notice. Candidates should download admit card from official portal, verify personal details, and follow reporting time and exam day instructions mentioned in the notice.",
+        "longDescription": "NTA has released the NCHM JEE 2026 admit card through a public notice dated 22 April 2026. The entrance examination for admission to the B.Sc. Hospitality and Hotel Administration programme for the 2026-27 academic session is scheduled for 25 April 2026. Candidates must download the admit card only from the official NCHM JEE portal, check their name, photograph, reporting time, and exam centre carefully, and remember that the admit card will not be sent by post. The official notice also reminds candidates that the admit card is provisional and subject to fulfilment of eligibility conditions.",
         "howToApply": [
-            "Open official notice PDF link.",
-            "Visit linked NCHM JEE portal.",
-            "Login and download admit card."
+            "Open the NCHM JEE admit card notice from the official NTA PDF link.",
+            "Visit the official NCHM JEE exam portal mentioned in the notice.",
+            "Log in using your application number, date of birth, and the required credentials.",
+            "Download the admit card PDF and verify exam date, centre, reporting time, and personal details.",
+            "Keep a printed copy of the admit card along with a valid photo ID for exam day."
         ],
         "beforeYouStart": [
-            "Check application number and date of birth.",
-            "Carry valid photo ID with admit card."
+            "Keep your application number, date of birth, and login credentials ready before opening the portal.",
+            "Carry a valid photo ID because the admit card alone may not be enough at the examination centre.",
+            "Check the exam city, reporting time, and any barred items mentioned in the hall ticket instructions.",
+            "Preserve the downloaded admit card in good condition for counselling and admission use later."
         ]
     },
     {
@@ -14482,14 +14526,14 @@
         "wpId": null,
         "slug": "nta-cuet-pg-result-2026-declaration-update",
         "path": "./post.html?slug=nta-cuet-pg-result-2026-declaration-update",
-        "title": "NTA CUET PG 2026 Result Declared Official Update",
+        "title": "NTA CUET PG 2026 Result Declared, Scorecard Download Link",
         "category": "Latest Results",
         "department": "National Testing Agency (NTA)",
         "location": "India",
-        "shortInfo": "NTA has issued official notice for declaration of result of CUET (PG) 2026 examination. Candidates can check scorecard from official portal.",
+        "shortInfo": "NTA public notice dated 24 April 2026 confirms that CUET PG 2026 result has been declared. Candidates who appeared in the March 2026 examination can now download their official scorecard from the CUET PG portal.",
         "publishedAt": "2026-04-24",
-        "updatedAt": "2026-04-25",
-        "isFeatured": false,
+        "updatedAt": "2026-04-26",
+        "isFeatured": true,
         "sourceName": "NTA CUET PG Result Notice",
         "sourceUrl": "https://nta.ac.in/Download/Notice/Notice_20260424201625.pdf",
         "image": "",
@@ -14501,6 +14545,14 @@
             {
                 "label": "Exam Name",
                 "value": "CUET (PG) 2026"
+            },
+            {
+                "label": "Exam Dates",
+                "value": "06, 07, 08, 09, 10, 11, 12, 13, 16, 17, 18, 19, 24, 25, 27, 29 and 30 March 2026"
+            },
+            {
+                "label": "Answer Key Challenge Window",
+                "value": "11 April 2026 to 14 April 2026"
             }
         ],
         "applicationFee": [
@@ -14513,6 +14565,18 @@
             {
                 "label": "Who Can Check",
                 "value": "Candidates who appeared in CUET PG 2026."
+            },
+            {
+                "label": "Unique Candidates Registered",
+                "value": "4,11,366"
+            },
+            {
+                "label": "Unique Candidates Appeared",
+                "value": "3,45,220"
+            },
+            {
+                "label": "Exam Mode and Coverage",
+                "value": "Computer Based Test conducted in 50 shifts for 157 subjects."
             }
         ],
         "vacancyDetails": [],
@@ -14524,20 +14588,29 @@
                 "type": "primary"
             },
             {
+                "label": "CUET PG Official Portal",
+                "url": "https://exams.nta.nic.in/cuet-pg/",
+                "type": "secondary"
+            },
+            {
                 "label": "NTA Official Website",
                 "url": "https://nta.ac.in/",
                 "type": "secondary"
             }
         ],
-        "longDescription": "NTA has declared CUET PG 2026 result through official notice. Candidates should download scorecard using official login and verify subject-wise score, percentile, and admission-related instructions.",
+        "longDescription": "NTA has officially declared the CUET PG 2026 result through its 24 April 2026 public notice. According to the notice, the examination was conducted on 17 different dates in March 2026 in 50 shifts covering 157 subjects in CBT mode. NTA also noted that the provisional answer keys, question papers, and recorded responses were hosted from 11 April 2026 to 14 April 2026 for challenge, and the final result was processed after expert verification of objections. Candidates should download the scorecard from the official CUET PG portal and verify subject-wise marks, percentile details, and admission-related instructions for participating universities.",
         "howToApply": [
-            "Open CUET PG result notice PDF.",
-            "Go to official CUET PG result portal.",
-            "Login and download scorecard."
+            "Open the CUET PG 2026 result notice PDF from the official NTA link.",
+            "Visit the official CUET PG result portal from the Important Links section.",
+            "Log in using your application number and password or date of birth, as prompted on the portal.",
+            "Download the scorecard and verify your subject code, marks, percentile, and personal details carefully.",
+            "Save the result PDF because it will be needed during counselling, admission, and document verification."
         ],
         "beforeYouStart": [
-            "Keep application number and password ready.",
-            "Save scorecard copy for counselling/admission."
+            "Keep your application number and login credentials ready before opening the scorecard portal.",
+            "Use only the official CUET PG website or the NTA notice link to avoid fake result pages.",
+            "Check every detail on the scorecard, especially subject, category, and name spelling.",
+            "Keep both soft and printed copies of the result for counselling and university admission rounds."
         ]
     },
     {
