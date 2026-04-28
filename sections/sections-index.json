@@ -1,5 +1,131 @@
 [
   {
+    "slug": "admission-today-highlights-2026-04-28",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/admission-today-highlights-2026-04-28.html",
+    "title": "Today Admission Updates 28 April 2026: Latest Form and Counselling Posts",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "admit-card-today-highlights-2026-04-28",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/admit-card-today-highlights-2026-04-28.html",
+    "title": "Today Admit Card Updates 28 April 2026: Top Download and Exam Notices",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "latest-jobs-today-highlights-2026-04-28",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/latest-jobs-today-highlights-2026-04-28.html",
+    "title": "Today Latest Jobs 28 April 2026: Top Online Form and Vacancy Updates",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "latest-results-today-highlights-2026-04-28",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/latest-results-today-highlights-2026-04-28.html",
+    "title": "Today Latest Results 28 April 2026: Top Result Links and Updates",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "sarkari-yojana-today-highlights-2026-04-28",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/sarkari-yojana-today-highlights-2026-04-28.html",
+    "title": "Today Sarkari Yojana Updates 28 April 2026: Latest Scheme and Service Posts",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "scholarship-today-highlights-2026-04-28",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/scholarship-today-highlights-2026-04-28.html",
+    "title": "Today Scholarship Updates 28 April 2026: Latest Portal and Benefit Posts",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "verification-today-highlights-2026-04-28",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/verification-today-highlights-2026-04-28.html",
+    "title": "Today Verification Updates 28 April 2026: Latest Service and Status Posts",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "admission-yesterday-highlights-2026-04-27",
+    "category": "Admission",
+    "folder": "admission",
+    "path": "sections/admission/admission-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Admission Updates 27 April 2026: Latest Form and Counselling Posts",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
+    "slug": "admit-card-yesterday-highlights-2026-04-27",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/admit-card-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Admit Card Updates 27 April 2026: Top Download and Exam Notices",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
+    "slug": "latest-jobs-yesterday-highlights-2026-04-27",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/latest-jobs-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Latest Jobs 27 April 2026: Top Online Form and Vacancy Updates",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
+    "slug": "latest-results-yesterday-highlights-2026-04-27",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/latest-results-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Latest Results 27 April 2026: Top Result Links and Updates",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
+    "slug": "sarkari-yojana-yesterday-highlights-2026-04-27",
+    "category": "Sarkari Yojana",
+    "folder": "sarkari-yojana",
+    "path": "sections/sarkari-yojana/sarkari-yojana-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Sarkari Yojana Updates 27 April 2026: Latest Scheme and Service Posts",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
+    "slug": "scholarship-yesterday-highlights-2026-04-27",
+    "category": "Scholarship",
+    "folder": "scholarship",
+    "path": "sections/scholarship/scholarship-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Scholarship Updates 27 April 2026: Latest Portal and Benefit Posts",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
+    "slug": "verification-yesterday-highlights-2026-04-27",
+    "category": "Verification",
+    "folder": "verification",
+    "path": "sections/verification/verification-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Verification Updates 27 April 2026: Latest Service and Status Posts",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
     "slug": "btsc-iti-instructor-recruitment-2026-advt-14-23",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -27,6 +153,78 @@
     "updatedAt": "2026-04-26"
   },
   {
+    "slug": "bceceb-junior-resident-revised-eligible-list-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bceceb-junior-resident-revised-eligible-list-2026.html",
+    "title": "BCECEB Junior Resident Revised Eligible List 2026 (Health JR)",
+    "publishedAt": "2026-03-20",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "bceceb-senior-resident-tutor-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bceceb-senior-resident-tutor-online-form-2026.html",
+    "title": "BCECEB Senior Resident Tutor Online Form 2026 (Health Dept Bihar)",
+    "publishedAt": "2026-04-14",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "bseb-intermediate-special-compartment-scrutiny-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bseb-intermediate-special-compartment-scrutiny-2026.html",
+    "title": "BSEB Intermediate Special Compartment and Scrutiny Update 2026",
+    "publishedAt": "2026-03-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "csbc-constable-operator-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-constable-operator-online-form-2026.html",
+    "title": "CSBC Bihar Police Constable Operator Online Form 2026 (Advt No. 02/2026)",
+    "publishedAt": "2026-02-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "csbc-driver-constable-pet-e-admit-card-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/csbc-driver-constable-pet-e-admit-card-2026.html",
+    "title": "CSBC Driver Constable PET e-Admit Card 2026 (Advt No. 02/2025)",
+    "publishedAt": "2026-02-14",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "csbc-driver-constable-written-result-2025-26",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/csbc-driver-constable-written-result-2025-26.html",
+    "title": "CSBC Driver Constable Written Result for PET 2026 (Advt No. 02/2025)",
+    "publishedAt": "2025-12-30",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "csbc-special-branch-constable-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-special-branch-constable-online-form-2026.html",
+    "title": "CSBC Special Branch Constable GD Online Form 2026 (Advt No. 01/2026)",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "cuet-ug-2026-registration-reopening-update",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/cuet-ug-2026-registration-reopening-update.html",
+    "title": "CUET UG 2026 Registration Reopening and Application Update",
+    "publishedAt": "2026-02-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "ibps-csa-xvi-2026-27-exam-calendar",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -36,12 +234,39 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "ibps-crp-calendar-2026-27-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ibps-crp-calendar-2026-27-update.html",
+    "title": "IBPS CRP Calendar 2026-27 for PSBs and RRBs (PO, Clerk, SO, RRB)",
+    "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ibps-csa-xv-provisional-allotment-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ibps-csa-xv-provisional-allotment-2026.html",
+    "title": "IBPS CSA XV Provisional Allotment List 2026",
+    "publishedAt": "2026-04-02",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "ibps-po-mt-xvi-2026-27-exam-calendar",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/ibps-po-mt-xvi-2026-27-exam-calendar.html",
     "title": "IBPS PO MT XVI 2026-27 Exam Calendar Prelims and Mains Schedule",
     "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ibps-rrb-xiv-office-assistant-provisional-allotment-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ibps-rrb-xiv-office-assistant-provisional-allotment-2026.html",
+    "title": "IBPS RRB XIV Office Assistants Provisional Allotment 2026",
+    "publishedAt": "2026-04-10",
     "updatedAt": "2026-04-25"
   },
   {
@@ -60,6 +285,51 @@
     "path": "sections/latest-jobs/ibps-so-spl-xvi-2026-27-exam-calendar.html",
     "title": "IBPS Specialist Officer SPL XVI 2026-27 Exam Calendar Update",
     "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "isro-iist-registrar-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-iist-registrar-recruitment-2026.html",
+    "title": "ISRO IIST Registrar Recruitment 2026 (Advertisement IIST/Admin/RMT/14-2026)",
+    "publishedAt": "2026-02-14",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "isro-sac-scientist-engineer-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-sac-scientist-engineer-recruitment-2026.html",
+    "title": "ISRO SAC Scientist Engineer Recruitment 2026 (SAC:01:2026)",
+    "publishedAt": "2026-01-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "isro-ursc-scientist-engineer-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-ursc-scientist-engineer-recruitment-2026.html",
+    "title": "ISRO URSC Scientist Engineer Recruitment 2026 (URSC:01:2026)",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "jee-main-session-2-admit-card-2026-april",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/jee-main-session-2-admit-card-2026-april.html",
+    "title": "JEE Main 2026 Session 2 Admit Card April Download Link",
+    "publishedAt": "2026-04-01",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "jee-main-session-2-score-card-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/jee-main-session-2-score-card-2026.html",
+    "title": "JEE Main 2026 Session 2 Paper 1 Score Card Download",
+    "publishedAt": "2026-04-19",
     "updatedAt": "2026-04-25"
   },
   {
@@ -96,6 +366,69 @@
     "path": "sections/latest-results/jkpsc-statistical-assistant-departmental-result-2025-declared.html",
     "title": "JKPSC Statistical Assistants Departmental Examination 2025 Result Declared",
     "publishedAt": "2026-04-16",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "karnataka-ii-puc-exam-1-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/karnataka-ii-puc-exam-1-result-2026.html",
+    "title": "Karnataka II PUC Exam 1 Result 2026 Declared on 09 April",
+    "publishedAt": "2026-04-09",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "karnataka-sslc-exam-1-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/karnataka-sslc-exam-1-result-2026.html",
+    "title": "Karnataka SSLC Exam 1 Result 2026 Declared on 23 April",
+    "publishedAt": "2026-04-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "kerala-psc-beat-forest-officer-short-list-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/kerala-psc-beat-forest-officer-short-list-2026.html",
+    "title": "Kerala PSC Beat Forest Officer Short List 2026 (Kollam, Cat No 214/2025)",
+    "publishedAt": "2026-04-17",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "kerala-psc-police-constable-trainee-rank-list-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/kerala-psc-police-constable-trainee-rank-list-2026.html",
+    "title": "Kerala PSC Police Constable Trainee Rank List 2026 (Cat No 740/2024)",
+    "publishedAt": "2026-04-17",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "kerala-psc-staff-nurse-gr2-interview-update-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/kerala-psc-staff-nurse-gr2-interview-update-2026.html",
+    "title": "Kerala PSC Staff Nurse Gr II Interview Update 2026 (Cat No 469/2024)",
+    "publishedAt": "2026-04-17",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "neet-ug-2026-application-correction-extension-update",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/neet-ug-2026-application-correction-extension-update.html",
+    "title": "NEET UG 2026 Application Form, Extension and Correction Window Update",
+    "publishedAt": "2026-04-12",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "neet-ug-2026-city-intimation-admit-update",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/neet-ug-2026-city-intimation-admit-update.html",
+    "title": "NEET UG 2026 City Intimation and Admit Card Update",
+    "publishedAt": "2026-04-12",
     "updatedAt": "2026-04-25"
   },
   {
@@ -144,6 +477,123 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "opsc-aao-admission-certificate-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/opsc-aao-admission-certificate-2026.html",
+    "title": "OPSC Assistant Agriculture Officer Admission Certificate 2026 Download",
+    "publishedAt": "2026-02-13",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-assistant-agriculture-officer-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/opsc-assistant-agriculture-officer-update-2026.html",
+    "title": "OPSC Assistant Agriculture Officer Recruitment Update 2026 (Advt 06/2025-26)",
+    "publishedAt": "2026-02-10",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-assistant-professor-broad-speciality-admission-certificate-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/opsc-assistant-professor-broad-speciality-admission-certificate-2026.html",
+    "title": "OPSC Assistant Professor Broad Speciality Admission Certificate 2026",
+    "publishedAt": "2026-02-17",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-assistant-professor-broad-speciality-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/opsc-assistant-professor-broad-speciality-update-2026.html",
+    "title": "OPSC Assistant Professor Broad Speciality Update 2026 (Advt 03/2025-26)",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-pgt-commerce-final-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/opsc-pgt-commerce-final-result-2026.html",
+    "title": "OPSC Post Graduate Teacher Commerce Final Result 2026",
+    "publishedAt": "2026-02-13",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-pgt-english-final-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/opsc-pgt-english-final-result-2026.html",
+    "title": "OPSC Post Graduate Teacher English Final Result 2026",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-cglre-preliminary-admit-card-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/ossc-cglre-preliminary-admit-card-2026.html",
+    "title": "OSSC CGLRE 2025 Preliminary Admit Card Download 2026",
+    "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-chsl-specialist-posts-recruitment-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ossc-chsl-specialist-posts-recruitment-update-2026.html",
+    "title": "OSSC CHSL Specialist Posts Recruitment 2025 Application Update 2026",
+    "publishedAt": "2026-03-07",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-cpglre-2025-application-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ossc-cpglre-2025-application-update-2026.html",
+    "title": "OSSC CPGLRE 2025 Application and Preliminary Exam Update 2026",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-je-civil-provisional-recommendation-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ossc-je-civil-provisional-recommendation-2026.html",
+    "title": "OSSC JE Civil Provisional Recommendation List 2026 (746 Candidates)",
+    "publishedAt": "2026-04-08",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-si-excise-si-traffic-marks-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ossc-si-excise-si-traffic-marks-2026.html",
+    "title": "OSSC SI Excise and SI Traffic Marks Released April 2026",
+    "publishedAt": "2026-04-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "sbi-group-chief-economic-advisor-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/sbi-group-chief-economic-advisor-recruitment-2026.html",
+    "title": "SBI Group Chief Economic Advisor Recruitment 2026 Apply Online",
+    "publishedAt": "2026-04-13",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "sbi-lead-business-analyst-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/sbi-lead-business-analyst-recruitment-2026.html",
+    "title": "SBI Lead Business Analyst Recruitment 2026 Apply Online (Last Date 04 May)",
+    "publishedAt": "2026-04-13",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "tnpsc-cts-non-interview-notification-date-2026-planner",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -180,6 +630,15 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "tnpsc-group-2-2a-main-hall-ticket-2026",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/tnpsc-group-2-2a-main-hall-ticket-2026.html",
+    "title": "TNPSC Group II and IIA Main Exam Hall Ticket 2026 Update",
+    "publishedAt": "2026-01-29",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "tnpsc-group-2-2a-notification-date-2026-planner",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -207,11 +666,92 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "uppsc-assistant-teacher-tgt-notice-2025-26",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/uppsc-assistant-teacher-tgt-notice-2025-26.html",
+    "title": "UPPSC Assistant Teacher TGT Recruitment Notice 2025-26 (Advt A-5/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "uppsc-ncc-directorate-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/uppsc-ncc-directorate-result-2026.html",
+    "title": "UPPSC Directorate of National Cadet Corps Result 2026 (D-4/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "uppsc-forthcoming-interviews-may-2026-update",
+    "category": "Admit Card",
+    "folder": "admit-card",
+    "path": "sections/admit-card/uppsc-forthcoming-interviews-may-2026-update.html",
+    "title": "UPPSC Forthcoming Interviews for May 2026 Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "uppsc-lecturer-gic-notice-2025-26",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/uppsc-lecturer-gic-notice-2025-26.html",
+    "title": "UPPSC Lecturer Government Inter College Notice 2025-26 (Advt A-6/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "uppsc-namami-gange-rural-water-supply-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/uppsc-namami-gange-rural-water-supply-result-2026.html",
+    "title": "UPPSC Namami Gange Rural Water Supply Department Result 2026 (D-4/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-capf-acs-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-capf-acs-2026-active-update.html",
+    "title": "UPSC CAPF Assistant Commandants Examination 2026 Active Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "upsc-cbi-dsp-ldce-forthcoming-exam-2026",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/upsc-cbi-dsp-ldce-forthcoming-exam-2026.html",
     "title": "UPSC CBI (DSP) LDCE Forthcoming Exam 2026 Notification Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-cds-1-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cds-1-2026-active-update.html",
+    "title": "UPSC CDS (I) Examination 2026 Active Recruitment Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-cisf-ac-exe-ldce-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cisf-ac-exe-ldce-2026-active-update.html",
+    "title": "UPSC CISF AC(EXE) LDCE 2026 Active Exam Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-civil-services-prelims-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-civil-services-prelims-2026-active-update.html",
+    "title": "UPSC Civil Services Preliminary Examination 2026 Active Exam Update",
     "publishedAt": "2026-04-25",
     "updatedAt": "2026-04-25"
   },
@@ -234,6 +774,15 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "upsc-engineering-services-prelims-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-engineering-services-prelims-2026-active-update.html",
+    "title": "UPSC Engineering Services Preliminary Examination 2026 Active Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "upsc-nda-na-2-2026-forthcoming-exam-update",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -243,12 +792,21 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "upsc-nda-na-1-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-nda-na-1-2026-active-update.html",
+    "title": "UPSC NDA NA (I) 2026 Active Examination Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "bpsc-school-teacher-tre-4-0-2026",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
     "title": "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts)",
-    "publishedAt": "2026-04-24T23:59:00+05:30",
+    "publishedAt": "2026-02-18",
     "updatedAt": "2026-04-24"
   },
   {

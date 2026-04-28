@@ -1,5 +1,23 @@
 [
   {
+    "slug": "latest-jobs-today-highlights-2026-04-28",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/latest-jobs-today-highlights-2026-04-28.html",
+    "title": "Today Latest Jobs 28 April 2026: Top Online Form and Vacancy Updates",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "latest-jobs-yesterday-highlights-2026-04-27",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/latest-jobs-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Latest Jobs 27 April 2026: Top Online Form and Vacancy Updates",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
     "slug": "btsc-iti-instructor-recruitment-2026-advt-14-23",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -9,11 +27,47 @@
     "updatedAt": "2026-04-26"
   },
   {
+    "slug": "bceceb-senior-resident-tutor-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bceceb-senior-resident-tutor-online-form-2026.html",
+    "title": "BCECEB Senior Resident Tutor Online Form 2026 (Health Dept Bihar)",
+    "publishedAt": "2026-04-14",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "csbc-constable-operator-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-constable-operator-online-form-2026.html",
+    "title": "CSBC Bihar Police Constable Operator Online Form 2026 (Advt No. 02/2026)",
+    "publishedAt": "2026-02-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "csbc-special-branch-constable-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-special-branch-constable-online-form-2026.html",
+    "title": "CSBC Special Branch Constable GD Online Form 2026 (Advt No. 01/2026)",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "ibps-csa-xvi-2026-27-exam-calendar",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/ibps-csa-xvi-2026-27-exam-calendar.html",
     "title": "IBPS Clerk CSA XVI 2026-27 Exam Calendar Prelims and Mains",
+    "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ibps-crp-calendar-2026-27-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ibps-crp-calendar-2026-27-update.html",
+    "title": "IBPS CRP Calendar 2026-27 for PSBs and RRBs (PO, Clerk, SO, RRB)",
     "publishedAt": "2026-01-16",
     "updatedAt": "2026-04-25"
   },
@@ -42,6 +96,87 @@
     "path": "sections/latest-jobs/ibps-so-spl-xvi-2026-27-exam-calendar.html",
     "title": "IBPS Specialist Officer SPL XVI 2026-27 Exam Calendar Update",
     "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "isro-iist-registrar-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-iist-registrar-recruitment-2026.html",
+    "title": "ISRO IIST Registrar Recruitment 2026 (Advertisement IIST/Admin/RMT/14-2026)",
+    "publishedAt": "2026-02-14",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "isro-sac-scientist-engineer-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-sac-scientist-engineer-recruitment-2026.html",
+    "title": "ISRO SAC Scientist Engineer Recruitment 2026 (SAC:01:2026)",
+    "publishedAt": "2026-01-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "isro-ursc-scientist-engineer-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-ursc-scientist-engineer-recruitment-2026.html",
+    "title": "ISRO URSC Scientist Engineer Recruitment 2026 (URSC:01:2026)",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-assistant-agriculture-officer-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/opsc-assistant-agriculture-officer-update-2026.html",
+    "title": "OPSC Assistant Agriculture Officer Recruitment Update 2026 (Advt 06/2025-26)",
+    "publishedAt": "2026-02-10",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-assistant-professor-broad-speciality-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/opsc-assistant-professor-broad-speciality-update-2026.html",
+    "title": "OPSC Assistant Professor Broad Speciality Update 2026 (Advt 03/2025-26)",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-chsl-specialist-posts-recruitment-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ossc-chsl-specialist-posts-recruitment-update-2026.html",
+    "title": "OSSC CHSL Specialist Posts Recruitment 2025 Application Update 2026",
+    "publishedAt": "2026-03-07",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-cpglre-2025-application-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ossc-cpglre-2025-application-update-2026.html",
+    "title": "OSSC CPGLRE 2025 Application and Preliminary Exam Update 2026",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "sbi-group-chief-economic-advisor-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/sbi-group-chief-economic-advisor-recruitment-2026.html",
+    "title": "SBI Group Chief Economic Advisor Recruitment 2026 Apply Online",
+    "publishedAt": "2026-04-13",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "sbi-lead-business-analyst-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/sbi-lead-business-analyst-recruitment-2026.html",
+    "title": "SBI Lead Business Analyst Recruitment 2026 Apply Online (Last Date 04 May)",
+    "publishedAt": "2026-04-13",
     "updatedAt": "2026-04-25"
   },
   {
@@ -81,11 +216,65 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "uppsc-assistant-teacher-tgt-notice-2025-26",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/uppsc-assistant-teacher-tgt-notice-2025-26.html",
+    "title": "UPPSC Assistant Teacher TGT Recruitment Notice 2025-26 (Advt A-5/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "uppsc-lecturer-gic-notice-2025-26",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/uppsc-lecturer-gic-notice-2025-26.html",
+    "title": "UPPSC Lecturer Government Inter College Notice 2025-26 (Advt A-6/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-capf-acs-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-capf-acs-2026-active-update.html",
+    "title": "UPSC CAPF Assistant Commandants Examination 2026 Active Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "upsc-cbi-dsp-ldce-forthcoming-exam-2026",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/upsc-cbi-dsp-ldce-forthcoming-exam-2026.html",
     "title": "UPSC CBI (DSP) LDCE Forthcoming Exam 2026 Notification Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-cds-1-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cds-1-2026-active-update.html",
+    "title": "UPSC CDS (I) Examination 2026 Active Recruitment Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-cisf-ac-exe-ldce-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cisf-ac-exe-ldce-2026-active-update.html",
+    "title": "UPSC CISF AC(EXE) LDCE 2026 Active Exam Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "upsc-civil-services-prelims-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-civil-services-prelims-2026-active-update.html",
+    "title": "UPSC Civil Services Preliminary Examination 2026 Active Exam Update",
     "publishedAt": "2026-04-25",
     "updatedAt": "2026-04-25"
   },
@@ -108,6 +297,15 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "upsc-engineering-services-prelims-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-engineering-services-prelims-2026-active-update.html",
+    "title": "UPSC Engineering Services Preliminary Examination 2026 Active Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "upsc-nda-na-2-2026-forthcoming-exam-update",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -117,12 +315,21 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "upsc-nda-na-1-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-nda-na-1-2026-active-update.html",
+    "title": "UPSC NDA NA (I) 2026 Active Examination Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "bpsc-school-teacher-tre-4-0-2026",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
     "path": "sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
     "title": "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts)",
-    "publishedAt": "2026-04-24T23:59:00+05:30",
+    "publishedAt": "2026-02-18",
     "updatedAt": "2026-04-24"
   },
   {

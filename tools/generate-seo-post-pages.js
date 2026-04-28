@@ -3,6 +3,9 @@ const path = require("path");
 
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, "data.json");
+const HOME_DATA_PATH = path.join(ROOT, "home-data.json");
+const HOME_TOOLS_DATA_PATH = path.join(ROOT, "home-tools-data.json");
+const SLUG_PATHS_PATH = path.join(ROOT, "slug-paths.json");
 const SITEMAP_PATH = path.join(ROOT, "sitemap.xml");
 const SECTIONS_INDEX_PATH = path.join(ROOT, "sections", "sections-index.json");
 
@@ -181,6 +184,24 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, ""));
 }
 
+function decodeHtmlEntities(value) {
+  return String(value ?? "")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&#(\d+);/g, (_, code) => {
+      const numeric = Number.parseInt(code, 10);
+      return Number.isFinite(numeric) ? String.fromCharCode(numeric) : "";
+    })
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => {
+      const numeric = Number.parseInt(code, 16);
+      return Number.isFinite(numeric) ? String.fromCharCode(numeric) : "";
+    });
+}
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -191,10 +212,11 @@ function escapeHtml(value) {
 }
 
 function stripHtml(value) {
-  return String(value ?? "")
-    .replace(/<[^>]*>/g, " ")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
+  return decodeHtmlEntities(
+    String(value ?? "")
+      .replace(/<br\s*\/?>/gi, " ")
+      .replace(/<[^>]*>/g, " ")
+  )
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -852,6 +874,310 @@ function buildFallbackPost(filePath, content) {
   };
 }
 
+function toIsoDateValue(value) {
+  const direct = normalizeIsoDate(value);
+  if (direct) return direct;
+
+  const text = cleanText(value);
+  if (!text) return "";
+
+  const date = new Date(text);
+  if (Number.isNaN(date.getTime())) return "";
+  return formatDateInTimeZone(date, "Asia/Kolkata");
+}
+
+function extractSectionHtml(content, headingPatterns) {
+  for (const pattern of headingPatterns) {
+    const regex = new RegExp(
+      `<section[^>]*>[\\s\\S]*?<h2[^>]*>\\s*${pattern}\\s*<\\/h2>([\\s\\S]*?)<\\/section>`,
+      "i"
+    );
+    const match = content.match(regex);
+    if (match?.[1]) return match[1];
+  }
+
+  return "";
+}
+
+function extractParagraphs(content) {
+  const items = [];
+  const regex = /<p[^>]*>(.*?)<\/p>/gis;
+  let match;
+  while ((match = regex.exec(content))) {
+    const text = cleanText(match[1]);
+    if (text) items.push(text);
+  }
+  return items;
+}
+
+function extractListItems(content) {
+  const items = [];
+  const regex = /<li[^>]*>(.*?)<\/li>/gis;
+  let match;
+  while ((match = regex.exec(content))) {
+    const text = cleanText(match[1]);
+    if (text) items.push(text);
+  }
+  return items;
+}
+
+function extractStrongSpanFacts(content) {
+  const facts = [];
+  const regex = /<strong[^>]*>(.*?)<\/strong>\s*<span[^>]*>(.*?)<\/span>/gis;
+  let match;
+  while ((match = regex.exec(content))) {
+    const label = cleanText(match[1]);
+    const value = cleanText(match[2]);
+    if (label && value) facts.push({ label, value });
+  }
+  return facts;
+}
+
+function findFactValue(facts, patterns) {
+  for (const pattern of patterns) {
+    const found = facts.find((item) => pattern.test(item.label));
+    if (found?.value) return found.value;
+  }
+  return "";
+}
+
+function extractTableRowsFromSection(content, headingPatterns) {
+  const sectionHtml = extractSectionHtml(content, headingPatterns);
+  if (!sectionHtml) return [];
+
+  const tableMatch = sectionHtml.match(/<table[^>]*>([\s\S]*?)<\/table>/i);
+  if (!tableMatch) return [];
+
+  const rows = [];
+  const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+  let rowMatch;
+
+  while ((rowMatch = rowRegex.exec(tableMatch[1]))) {
+    const cells = [];
+    const cellRegex = /<(th|td)[^>]*>([\s\S]*?)<\/\1>/gi;
+    let cellMatch;
+    while ((cellMatch = cellRegex.exec(rowMatch[1]))) {
+      const text = cleanText(cellMatch[2]);
+      if (text) cells.push(text);
+    }
+
+    if (cells.length >= 3) {
+      if (/^advt\.?\s*no\.?$|^post name$/i.test(cells[0]) && /^total/i.test(cells[1])) {
+        continue;
+      }
+      rows.push({
+        post: cells[0],
+        total: cells[1],
+        criteria: cells[2]
+      });
+      continue;
+    }
+
+    if (cells.length >= 2) {
+      rows.push({
+        label: cells[0],
+        value: cells[1]
+      });
+    }
+  }
+
+  return rows;
+}
+
+function classifyImportantLink(label, url) {
+  const text = cleanText(label || url || "");
+  return /official|website|portal|home page|homepage|source/i.test(text) ? "secondary" : "primary";
+}
+
+function extractImportantLinks(content) {
+  const sectionHtml = extractSectionHtml(content, ["Important Links"]);
+  if (!sectionHtml) return [];
+
+  const links = [];
+  const cardRegex = /<div[^>]*link-card[^>]*>[\s\S]*?<strong[^>]*>(.*?)<\/strong>[\s\S]*?<a[^>]+href="([^"]+)"/gi;
+  let match;
+
+  while ((match = cardRegex.exec(sectionHtml))) {
+    const label = cleanText(match[1]);
+    const url = cleanText(match[2]);
+    if (!label || !url) continue;
+    links.push({ label, url, type: classifyImportantLink(label, url) });
+  }
+
+  if (links.length) return uniqueUrls(links).slice(0, 8);
+
+  return uniqueUrls(parseLinksFromHtml(sectionHtml).map((item) => ({
+    ...item,
+    type: classifyImportantLink(item.label, item.url)
+  }))).slice(0, 8);
+}
+
+function extractSourceLinks(content) {
+  const sectionHtml = extractSectionHtml(content, ["Source References"]);
+  if (!sectionHtml) return [];
+  return uniqueUrls(parseLinksFromHtml(sectionHtml));
+}
+
+function extractSectionList(content, headingPatterns) {
+  const sectionHtml = extractSectionHtml(content, headingPatterns);
+  return sectionHtml ? extractListItems(sectionHtml) : [];
+}
+
+function buildCatalogPost(filePath, content, existingPost = {}) {
+  const folder = path.basename(path.dirname(filePath));
+  const slug = path.basename(filePath, ".html");
+  const facts = extractStrongSpanFacts(content);
+  const metaDescription = firstNonEmpty([
+    getMetaContent(content, { name: "description" }),
+    getMetaContent(content, { property: "og:description" })
+  ]);
+  const title = firstNonEmpty([
+    cleanText(content.match(/<h1[^>]*>(.*?)<\/h1>/is)?.[1] || ""),
+    cleanText(content.match(/<title>(.*?)<\/title>/is)?.[1] || "").replace(/\s*\|\s*BiharResult\.live.*$/i, ""),
+    existingPost.title,
+    slug.replace(/-/g, " ")
+  ]);
+  const lead = firstNonEmpty([
+    cleanText(content.match(/<p[^>]*class="[^"]*lead[^"]*"[^>]*>(.*?)<\/p>/is)?.[1] || ""),
+    cleanText(content.match(/<p[^>]*class="[^"]*seo-post-lead[^"]*"[^>]*>(.*?)<\/p>/is)?.[1] || ""),
+    metaDescription,
+    existingPost.shortInfo
+  ]);
+  const summaryParagraphs = extractParagraphs(
+    extractSectionHtml(content, [
+      "Result Summary",
+      "Recruitment Summary",
+      "Admit Card Summary",
+      "Admission Summary",
+      "Scholarship Summary",
+      "Scheme Summary",
+      "Verification Summary",
+      "Post Details",
+      "Summary"
+    ])
+  );
+  const category = firstNonEmpty([
+    getMetaContent(content, { property: "article:section" }),
+    existingPost.category,
+    FOLDER_TO_CATEGORY[folder],
+    "Latest Results"
+  ]);
+  const publishedAt = firstNonEmpty([
+    toIsoDateValue(getMetaContent(content, { property: "article:published_time" })),
+    toIsoDateValue(content.match(/<strong>\s*Posted:\s*<\/strong>\s*([^<]+)/i)?.[1] || ""),
+    toIsoDateValue(existingPost.publishedAt),
+    "2026-02-18"
+  ]);
+  const updatedAt = firstNonEmpty([
+    toIsoDateValue(getMetaContent(content, { property: "article:modified_time" })),
+    toIsoDateValue(content.match(/<strong>\s*Modified:\s*<\/strong>\s*([^<]+)/i)?.[1] || ""),
+    toIsoDateValue(existingPost.updatedAt),
+    publishedAt
+  ]);
+  const importantDates = extractTableRowsFromSection(content, ["Important Dates(?: and Key Details)?"]);
+  const applicationFee = extractTableRowsFromSection(content, ["Application Fee(?:\\s*\\/\\s*Service Fee)?"]);
+  const eligibility = extractTableRowsFromSection(content, ["Eligibility Details"]);
+  const vacancyDetails = extractTableRowsFromSection(content, ["Vacancy(?:\\s*\\/\\s*Seat\\s*\\/\\s*Category)? Details"]);
+  const ageLimitItems = extractSectionList(content, ["Age Limit"]);
+  const ageLimit = ageLimitItems.map((item) => {
+    const separatorIndex = item.indexOf(":");
+    if (separatorIndex === -1) {
+      return { label: "Age", value: item };
+    }
+    return {
+      label: cleanText(item.slice(0, separatorIndex)),
+      value: cleanText(item.slice(separatorIndex + 1))
+    };
+  }).filter((item) => item.label && item.value);
+  const importantLinks = extractImportantLinks(content);
+  const sourceLinks = extractSourceLinks(content);
+  const sourceCandidate = sourceLinks[0] || importantLinks.find((item) => item.type === "secondary") || importantLinks[0] || null;
+
+  return {
+    ...existingPost,
+    slug,
+    title,
+    category,
+    department: firstNonEmpty([
+      findFactValue(facts, [/^department$/i, /^board$/i, /^agency$/i, /^conducting body$/i]),
+      existingPost.department,
+      "Official Update"
+    ]),
+    location: firstNonEmpty([
+      findFactValue(facts, [/^location$/i, /^state$/i, /^region$/i]),
+      existingPost.location,
+      "Bihar"
+    ]),
+    shortInfo: lead,
+    longDescription: firstNonEmpty([
+      summaryParagraphs.join(" "),
+      lead,
+      metaDescription,
+      existingPost.longDescription,
+      existingPost.shortInfo
+    ]),
+    publishedAt,
+    updatedAt,
+    path: `sections/${folder}/${slug}.html`,
+    image: firstNonEmpty([
+      getMetaContent(content, { property: "og:image" }),
+      existingPost.image
+    ]),
+    sourceName: firstNonEmpty([
+      cleanText(sourceCandidate?.label || ""),
+      existingPost.sourceName,
+      "Official Source"
+    ]),
+    sourceUrl: firstNonEmpty([
+      cleanText(sourceCandidate?.url || ""),
+      existingPost.sourceUrl
+    ]),
+    importantDates: importantDates.length ? importantDates : Array.isArray(existingPost.importantDates) ? existingPost.importantDates : [],
+    applicationFee: applicationFee.length ? applicationFee : Array.isArray(existingPost.applicationFee) ? existingPost.applicationFee : [],
+    eligibility: eligibility.length ? eligibility : Array.isArray(existingPost.eligibility) ? existingPost.eligibility : [],
+    ageLimit: ageLimit.length ? ageLimit : Array.isArray(existingPost.ageLimit) ? existingPost.ageLimit : [],
+    vacancyDetails: vacancyDetails.length ? vacancyDetails : Array.isArray(existingPost.vacancyDetails) ? existingPost.vacancyDetails : [],
+    importantLinks: importantLinks.length ? importantLinks : Array.isArray(existingPost.importantLinks) ? existingPost.importantLinks : [],
+    howToApply: (() => {
+      const parsed = extractSectionList(content, ["How To Proceed", "How To Fill Form\\s*\\/\\s*Check Update"]);
+      return parsed.length ? parsed : Array.isArray(existingPost.howToApply) ? existingPost.howToApply : [];
+    })(),
+    beforeYouStart: (() => {
+      const parsed = extractSectionList(content, ["Before You Start"]);
+      return parsed.length ? parsed : Array.isArray(existingPost.beforeYouStart) ? existingPost.beforeYouStart : [];
+    })()
+  };
+}
+
+function buildDataCatalog(sectionFiles, existingDataMap) {
+  return sectionFiles
+    .map((filePath) => {
+      const slug = path.basename(filePath, ".html");
+      const content = fs.readFileSync(filePath, "utf8");
+      return buildCatalogPost(filePath, content, existingDataMap.get(slug) || {});
+    })
+    .sort(compareEntriesByDate);
+}
+
+function ensureSectionPostFiles(data) {
+  let createdCount = 0;
+
+  for (const post of data) {
+    const folder = CATEGORY_TO_FOLDER[post.category];
+    const slug = cleanText(post.slug || "");
+    if (!folder || !slug) continue;
+
+    const filePath = path.join(ROOT, "sections", folder, `${slug}.html`);
+    if (fs.existsSync(filePath)) continue;
+
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+    fs.writeFileSync(filePath, buildHtml(post, folder), "utf8");
+    createdCount += 1;
+  }
+
+  return createdCount;
+}
+
 function renderTableRows(rows, keyA = "label", keyB = "value") {
   return rows
     .map((row) => `<tr><th scope="row">${escapeHtml(cleanText(row[keyA]))}</th><td>${escapeHtml(cleanText(row[keyB]))}</td></tr>`)
@@ -1117,9 +1443,8 @@ function buildHtml(post, folder) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#0b3ab2" />
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
@@ -1195,13 +1520,6 @@ function buildHtml(post, folder) {
     }
   </style>
 ${buildSchema(post, folder, canonicalUrl, faq, howToApply)}
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-YVN84V93Z6");
-  </script>
 </head>
 <body class="br-post-page">
   <header class="post-topbar"><div class="br-wrap"><a href="../../index.html" class="post-brand">BiharResult.live</a></div></header>
@@ -1239,6 +1557,7 @@ ${buildSchema(post, folder, canonicalUrl, faq, howToApply)}
     </article>
     <section class="br-ad-section" aria-label="Bottom Advertisement"><div class="br-ad-head">Advertisement</div><div class="br-ad-slot"><div class="br-ad-slot-code"></div></div></section>
   </main>
+  <script src="/analytics.js?v=${ASSET_VERSION}" defer></script>
   <script src="../../monetization.js" defer></script>
 </body>
 </html>
@@ -1364,9 +1683,8 @@ function buildSectionArchiveHtml(folder, folderEntries) {
   <link rel="canonical" href="${escapeHtml(sectionUrl(folder))}" />
   <link rel="alternate" hreflang="en-IN" href="${escapeHtml(sectionUrl(folder))}" />
   <link rel="alternate" hreflang="x-default" href="${escapeHtml(sectionUrl(folder))}" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="BiharResult.live" />
   <meta property="og:locale" content="en_IN" />
@@ -1382,13 +1700,6 @@ function buildSectionArchiveHtml(folder, folderEntries) {
   <meta name="twitter:image:alt" content="${escapeHtml(`${meta.heading} archive on BiharResult.live`)}" />
   <link rel="stylesheet" href="/style.css" />
   <script type="application/ld+json">${schema}</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVN84V93Z6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YVN84V93Z6');
-  </script>
 </head>
 <body>
   <header class="post-topbar"><div class="br-wrap"><a href="../../index.html" class="post-brand">BiharResult.live</a></div></header>
@@ -1414,6 +1725,7 @@ ${archiveList}
       <p class="br-legal-disclaimer"><strong>Disclaimer:</strong> Information is provided for education purposes. Always verify final details from the official notification/website.</p>
     </footer>
   </main>
+  <script src="/analytics.js?v=${ASSET_VERSION}" defer></script>
 </body>
 </html>
 `;
@@ -1444,6 +1756,40 @@ function writeSectionIndexes(entries) {
 
   rebuildSectionLandingPages(grouped);
   fs.writeFileSync(SECTIONS_INDEX_PATH, `${JSON.stringify(entries, null, 2)}\n`, "utf8");
+}
+
+function writeRuntimeDataFiles(catalog) {
+  const homeData = catalog.map((post) => ({
+    slug: cleanText(post.slug || ""),
+    path: cleanText(post.path || ""),
+    title: cleanText(post.title || ""),
+    category: cleanText(post.category || ""),
+    shortInfo: cleanText(post.shortInfo || ""),
+    publishedAt: cleanText(post.publishedAt || ""),
+    updatedAt: cleanText(post.updatedAt || ""),
+    isFeatured: Boolean(post.isFeatured)
+  }));
+
+  const homeToolsData = catalog.map((post) => ({
+    slug: cleanText(post.slug || ""),
+    path: cleanText(post.path || ""),
+    title: cleanText(post.title || ""),
+    category: cleanText(post.category || ""),
+    publishedAt: cleanText(post.publishedAt || ""),
+    updatedAt: cleanText(post.updatedAt || ""),
+    importantDates: Array.isArray(post.importantDates) ? post.importantDates.slice(0, 8) : [],
+    ageLimit: Array.isArray(post.ageLimit) ? post.ageLimit : []
+  }));
+
+  const slugPaths = Object.fromEntries(
+    catalog
+      .filter((post) => cleanText(post.slug) && cleanText(post.path))
+      .map((post) => [cleanText(post.slug), cleanText(post.path)])
+  );
+
+  fs.writeFileSync(HOME_DATA_PATH, JSON.stringify(homeData), "utf8");
+  fs.writeFileSync(HOME_TOOLS_DATA_PATH, JSON.stringify(homeToolsData), "utf8");
+  fs.writeFileSync(SLUG_PATHS_PATH, JSON.stringify(slugPaths), "utf8");
 }
 
 function rebuildSitemap(entries) {
@@ -1497,7 +1843,8 @@ function rebuildSitemap(entries) {
 function main() {
   const data = readJson(DATA_PATH);
   const dataMap = new Map(data.map((post) => [post.slug, post]));
-  const sectionFiles = getAllSectionPostFiles();
+  const createdSectionFileCount = ensureSectionPostFiles(data);
+  let sectionFiles = getAllSectionPostFiles();
 
   let generatedCount = 0;
   let preservedCount = 0;
@@ -1520,12 +1867,20 @@ function main() {
     }
   }
 
-  const entries = buildSectionEntries(sectionFiles, dataMap);
+  sectionFiles = getAllSectionPostFiles();
+  const catalog = buildDataCatalog(sectionFiles, dataMap);
+  const catalogMap = new Map(catalog.map((post) => [post.slug, post]));
+  fs.writeFileSync(DATA_PATH, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
+  writeRuntimeDataFiles(catalog);
+
+  const entries = buildSectionEntries(sectionFiles, catalogMap);
   writeSectionIndexes(entries);
   const sitemapCount = rebuildSitemap(entries);
   console.log(JSON.stringify({
+    createdSectionFileCount,
     generatedCount,
     preservedCount,
+    dataCatalogCount: catalog.length,
     sectionEntryCount: entries.length,
     sitemapCount,
     skipPostRewrite: SKIP_POST_REWRITE

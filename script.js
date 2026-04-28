@@ -1,694 +1,11 @@
 const HOME_ASSET_VERSION = resolveHomeAssetVersion();
-const DATA_FILE = withHomeAssetVersion("data.json");
+const HOME_DATA_FILE = withHomeAssetVersion("home-data.json");
+const HOME_TOOLS_DATA_FILE = withHomeAssetVersion("home-tools-data.json");
 const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
 const HOME_SEARCH_DEBOUNCE_MS = 120;
-const MANUAL_PRIORITY_POSTS = [
-  {
-    id: "custom-latest-results-up-board-class-10th-12th-result-2026",
-    wpId: null,
-    slug: "up-board-class-10th-12th-result-2026",
-    path: "./sections/latest-results/up-board-class-10th-12th-result-2026.html",
-    title: "UP Board Class 10th, 12th Result 2026",
-    category: "Latest Results",
-    department: "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)",
-    location: "Uttar Pradesh",
-    shortInfo: "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), will release the UP Board Class 10th and 12th Result 2026 on its official website Tomorrow at 4 PM. The exam was conducted from 18 February to 12 March 2026.",
-    publishedAt: "2026-04-22",
-    updatedAt: "2026-04-22",
-    isFeatured: true,
-    sourceName: "UPMSP Official Website",
-    sourceUrl: "https://upmsp.edu.in/",
-    image: "",
-    importantDates: [
-      { label: "Time Table Issued", value: "05 November 2025" },
-      { label: "Class 10th High School Exam Date", value: "18 February 2026 to 12 March 2026" },
-      { label: "Class 12th Intermediate Exam Date", value: "18 February 2026 to 12 March 2026" },
-      { label: "Result Declared Date", value: "23 April 2026 At 4 PM" }
-    ],
-    applicationFee: [
-      { label: "Fee", value: "No fee required to check the result." }
-    ],
-    eligibility: [
-      { label: "Who Can Check Result", value: "Candidates who appeared in UP Board Class 10th and 12th Examination 2026." },
-      { label: "Required Details", value: "Roll Number, District and Captcha." }
-    ],
-    vacancyDetails: [],
-    importantLinks: [
-      { label: "Download result - Coming 23 april at 4pm", url: "https://upresults.nic.in/", type: "primary" },
-      { label: "UPMSP Official Website", url: "https://upmsp.edu.in/", type: "secondary" }
-    ],
-    longDescription: "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), will release the UP Board Class 10th and 12th Result 2026 on its official website Tomorrow at 4 PM. The exam was conducted from 18 February to 12 March 2026. Students can check their results online by entering their roll number, District and captcha on the login portal. A direct link to access the UP Board Class 10th and 12th results will be available below.",
-    howToApply: [
-      "Open your internet browser on your mobile phone or computer.",
-      "Visit the official website of the Uttar Pradesh Madhyamik Shiksha Parishad.",
-      "On the homepage, click on the “Results” section.",
-      "Select “UP Board Class 10th Result 2026” or “UP Board Class 12th Result 2026”.",
-      "Enter your Roll Number.",
-      "Fill in the captcha code if required.",
-      "Click on the Submit / View Result button.",
-      "Your result will appear on the screen.",
-      "Check your marks and details carefully.",
-      "Download the result and take a printout for future use."
-    ],
-    beforeYouStart: [
-      "Keep your Roll Number ready before opening the portal.",
-      "Use only the official link for result updates.",
-      "Check all details carefully after the result is displayed.",
-      "Save a copy of the result for admission and future reference."
-    ]
-  },
-  {
-    id: "custom-latest-results-cbse-class-10th-results-2026-download-link",
-    wpId: null,
-    slug: "cbse-class-10th-results-2026-download-link",
-    path: "./sections/latest-results/cbse-class-10th-results-2026-download-link.html",
-    title: "CBSE Class 10th Results 2026 Download Link (OUT)",
-    category: "Latest Results",
-    department: "Central Board of Secondary Education (CBSE)",
-    location: "India",
-    shortInfo: "Central Board of Secondary Education (CBSE) has declared online result for class 10th annual examination 2026 for regular and vocational courses. All eligible applicants and their parents can download result online at CBSE official website at cbseresults.nic.in or cbse.gov.in from 15th April 2026 onwards for secondary examination result 2026.",
-    publishedAt: "2026-04-15",
-    updatedAt: "2026-04-16",
-    isFeatured: true,
-    sourceName: "CBSE Results Portal",
-    sourceUrl: "https://cbseresults.nic.in/",
-    image: "",
-    importantDates: [
-      { label: "Board Name", value: "Central Board of Secondary Education" },
-      { label: "Class", value: "10th" },
-      { label: "Total Students", value: "25.08 Lakh (Approx.)" },
-      { label: "Exam Date", value: "17 February 2026 to 11 March 2026" },
-      { label: "Result Status", value: "Released" },
-      { label: "CBSE Result Released Date", value: "15 April 2026" }
-    ],
-    applicationFee: [
-      { label: "Fee", value: "No fee required to check the result." }
-    ],
-    eligibility: [
-      { label: "Who Can Check Result", value: "All eligible applicants / students and their parents for CBSE Class 10th Annual Examination 2026." },
-      { label: "Official Websites", value: "cbseresults.nic.in or cbse.gov.in" },
-      { label: "Helpline Email", value: "info.cbse@gov.in" },
-      { label: "Helpline Number", value: "7669886950, 1800 11 8002" }
-    ],
-    vacancyDetails: [],
-    importantLinks: [
-      { label: "10th Result Download Link-I", url: "https://examinationservices.nic.in/cbseresults/class_x_jj_2026_de/ClassTenth_xy_2026.htm", type: "primary" },
-      { label: "10th Result Download Link-II", url: "https://cnr.nic.in/CBSEResults/class_x_jj_2026_de/ClassTenth_xy_2026.htm", type: "primary" },
-      { label: "10th Result Download Link-III", url: "https://cbseresults.nic.in/class_x_jj_2026_de/ClassTenth_xy_2026.htm", type: "primary" },
-      { label: "CBSE Results Portal", url: "https://cbseresults.nic.in/", type: "secondary" },
-      { label: "CBSE Official Website", url: "https://cbse.gov.in/", type: "secondary" }
-    ],
-    longDescription: "Central Board of Secondary Education (CBSE) has declared online result for class 10th annual examination 2026 for regular and vocational courses. All eligible applicants and their parents can download result online at CBSE official website at cbseresults.nic.in or cbse.gov.in from 15th April 2026 onwards for secondary examination result 2026.",
-    howToApply: [
-      "Open any one of the official CBSE Class 10th result links from the Important Links section.",
-      "Enter the required login details exactly as asked on the official result portal.",
-      "Submit the details to check your CBSE 10th result 2026.",
-      "Verify your marks and result status carefully.",
-      "Download or print the result page for future use."
-    ],
-    beforeYouStart: [
-      "Use only the official CBSE result links given on this page.",
-      "Keep the required login credentials ready before opening the portal.",
-      "Verify all details after downloading the result.",
-      "Save a copy of the result for future use."
-    ]
-  },
-  {
-    id: "custom-latest-results-ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
-    wpId: null,
-    slug: "ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
-    path: "./post.html?slug=ofss-bihar-11th-admission-2026-online-form-ofssbihar-net",
-    title: "OFSS Bihar 11th Admission 2026 Online Form ofssbihar.net",
-    category: "Latest Results",
-    department: "Bihar School Examination Board (BSEB) - OFSS Bihar",
-    location: "Bihar",
-    shortInfo: "OFSS Bihar under BSEB invites online application for Intermediate (11th) admission 2026-28 in Science, Commerce, and Arts streams. Eligible students can apply at ofssbihar.net from 08 April 2026 to 18 April 2026.",
-    publishedAt: "2026-04-17T23:59:00+05:30",
-    updatedAt: "2026-04-17T23:59:00+05:30",
-    isFeatured: true,
-    sourceName: "OFSS Bihar",
-    sourceUrl: "https://ofssbihar.net/",
-    image: "",
-    importantDates: [
-      { label: "Application Start Date", value: "08-04-2026" },
-      { label: "Application Last Date", value: "18-04-2026" },
-      { label: "1st Merit List Date", value: "To be notified soon" }
-    ],
-    applicationFee: [
-      { label: "Application Fee (All Category)", value: "Rs. 350/-" },
-      { label: "Payment Mode", value: "Debit Card, Credit Card, Internet Banking" }
-    ],
-    eligibility: [
-      { label: "Required Qualification", value: "Students who passed Matriculation / Class 10th from BSEB, CBSE, ICSE, or any recognized state board." },
-      { label: "Admission Session", value: "2026-2028 (Intermediate / 11th Class)" },
-      { label: "Streams", value: "Science, Commerce, Arts" }
-    ],
-    vacancyDetails: [],
-    importantLinks: [
-      { label: "Apply Online (OFSS Bihar)", url: "https://ofssbihar.net/Higher-Education/innerpage.aspx", type: "primary" },
-      { label: "OFSS Bihar Official Website", url: "https://ofssbihar.net/", type: "secondary" }
-    ],
-    longDescription: "OFSS Bihar under BSEB invites online applications for Intermediate (11th class) admission in Science, Commerce, and Arts streams for the academic session 2026-28 through Online Facilitation System For Students (OFSS) in Bihar schools and colleges. Eligible students and parents can submit the online application from 08 April 2026 to 18 April 2026 at ofssbihar.net.",
-    howToApply: [
-      "Open the Apply Online link.",
-      "Register and fill student details carefully.",
-      "Select stream and preferred colleges/schools.",
-      "Pay application fee and submit form.",
-      "Download submitted form copy for records."
-    ],
-    beforeYouStart: [
-      "Keep Class 10th marksheet and personal details ready.",
-      "Check stream and school preference before final submit.",
-      "Use only official OFSS Bihar portal for application."
-    ]
-  },
-  {
-    id: "custom-latest-results-bcece-application-form-2026-prospectus-apply-online",
-    wpId: null,
-    slug: "bcece-application-form-2026-prospectus-apply-online",
-    path: "./post.html?slug=bcece-application-form-2026-prospectus-apply-online",
-    title: "BCECE Application Form 2026 Prospectus, Apply Online",
-    category: "Latest Results",
-    department: "Bihar Combined Entrance Competitive Examination Board (BCECEB)",
-    location: "Bihar",
-    shortInfo: "BCECE Board (BCECEB) invites online applications for Bihar Combined Entrance Competitive Examination (BCECE) 2026 for admission into Pharmacy stream, medical stream, agriculture stream and engineering stream. All eligible aspirants can fill online application form on the official BCECEB website bceceboard.bihar.gov.in from 15th April 2026 to till the application closing date 05th May 2026 for Bihar Combined Entrance Competitive Examination 2026.",
-    publishedAt: "2026-04-18T00:10:00+05:30",
-    updatedAt: "2026-04-18T00:10:00+05:30",
-    isFeatured: true,
-    sourceName: "BCECEB Official Website",
-    sourceUrl: "https://bceceboard.bihar.gov.in/",
-    image: "",
-    importantDates: [
-      { label: "Application Start Date", value: "15-04-2026" },
-      { label: "Application Last Date", value: "05-05-2026" },
-      { label: "Fee Payment Last Date", value: "06-05-2026 (11:59 PM)" },
-      { label: "Editing of Application", value: "07-05-2026 to 08-05-2026" },
-      { label: "Admit Card Issue Date", value: "22-05-2026" },
-      { label: "Prospectus / Exam Date", value: "30 & 31 May 2026" }
-    ],
-    applicationFee: [
-      { label: "PCMB / PCA / Agriculture Group (Gen/BC/EBC/EWS)", value: "Rs.1000/-" },
-      { label: "PCMB / PCA / Agriculture Group (SC/ST/DQ)", value: "Rs.500/-" },
-      { label: "PCM Group (Gen/BC/EBC/EWS)", value: "Rs.1100/-" },
-      { label: "PCM Group (SC/ST/DQ)", value: "Rs.550/-" },
-      { label: "Payment Mode", value: "Debit Card, Credit Card, Internet Banking, UPI" }
-    ],
-    eligibility: [
-      { label: "Eligibility Heading", value: "Bihar Combined Entrance Competitive Examination Eligibility 2026" },
-      { label: "Engineering And Technology (4 Year Course)", value: "Passed 10+2 examination with Physics/ Mathematics/ Chemistry/ Computer Science/ Electronics/ Information Technology/ Biology/ Informatics Practices/ Biotechnology/ Technical Vocational Subject/ Agriculture / Engineering Graphics / Business Studies / Entrepreneurship as per Annexure-7. Agriculture stream (for Agriculture Engineering) obtained at least 45% marks (40% marks in case of candidates belonging to reserved category) in the above subjects taken together. OR Passed minimum 3 years diploma examination with at least 45% marks (40% marks in case of candidates belonging to reserved category) subject to vacancies in the first year, in case the vacancies at lateral entry are exhausted. (The Universities will offer suitable bridge course such as mathematics physics engineering drawing, etc. for the student coming from diverse backgrounds to prepare level playing field and desired learning outcomes of the programme). Age Limit:- No Limit" },
-      { label: "Pharmacy (4 Year Course)", value: "Pharmacy course requires a pass in 10+2/ equivalent examination with Physics and Chemistry as compulsory subjects and Mathematics/ Biology as one of the elective subjects. Candidates appearing in Intermediate or equivalent examination can also apply, but must have passed 10+2/equivalent examination at the time of interview/counselling. Age Limit:- Minimum 17 Years, age as on 31 December 2026." },
-      { label: "Medical and Similar Professional Courses", value: "i. English (as a language and literature) in 10+2 / Higher Secondary / I.S.C. / equivalent examinations for medical stream courses viz. Physiotherapy, Occupational Therapy, Para Medical Undergraduate courses, Physics, Chemistry, Biology (Botany, Zoology) subjects. ii. For BSc (Nursing) course, it is necessary to pass 10+2 (Physics, Chemistry, Biology and English subjects) with a total of 45% marks. iii. Candidates appearing in Intermediate or equivalent examination in the current session (2026) can also apply, but it will be necessary to pass the examination at the time of interview/ counseling. Age Limit:- Minimum 17 Years, age as on 31 December 2026." },
-      { label: "Agriculture Stream", value: "I.Sc / I.Sc in Agriculture as per college Seat. (For More Details Must See Prospectus In Page No:- 17 (15.4).) Age Limit:- Minimum 16 Years, age as on 31 August 2026." }
-    ],
-    vacancyDetails: [],
-    importantLinks: [
-      { label: "Apply Online", url: "https://admissions.nic.in/Bihar/Applicant/Root/OTHome.aspx?enc=k5U5Gp8NR6abhZ8Lld4oWvvSsCkKcG+Kcizck0pVdCvJE10jNAB9fCwdCq9SngLzpzmEkqSwweByGITZeenPaw==", type: "primary" },
-      { label: "BCECEB Official Website", url: "https://bceceboard.bihar.gov.in/", type: "secondary" }
-    ],
-    longDescription: "BCECE Board (BCECEB) invites online applications for Bihar Combined Entrance Competitive Examination (BCECE) 2026 for admission into Pharmacy stream, medical stream, agriculture stream and engineering stream. All eligible aspirants can fill online application form on the official BCECEB website bceceboard.bihar.gov.in from 15th April 2026 to till the application closing date 05th May 2026 for Bihar Combined Entrance Competitive Examination 2026.",
-    howToApply: [
-      "Open the Apply Online link.",
-      "Complete registration and fill your application details.",
-      "Choose stream/group carefully as per eligibility.",
-      "Pay fee online and submit the form.",
-      "Download final submitted application for future use."
-    ],
-    beforeYouStart: [
-      "Read BCECE 2026 prospectus and stream-wise eligibility carefully.",
-      "Keep personal and educational documents ready before applying.",
-      "Use only official portal for final application submission."
-    ]
-  },
-  {
-    id: "custom-latest-results-ctet-feb-result-2026-download-link",
-    wpId: null,
-    slug: "ctet-feb-result-2026-download-link",
-    path: "./post.html?slug=ctet-feb-result-2026-download-link",
-    title: "CTET Feb Result 2026 Download Link ctet.nic.in (OUT)",
-    category: "Latest Results",
-    department: "Central Board of Secondary Education (CBSE)",
-    location: "India",
-    shortInfo: "The Central Board of Secondary Education (CBSE) invites online applications for Central Teacher Eligibility Test (CTET) February 2026. The 21st Edition of CTET Examination is scheduled on 08th February, 2026 (Sunday) in 132 cities in the country. All eligible and interested candidates can apply online at CTET Official Website ctet.nic.in from 27th November 2025 to till the application last date 18th December 2025 for Central Teacher Eligibility Test (CTET) February 2026.",
-    publishedAt: "2026-03-31",
-    updatedAt: "2026-03-31",
-    isFeatured: true,
-    sourceName: "CTET Official Website",
-    sourceUrl: "https://ctet.nic.in/",
-    image: "",
-    importantDates: [
-      { label: "Application Start Date", value: "27-11-2025" },
-      { label: "Application Last Date", value: "18-12-2025" },
-      { label: "Last Date for Fee Payment", value: "18-12-2025" },
-      { label: "Online Correction", value: "23 to 26 Dec 2025" },
-      { label: "Admit Card Date", value: "06 February 2026" },
-      { label: "Date of Examination", value: "08 February 2026 (Sunday)" },
-      { label: "Exam Cities", value: "132 Cities (India)" },
-      { label: "Result Date", value: "End of March 2026" },
-      { label: "Result Status", value: "OUT" }
-    ],
-    applicationFee: [
-      { label: "General / OBC - Only Paper I or II", value: "Rs. 1000/-" },
-      { label: "General / OBC - Both Paper I & II", value: "Rs. 1200/-" },
-      { label: "SC / ST / PwBD - Only Paper I or II", value: "Rs. 500/-" },
-      { label: "SC / ST / PwBD - Both Paper I & II", value: "Rs. 600/-" },
-      { label: "Payment Mode", value: "Pay Fee Through Online by Debit Card / Credit Card / Net Banking." }
-    ],
-    eligibility: [
-      { label: "Classes I to V | Qualification Id 1", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 2-year Diploma in Elementary Education (by whatever name known)." },
-      { label: "Classes I to V | Qualification Id 2", value: "Senior Secondary (or its equivalent) with at least 45% marks and passed or appearing in final year of 2-year Diploma in Elementary Education (by whatever name known), in accordance with the NCTE (Recognition Norms and Procedure), Regulations, 2002." },
-      { label: "Classes I to V | Qualification Id 3", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 4-year Bachelor of Elementary Education (B.El.Ed)." },
-      { label: "Classes I to V | Qualification Id 4", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 2-year Diploma in Education (Special Education).*" },
-      { label: "Classes I to V | Qualification Id 5", value: "Graduation with at least 50% marks and passed or appearing in final year Bachelor of Education (B.Ed). (a) A person who has acquired the qualification of Bachelor of Education from any NCTE recognized institution shall be considered for appointment as a teacher in classes I to V, provided the person so appointed shall mandatorily undergo a six month Bridge Course in Elementary Education recognized by the NCTE, within two year of such appointment as primary teacher." },
-      { label: "Classes I to V | Qualification Id 6", value: "Post-Graduation with a minimum 55% marks or equivalent grade and passed or appearing in final year of three-year integrated B.Ed.-M.Ed." },
-      { label: "Classes VI to VIII | Qualification Id 1", value: "Graduation and passed or appearing in final year of 2-year Diploma in Elementary Education (by whatever name known)." },
-      { label: "Classes VI to VIII | Qualification Id 2", value: "At least 50% marks either in Graduation or in PostGraduation and passed or appearing in final year Bachelor in Education (B.Ed)." },
-      { label: "Classes VI to VIII | Qualification Id 3", value: "Graduation with at least 45% marks and passed or appearing in final year Bachelor in Education (B.Ed), in accordance with the NCTE (Recognition Norms and Procedure) Regulations issued from time to time in this regard." },
-      { label: "Classes VI to VIII | Qualification Id 4", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 4-year Bachelor in Elementary Education (B.El.Ed)." },
-      { label: "Classes VI to VIII | Qualification Id 5", value: "Senior Secondary (or its equivalent) with at least 50% marks and passed or appearing in final year of 4-year B.A / B.Sc.Ed or B.A.Ed / B.Sc.Ed." },
-      { label: "Classes VI to VIII | Qualification Id 6", value: "Graduation with at least 50% marks and passed or appearing in final year B.Ed. (Special Education).*" },
-      { label: "Classes VI to VIII | Qualification Id 7", value: "Any candidate having qualified B.Ed. Programme recognized by the NCTE is eligible to appear in TET / CTET. Moreover, as per existing TET guidelines circulated vide NCTE letter dated 11-02-2011, a person who is pursuing any of the teacher education courses (recognized by the NCTE or the RCI, as the case may be) specified in the NCTE Notification dated 23rd August 2010 is also qualified to appear in the TET / CTET." },
-      { label: "Classes VI to VIII | Qualification Id 8", value: "Post-Graduation with a minimum 55% marks or equivalent grade and passed or appearing in final year of three-year integrated B.Ed.-M.Ed." }
-    ],
-    vacancyDetails: [],
-    importantLinks: [
-      { label: "Download CTET Feb Result 2026", url: "https://cbseresults.nic.in/CtetFeb26ii/CtetFeb26iix.htm", type: "primary" },
-      { label: "CTET Official Website", url: "https://ctet.nic.in/", type: "secondary" },
-      { label: "CBSE Results Portal", url: "https://cbseresults.nic.in/", type: "secondary" }
-    ],
-    longDescription: "The Central Board of Secondary Education (CBSE) invites online applications for Central Teacher Eligibility Test (CTET) February 2026. The 21st Edition of CTET Examination is scheduled on 08th February, 2026 (Sunday) in 132 cities in the country. All eligible and interested candidates can apply online at CTET Official Website ctet.nic.in from 27th November 2025 to till the application last date 18th December 2025 for Central Teacher Eligibility Test (CTET) February 2026.",
-    howToApply: [
-      "Open the CTET Feb 2026 result link from the Important Links section.",
-      "Enter required login details (such as roll number and other asked credentials).",
-      "Submit details to view your CTET February 2026 result and score card.",
-      "Download and print the score card for future use."
-    ],
-    beforeYouStart: [
-      "Keep your CTET roll number and login credentials ready.",
-      "Use only official CTET/CBSE links listed on this page.",
-      "Verify all details after downloading the result."
-    ]
-  },
-  {
-    id: "custom-latest-results-bpsc-aedo-admit-card-2026",
-    wpId: null,
-    slug: "bpsc-aedo-admit-card-2026-latest-update",
-    path: "./sections/admit-card/bpsc-aedo-admit-card-2026.html",
-    title: "BPSC AEDO Admit Card 2026 Download Link (OUT)",
-    category: "Latest Results",
-    department: "Bihar Public Service Commission (BPSC)",
-    location: "Bihar",
-    shortInfo: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar.",
-    publishedAt: "2026-04-03",
-    updatedAt: "2026-04-03",
-    isFeatured: true,
-    sourceName: "BPSC Official Portal",
-    sourceUrl: "https://bpsc.bihar.gov.in/",
-    image: "",
-    importantDates: [
-      { label: "BPSC Admit Card Released Date", value: "03 April 2026" },
-      { label: "BPSC AEDO Exam Date", value: "14 & 15 April 2026, 17 & 18 April 2026 and 20 & 21 April 2026" },
-      { label: "Shift", value: "03 Shift" },
-      { label: "Admit Card Status", value: "Released" },
-      { label: "Admit Card Download Start", value: "03 April 2026 Onwards" }
-    ],
-    applicationFee: [
-      { label: "Admit Card Fee", value: "No fee required for admit card download." }
-    ],
-    eligibility: [
-      { label: "Who Can Download", value: "All eligible aspirants for Assistant Education Development Officer (AEDO) recruitment examination 2026." },
-      { label: "Required Login", value: "Candidate Login with User Id and Password." }
-    ],
-    vacancyDetails: [
-      { post: "Assistant Education Development Officer (AEDO)", total: "935", criteria: "Advt. No. 87/2025" }
-    ],
-    importantLinks: [
-      { label: "Download BPSC AEDO Admit Card 2026", url: "https://bpsc.bihar.gov.in/", type: "primary" },
-      { label: "BPSC Official Website", url: "https://bpsc.bihar.gov.in/", type: "secondary" },
-      { label: "Helpdesk Email", url: "mailto:bpscpat-bih@nic.in", type: "secondary" }
-    ],
-    longDescription: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar. The written examination shall be held on 14th & 15th April 2026, 17th & 18th April 2026 and 20th & 21st April 2026 in 03 shift of the state as per the notified examination center by the commission. All eligible aspirants can download their admit card online at BPSC official portal bpsc.bihar.gov.in from 03rd April 2026 onwards for AEDO recruitment examination 2026.",
-    howToApply: [
-      "Open BPSC official portal https://bpsc.bihar.gov.in/.",
-      "Go to Candidate Login for AEDO recruitment examination 2026.",
-      "Login using User Id and Password.",
-      "Download admit card and verify exam date, shift, and center details.",
-      "Keep printout of admit card for examination day."
-    ],
-    beforeYouStart: [
-      "Keep User Id and Password ready before login.",
-      "Check exam date and shift carefully on admit card.",
-      "Verify exam center code / name view date before examination.",
-      "Carry valid photo ID proof with admit card printout."
-    ]
-  },
-  {
-    id: "custom-admit-card-bpsc-aedo-admit-card-2026",
-    wpId: null,
-    slug: "bpsc-aedo-admit-card-2026",
-    path: "./sections/admit-card/bpsc-aedo-admit-card-2026.html",
-    title: "BPSC AEDO Admit Card 2026 Download Link (OUT)",
-    category: "Admit Card",
-    department: "Bihar Public Service Commission (BPSC)",
-    location: "Bihar",
-    shortInfo: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar.",
-    publishedAt: "2026-04-03",
-    updatedAt: "2026-04-03",
-    isFeatured: true,
-    sourceName: "BPSC Official Portal",
-    sourceUrl: "https://bpsc.bihar.gov.in/",
-    image: "",
-    importantDates: [
-      { label: "BPSC Admit Card Released Date", value: "03 April 2026" },
-      { label: "BPSC AEDO Exam Date", value: "14 & 15 April 2026, 17 & 18 April 2026 and 20 & 21 April 2026" },
-      { label: "Shift", value: "03 Shift" },
-      { label: "Admit Card Status", value: "Released" },
-      { label: "Admit Card Download Start", value: "03 April 2026 Onwards" }
-    ],
-    applicationFee: [
-      { label: "Admit Card Fee", value: "No fee required for admit card download." }
-    ],
-    eligibility: [
-      { label: "Who Can Download", value: "All eligible aspirants for Assistant Education Development Officer (AEDO) recruitment examination 2026." },
-      { label: "Required Login", value: "Candidate Login with User Id and Password." }
-    ],
-    vacancyDetails: [
-      { post: "Assistant Education Development Officer (AEDO)", total: "935", criteria: "Advt. No. 87/2025" }
-    ],
-    importantLinks: [
-      { label: "Download BPSC AEDO Admit Card 2026", url: "https://bpsc.bihar.gov.in/", type: "primary" },
-      { label: "BPSC Official Website", url: "https://bpsc.bihar.gov.in/", type: "secondary" },
-      { label: "Helpdesk Email", url: "mailto:bpscpat-bih@nic.in", type: "secondary" }
-    ],
-    longDescription: "Bihar Public Service Commission (BPSC) has published online admit card or call letter for recruitment of Assistant Education Development Officer (AEDO) for 935 under education department, Govt of Bihar. The written examination shall be held on 14th & 15th April 2026, 17th & 18th April 2026 and 20th & 21st April 2026 in 03 shift of the state as per the notified examination center by the commission. All eligible aspirants can download their admit card online at BPSC official portal bpsc.bihar.gov.in from 03rd April 2026 onwards for AEDO recruitment examination 2026.",
-    howToApply: [
-      "Open BPSC official portal https://bpsc.bihar.gov.in/.",
-      "Go to Candidate Login for AEDO recruitment examination 2026.",
-      "Login using User Id and Password.",
-      "Download admit card and verify exam date, shift, and center details.",
-      "Keep printout of admit card for examination day."
-    ],
-    beforeYouStart: [
-      "Keep User Id and Password ready before login.",
-      "Check exam date and shift carefully on admit card.",
-      "Verify exam center code / name view date before examination.",
-      "Carry valid photo ID proof with admit card printout."
-    ]
-  },
-  {
-    id: "custom-latest-results-bihar-board-inter-12th-scrutiny-online-application-form-2026",
-    wpId: null,
-    slug: "bihar-board-inter-12th-scrutiny-online-application-form-2026",
-    path: "./sections/latest-results/bihar-board-inter-12th-scrutiny-online-application-form-2026.html",
-    title: "Bihar Board Inter 12th Scrutiny Online Application Form 2026",
-    category: "Latest Results",
-    department: "Bihar School Examination Board (BSEB)",
-    location: "Bihar",
-    shortInfo: "Bihar School Examination Board (BSEB) invites online scrutiny application form for Inter (12th class) of Annual Examination Result 2026. The Intermediate Annual Examination 2026 result was declared on 23rd March 2026 by the board. All appeared students can fill online form at BSEB official portal intermediate.biharboardscrutiny.com from 25th March 2026 to the application last date 02nd April 2026 for Inter Scrutiny Application 2026.",
-    publishedAt: "2026-03-26",
-    updatedAt: "2026-03-26",
-    isFeatured: true,
-    sourceName: "intermediate.biharboardscrutiny.com",
-    sourceUrl: "https://intermediate.biharboardscrutiny.com/",
-    image: "",
-    importantDates: [
-      { label: "Board Name", value: "Bihar School Examination Board" },
-      { label: "Class", value: "12th" },
-      { label: "Subject", value: "All" },
-      { label: "Annual Examination Year", value: "2026" },
-      { label: "Scrutiny Application Status", value: "Started" },
-      { label: "Inter Result Declared Date", value: "23 March 2026" },
-      { label: "Bihar Board 12th Scrutiny Application Period", value: "25 March 2026 to 02 April 2026" },
-      { label: "Scrutiny Apply Start Date", value: "25 March 2026" },
-      { label: "Scrutiny Apply Last Date", value: "02 April 2026" },
-      { label: "Scrutiny Result Date", value: "As per official notification" }
-    ],
-    applicationFee: [
-      { label: "Scrutiny Application Fee", value: "Rs.120/- (Per Subject)" },
-      { label: "Payment Mode", value: "Debit Card, Credit Card, Net Banking" }
-    ],
-    eligibility: [
-      { label: "Who Can Apply", value: "All appeared students of Bihar Board Inter (Class 12th) Annual Examination Result 2026 who want scrutiny / rechecking." },
-      { label: "Bihar Board Scrutiny Form Link", value: "https://intermediate.biharboardscrutiny.com/" },
-      { label: "Alternate Portal", value: "https://intermediate.biharboardonline.com/" },
-      { label: "Helpline Email ID", value: "intermediatescrutinyhelpdesk@gmail.com" }
-    ],
-    vacancyDetails: [],
-    importantLinks: [
-      { label: "Click Here To Apply For Scrutiny", url: "https://intermediate.biharboardscrutiny.com/", type: "primary" },
-      { label: "Bihar Board Inter Scrutiny 2026 Notification Download", url: "https://intermediate.biharboardonline.com/", type: "secondary" },
-      { label: "Click Here To Open Official Website", url: "https://intermediate.biharboardonline.com/", type: "secondary" }
-    ],
-    longDescription: "Bihar School Examination Board (BSEB) invites online scrutiny application form for Inter (12th class) of Annual Examination Result 2026. The Intermediate Annual Examination 2026 result was declared on 23rd March 2026 by the board. All appeared students can fill online form at BSEB official portal intermediate.biharboardscrutiny.com from 25th March 2026 to the application last date 02nd April 2026 for Inter Scrutiny Application 2026.",
-    howToApply: [
-      "To apply online for scrutiny of answer sheets, open the official portal https://intermediate.biharboardscrutiny.com or https://intermediate.biharboardonline.com and click on \"Apply for scrutiny (Intermediate Annual Examination 2026)\".",
-      "Register by entering Roll Code, Roll Number, and Date of Birth to create a password, and keep this password safe for future use.",
-      "Login using Roll Code, Roll Number, and Password. The scrutiny application form will open with your details and subject list.",
-      "Select the subject(s) for scrutiny by checking the required checkbox.",
-      "Click the Pay button and complete fee payment through Debit Card, Credit Card, or Net Banking.",
-      "Submit final form and keep printout / acknowledgment for record."
-    ],
-    beforeYouStart: [
-      "Read the scrutiny instructions carefully before final submission.",
-      "Keep Roll Code, Roll Number, and Date of Birth ready for login/registration.",
-      "Apply only between 25 March 2026 and 02 April 2026.",
-      "Use correct subjects while selecting scrutiny request."
-    ]
-  },
-  {
-    id: "custom-latest-results-bihar-iti-cat-admission-form-2026",
-    wpId: null,
-    slug: "bihar-iti-cat-admission-form-2026",
-    path: "./sections/latest-results/bihar-iti-cat-admission-form-2026.html",
-    title: "Bihar ITI CAT Admission Form 2026",
-    category: "Latest Results",
-    department: "Bihar Combined Entrance Competitive Examination Board (BCECEB)",
-    location: "Bihar",
-    shortInfo: "Bihar Combined Entrance Competitive Examination Board (BCECEB) has released a notification on the official website for the Admission of Industrial Training Institute Competitive Admission Test (I.T.I.C.A.T) 2026. BCECEB Application Form has started on 16 March 2026 and candidates can apply until 14 April 2026. Candidates must check the complete details for Bihar ITI CAT Admission Form 2026. Links are provided below.",
-    publishedAt: "2026-03-26",
-    updatedAt: "2026-03-26",
-    isFeatured: true,
-    sourceName: "BCECEB",
-    sourceUrl: "https://bceceboard.bihar.gov.in/",
-    image: "",
-    importantDates: [
-      { label: "Online Apply Start Date", value: "16 March 2026" },
-      { label: "Online Apply Last Date", value: "14 April 2026" },
-      { label: "Last Date Of Fee Payment", value: "15 April 2026" },
-      { label: "Correction Last Date", value: "16 - 17 April 2026" },
-      { label: "Exam Date", value: "17 May 2026" },
-      { label: "Admit Card Date", value: "08 May 2026" },
-      { label: "Result Declared Date", value: "Will Be Updated Here Soon" }
-    ],
-    applicationFee: [
-      { label: "General / EBC / OBC", value: "Rs. 750/-" },
-      { label: "SC / ST", value: "Rs. 100/-" },
-      { label: "PH", value: "Rs. 430/-" },
-      { label: "Payment Mode (Online)", value: "Debit Card, Credit Card, Internet Banking, IMPS, Cash Card / Mobile Wallet" }
-    ],
-    eligibility: [
-      { label: "Bihar ITI CAT", value: "Candidates must have passed or be appearing in the 10th (High School) examination from any recognized board. For more details regarding eligibility, candidates should read the official notification carefully." }
-    ],
-    ageLimit: [
-      "Minimum Age: 14 Years",
-      "Minimum Age: 17 Years (For MMT / MT)",
-      "Maximum Age: N/A",
-      "Age limit as on 01 August 2026."
-    ],
-    vacancyDetails: [
-      { post: "ITI CAT Total Seat", total: "33,108 Seats", criteria: "As per official notification" }
-    ],
-    importantLinks: [
-      { label: "Apply Now", url: "https://bceceboard.bihar.gov.in/", type: "primary" },
-      { label: "Check Official Notification", url: "https://bceceboard.bihar.gov.in/", type: "secondary" },
-      { label: "BCECEB Official Website", url: "https://bceceboard.bihar.gov.in/", type: "secondary" }
-    ],
-    longDescription: "Bihar Combined Entrance Competitive Examination Board (BCECEB), has released a notification on the official website for the Admission of Industrial Training Institute Competitive Admission Test (I.T.I.C.A.T) 2026. BCECEB Application Form has started on 16 March 2026 and the candidates can apply until 14 April 2026. Candidates must check the complete details for Bihar ITI CAT Admission Form 2026. Links are provided below.",
-    howToApply: [
-      "Open the Apply Online link from the Important Links section.",
-      "Complete registration with valid mobile number and email ID.",
-      "Fill personal, educational, and category details carefully.",
-      "Upload required documents, photo, and signature in prescribed format.",
-      "Pay the required application fee in online mode and submit the form.",
-      "Download and print the final submitted application form for future use."
-    ],
-    beforeYouStart: [
-      "Read the official BCECEB ITI CAT 2026 notification carefully before applying.",
-      "Keep Class 10th details and required documents ready.",
-      "Use only the official website for registration and payment.",
-      "Check all details before final submit to avoid correction issues later."
-    ]
-  },
-  {
-    id: "custom-latest-results-bihar-board-class-12th-result-2026",
-    wpId: null,
-    slug: "bihar-board-class-12th-result-2026",
-    title: "Bihar Board Class 12th Result 2026",
-    category: "Latest Results",
-    department: "Bihar School Examination Board (BSEB)",
-    location: "Bihar",
-    shortInfo: "The Bihar School Examination Board (BSEB) has released the result for the Bihar Board Class 12th Examination 2026 on its official website. Candidates can now check their result using Roll Number and Captcha.",
-    publishedAt: "2026-03-25",
-    updatedAt: "2026-03-25",
-    isFeatured: true,
-    sourceName: "interbiharboard.com",
-    sourceUrl: "https://interbiharboard.com/",
-    image: "",
-    importantDates: [
-      { label: "Exam Start Date", value: "02-02-2026" },
-      { label: "Exam Last Date", value: "13-02-2026" },
-      { label: "Result Declared Date", value: "25-03-2026" },
-      { label: "Result Status", value: "Available Now" }
-    ],
-    applicationFee: [
-      { label: "Fee", value: "No fee required to check the result." }
-    ],
-    eligibility: [
-      { label: "Who Can Check Result", value: "Candidates who appeared in Bihar Board Class 12th Examination 2026." },
-      { label: "Required Details", value: "Examination Roll Number and Captcha." }
-    ],
-    vacancyDetails: [
-      { post: "Science - Aditya Prakash Aman", total: "481 Marks", criteria: "Topper" },
-      { post: "Science - Sakshi Kumari", total: "479 Marks", criteria: "Topper" },
-      { post: "Science - Swapna Kumari", total: "479 Marks", criteria: "Topper" },
-      { post: "Arts - Nishu Kumari", total: "489 Marks (95.8%)", criteria: "Topper" },
-      { post: "Arts - Siddhi Shukla", total: "478 Marks", criteria: "Topper" },
-      { post: "Arts - Chandradeep Kumar", total: "478 Marks", criteria: "Topper" },
-      { post: "Arts - Mohammad Zakir Ansari", total: "478 Marks", criteria: "Topper" },
-      { post: "Commerce - Aditi Kumari", total: "480 Marks", criteria: "Topper" },
-      { post: "Commerce - Mahi Kumari", total: "470 Marks", criteria: "Topper" }
-    ],
-    importantLinks: [
-      { label: "Download Class 12th Result Link-I", url: "https://interbiharboard.com/", type: "primary" },
-      { label: "Download Class 12th Result Link-II", url: "https://interbiharboard.com/", type: "primary" },
-      { label: "Check Class 12th Result Notice", url: "https://interbiharboard.com/", type: "secondary" },
-      { label: "Register For Class 10th Result", url: "https://interbiharboard.com/", type: "secondary" }
-    ],
-    longDescription: "The Bihar School Examination Board (BSEB) has released the result for the Bihar Board Class 12th Examination 2026 on its official website. The examination was conducted from 02 to 13 February 2026. Candidates can now check their result by logging into the portal using their Examination Roll Number and Captcha. The direct link to check the Bihar Board Class 12th Result 2026 is provided below.",
-    howToApply: [
-      "Open any result link given in the Important Links section.",
-      "Enter your Bihar Board Class 12th Examination Roll Number carefully.",
-      "Fill the Captcha exactly as shown on the screen.",
-      "Submit the details to view your result and marks.",
-      "Download or print the result for future use."
-    ],
-    beforeYouStart: [
-      "Keep your Examination Roll Number ready before opening the portal.",
-      "Use only the official result link to avoid confusion.",
-      "Check your name, roll number, and marks carefully after login.",
-      "Download and save a copy of the result for admission and counselling use."
-    ]
-  },
-  {
-    id: "custom-latest-results-bihar-board-10th-result-2026",
-    wpId: null,
-    slug: "bihar-board-10th-result-2026",
-    title: "Bihar Board 10th Result 2026 Declared",
-    category: "Latest Results",
-    department: "Bihar School Examination Board (BSEB)",
-    location: "Bihar",
-    shortInfo: "The Bihar School Examination Board (BSEB) declared Bihar Board 10th Result 2026 on 29 March 2026 at 1:15 PM. Students can check the direct result link, topper list, pass percentage, and official portals from this page.",
-    publishedAt: "2026-03-29",
-    updatedAt: "2026-03-29",
-    isFeatured: true,
-    sourceName: "BSEB Official Website",
-    sourceUrl: "https://biharboardonline.bihar.gov.in/",
-    image: "",
-    importantDates: [
-      { label: "Dummy Registration Card", value: "05 To 25 July 2025" },
-      { label: "Dummy Admit Card", value: "21-27 November 2025" },
-      { label: "2nd Dummy Admit Card", value: "28 November - 04 December 2025" },
-      { label: "Exam Date Class 10th", value: "17-25 February 2026" },
-      { label: "10th Answer Key", value: "07 March 2026" },
-      { label: "Expected Result Window", value: "30-31 March 2026 (Latest Reports)" },
-      { label: "Official Result Time", value: "Not Confirmed Yet" }
-    ],
-    applicationFee: [
-      { label: "Fee", value: "No fee required to check the result." }
-    ],
-    eligibility: [
-      { label: "Who Can Check Result", value: "Candidates who appeared in Bihar Board Class 10th Examination 2026." },
-      { label: "Required Details", value: "Examination Roll Number and Captcha." }
-    ],
-    vacancyDetails: [],
-    importantLinks: [
-      { label: "Open Official BSEB Website", url: "https://biharboardonline.bihar.gov.in/", type: "primary" },
-      { label: "Open Result Portal-I", url: "https://results.biharboardonline.com/", type: "secondary" },
-      { label: "Open Result Portal-II", url: "https://biharboardonline.com/", type: "secondary" }
-    ],
-    longDescription: "The Bihar School Examination Board (BSEB) Bihar Board 10th Result 2026 is not officially declared yet. The examination was conducted from 17 February to 25 February 2026. Latest reports suggest a likely release around 30 to 31 March 2026, but the board has not officially confirmed the final date and time. Students should use only board-announced result portals and keep Roll Code, Roll Number, and Captcha ready.",
-    howToApply: [
-      "Open the result or registration link given in the Important Links section.",
-      "Enter your Bihar Board Class 10th Examination Roll Number carefully.",
-      "Fill the Captcha exactly as shown on the screen.",
-      "Submit the details to check your result or status when available.",
-      "Download or print the result page for future use."
-    ],
-    beforeYouStart: [
-      "Keep your Examination Roll Number ready before opening the portal.",
-      "Use only the official link for result and answer key updates.",
-      "Check all details carefully after the result is displayed.",
-      "Save a copy of the result for admission and future reference."
-    ]
-  },
-  {
-    id: "custom-latest-results-bpsc-school-teacher-tre-4-0-2026-update",
-    wpId: null,
-    slug: "bpsc-school-teacher-tre-4-0-2026-latest-update",
-    path: "./sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
-    title: "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts) - Final Update",
-    category: "Latest Results",
-    department: "Sarkari Exam",
-    location: "Bihar",
-    shortInfo: "Final mixed update: previous TRE 4.0 eligibility/age details kept, plus current status tracking while detailed official schedule is awaited.",
-    publishedAt: "2026-03-25",
-    updatedAt: "2026-03-25",
-    isFeatured: true,
-    sourceName: "BiharResult.live",
-    sourceUrl: "https://biharresult.live/bpsc-school-teacher-tre-4-0-2026/",
-    image: "",
-    importantDates: [
-      { label: "Current Status", value: "Mixed final update with latest tracking" },
-      { label: "Online Apply Start Date", value: "To Be Announced" },
-      { label: "Last Date To Apply", value: "To Be Announced" },
-      { label: "Exam Date", value: "To Be Announced" }
-    ],
-    applicationFee: [
-      { label: "General / OBC / EWS", value: "To Be Announced in official notification" },
-      { label: "SC / ST / Female / PH", value: "To Be Announced in official notification" }
-    ],
-    eligibility: [
-      { label: "Primary School Teacher (Class 1-5)", value: "Graduation Degree in any stream with D.El.Ed OR B.Ed / B.L.Ed (as applicable) and valid STET / CTET qualification as per rules." },
-      { label: "Middle School Teacher (Class 6-8)", value: "Graduation Degree with 50% marks and B.Ed / B.A.Ed / B.Sc.Ed OR equivalent qualification with valid STET/CTET as per post requirement." },
-      { label: "TGT Secondary School Teacher (Class 9-10)", value: "Graduation / Post Graduation in relevant subject with B.Ed and Bihar STET Paper I/II as required for TGT posts." },
-      { label: "PGT Secondary School Teacher (Class 11-12)", value: "Post Graduation in relevant subject with minimum required marks, B.Ed / equivalent teaching degree, and STET Paper II qualification." }
-    ],
-    vacancyDetails: [
-      { post: "Primary School Teacher (Class 1-5)", total: "--", criteria: "See official notification" },
-      { post: "Middle School Teacher (Class 6-8)", total: "--", criteria: "See official notification" },
-      { post: "TGT Secondary School Teacher (Class 9-10)", total: "--", criteria: "See official notification" },
-      { post: "TGT Secondary School Teacher (Class 9-10 Science)", total: "--", criteria: "See official notification" },
-      { post: "PGT Secondary School Teacher (Class 11-12)", total: "--", criteria: "See official notification" }
-    ],
-    importantLinks: [
-      { label: "Open Final TRE 4.0 Post", url: "./sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html", type: "primary" },
-      { label: "Official Website", url: "https://bpsc.bihar.gov.in/", type: "secondary" }
-    ],
-    longDescription: "This final TRE 4.0 post combines previous recruitment details and current status context. It keeps earlier eligibility and age structure while clarifying that final date/fee/vacancy confirmation should be taken from official BPSC notification.",
-    howToApply: [
-      "Read the official BPSC TRE 4.0 notification carefully before applying.",
-      "Check post-wise eligibility, required marks, and STET/CTET requirement for your target post.",
-      "Keep scanned documents ready: photo, signature, identity proof, educational certificates, and caste/category documents (if applicable).",
-      "Open the official application link, complete registration, and fill the online form carefully.",
-      "Pay the required application fee using online mode and submit the final form before deadline.",
-      "Download and print the final submitted form and fee receipt for future use."
-    ],
-    beforeYouStart: [
-      "Check official instructions before starting process."
-    ]
-  }
-];
-const MANUAL_PRIORITY_SLUGS = new Set(MANUAL_PRIORITY_POSTS.map((post) => post.slug));
+const MANUAL_PRIORITY_POSTS = [];
+const MANUAL_PRIORITY_SLUGS = new Set();
 
 const HOME_MAP = {
   "Latest Results": "results-list",
@@ -774,6 +91,16 @@ function runWhenBrowserIdle(callback, timeout = 1200) {
   return window.setTimeout(callback, 1);
 }
 
+function yieldToMainThread() {
+  return new Promise((resolve) => {
+    if (typeof window.requestAnimationFrame === "function") {
+      window.requestAnimationFrame(() => resolve());
+      return;
+    }
+    window.setTimeout(resolve, 0);
+  });
+}
+
 function debounce(fn, wait = 100) {
   let timerId = null;
   return (...args) => {
@@ -810,15 +137,30 @@ function buildSeoDescription(post) {
 
 async function loadData() {
   try {
-    const response = await fetch(DATA_FILE, { cache: "default" });
+    const response = await fetch(HOME_DATA_FILE, { cache: "default" });
     if (!response.ok) {
-      throw new Error(`Failed to load data.json (${response.status})`);
+      throw new Error(`Failed to load home-data.json (${response.status})`);
     }
 
     const data = await response.json();
     return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error("[BiharResult.live] Failed to load homepage data.", error);
+    return [];
+  }
+}
+
+async function loadHomeToolsData() {
+  try {
+    const response = await fetch(HOME_TOOLS_DATA_FILE, { cache: "default" });
+    if (!response.ok) {
+      throw new Error(`Failed to load home-tools-data.json (${response.status})`);
+    }
+
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
+  } catch (error) {
+    console.error("[BiharResult.live] Failed to load homepage tools data.", error);
     return [];
   }
 }
@@ -834,10 +176,7 @@ async function runSafeHomeStep(stepName, handler) {
 
 function mergeManualPriorityPosts(posts) {
   const basePosts = Array.isArray(posts) ? posts : [];
-  return [
-    ...MANUAL_PRIORITY_POSTS,
-    ...basePosts.filter((post) => !MANUAL_PRIORITY_SLUGS.has(post.slug))
-  ];
+  return basePosts;
 }
 
 function byDate(a, b) {
@@ -974,10 +313,6 @@ function initPrimaryNavigation() {
 }
 
 function postHref(post) {
-  if (post?.path && isUsableUrl(post.path)) {
-    return sanitizeUrl(post.path);
-  }
-
   const sectionMap = {
     "Latest Results": "latest-results",
     "Latest Jobs": "latest-jobs",
@@ -988,6 +323,18 @@ function postHref(post) {
     "Verification": "verification"
   };
   const folder = sectionMap[post.category];
+
+  if (post?.path && isUsableUrl(post.path)) {
+    if (
+      folder &&
+      post?.slug &&
+      /(?:^|\/)post\.html(?:\?|$)/i.test(String(post.path || ""))
+    ) {
+      return `sections/${folder}/${encodeURIComponent(post.slug)}.html`;
+    }
+    return sanitizeUrl(post.path);
+  }
+
   if (folder) return `sections/${folder}/${encodeURIComponent(post.slug)}.html`;
   return `post.html?slug=${encodeURIComponent(post.slug)}`;
 }
@@ -1521,10 +868,13 @@ function renderHomeHighlights(posts) {
   grid.replaceChildren(fragment);
 }
 
-function renderHome(posts) {
-  Object.entries(HOME_MAP).forEach(([category, listId]) => {
+async function renderHome(posts) {
+  const homeEntries = Object.entries(HOME_MAP);
+
+  for (let index = 0; index < homeEntries.length; index += 1) {
+    const [category, listId] = homeEntries[index];
     const listEl = document.getElementById(listId);
-    if (!listEl) return;
+    if (!listEl) continue;
 
     const items = posts
       .filter((post) => post.category === category)
@@ -1554,7 +904,10 @@ function renderHome(posts) {
     rows.forEach((row, idx) => {
       row.style.display = !hasMore || idx < HOME_SECTION_INITIAL_VISIBLE ? "" : "none";
     });
-  });
+    if (index < homeEntries.length - 1) {
+      await yieldToMainThread();
+    }
+  }
 
   HOME_SECTIONS = Object.entries(HOME_MAP)
     .map(([category, listId]) => {
@@ -1698,9 +1051,12 @@ function parseAgeBounds(ageLimitLines) {
   let max = null;
 
   ageLimitLines.forEach((line) => {
-    const value = String(line || "");
-    const minMatch = value.match(/minimum age\s*:?\s*(\d{1,2})/i);
-    const maxMatch = value.match(/maximum age\s*:?\s*(\d{1,2})/i);
+    const labelText = cleanSnippet(line?.label || "");
+    const valueText = cleanSnippet(line?.value || line || "");
+    const joined = `${labelText}: ${valueText}`.trim();
+    const value = joined || String(line || "");
+    const minMatch = value.match(/minimum age\s*:?\s*(\d{1,2})/i) || (labelText.match(/minimum age/i) ? valueText.match(/(\d{1,2})/) : null);
+    const maxMatch = value.match(/maximum age\s*:?\s*(\d{1,2})/i) || (labelText.match(/maximum age/i) ? valueText.match(/(\d{1,2})/) : null);
     if (minMatch) min = min === null ? Number(minMatch[1]) : Math.min(min, Number(minMatch[1]));
     if (maxMatch) max = max === null ? Number(maxMatch[1]) : Math.max(max, Number(maxMatch[1]));
   });
@@ -2849,7 +2205,10 @@ async function init() {
       await runSafeHomeStep("search filter apply", () => applyHomeSearchFilter());
       await runSafeHomeStep("home dynamic schema", () => setHomeDynamicSchema(mergedPosts));
       runWhenBrowserIdle(() => {
-        runSafeHomeStep("home tools render", () => renderProFeatures(mergedPosts));
+        runSafeHomeStep("home tools render", async () => {
+          const toolPosts = await loadHomeToolsData();
+          renderProFeatures(toolPosts);
+        });
       });
       runWhenBrowserIdle(() => {
         runSafeHomeStep("auto expand setup", () => setupAutoExpandBlocks(document));
@@ -2861,7 +2220,15 @@ async function init() {
       const slug = getSlugFromUrl();
       const post = mergedPosts.find((p) => p.slug === slug);
       if (!post) renderNotFound();
-      else renderPost(post);
+      else {
+        const canonicalHref = postHref(post);
+        const isLegacyPostRoute = /(?:^|\/)post\.html$/i.test(window.location.pathname);
+        if (isLegacyPostRoute && canonicalHref && canonicalHref !== "#" && !/(?:^|\/)post\.html(?:\?|$)/i.test(canonicalHref)) {
+          window.location.replace(canonicalHref);
+          return;
+        }
+        renderPost(post);
+      }
       hardenExternalLinks(document);
     }
   } catch (error) {

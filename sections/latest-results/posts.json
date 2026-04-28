@@ -1,5 +1,23 @@
 [
   {
+    "slug": "latest-results-today-highlights-2026-04-28",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/latest-results-today-highlights-2026-04-28.html",
+    "title": "Today Latest Results 28 April 2026: Top Result Links and Updates",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28"
+  },
+  {
+    "slug": "latest-results-yesterday-highlights-2026-04-27",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/latest-results-yesterday-highlights-2026-04-27.html",
+    "title": "Yesterday Latest Results 27 April 2026: Top Result Links and Updates",
+    "publishedAt": "2026-04-27",
+    "updatedAt": "2026-04-27"
+  },
+  {
     "slug": "nta-cuet-pg-result-2026-declaration-update",
     "category": "Latest Results",
     "folder": "latest-results",
@@ -7,6 +25,69 @@
     "title": "NTA CUET PG 2026 Result Declared, Scorecard Download Link",
     "publishedAt": "2026-04-24",
     "updatedAt": "2026-04-26"
+  },
+  {
+    "slug": "bceceb-junior-resident-revised-eligible-list-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bceceb-junior-resident-revised-eligible-list-2026.html",
+    "title": "BCECEB Junior Resident Revised Eligible List 2026 (Health JR)",
+    "publishedAt": "2026-03-20",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "bseb-intermediate-special-compartment-scrutiny-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/bseb-intermediate-special-compartment-scrutiny-2026.html",
+    "title": "BSEB Intermediate Special Compartment and Scrutiny Update 2026",
+    "publishedAt": "2026-03-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "csbc-driver-constable-written-result-2025-26",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/csbc-driver-constable-written-result-2025-26.html",
+    "title": "CSBC Driver Constable Written Result for PET 2026 (Advt No. 02/2025)",
+    "publishedAt": "2025-12-30",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "cuet-ug-2026-registration-reopening-update",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/cuet-ug-2026-registration-reopening-update.html",
+    "title": "CUET UG 2026 Registration Reopening and Application Update",
+    "publishedAt": "2026-02-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ibps-csa-xv-provisional-allotment-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ibps-csa-xv-provisional-allotment-2026.html",
+    "title": "IBPS CSA XV Provisional Allotment List 2026",
+    "publishedAt": "2026-04-02",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ibps-rrb-xiv-office-assistant-provisional-allotment-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ibps-rrb-xiv-office-assistant-provisional-allotment-2026.html",
+    "title": "IBPS RRB XIV Office Assistants Provisional Allotment 2026",
+    "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "jee-main-session-2-score-card-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/jee-main-session-2-score-card-2026.html",
+    "title": "JEE Main 2026 Session 2 Paper 1 Score Card Download",
+    "publishedAt": "2026-04-19",
+    "updatedAt": "2026-04-25"
   },
   {
     "slug": "jkpsc-lecturer-botany-provisional-selection-list-april-2026",
@@ -27,6 +108,51 @@
     "updatedAt": "2026-04-25"
   },
   {
+    "slug": "karnataka-ii-puc-exam-1-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/karnataka-ii-puc-exam-1-result-2026.html",
+    "title": "Karnataka II PUC Exam 1 Result 2026 Declared on 09 April",
+    "publishedAt": "2026-04-09",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "karnataka-sslc-exam-1-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/karnataka-sslc-exam-1-result-2026.html",
+    "title": "Karnataka SSLC Exam 1 Result 2026 Declared on 23 April",
+    "publishedAt": "2026-04-23",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "kerala-psc-beat-forest-officer-short-list-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/kerala-psc-beat-forest-officer-short-list-2026.html",
+    "title": "Kerala PSC Beat Forest Officer Short List 2026 (Kollam, Cat No 214/2025)",
+    "publishedAt": "2026-04-17",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "kerala-psc-police-constable-trainee-rank-list-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/kerala-psc-police-constable-trainee-rank-list-2026.html",
+    "title": "Kerala PSC Police Constable Trainee Rank List 2026 (Cat No 740/2024)",
+    "publishedAt": "2026-04-17",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "neet-ug-2026-application-correction-extension-update",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/neet-ug-2026-application-correction-extension-update.html",
+    "title": "NEET UG 2026 Application Form, Extension and Correction Window Update",
+    "publishedAt": "2026-04-12",
+    "updatedAt": "2026-04-25"
+  },
+  {
     "slug": "nta-jee-main-paper-1-result-2026-session1-2-update",
     "category": "Latest Results",
     "folder": "latest-results",
@@ -42,6 +168,42 @@
     "path": "sections/latest-results/nta-jee-main-session2-paper2-answer-key-2026-update.html",
     "title": "NTA JEE Main 2026 Session 2 Paper 2 Answer Key Challenge Update",
     "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-pgt-commerce-final-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/opsc-pgt-commerce-final-result-2026.html",
+    "title": "OPSC Post Graduate Teacher Commerce Final Result 2026",
+    "publishedAt": "2026-02-13",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "opsc-pgt-english-final-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/opsc-pgt-english-final-result-2026.html",
+    "title": "OPSC Post Graduate Teacher English Final Result 2026",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-je-civil-provisional-recommendation-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ossc-je-civil-provisional-recommendation-2026.html",
+    "title": "OSSC JE Civil Provisional Recommendation List 2026 (746 Candidates)",
+    "publishedAt": "2026-04-08",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "ossc-si-excise-si-traffic-marks-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/ossc-si-excise-si-traffic-marks-2026.html",
+    "title": "OSSC SI Excise and SI Traffic Marks Released April 2026",
+    "publishedAt": "2026-04-23",
     "updatedAt": "2026-04-25"
   },
   {
@@ -69,6 +231,24 @@
     "path": "sections/latest-results/tnpsc-group-4-physical-certificate-verification-counselling-2026.html",
     "title": "TNPSC Group IV Physical Certificate Verification and Counselling List 2026",
     "publishedAt": "2026-04-10",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "uppsc-ncc-directorate-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/uppsc-ncc-directorate-result-2026.html",
+    "title": "UPPSC Directorate of National Cadet Corps Result 2026 (D-4/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25"
+  },
+  {
+    "slug": "uppsc-namami-gange-rural-water-supply-result-2026",
+    "category": "Latest Results",
+    "folder": "latest-results",
+    "path": "sections/latest-results/uppsc-namami-gange-rural-water-supply-result-2026.html",
+    "title": "UPPSC Namami Gange Rural Water Supply Department Result 2026 (D-4/E-1/2025)",
+    "publishedAt": "2026-04-25",
     "updatedAt": "2026-04-25"
   },
   {
