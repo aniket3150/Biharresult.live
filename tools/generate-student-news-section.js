@@ -6,6 +6,7 @@ const SOURCE_PATH = path.join(ROOT, "student-news-source.json");
 const SECTION_DIR = path.join(ROOT, "sections", "student-news");
 const HOME_JSON_PATH = path.join(ROOT, "student-news-home.json");
 const LEGACY_PAGE_PATH = path.join(ROOT, "pages", "news", "student-news.html");
+const ASSET_VERSION = "20260505";
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -42,6 +43,27 @@ function sortItems(items) {
     }
     return String(right.date).localeCompare(String(left.date));
   });
+}
+
+function normalizeIntentKey(item) {
+  return String(item.headline || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\b(2024|2025|2026|2027|today|latest|update|news|official)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isHighValueStudentNewsItem(item) {
+  const headline = String(item?.headline || "").trim();
+  const summary = String(item?.summary || "").trim();
+  const details = Array.isArray(item?.details) ? item.details.map((row) => String(row || "").trim()).filter(Boolean) : [];
+  const relatedPostUrl = String(item?.relatedPostUrl || "").trim();
+  if (!headline || headline.length < 28) return false;
+  if (!summary || summary.length < 80) return false;
+  if (!details.length || details.join(" ").length < 180) return false;
+  if (!/^\/sections\//i.test(relatedPostUrl)) return false;
+  return true;
 }
 
 function buildHomeJson(items) {
@@ -100,7 +122,7 @@ function buildPostHtml(item) {
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="https://biharresult.live/favicon.png" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=${ASSET_VERSION}" />
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -220,7 +242,7 @@ function buildIndexHtml(items) {
   <meta name="twitter:title" content="Student News Hinglish Updates | BiharResult.live" />
   <meta name="twitter:description" content="Read result, jobs, admit card, board and university student updates in clear Hinglish." />
   <meta name="twitter:image" content="https://biharresult.live/favicon.png" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=${ASSET_VERSION}" />
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -318,7 +340,19 @@ function buildLegacyRedirect() {
 }
 
 function main() {
-  const items = readJson(SOURCE_PATH);
+  const rawItems = readJson(SOURCE_PATH);
+  const seenSlug = new Set();
+  const seenIntent = new Set();
+  const items = rawItems.filter((item) => {
+    if (!isHighValueStudentNewsItem(item)) return false;
+    const slug = String(item.slug || "").trim();
+    if (!slug || seenSlug.has(slug)) return false;
+    seenSlug.add(slug);
+    const intent = normalizeIntentKey(item);
+    if (intent && seenIntent.has(intent)) return false;
+    if (intent) seenIntent.add(intent);
+    return true;
+  });
   ensureDir(SECTION_DIR);
   ensureDir(path.dirname(LEGACY_PAGE_PATH));
 
@@ -335,6 +369,7 @@ function main() {
 
   console.log(JSON.stringify({
     section: "student-news",
+    sourceCount: rawItems.length,
     postCount: items.length,
     homeJsonCount: homeJson.length,
     indexPath: path.relative(ROOT, path.join(SECTION_DIR, "index.html")).replace(/\\/g, "/")

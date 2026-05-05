@@ -70,20 +70,40 @@ const SECTION_CONFIG = {
   }
 };
 
-const ROUNDUP_DATES = [
-  {
-    kind: "today",
-    iso: "2026-04-28",
-    display: "28 April 2026",
-    label: "Today"
-  },
-  {
-    kind: "yesterday",
-    iso: "2026-04-27",
-    display: "27 April 2026",
-    label: "Yesterday"
-  }
-];
+const ROUNDUP_CATEGORIES = new Set(["Latest Results", "Latest Jobs", "Admit Card"]);
+
+function formatDateInTimeZone(date, timeZone) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+  const get = (type) => parts.find((part) => part.type === type)?.value || "00";
+  return `${get("year")}-${get("month")}-${get("day")}`;
+}
+
+function prettyDate(isoDate) {
+  const date = new Date(`${isoDate}T00:00:00+05:30`);
+  if (Number.isNaN(date.getTime())) return isoDate;
+  return new Intl.DateTimeFormat("en-IN", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    timeZone: "Asia/Kolkata"
+  }).format(date);
+}
+
+function getRoundupDates() {
+  const today = new Date();
+  const yesterday = new Date(today.getTime() - 86400000);
+  const todayIso = formatDateInTimeZone(today, "Asia/Kolkata");
+  const yesterdayIso = formatDateInTimeZone(yesterday, "Asia/Kolkata");
+  return [
+    { kind: "today", iso: todayIso, display: prettyDate(todayIso), label: "Today" },
+    { kind: "yesterday", iso: yesterdayIso, display: prettyDate(yesterdayIso), label: "Yesterday" }
+  ];
+}
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, ""));
@@ -213,27 +233,32 @@ function buildEntry(category, round, topPosts, existing = {}) {
 }
 
 function main() {
+  const ROUNDUP_DATES = getRoundupDates();
   const data = readJson(DATA_PATH);
   const basePosts = data.filter((post) => !isRoundupSlug(post.slug));
   const next = [...basePosts];
+  let addedOrUpdatedRoundups = 0;
 
   for (const [category, config] of Object.entries(SECTION_CONFIG)) {
+    if (!ROUNDUP_CATEGORIES.has(category)) continue;
     const sectionPosts = basePosts
       .filter((post) => post.category === category)
       .sort(byRecent)
       .slice(0, 6);
+    if (sectionPosts.length < 5) continue;
 
     for (const round of ROUNDUP_DATES) {
       const slug = buildSlug(config.folder, round.kind, round.iso);
       const existing = data.find((post) => post.slug === slug) || {};
       next.push(buildEntry(category, round, sectionPosts, existing));
+      addedOrUpdatedRoundups += 1;
     }
   }
 
   next.sort(byRecent);
   writeJson(DATA_PATH, next);
   console.log(JSON.stringify({
-    addedOrUpdatedRoundups: Object.keys(SECTION_CONFIG).length * ROUNDUP_DATES.length,
+    addedOrUpdatedRoundups,
     totalPosts: next.length
   }, null, 2));
 }

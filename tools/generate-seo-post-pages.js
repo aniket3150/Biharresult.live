@@ -9,6 +9,7 @@ const SLUG_PATHS_PATH = path.join(ROOT, "slug-paths.json");
 const SITEMAP_PATH = path.join(ROOT, "sitemap.xml");
 const SECTIONS_INDEX_PATH = path.join(ROOT, "sections", "sections-index.json");
 const STUDENT_NEWS_POSTS_PATH = path.join(ROOT, "sections", "student-news", "posts.json");
+const INDEX_QUALITY_REPORT_PATH = path.join(ROOT, "index-quality-report.json");
 
 function formatDateInTimeZone(date, timeZone) {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -52,6 +53,24 @@ const SECTION_LABELS = {
   Verification: "Verification"
 };
 
+const HOME_ANCHOR_BY_CATEGORY = {
+  "Latest Results": "../../index.html#latest-results",
+  "Latest Jobs": "../../index.html#latest-jobs",
+  "Admit Card": "../../index.html#admit-card",
+  Scholarship: "../../index.html#scholarship",
+  "Sarkari Yojana": "../../index.html#sarkari-yojana"
+};
+
+const RELATED_STOP_WORDS = new Set([
+  "2024", "2025", "2026", "2027", "about", "admit", "after", "against", "alert", "all",
+  "and", "application", "apply", "board", "bihar", "card", "check", "date", "declared",
+  "details", "direct", "download", "exam", "for", "form", "from", "government", "hall",
+  "important", "india", "job", "jobs", "key", "latest", "link", "links", "list", "marks",
+  "notice", "official", "online", "out", "portal", "posts", "result", "results", "score",
+  "scorecard", "soon", "student", "students", "the", "today", "update", "updates", "vacancy",
+  "with", "www", "year", "yesterday"
+]);
+
 const MANUAL_PRESERVE_SLUGS = new Set([
   "bihar-board-inter-12th-scrutiny-online-application-form-2026",
   "bihar-iti-cat-admission-form-2026",
@@ -62,6 +81,72 @@ const MANUAL_PRESERVE_SLUGS = new Set([
   "download-12th-bseb-result",
   "bpsc-school-teacher-tre-4-0-2026"
 ]);
+
+const FORCE_INDEXABLE_SLUGS = new Set([
+  ...Array.from(MANUAL_PRESERVE_SLUGS),
+  "bihar-board-10th-result-2026",
+  "bihar-board-class-10th-topper-list-2026",
+  "cbse-class-10th-results-2026-download-link",
+  "jee-main-session-2-score-card-2026",
+  "bpsc-exam-calendar-2026",
+  "neet-ug-2026-city-intimation-admit-update",
+  "railway-rrb-alp-recruitment-2026",
+  "csbc-constable-operator-online-form-2026",
+  "incois-recruitment-2026-advt-01"
+]);
+
+const ROUNDUP_SLUG_PATTERN = /(?:today|yesterday)-highlights-\d{4}-\d{2}-\d{2}$/i;
+const OFFICIAL_UPDATE_SLUG_PATTERN = /official-update-\d+-\d+$/i;
+const SERVICE_LINK_SLUG_PATTERN = /service-link-\d+-\d+$/i;
+const OFFICIAL_INFORMATION_SLUG_PATTERN = /official-information-\d+-\d+$/i;
+const OFFICIAL_PORTAL_SLUG_PATTERN = /official-portal-link-\d+-\d+$/i;
+const SERVICE_STYLE_SLUG_PATTERN = /(service-link-\d+-\d+|official-information-\d+-\d+|official-portal-link-\d+-\d+)$/i;
+const WEAK_SLUG_PATTERN = /(official-update-\d+-\d+|service-link-\d+-\d+|official-information-\d+-\d+|official-portal-link-\d+-\d+|(?:today|yesterday)-highlights-\d{4}-\d{2}-\d{2})$/i;
+const GENERIC_TITLE_PATTERN = /(official update \d+|service link \d+|official information \d+|portal link \d+)/i;
+const TRUSTED_AUTHORITY_HOST_PATTERN = /(gov\.in|nic\.in|ac\.in|edu\.in|upsc\.gov\.in|cbse\.gov\.in|biharboardonline\.com|nta\.ac\.in|rrb|ibps\.in|ssc\.gov\.in|osssc\.gov\.in|drdo\.gov\.in)/i;
+
+const DISCOVERED_RISK_GROUPS = {
+  keep_and_improve: {
+    label: "keep and improve",
+    urlPatterns: [
+      "sections/*/*.html where slug is not a numbered template but page is thin or missing authority sources"
+    ],
+    reason: "These URLs have user intent but need stronger unique content, source links, and freshness signals."
+  },
+  merge_with_stronger_page: {
+    label: "merge with stronger page",
+    urlPatterns: [
+      "sections/*/*-today-highlights-YYYY-MM-DD.html",
+      "sections/*/*-yesterday-highlights-YYYY-MM-DD.html"
+    ],
+    reason: "Daily roundup pages expire quickly and should consolidate into their primary section archive."
+  },
+  noindex_intentionally: {
+    label: "noindex intentionally",
+    urlPatterns: [
+      "sections/admission/*official-update-#-#.html",
+      "sections/sarkari-yojana/*(service-link|official-information)-#-#.html",
+      "sections/scholarship/*official-portal-link-#-#.html",
+      "sections/verification/*service-link-#-#.html"
+    ],
+    reason: "These templated URLs are useful for navigation but are weak standalone index targets."
+  },
+  remove_from_sitemap: {
+    label: "remove from sitemap",
+    urlPatterns: [
+      "sections/verification/*service-link-#-#.html (borderline quality)",
+      "sections/scholarship/*official-update-#-#.html (borderline quality)"
+    ],
+    reason: "Keep accessible for users, but do not promote these weaker templates in XML sitemap."
+  },
+  delete_or_stop_generating: {
+    label: "delete or stop generating",
+    urlPatterns: [
+      "sections/(admission|sarkari-yojana|verification|scholarship)/*(official-update|official-information|official-portal-link|service-link)-#-#.html"
+    ],
+    reason: "High-volume numbered templates create near-duplicates and should not be auto-generated further."
+  }
+};
 
 const SECTION_INDEX_META = {
   "latest-results": {
@@ -241,6 +326,230 @@ function trimForMeta(text, max = 158) {
   return `${safe.trim()}...`;
 }
 
+function urlHost(url) {
+  try {
+    return new URL(cleanText(url || "")).hostname.toLowerCase();
+  } catch (error) {
+    return "";
+  }
+}
+
+function isInternalSiteUrl(url) {
+  const host = urlHost(url);
+  return !host || host === "biharresult.live" || host.endsWith(".biharresult.live");
+}
+
+function normalizeIsoDay(value) {
+  const iso = normalizeIsoDate(value);
+  if (!iso) return "";
+  return iso;
+}
+
+function dayDiffFromBuild(value) {
+  const iso = normalizeIsoDay(value);
+  if (!iso) return 0;
+  const a = new Date(`${iso}T00:00:00+05:30`);
+  const b = new Date(`${BUILD_DATE}T00:00:00+05:30`);
+  if (Number.isNaN(a.getTime()) || Number.isNaN(b.getTime())) return 0;
+  return Math.floor((b.getTime() - a.getTime()) / 86400000);
+}
+
+function extractExternalLinks(post) {
+  const links = [];
+  const push = (url) => {
+    const cleaned = cleanText(url || "");
+    if (!/^https?:\/\//i.test(cleaned)) return;
+    if (isInternalSiteUrl(cleaned)) return;
+    links.push(cleaned);
+  };
+
+  push(post?.sourceUrl);
+  (post?.importantLinks || []).forEach((item) => push(item?.url));
+
+  return Array.from(new Set(links));
+}
+
+function computePostQuality(post, folder) {
+  const slug = cleanText(post?.slug || "");
+  const title = cleanText(post?.title || "");
+  const shortInfo = cleanText(post?.shortInfo || "");
+  const longDescription = cleanText(post?.longDescription || "");
+  const category = cleanText(post?.category || FOLDER_TO_CATEGORY[folder] || "Latest Results");
+  const importantDatesCount = Array.isArray(post?.importantDates) ? post.importantDates.length : 0;
+  const eligibilityCount = Array.isArray(post?.eligibility) ? post.eligibility.length : 0;
+  const linkCount = Array.isArray(post?.importantLinks) ? post.importantLinks.length : 0;
+  const externalLinks = extractExternalLinks(post);
+  const authorityExternalCount = externalLinks.filter((url) => TRUSTED_AUTHORITY_HOST_PATTERN.test(urlHost(url))).length;
+
+  const weakSlug = WEAK_SLUG_PATTERN.test(slug);
+  const serviceStyleSlug = /(service-link-\d+-\d+|official-information-\d+-\d+|official-portal-link-\d+-\d+)/i.test(slug);
+  const genericTitle = GENERIC_TITLE_PATTERN.test(title);
+  const selfSource = isInternalSiteUrl(post?.sourceUrl || "");
+  const staleRoundup = /(?:today|yesterday)-highlights-\d{4}-\d{2}-\d{2}$/i.test(slug) && dayDiffFromBuild(post?.updatedAt || post?.publishedAt || "") > 4;
+
+  let score = 0;
+  const reasons = [];
+
+  if (title.length >= 34) score += 2;
+  else if (title.length >= 24) score += 1;
+  else reasons.push("short-title");
+
+  if (shortInfo.length >= 120) score += 2;
+  else if (shortInfo.length >= 80) score += 1;
+  else reasons.push("thin-short-info");
+
+  if (longDescription.length >= 220) score += 2;
+  else if (longDescription.length >= 130) score += 1;
+  else reasons.push("thin-long-description");
+
+  if (importantDatesCount >= 2) score += 1;
+  if (eligibilityCount >= 1) score += 1;
+  if (linkCount >= 2) score += 1;
+  if (externalLinks.length >= 1) score += 2;
+  if (authorityExternalCount >= 1) score += 2;
+
+  if (weakSlug) {
+    score -= 4;
+    reasons.push("weak-pattern-slug");
+  }
+  if (serviceStyleSlug) {
+    score -= 5;
+    reasons.push("directory-style-service-slug");
+  }
+  if (genericTitle) {
+    score -= 3;
+    reasons.push("generic-title-pattern");
+  }
+  if (weakSlug && authorityExternalCount === 0) {
+    score -= 3;
+    reasons.push("weak-slug-without-authority-links");
+  }
+  if (weakSlug && ["Admission", "Scholarship", "Sarkari Yojana", "Verification"].includes(category) && authorityExternalCount < 2) {
+    score -= 3;
+    reasons.push("weak-category-patterned-page");
+  }
+  if (selfSource && externalLinks.length === 0) {
+    score -= 3;
+    reasons.push("no-authority-source");
+  }
+  if (staleRoundup) {
+    score -= 3;
+    reasons.push("stale-roundup");
+  }
+  if (category === "Verification" && externalLinks.length === 0) {
+    score -= 2;
+    reasons.push("verification-without-authority-link");
+  }
+
+  const forceIndexable = FORCE_INDEXABLE_SLUGS.has(slug);
+  const indexable = forceIndexable || score >= 4;
+  const canonicalHref = indexable ? pageUrl(folder, slug) : sectionUrl(folder);
+  const robotsMeta = indexable
+    ? "index, follow, max-image-preview:large, max-snippet:-1"
+    : "noindex, follow, max-image-preview:large, max-snippet:-1";
+
+  return {
+    indexable,
+    score,
+    reasons: forceIndexable ? ["force-indexable"] : reasons,
+    canonicalHref,
+    robotsMeta,
+    qualityTier: forceIndexable ? "high" : (indexable ? "standard" : "low")
+  };
+}
+
+function discoveryGroupReason(groupKey) {
+  return DISCOVERED_RISK_GROUPS[groupKey]?.reason || "";
+}
+
+function classifyDiscoveryRiskGroup(post, folder, quality = null) {
+  const slug = cleanText(post?.slug || "");
+  if (!slug) return null;
+
+  const category = cleanText(post?.category || FOLDER_TO_CATEGORY[folder] || "Latest Results");
+  const resolvedQuality = quality || computePostQuality(post, folder);
+  const score = Number(resolvedQuality?.score || 0);
+  const reasons = Array.isArray(resolvedQuality?.reasons) ? resolvedQuality.reasons : [];
+  const isIndexable = Boolean(resolvedQuality?.indexable);
+
+  const isRoundup = ROUNDUP_SLUG_PATTERN.test(slug);
+  const isOfficialUpdate = OFFICIAL_UPDATE_SLUG_PATTERN.test(slug);
+  const isServiceStyle = SERVICE_STYLE_SLUG_PATTERN.test(slug);
+  const isWeakPattern = WEAK_SLUG_PATTERN.test(slug);
+  const isNumberedTemplate = isOfficialUpdate || isServiceStyle;
+
+  if (isRoundup) {
+    return { group: "merge_with_stronger_page", reason: discoveryGroupReason("merge_with_stronger_page") };
+  }
+
+  if (
+    isNumberedTemplate
+    && ["Admission", "Sarkari Yojana", "Verification", "Scholarship"].includes(category)
+    && score <= 0
+  ) {
+    return { group: "delete_or_stop_generating", reason: discoveryGroupReason("delete_or_stop_generating") };
+  }
+
+  if (isWeakPattern && isIndexable) {
+    return { group: "remove_from_sitemap", reason: discoveryGroupReason("remove_from_sitemap") };
+  }
+
+  if (isWeakPattern && !isIndexable) {
+    return { group: "noindex_intentionally", reason: discoveryGroupReason("noindex_intentionally") };
+  }
+
+  if (
+    !isIndexable
+    && reasons.some((item) => ["short-title", "thin-short-info", "thin-long-description", "no-authority-source"].includes(item))
+  ) {
+    return { group: "keep_and_improve", reason: discoveryGroupReason("keep_and_improve") };
+  }
+
+  return null;
+}
+
+function buildDiscoveredRiskGroupReport(catalog) {
+  const rows = Array.isArray(catalog) ? catalog : [];
+  const grouped = Object.fromEntries(
+    Object.entries(DISCOVERED_RISK_GROUPS).map(([key, value]) => [key, {
+      label: value.label,
+      reason: value.reason,
+      urlPatterns: value.urlPatterns,
+      count: 0,
+      categories: [],
+      sampleUrls: []
+    }])
+  );
+
+  rows.forEach((post) => {
+    const slug = cleanText(post?.slug || "");
+    if (!slug) return;
+    const category = cleanText(post?.category || "Other");
+    const folder = CATEGORY_TO_FOLDER[category];
+    if (!folder) return;
+
+    const quality = {
+      indexable: post?.indexable !== false,
+      score: Number(post?.qualityScore || 0),
+      reasons: Array.isArray(post?.qualityReasons) ? post.qualityReasons : []
+    };
+    const action = classifyDiscoveryRiskGroup(post, folder, quality);
+    if (!action) return;
+
+    const target = grouped[action.group];
+    if (!target) return;
+    target.count += 1;
+    if (!target.categories.includes(category)) {
+      target.categories.push(category);
+    }
+    if (target.sampleUrls.length < 12) {
+      target.sampleUrls.push(pageUrl(folder, slug));
+    }
+  });
+
+  return grouped;
+}
+
 function sectionUrl(folder) {
   return `https://biharresult.live/sections/${folder}/`;
 }
@@ -297,27 +606,36 @@ function detectCategoryMeta(category) {
 
 function buildSeoTitle(post) {
   const title = cleanText(post.title || "Latest Update");
-  const suffix = detectCategoryMeta(post.category).suffix;
-  const candidate = `${title} | ${suffix}`;
-  return candidate.length <= 72 ? candidate : `${title} | BiharResult.live`;
+  const section = cleanText(post.category || "Student Update");
+  const candidate = `${title} | ${section} | BiharResult.live`;
+  if (candidate.length <= 72) return candidate;
+  const compact = `${title} | BiharResult.live`;
+  return compact.length <= 72 ? compact : `${title.slice(0, 66).trim()}...`;
 }
 
 function buildSeoDescription(post) {
   const title = cleanText(post.title || "Latest update");
+  const section = cleanText(post.category || "Latest Update");
   const department = cleanText(post.department || "");
-  const action = detectCategoryMeta(post.category).action;
-  const intro = cleanText(post.shortInfo || post.longDescription || "");
-  const cleanedIntro = intro.toLowerCase().startsWith(title.toLowerCase()) ? intro.slice(title.length).replace(/^[:\-\s]+/, "") : intro;
   const summaryRows = buildDetailedDateRows(post);
-  const keyLine = summaryRows[0]
+  const firstKey = summaryRows[0]
     ? `${cleanText(summaryRows[0].label)}: ${cleanText(summaryRows[0].value)}`
     : "";
-  const keywordTail = post.category === "Latest Results"
-    ? "Useful for Sarkari Result India, fast result checks, and official result-link searches."
-    : "Fast all India student update with official links on BiharResult.live.";
-  const departmentLine = department ? `${department} official update.` : "";
-  const body = cleanedIntro || keywordTail;
-  return trimForMeta(`${title}: ${action}. ${departmentLine} ${keyLine ? `${keyLine}. ` : ""}${body} ${keywordTail}`);
+  const intro = cleanText(post.shortInfo || post.longDescription || "");
+  const cleanedIntro = intro.toLowerCase().startsWith(title.toLowerCase())
+    ? intro.slice(title.length).replace(/^[:\-\s]+/, "")
+    : intro;
+  const actionLine = detectCategoryMeta(post.category).action;
+  const parts = [
+    `${title} ${section} update`,
+    department ? `${department} notice summary` : "",
+    firstKey ? `Key update: ${firstKey}` : "",
+    actionLine,
+    cleanedIntro || "Check dates, eligibility, and official links before taking action.",
+    "Use official source links for final verification."
+  ].filter(Boolean);
+
+  return trimForMeta(parts.join(". "));
 }
 
 function buildKeywords(post) {
@@ -627,10 +945,10 @@ function buildStudentGuide(post, summaryRows, feeRows, eligibilityRows) {
     : "Fee / Service Note: Check official portal before making any payment.";
 
   return [
-    `Students should first note this key update: ${keyDate}.`,
-    `Eligibility focus: ${eligibilityNote}`,
-    `Fee and service reminder: ${feeNote}`,
-    `Next official step: use ${primaryLabel} from the Important Links section and cross-check every detail before applying, downloading, or checking status.`
+    `First confirm the priority update: ${keyDate}.`,
+    `Eligibility checkpoint: ${eligibilityNote}`,
+    `Fee/service checkpoint: ${feeNote}`,
+    `Next step: open ${primaryLabel} from Important Links and verify all instructions on the official portal before proceeding.`
   ];
 }
 
@@ -735,15 +1053,19 @@ function defaultFaq(post) {
     return [
       {
         q: `What is the last date for ${title}?`,
-        a: lastDate ? `The important date reference available on this page is ${lastDate}. Always confirm the final schedule from the official notice.` : "Check the Important Dates section for the latest deadline and official schedule."
+        a: lastDate
+          ? `The current key date shown for this recruitment is ${lastDate}. Final cutoff time, extension, or correction updates must be confirmed from the official notification/portal.`
+          : "Check the Important Dates table on this page and verify the final schedule from the official notification."
       },
       {
         q: `Who can apply for ${title}?`,
-        a: eligibilityLine || "Check the Eligibility Details section on this page for educational qualification, age rules, and category-specific requirements."
+        a: eligibilityLine
+          ? `${eligibilityLine} Also verify age limit, category relaxation, and required certificates from the official advertisement before applying.`
+          : "Use the Eligibility Details table for qualification, age rules, and category-wise conditions, then match them with the official notice."
       },
       {
-        q: `Where is the official apply link for ${title}?`,
-        a: `Use the Important Links section on this page to open the ${primaryLabel} and official department link.`
+        q: `Which official sources should I open before applying for ${title}?`,
+        a: `Open ${primaryLabel} from the Important Links section, then check the Official Website and Notification block for the original advertisement and authority source links.`
       }
     ];
   }
@@ -752,15 +1074,15 @@ function defaultFaq(post) {
     return [
       {
         q: `How can I download ${title}?`,
-        a: "Use the admit card link from the Important Links section, log in with the required credentials, and download the hall ticket carefully."
+        a: `Open the ${primaryLabel} link in Important Links, log in with the required credentials, and download the admit card only from the official portal.`
       },
       {
         q: `What details should I check on ${title}?`,
-        a: "Verify your name, roll number, exam date, shift timing, reporting time, and exam center details after downloading."
+        a: "Verify candidate name, roll/application number, exam date, shift, reporting time, center address, and exam-day instructions exactly as printed."
       },
       {
-        q: `Where is the official link for ${title}?`,
-        a: `The Important Links section on this page provides the ${primaryLabel} and official source links.`
+        q: `What should I do if details mismatch on ${title}?`,
+        a: "Do not wait for exam day. Re-check your credentials, read the correction instructions in the official notice, and contact the authority helpdesk if required."
       }
     ];
   }
@@ -769,15 +1091,15 @@ function defaultFaq(post) {
     return [
       {
         q: `How can I check ${title}?`,
-        a: "Open the result link from the Important Links section and enter the required credentials such as roll number, registration number, date of birth, or captcha."
+        a: `Use ${primaryLabel} from Important Links, enter the required credentials (roll number/registration/date of birth/captcha), and submit exactly as per the official portal format.`
       },
       {
         q: `What details are required for ${title}?`,
-        a: "Students or candidates should keep their roll number, registration number, login details, and supporting information ready before checking the result."
+        a: "Keep roll code/roll number, registration details, date of birth, and any portal-specific login information ready before opening the result page."
       },
       {
-        q: `Where can I find the official link for ${title}?`,
-        a: `Use the Important Links section on this page to open the ${primaryLabel} and related official portals.`
+        q: `What should I check after viewing ${title}?`,
+        a: "Check subject-wise marks/status, candidate details, qualifying status, and the next process such as scrutiny, counselling, or document verification."
       }
     ];
   }
@@ -789,11 +1111,11 @@ function defaultFaq(post) {
     },
     {
       q: `What should I check before using ${title}?`,
-      a: "Check eligibility, required details, important dates, and official instructions before proceeding."
+      a: "Check key dates, eligibility/documents, and all official instructions first. Use only authority sources for final confirmation before any submission or payment."
     },
     {
       q: `Where can I find the official link for ${title}?`,
-      a: `Use the Important Links section on this page to open the ${primaryLabel} and related official source links.`
+      a: `Use Important Links for ${primaryLabel}, then cross-check the Official Website and Notification section for the primary authority source.`
     }
   ];
 }
@@ -1094,7 +1416,7 @@ function buildCatalogPost(filePath, content, existingPost = {}) {
   const sourceLinks = extractSourceLinks(content);
   const sourceCandidate = sourceLinks[0] || importantLinks.find((item) => item.type === "secondary") || importantLinks[0] || null;
 
-  return {
+  const candidate = {
     ...existingPost,
     slug,
     title,
@@ -1148,6 +1470,16 @@ function buildCatalogPost(filePath, content, existingPost = {}) {
       return parsed.length ? parsed : Array.isArray(existingPost.beforeYouStart) ? existingPost.beforeYouStart : [];
     })()
   };
+
+  const quality = computePostQuality(candidate, folder);
+  return {
+    ...candidate,
+    indexable: quality.indexable,
+    qualityScore: quality.score,
+    qualityReasons: quality.reasons,
+    canonicalTarget: quality.canonicalHref,
+    qualityTier: quality.qualityTier
+  };
 }
 
 function buildDataCatalog(sectionFiles, existingDataMap) {
@@ -1167,12 +1499,16 @@ function ensureSectionPostFiles(data) {
     const folder = CATEGORY_TO_FOLDER[post.category];
     const slug = cleanText(post.slug || "");
     if (!folder || !slug) continue;
+    const quality = computePostQuality({ ...post, slug }, folder);
+    const action = classifyDiscoveryRiskGroup({ ...post, slug }, folder, quality);
+    if (action?.group === "delete_or_stop_generating") continue;
+    if (!quality.indexable && !FORCE_INDEXABLE_SLUGS.has(slug)) continue;
 
     const filePath = path.join(ROOT, "sections", folder, `${slug}.html`);
     if (fs.existsSync(filePath)) continue;
 
     fs.mkdirSync(path.dirname(filePath), { recursive: true });
-    fs.writeFileSync(filePath, buildHtml(post, folder), "utf8");
+    fs.writeFileSync(filePath, buildHtml(post, folder, data), "utf8");
     createdCount += 1;
   }
 
@@ -1222,24 +1558,457 @@ function uniqueUrls(items) {
   });
 }
 
+function sourceLabelFromUrl(url) {
+  const value = cleanText(url || "");
+  try {
+    const host = new URL(value).hostname.replace(/^www\./i, "");
+    return host || value;
+  } catch (error) {
+    return value;
+  }
+}
+
+function normalizeSourceLabel(label, url) {
+  const cleaned = cleanText(label || "");
+  if (!cleaned) return `Official Source: ${sourceLabelFromUrl(url)}`;
+  if (/official source:/i.test(cleaned)) return cleaned;
+  if (/click here|open link|source link/i.test(cleaned)) {
+    return `Official Source: ${sourceLabelFromUrl(url)}`;
+  }
+  return `Official Source: ${cleaned}`;
+}
+
+function officialLinkNote(label) {
+  const text = cleanText(label || "");
+  if (/notification|advertisement|advt|pdf|prospectus|brochure/i.test(text)) {
+    return "Primary official notification document for exact rules.";
+  }
+  if (/login|apply|registration|portal/i.test(text)) {
+    return "Official application/login portal published by the authority.";
+  }
+  if (/result|score|mark|status|check/i.test(text)) {
+    return "Official result or status-check source link.";
+  }
+  if (/admit|hall ticket|call letter/i.test(text)) {
+    return "Official admit-card or call-letter download source.";
+  }
+  return "Official department source link for final verification.";
+}
+
 function buildSourceList(post) {
   const items = [];
   if (cleanText(post.sourceUrl)) {
-    items.push({ label: cleanText(post.sourceName || post.sourceUrl), url: cleanText(post.sourceUrl) });
+    items.push({
+      label: normalizeSourceLabel(post.sourceName || post.sourceUrl, post.sourceUrl),
+      url: cleanText(post.sourceUrl)
+    });
   }
   for (const link of post.importantLinks || []) {
     if (/^https?:\/\//i.test(String(link.url || ""))) {
-      items.push({ label: cleanText(link.label || link.url), url: cleanText(link.url) });
+      items.push({
+        label: normalizeSourceLabel(link.label || link.url, link.url),
+        url: cleanText(link.url)
+      });
     }
   }
   return uniqueUrls(items).slice(0, 6);
 }
 
+function relativeSectionHref(currentFolder, category) {
+  const targetFolder = CATEGORY_TO_FOLDER[category];
+  if (!targetFolder) return "../../index.html";
+  return targetFolder === currentFolder ? "./" : `../${targetFolder}/`;
+}
+
+function relativePostHref(currentFolder, candidate) {
+  const targetFolder = CATEGORY_TO_FOLDER[candidate.category] || cleanText(candidate.folder || "");
+  if (!targetFolder || !cleanText(candidate.slug)) return "../../index.html";
+  return targetFolder === currentFolder
+    ? `./${candidate.slug}.html`
+    : `../${targetFolder}/${candidate.slug}.html`;
+}
+
+function tokenizeRelatedText(...values) {
+  return values
+    .join(" ")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .split(/\s+/)
+    .filter((token) => token.length > 2 && !RELATED_STOP_WORDS.has(token));
+}
+
+function extractIntentTags(...values) {
+  const text = values.join(" ").toLowerCase();
+  const probes = [
+    "bpsc", "bssc", "bpssc", "csbc", "bseb", "bceceb", "btsc", "upsc", "ibps",
+    "ssc", "rrb", "railway", "neet", "jee", "cuet", "police", "constable",
+    "teacher", "inter", "matric", "scholarship", "admission", "counselling",
+    "admit", "result", "verification", "yojana"
+  ];
+  return probes.filter((probe) => text.includes(probe));
+}
+
+function buildOfficialLinkItems(post, sourceItems) {
+  const officialPattern = /(official|notification|notice|website|portal|apply|result|download|admit|login|counselling|schedule)/i;
+  const govPattern = /(gov\.in|nic\.in|ac\.in|org\.in|results\.biharboardonline\.com|matricbiharboard\.com)/i;
+  const items = [];
+
+  (post.importantLinks || []).forEach((item) => {
+    const label = cleanText(item.label || "Official Link");
+    const url = cleanText(item.url || "");
+    if (!/^https?:\/\//i.test(url)) return;
+    if (!officialPattern.test(label) && !govPattern.test(url)) return;
+    items.push({
+      label,
+      note: officialLinkNote(label),
+      url
+    });
+  });
+
+  sourceItems.forEach((item) => {
+    if (!/^https?:\/\//i.test(String(item.url || ""))) return;
+    items.push({
+      label: cleanText(item.label || "Official Source"),
+      note: "Secondary source captured for cross-verification.",
+      url: cleanText(item.url)
+    });
+  });
+
+  return uniqueUrls(items).slice(0, 4);
+}
+
+function buildTopicClusterLinks(post, currentFolder) {
+  const title = cleanText(post.title || "");
+  const department = cleanText(post.department || "");
+  const combined = `${title} ${department}`;
+  const items = [];
+
+  items.push({
+    href: relativeSectionHref(currentFolder, post.category),
+    label: `Open ${SECTION_LABELS[post.category] || post.category} Archive`,
+    note: "Browse more updates from the same category."
+  });
+
+  const homeAnchor = HOME_ANCHOR_BY_CATEGORY[post.category];
+  if (homeAnchor) {
+    items.push({
+      href: homeAnchor,
+      label: `Homepage ${SECTION_LABELS[post.category] || post.category} Section`,
+      note: "Jump back to the main homepage update stream."
+    });
+  }
+
+  if (post.category === "Latest Results") {
+    items.push(
+      {
+        href: "../../pages/guides/sarkari-result-bihar.html",
+        label: "Sarkari Result Bihar Hub",
+        note: "Broader result-intent cluster page."
+      },
+      {
+        href: "../../pages/guides/fast-result-bihar.html",
+        label: "Fast Result Bihar Hub",
+        note: "Quick routes for high-intent result checks."
+      },
+      {
+        href: "../../pages/guides/result-2026-bihar.html",
+        label: "Result 2026 Bihar Hub",
+        note: "Board and recruitment result support page."
+      },
+      {
+        href: "../../sections/admit-card/",
+        label: "Admit Card and Exam Date Archive",
+        note: "Useful next step when result posts mention upcoming exams."
+      }
+    );
+  }
+
+  if (post.category === "Latest Jobs") {
+    items.push(
+      {
+        href: "../../sections/admit-card/",
+        label: "Admit Card Archive",
+        note: "Track hall-ticket and exam-date updates for related recruitments."
+      },
+      {
+        href: "../../sections/latest-results/",
+        label: "Latest Results Archive",
+        note: "Follow selection-result updates for similar posts."
+      },
+      {
+        href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html",
+        label: "Bihar Jobs, Result and Admit Card Hub",
+        note: "Cross-category internal hub for related exam stages."
+      }
+    );
+  }
+
+  if (post.category === "Admit Card") {
+    items.push(
+      {
+        href: "../../sections/latest-results/",
+        label: "Latest Results Archive",
+        note: "Check result announcements for the same exam families."
+      },
+      {
+        href: "../../sections/latest-jobs/",
+        label: "Latest Jobs Archive",
+        note: "Follow original recruitment notices and related cycles."
+      },
+      {
+        href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html",
+        label: "Bihar Jobs, Result and Admit Card Hub",
+        note: "One-page route across application, admit card, and result stages."
+      }
+    );
+  }
+
+  if (post.category === "Scholarship") {
+    items.push(
+      {
+        href: "../../pages/guides/guide-post-matric-scholarship-apply.html",
+        label: "Post-Matric Scholarship Guide",
+        note: "Step-by-step scholarship application guidance."
+      },
+      {
+        href: "../../sections/verification/",
+        label: "Verification Service Archive",
+        note: "Useful for status-check and document verification steps."
+      }
+    );
+  }
+
+  if (post.category === "Admission") {
+    items.push(
+      {
+        href: "../../sections/latest-jobs/",
+        label: "Latest Jobs Archive",
+        note: "Track recruitment-linked admissions and course notices."
+      },
+      {
+        href: "../../pages/guides/guides.html",
+        label: "Guide Library",
+        note: "Form-fill, documents, and counselling support guides."
+      }
+    );
+  }
+
+  if (post.category === "Sarkari Yojana") {
+    items.push(
+      {
+        href: "../../sections/verification/",
+        label: "Verification Service Archive",
+        note: "Check scheme service and status portals."
+      },
+      {
+        href: "../../pages/guides/guides.html",
+        label: "Guide Library",
+        note: "Support pages for applications and required documents."
+      }
+    );
+  }
+
+  if (post.category === "Verification") {
+    items.push(
+      {
+        href: "../../sections/sarkari-yojana/",
+        label: "Sarkari Yojana Archive",
+        note: "Related citizen-service and scheme information pages."
+      },
+      {
+        href: "../../pages/guides/guides.html",
+        label: "Guide Library",
+        note: "Helpful process guides for status and document workflows."
+      }
+    );
+  }
+
+  items.push(
+    {
+      href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html",
+      label: "Bihar Jobs, Result and Admit Card Hub",
+      note: "Broad internal hub connecting similar high-intent pages."
+    },
+    {
+      href: "../../pages/guides/guides.html",
+      label: "Guide Library",
+      note: "Practical guides for form fill, eligibility, and result workflows."
+    }
+  );
+
+  if (/bpsc/i.test(combined)) {
+    items.push(
+      {
+        href: "../admit-card/bpsc-exam-calendar-2026.html",
+        label: "BPSC Exam Calendar 2026",
+        note: "Useful BPSC exam-date and planning page."
+      },
+      {
+        href: "../student-news/bpsc-exam-calendar-student-watch-2026.html",
+        label: "BPSC Student News Watch",
+        note: "Short student-friendly BPSC update coverage."
+      }
+    );
+  }
+
+  if (/(bihar board|bseb|matric|inter)/i.test(combined)) {
+    items.push(
+      {
+        href: "../latest-results/bihar-board-10th-result-2026.html",
+        label: "Bihar Board 10th Result 2026",
+        note: "Board-result hub page with direct links and guidance."
+      },
+      {
+        href: "../latest-results/bihar-board-class-12th-result-2026.html",
+        label: "Bihar Board Class 12th Result 2026",
+        note: "Inter-result page for related board searches."
+      }
+    );
+  }
+
+  if (/(jee|neet)/i.test(combined)) {
+    items.push(
+      {
+        href: "../admit-card/jee-main-session-2-admit-card-2026-april.html",
+        label: "JEE Main Admit Card Update",
+        note: "Related JEE exam-date and admit-card page."
+      },
+      {
+        href: "../admit-card/neet-ug-2026-city-intimation-admit-update.html",
+        label: "NEET UG Admit Update",
+        note: "Related NEET student alert and download guidance."
+      }
+    );
+  }
+
+  const deduped = [];
+  const seen = new Set();
+  items.forEach((item) => {
+    const href = cleanText(item.href);
+    if (!href || seen.has(href)) return;
+    seen.add(href);
+    deduped.push(item);
+  });
+  return deduped.slice(0, 7);
+}
+
+function buildRelatedEntries(post, catalog, currentFolder, limit = 6) {
+  const rows = Array.isArray(catalog) ? catalog : [];
+  const currentSlug = cleanText(post.slug || "");
+  const currentTokens = new Set(
+    tokenizeRelatedText(post.title || "", post.department || "", post.location || "", post.shortInfo || "", post.slug || "")
+  );
+  const currentTags = new Set(
+    extractIntentTags(post.title || "", post.department || "", post.location || "", post.shortInfo || "", post.slug || "")
+  );
+
+  const sameCategory = rows.filter((item) => (
+    cleanText(item.slug) !== currentSlug
+    && cleanText(item.category) === cleanText(post.category)
+    && cleanText(item.slug)
+  ));
+
+  const scored = sameCategory.map((item) => {
+    const tokens = tokenizeRelatedText(item.title || "", item.department || "", item.location || "", item.shortInfo || "", item.slug || "");
+    const tags = extractIntentTags(item.title || "", item.department || "", item.location || "", item.shortInfo || "", item.slug || "");
+    let score = 0;
+    tokens.forEach((token) => {
+      if (currentTokens.has(token)) score += 2;
+    });
+    tags.forEach((tag) => {
+      if (currentTags.has(tag)) score += 4;
+    });
+
+    if (cleanText(item.department).toLowerCase() && cleanText(item.department).toLowerCase() === cleanText(post.department).toLowerCase()) {
+      score += 6;
+    }
+
+    if (cleanText(item.location).toLowerCase() && cleanText(item.location).toLowerCase() === cleanText(post.location).toLowerCase()) {
+      score += 2;
+    }
+
+    const updatedAt = cleanText(item.updatedAt || item.publishedAt || "");
+    if (updatedAt && updatedAt >= "2026-01-01") score += 1;
+
+    return { item, score };
+  });
+
+  const primary = scored
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || compareEntriesByDate(left.item, right.item))
+    .map((entry) => entry.item);
+
+  const fallback = sameCategory
+    .sort(compareEntriesByDate)
+    .filter((item) => !primary.some((candidate) => candidate.slug === item.slug));
+
+  return primary
+    .concat(fallback)
+    .slice(0, limit)
+    .map((item) => {
+      const targetFolder = CATEGORY_TO_FOLDER[item.category] || currentFolder;
+      return {
+        title: cleanText(item.title || ""),
+        href: relativePostHref(currentFolder, item),
+        absoluteUrl: pageUrl(targetFolder, item.slug),
+        meta: `${cleanText(item.category || "")} | Updated ${formatDisplayDate(item.updatedAt || item.publishedAt || BUILD_DATE)}`
+      };
+    });
+}
+
 function buildHeroLead(post) {
-  return cleanText(post.shortInfo || post.longDescription || `${post.title} is listed on BiharResult.live with important details and official links.`);
+  const section = cleanText(post.category || "Latest Update");
+  const department = cleanText(post.department || "Official department");
+  const actionByCategory = {
+    "Latest Jobs": "Recruitment update",
+    "Latest Results": "Result update",
+    "Admit Card": "Admit-card update",
+    Admission: "Admission update",
+    Scholarship: "Scholarship update",
+    "Sarkari Yojana": "Scheme update",
+    Verification: "Verification update"
+  };
+  const actionLabel = actionByCategory[section] || "Official update";
+  const primary = getPrimaryLink(post);
+  const primaryLabel = cleanText(primary?.label || "official source link");
+  const summaryRows = buildDetailedDateRows(post);
+  const keyRow = summaryRows.find((row) => /(last date|result status|admit card status|application window|scheme status|service status)/i.test(cleanText(row.label || "")))
+    || summaryRows[0];
+  const keyLine = keyRow ? `${cleanText(keyRow.label)}: ${cleanText(keyRow.value)}` : "";
+
+  const leadParts = [
+    `${actionLabel} for ${department} is available with key details and official links on this page.`,
+    keyLine ? `Key update: ${keyLine}.` : "",
+    `Verify final instructions through ${primaryLabel} before taking action.`
+  ].filter(Boolean);
+
+  return leadParts.join(" ");
+}
+
+function compressNarrativeCopy(value, maxSentences = 4, maxChars = 540) {
+  const raw = cleanText(value || "");
+  if (!raw) return "";
+
+  const sentences = raw
+    .split(/(?<=[.!?])\s+/)
+    .map((item) => cleanText(item))
+    .filter(Boolean);
+
+  const unique = [];
+  const seen = new Set();
+  sentences.forEach((sentence) => {
+    const key = sentence.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    unique.push(sentence);
+  });
+
+  const compact = unique.slice(0, maxSentences).join(" ");
+  return compact.length > maxChars ? `${compact.slice(0, maxChars - 3).trim()}...` : compact;
 }
 
 function buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows) {
+  const title = cleanText(post.title || "This update");
   const dept = cleanText(post.department || "the concerned department");
   const category = cleanText(post.category || "official update");
   const primary = getPrimaryLink(post);
@@ -1254,16 +2023,11 @@ function buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows) {
     ? `${cleanText(eligibilityRows[0].label)}: ${cleanText(eligibilityRows[0].value)}`
     : "Check the official notification for exact eligibility rules.";
   const paragraphs = [
-    `${cleanText(post.title)} is listed under ${category} on BiharResult.live as a student-friendly update page.`,
-    `This post gathers the main schedule, eligibility points, fee or service note, and official action link shared by ${dept} so candidates can review the process quickly in one place.`,
-    `Key details right now: ${keyDate} ${feeLine} ${eligibilityLine}`,
-    `Use ${primaryLabel} from the Important Links section for the next official step, and always verify final rules from the original department notice before taking action.`
+    `${title} is published in the ${category} section with key points extracted from authority notices and official portal updates.`,
+    `This page summarizes schedule, eligibility checkpoints, fee/service notes, and trusted source links from ${dept} so users can review critical details quickly.`,
+    `Priority checks: ${keyDate} ${feeLine} ${eligibilityLine}`,
+    `Before submitting, downloading, or checking status, open ${primaryLabel} and confirm final rules from the official notification/website.`
   ];
-
-  const descriptiveCopy = cleanText(post.longDescription || post.shortInfo || "");
-  if (descriptiveCopy) {
-    paragraphs.splice(2, 0, descriptiveCopy);
-  }
 
   return paragraphs;
 }
@@ -1289,7 +2053,7 @@ function buildSectionTitle(post) {
   }
 }
 
-function buildSchema(post, folder, canonicalUrl, faq, howToApply) {
+function buildSchema(post, folder, canonicalUrl, faq, howToApply, relatedPosts = []) {
   const publisher = {
     "@type": "Organization",
     name: "BiharResult.live",
@@ -1406,14 +2170,31 @@ function buildSchema(post, folder, canonicalUrl, faq, howToApply) {
     });
   }
 
+  if (Array.isArray(relatedPosts) && relatedPosts.length) {
+    graph.push({
+      "@type": "ItemList",
+      name: `Related posts for ${cleanText(post.title)}`,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      numberOfItems: relatedPosts.length,
+      itemListElement: relatedPosts.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: cleanText(item.absoluteUrl || ""),
+        name: cleanText(item.title || "")
+      }))
+    });
+  }
+
   return `<script type="application/ld+json">\n${JSON.stringify({
     "@context": "https://schema.org",
     "@graph": graph
   }, null, 2)}\n</script>`;
 }
 
-function buildHtml(post, folder) {
-  const canonicalUrl = pageUrl(folder, post.slug);
+function buildHtml(post, folder, catalog = []) {
+  const quality = computePostQuality(post, folder);
+  const canonicalUrl = quality.canonicalHref;
+  const pageUrlSelf = pageUrl(folder, post.slug);
   const lead = buildHeroLead(post);
   const description = buildSeoDescription(post);
   const title = buildSeoTitle(post);
@@ -1423,7 +2204,10 @@ function buildHtml(post, folder) {
   const primary = getPrimaryLink(post);
   const primaryLabel = cleanText(primary?.label || detectCategoryMeta(post.category).badge);
   const sourceItems = buildSourceList(post);
+  const officialLinks = buildOfficialLinkItems(post, sourceItems);
   const faq = defaultFaq(post);
+  const relatedPosts = buildRelatedEntries(post, catalog, folder);
+  const clusterLinks = buildTopicClusterLinks(post, folder);
   const quickFacts = [
     { label: "Category", value: cleanText(post.category || "-") },
     { label: "Department", value: cleanText(post.department || "Official Update") },
@@ -1438,6 +2222,7 @@ function buildHtml(post, folder) {
   const studentGuide = buildStudentGuide(post, summaryRows, feeRows, eligibilityRows);
   const summaryParagraphs = buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows);
   const keywords = buildKeywords(post);
+  const schemaTag = quality.indexable ? buildSchema(post, folder, pageUrlSelf, faq, howToApply, relatedPosts) : "";
 
   return `<!doctype html>
 <html lang="en-IN">
@@ -1451,14 +2236,14 @@ function buildHtml(post, folder) {
   <meta name="description" content="${escapeHtml(description)}" />
   <meta name="keywords" content="${escapeHtml(keywords)}" />
   <meta name="author" content="BiharResult.live Editorial Team" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="robots" content="${escapeHtml(quality.robotsMeta)}" />
+  <meta name="googlebot" content="${escapeHtml(quality.robotsMeta)}, max-video-preview:-1" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="BiharResult.live" />
   <meta property="og:locale" content="en_IN" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="${escapeHtml(description)}" />
-  <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
+  <meta property="og:url" content="${escapeHtml(pageUrlSelf)}" />
   <meta property="og:image" content="https://biharresult.live/favicon.png" />
   <meta property="og:image:alt" content="${escapeHtml(`${cleanText(post.title)} on BiharResult.live`)}" />
   <meta property="article:published_time" content="${escapeHtml(cleanText(post.publishedAt || post.updatedAt || "2026-02-18"))}" />
@@ -1472,7 +2257,7 @@ function buildHtml(post, folder) {
   <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
   <link rel="alternate" hreflang="en-IN" href="${escapeHtml(canonicalUrl)}" />
   <link rel="alternate" hreflang="x-default" href="${escapeHtml(canonicalUrl)}" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=${ASSET_VERSION}" />
   <style>
     .seo-post-card { padding: 0; overflow: hidden; }
     .seo-post-hero { background: radial-gradient(120% 140% at 0% 0%, rgba(255, 255, 255, 0.18), transparent 42%), linear-gradient(135deg, #03114a 0%, #0a3ba5 54%, #1183d6 100%); color: #fff; padding: 16px 14px; }
@@ -1495,6 +2280,10 @@ function buildHtml(post, folder) {
     .seo-post-link-card { border: 1px solid #dae4f3; border-radius: 10px; padding: 12px; background: #fff; display: grid; gap: 10px; }
     .seo-post-link-card strong { color: #0f172a; font-size: 14px; display: block; }
     .seo-post-link-card small { display: block; color: #475569; margin-top: 2px; font-size: 12px; }
+    .seo-post-related-grid { display: grid; gap: 10px; }
+    .seo-post-related-card { border: 1px solid #dae4f3; border-radius: 10px; padding: 12px; background: linear-gradient(180deg, #fff 0%, #f8fbff 100%); }
+    .seo-post-related-card a { color: #0b2f9b; font-size: 14px; font-weight: 800; text-decoration: none; line-height: 1.5; }
+    .seo-post-related-card small { display: block; margin-top: 6px; color: #475569; font-size: 12px; line-height: 1.6; }
     .seo-post-faq { display: grid; gap: 12px; }
     .seo-post-faq-item { border: 1px solid #dae4f3; border-radius: 10px; padding: 12px; background: #f8fbff; }
     .seo-post-faq-item h3 { margin: 0 0 8px; color: #0f172a; font-size: 14px; }
@@ -1508,6 +2297,7 @@ function buildHtml(post, folder) {
       .seo-post-content { padding: 18px; }
       .seo-post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .seo-post-link-card { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+      .seo-post-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (min-width: 900px) {
       .seo-post-hero { padding: 24px 22px; }
@@ -1516,11 +2306,12 @@ function buildHtml(post, folder) {
       .seo-post-content { padding: 22px; }
       .seo-post-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
       .seo-post-copy { font-size: 14px; }
+      .seo-post-related-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .seo-post-faq-item p,
       .seo-post-source-list { font-size: 14px; }
     }
   </style>
-${buildSchema(post, folder, canonicalUrl, faq, howToApply)}
+${schemaTag}
 </head>
 <body class="br-post-page">
   <header class="post-topbar"><div class="br-wrap"><a href="../../index.html" class="post-brand">BiharResult.live</a></div></header>
@@ -1548,11 +2339,13 @@ ${buildSchema(post, folder, canonicalUrl, faq, howToApply)}
         ${eligibilityRows.length ? `<section class="mt-6"><h2 class="table-title table-title--eligibility">Eligibility Details</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(eligibilityRows)}</table></div></section>` : ""}
         ${vacancyRows.length ? `<section class="mt-6"><h2 class="table-title table-title--vacancy">Vacancy / Seat / Category Details</h2><div class="overflow-x-auto"><table class="info-table">${renderVacancyRows(vacancyRows)}</table></div></section>` : ""}
         ${(post.importantLinks || []).length ? `<section class="mt-6"><h2 class="table-title table-title--links">Important Links</h2><div class="seo-post-links">${(post.importantLinks || []).slice(0, 6).map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(cleanText(item.label || "Official Link"))}</strong><small>${escapeHtml(cleanText(post.title || ""))}</small></div><a href="${escapeHtml(cleanText(item.url || "#"))}" target="_blank" rel="noopener noreferrer" class="link-btn result-link-btn${item.type === "secondary" ? " secondary" : ""}">Open Link</a></div>`).join("\n")}</div></section>` : ""}
+        ${officialLinks.length ? `<section class="mt-6"><h2 class="table-title table-title--links">Official Website and Notification</h2><div class="seo-post-links">${officialLinks.map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(item.label)}</strong><small>${escapeHtml(item.note)}</small></div><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="link-btn result-link-btn secondary">Open Official Link</a></div>`).join("\n")}</div></section>` : ""}
         ${beforeStart.length ? `<section class="mt-6"><h2 class="table-title table-title--before">Before You Start</h2><ul class="post-checklist">${beforeStart.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ul></section>` : ""}
         ${howToApply.length ? `<section class="mt-6"><h2 class="table-title table-title--process">How To Proceed</h2><ol class="post-steps">${howToApply.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ol></section>` : ""}
         <section class="mt-6"><h2 class="table-title table-title--faq">Frequently Asked Questions</h2><div class="seo-post-faq">${faq.map((item) => `<div class="seo-post-faq-item"><h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p></div>`).join("\n")}</div></section>
         ${sourceItems.length ? `<section class="mt-6"><h2 class="table-title table-title--source">Source References</h2><ul class="seo-post-source-list">${sourceItems.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.label || item.url)}</a></li>`).join("\n")}</ul></section>` : ""}
-        <section class="mt-6"><h2 class="table-title table-title--related">Related Links</h2><div class="result-link-actions"><a href="../../index.html" class="link-btn result-link-btn secondary">Home Page</a><a href="./" class="link-btn result-link-btn">Open ${escapeHtml(SECTION_LABELS[post.category] || post.category)} Archive</a></div></section>
+        ${clusterLinks.length ? `<section class="mt-6"><h2 class="table-title table-title--related">Browse More in This Topic</h2><div class="seo-post-links">${clusterLinks.map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(item.label)}</strong><small>${escapeHtml(item.note)}</small></div><a href="${escapeHtml(item.href)}" class="link-btn result-link-btn secondary">Open Page</a></div>`).join("\n")}</div></section>` : ""}
+        ${relatedPosts.length ? `<section class="mt-6"><h2 class="table-title table-title--related">Related Posts</h2><div class="seo-post-related-grid">${relatedPosts.map((item) => `<article class="seo-post-related-card"><a href="${escapeHtml(item.href)}">${escapeHtml(item.title)}</a><small>${escapeHtml(item.meta)}</small></article>`).join("\n")}</div></section>` : ""}
         <div class="br-post-mini-footer">BiharResult.live</div>
       </div>
     </article>
@@ -1593,6 +2386,10 @@ function buildSectionEntries(sectionFiles, dataMap) {
       const slug = path.basename(filePath, ".html");
       const existing = fs.readFileSync(filePath, "utf8");
       const post = dataMap.get(slug) || buildFallbackPost(filePath, existing);
+      const quality = computePostQuality(post, folder);
+      if (!quality.indexable) return null;
+      const action = classifyDiscoveryRiskGroup(post, folder, quality);
+      const sitemapEligible = action?.group !== "remove_from_sitemap";
 
       return {
         slug,
@@ -1601,9 +2398,11 @@ function buildSectionEntries(sectionFiles, dataMap) {
         path: `sections/${folder}/${slug}.html`,
         title: cleanText(post.title || slug.replace(/-/g, " ")),
         publishedAt: cleanText(post.publishedAt || post.updatedAt || BUILD_DATE),
-        updatedAt: cleanText(post.updatedAt || post.publishedAt || BUILD_DATE)
+        updatedAt: cleanText(post.updatedAt || post.publishedAt || BUILD_DATE),
+        sitemapEligible
       };
     })
+    .filter(Boolean)
     .sort(compareEntriesByDate);
 }
 
@@ -1699,7 +2498,7 @@ function buildSectionArchiveHtml(folder, folderEntries) {
   <meta name="twitter:description" content="${escapeHtml(meta.socialDescription)}" />
   <meta name="twitter:image" content="https://biharresult.live/favicon.png" />
   <meta name="twitter:image:alt" content="${escapeHtml(`${meta.heading} archive on BiharResult.live`)}" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=${ASSET_VERSION}" />
   <script type="application/ld+json">${schema}</script>
 </head>
 <body>
@@ -1760,7 +2559,8 @@ function writeSectionIndexes(entries) {
 }
 
 function writeRuntimeDataFiles(catalog) {
-  const homeData = catalog.map((post) => ({
+  const indexableCatalog = catalog.filter((post) => post.indexable !== false);
+  const homeData = indexableCatalog.map((post) => ({
     slug: cleanText(post.slug || ""),
     path: cleanText(post.path || ""),
     title: cleanText(post.title || ""),
@@ -1771,7 +2571,7 @@ function writeRuntimeDataFiles(catalog) {
     isFeatured: Boolean(post.isFeatured)
   }));
 
-  const homeToolsData = catalog.map((post) => ({
+  const homeToolsData = indexableCatalog.map((post) => ({
     slug: cleanText(post.slug || ""),
     path: cleanText(post.path || ""),
     title: cleanText(post.title || ""),
@@ -1783,7 +2583,7 @@ function writeRuntimeDataFiles(catalog) {
   }));
 
   const slugPaths = Object.fromEntries(
-    catalog
+    indexableCatalog
       .filter((post) => cleanText(post.slug) && cleanText(post.path))
       .map((post) => [cleanText(post.slug), cleanText(post.path)])
   );
@@ -1795,12 +2595,12 @@ function writeRuntimeDataFiles(catalog) {
 
 function rebuildSitemap(entries) {
   const urls = [];
+  // Only include canonical indexable routes here; legacy redirects and noindex pages must stay out of the sitemap.
   const fixedPages = [
     { loc: "https://biharresult.live/", lastmod: BUILD_DATE, changefreq: "hourly", priority: "1.0" },
     { loc: "https://biharresult.live/pages/legal/about.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/contact.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/privacy-policy.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
-    { loc: "https://biharresult.live/pages/news/student-news.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.7" },
     { loc: "https://biharresult.live/sections/student-news/", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
     { loc: "https://biharresult.live/pages/guides/guides.html", lastmod: "2026-03-28", changefreq: "weekly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/india-result-latest-result.html", lastmod: "2026-04-17", changefreq: "weekly", priority: "0.7" },
@@ -1823,6 +2623,9 @@ function rebuildSitemap(entries) {
   urls.push(...fixedPages, ...sectionIndexes);
 
   for (const entry of entries) {
+    if (entry && entry.sitemapEligible === false) {
+      continue;
+    }
     const lastmod = cleanText(entry.updatedAt || entry.publishedAt || "2026-02-18");
     const category = entry.category || FOLDER_TO_CATEGORY[entry.folder] || "Latest Results";
     const changefreq = category === "Latest Results" ? "daily" : category === "Latest Jobs" ? "daily" : "weekly";
@@ -1861,6 +2664,42 @@ function rebuildSitemap(entries) {
   return uniqueUrls.length;
 }
 
+function writeIndexQualityReport(catalog) {
+  const rows = Array.isArray(catalog) ? catalog : [];
+  const indexable = rows.filter((post) => post.indexable !== false);
+  const blocked = rows.filter((post) => post.indexable === false);
+  const discoveredNotIndexedRiskGroups = buildDiscoveredRiskGroupReport(rows);
+  const byCategory = {};
+  rows.forEach((post) => {
+    const key = cleanText(post.category || "Other");
+    if (!byCategory[key]) {
+      byCategory[key] = { total: 0, indexable: 0, blocked: 0 };
+    }
+    byCategory[key].total += 1;
+    if (post.indexable === false) byCategory[key].blocked += 1;
+    else byCategory[key].indexable += 1;
+  });
+
+  const report = {
+    buildDate: BUILD_DATE,
+    total: rows.length,
+    indexable: indexable.length,
+    blocked: blocked.length,
+    byCategory,
+    discoveredNotIndexedRiskGroups,
+    blockedSamples: blocked.slice(0, 50).map((post) => ({
+      slug: cleanText(post.slug || ""),
+      category: cleanText(post.category || ""),
+      title: cleanText(post.title || ""),
+      score: Number(post.qualityScore || 0),
+      reasons: Array.isArray(post.qualityReasons) ? post.qualityReasons : []
+    }))
+  };
+
+  fs.writeFileSync(INDEX_QUALITY_REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  return report;
+}
+
 function main() {
   const data = readJson(DATA_PATH);
   const dataMap = new Map(data.map((post) => [post.slug, post]));
@@ -1882,7 +2721,7 @@ function main() {
       }
 
       const post = dataMap.get(slug) || buildFallbackPost(filePath, existing);
-      const html = buildHtml(post, folder);
+      const html = buildHtml(post, folder, data);
       fs.writeFileSync(filePath, html, "utf8");
       generatedCount += 1;
     }
@@ -1893,6 +2732,7 @@ function main() {
   const catalogMap = new Map(catalog.map((post) => [post.slug, post]));
   fs.writeFileSync(DATA_PATH, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
   writeRuntimeDataFiles(catalog);
+  const qualityReport = writeIndexQualityReport(catalog);
 
   const entries = buildSectionEntries(sectionFiles, catalogMap);
   writeSectionIndexes(entries);
@@ -1902,6 +2742,8 @@ function main() {
     generatedCount,
     preservedCount,
     dataCatalogCount: catalog.length,
+    indexableCatalogCount: qualityReport.indexable,
+    blockedCatalogCount: qualityReport.blocked,
     sectionEntryCount: entries.length,
     sitemapCount,
     skipPostRewrite: SKIP_POST_REWRITE

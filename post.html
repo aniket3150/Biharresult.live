@@ -14,7 +14,9 @@
   <title id="page-title">Post | BiharResult.live</title>
   <meta name="description" id="meta-description" content="Check important dates, eligibility, fee details, and official links. Fast, reliable student updates on BiharResult.live." />
   <meta name="keywords" content="Sarkari Result Bihar, fast result, Bihar result 2026, result link, admit card, online form, BiharResult.live" />
-  <meta name="robots" content="noindex, nofollow" />
+  <!-- Legacy route stays noindex, but still follows links so old URLs can pass users and crawlers to canonical pages. -->
+  <meta name="robots" content="noindex, follow" />
+  <meta name="googlebot" content="noindex, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="BiharResult.live" />
   <meta property="og:locale" content="en_IN" />
@@ -35,6 +37,118 @@
   <link rel="alternate" hreflang="en-IN" id="alternate-en-in" href="https://biharresult.live/post.html" />
   <link rel="alternate" hreflang="x-default" id="alternate-x-default" href="https://biharresult.live/post.html" />
   <link rel="stylesheet" href="/style.css?v=20260426" />
+  <style>
+    .post-breadcrumb {
+      margin-bottom: 14px;
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .post-breadcrumb a {
+      color: #0b3ab2;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .post-breadcrumb span[aria-hidden="true"] {
+      padding: 0 6px;
+      color: #94a3b8;
+    }
+
+    .post-link-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .post-link-card {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .post-link-card strong {
+      display: block;
+      color: #0f172a;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .post-link-card p,
+    .post-link-card small {
+      margin: 6px 0 0;
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .post-related-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .post-related-card {
+      padding: 14px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .post-related-card a {
+      color: #0b3ab2;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.55;
+      text-decoration: none;
+    }
+
+    .post-related-card p {
+      margin: 8px 0 0;
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .post-faq-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .post-faq-item {
+      padding: 14px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: #f8fbff;
+    }
+
+    .post-faq-item h3 {
+      margin: 0 0 8px;
+      color: #0f172a;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .post-faq-item p {
+      margin: 0;
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (min-width: 720px) {
+      .post-link-card {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+      }
+
+      .post-related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
 </head>
 <body class="br-post-page">
   <a class="br-skip-link" href="#post-root">Skip to main content</a>
@@ -55,6 +169,14 @@
     </section>
 
     <article class="section-card br-post-article" aria-labelledby="post-title">
+      <!-- Breadcrumb + supporting sections are rendered with the current visual system so SEO improves without redesigning the page. -->
+      <nav class="post-breadcrumb" id="post-breadcrumb" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/sections/latest-results/" id="post-breadcrumb-category">Latest Updates</a>
+        <span aria-hidden="true">/</span>
+        <span id="post-breadcrumb-current">Post</span>
+      </nav>
       <h1 id="post-title" class="text-2xl font-extrabold text-slate-900"></h1>
       <p id="post-summary" class="mt-2 text-slate-700"></p>
       <div class="post-meta-line" id="post-meta-line" aria-label="Post dates" hidden>
@@ -143,14 +265,29 @@
         <div id="important-links" class="grid gap-3 sm:grid-cols-2" data-auto-expand data-expand-height="190"></div>
       </section>
 
-      <section class="mt-6" aria-label="Search Hubs">
-        <h2 class="table-title table-title--related">Search Hubs</h2>
-        <div class="result-link-actions">
+      <section class="mt-6" id="official-links-section" aria-label="Official Website and Notification" hidden>
+        <h2 class="table-title table-title--links">Official Website and Notification</h2>
+        <div class="post-link-grid" id="official-links-grid"></div>
+      </section>
+
+      <section class="mt-6" id="topic-cluster-section" aria-label="Browse More in This Topic">
+        <h2 class="table-title table-title--related">Browse More in This Topic</h2>
+        <div class="result-link-actions" id="topic-cluster-links">
           <a class="link-btn secondary" href="pages/guides/sarkari-result-bihar.html">Sarkari Result Bihar Hub</a>
           <a class="link-btn secondary" href="pages/guides/fast-result-bihar.html">Fast Result Hub</a>
           <a class="link-btn secondary" href="pages/guides/result-2026-bihar.html">Result 2026 Hub</a>
           <a class="link-btn secondary" href="sections/latest-results/">Latest Results Archive</a>
         </div>
+      </section>
+
+      <section class="mt-6" id="faq-section" hidden>
+        <h2 class="table-title table-title--faq">Frequently Asked Questions</h2>
+        <div class="post-faq-grid" id="post-faq-grid"></div>
+      </section>
+
+      <section class="mt-6" id="related-posts-section" hidden>
+        <h2 class="table-title table-title--related">Related Posts</h2>
+        <div class="post-related-grid" id="related-posts-grid"></div>
       </section>
 
       <section class="br-aff-section mt-6" aria-label="Recommended Services">

@@ -46,6 +46,133 @@ const HOME_PRIORITY_SLUG_ORDER = [
   "csbc-special-branch-constable-online-form-2026",
   "csbc-driver-constable-written-result-2025-26"
 ];
+const HOME_CATEGORY_PRIORITY_SLUG_ORDER = {
+  "Latest Results": [
+    "bihar-board-10th-result-2026",
+    "bihar-board-class-12th-result-2026",
+    "bihar-board-class-10th-topper-list-2026",
+    "cbse-class-10th-results-2026-download-link",
+    "jee-main-session-2-score-card-2026",
+    "bihar-board-inter-12th-scrutiny-online-application-form-2026"
+  ],
+  "Latest Jobs": [
+    "bpsc-school-teacher-tre-4-0-2026",
+    "railway-rrb-alp-recruitment-2026",
+    "csbc-constable-operator-online-form-2026",
+    "bceceb-senior-resident-tutor-online-form-2026",
+    "btsc-iti-instructor-recruitment-2026-advt-14-23"
+  ],
+  "Admit Card": [
+    "bpsc-exam-calendar-2026",
+    "jee-main-session-2-admit-card-2026-april",
+    "neet-ug-2026-city-intimation-admit-update",
+    "csbc-driver-constable-pet-e-admit-card-2026",
+    "bihar-state-cooperative-bank-bscb-dv-notice-2026"
+  ],
+  "Student News": [
+    "bpsc-tre-4-application-badi-update-2026",
+    "neet-ug-city-slip-admit-news-2026",
+    "cbse-10th-result-link-activate-news-2026",
+    "bihar-board-inter-scrutiny-news-2026"
+  ],
+  Scholarship: [
+    "bihar-kanya-utthan-protsahan-yojna-form",
+    "bihar-scholarship-update-matric2024-2",
+    "bihar-scholarship-update-inter2024-6",
+    "bihar-scholarship-official-update-40-40"
+  ],
+  "Sarkari Yojana": [
+    "bihar-sarkari-yojana-service-link-1-1",
+    "bihar-yojana-official-information-27-27",
+    "bihar-sarkari-yojana-official-update-40-40"
+  ]
+};
+const HOME_SECTION_SHORTCUTS = {
+  "Latest Results": [
+    {
+      title: "Latest Results Archive (All Updates)",
+      href: "sections/latest-results/",
+      meta: "Latest Results | Archive",
+      snippet: "Open the complete result archive with board and recruitment result pages."
+    },
+    {
+      title: "Sarkari Result Bihar Hub",
+      href: "pages/guides/sarkari-result-bihar.html",
+      meta: "Guide Hub | Results",
+      snippet: "Cluster page connecting top Bihar result intents and related internal routes."
+    }
+  ],
+  "Latest Jobs": [
+    {
+      title: "Latest Jobs Archive (All Vacancy Updates)",
+      href: "sections/latest-jobs/",
+      meta: "Latest Jobs | Archive",
+      snippet: "Browse all online forms, vacancy notices, and recruitment timelines."
+    },
+    {
+      title: "Bihar Jobs, Result and Admit Card Hub",
+      href: "pages/guides/guide-bihar-job-result-admit-card-hub.html",
+      meta: "Guide Hub | Jobs",
+      snippet: "Cross-category hub for job lifecycle pages from form to result."
+    }
+  ],
+  "Admit Card": [
+    {
+      title: "Admit Card and Exam Date Archive",
+      href: "sections/admit-card/",
+      meta: "Admit Card | Archive",
+      snippet: "Open hall-ticket, exam-date, and DV schedule pages in one stream."
+    },
+    {
+      title: "Latest Results Archive for Exam Outcomes",
+      href: "sections/latest-results/",
+      meta: "Cross Link | Results",
+      snippet: "Track result announcements for exams linked to admit-card posts."
+    }
+  ],
+  "Student News": [
+    {
+      title: "Student News Archive (Hinglish Updates)",
+      href: "sections/student-news/",
+      meta: "Student News | Archive",
+      snippet: "Short, quick-read updates for exam, result, and form alerts."
+    },
+    {
+      title: "Guide Library for Students",
+      href: "pages/guides/guides.html",
+      meta: "Guide Hub | Student News",
+      snippet: "Detailed guides for forms, results, eligibility, and exam prep."
+    }
+  ],
+  Scholarship: [
+    {
+      title: "Scholarship Archive (Eligibility and Portal Links)",
+      href: "sections/scholarship/",
+      meta: "Scholarship | Archive",
+      snippet: "Central scholarship stream for document, payment, and eligibility updates."
+    },
+    {
+      title: "Post-Matric Scholarship Apply Guide",
+      href: "pages/guides/guide-post-matric-scholarship-apply.html",
+      meta: "Guide Hub | Scholarship",
+      snippet: "Step-by-step scholarship application workflow for students."
+    }
+  ],
+  "Sarkari Yojana": [
+    {
+      title: "Sarkari Yojana Archive (Service and Benefit Links)",
+      href: "sections/sarkari-yojana/",
+      meta: "Sarkari Yojana | Archive",
+      snippet: "Browse Bihar scheme pages with official service-route references."
+    },
+    {
+      title: "Verification Service Archive",
+      href: "sections/verification/",
+      meta: "Cross Link | Verification",
+      snippet: "Useful status-check and verification pages related to public services."
+    }
+  ]
+};
 
 function setTodayDate() {
   const dateElement = document.getElementById("br-date");
@@ -199,12 +326,20 @@ function byFeaturedThenDate(a, b) {
   return byDate(a, b);
 }
 
+function getHomePriorityRank(post, category = "") {
+  const slug = String(post?.slug || "");
+  const categoryPriority = HOME_CATEGORY_PRIORITY_SLUG_ORDER[category] || [];
+  const categoryRank = categoryPriority.indexOf(slug);
+  if (categoryRank !== -1) return categoryRank;
+  const globalRank = HOME_PRIORITY_SLUG_ORDER.indexOf(slug);
+  if (globalRank !== -1) return 100 + globalRank;
+  return Number.MAX_SAFE_INTEGER;
+}
+
 function byHomePriorityThenDate(a, b, category = "") {
-  const rankA = HOME_PRIORITY_SLUG_ORDER.indexOf(String(a?.slug || ""));
-  const rankB = HOME_PRIORITY_SLUG_ORDER.indexOf(String(b?.slug || ""));
-  const safeRankA = rankA === -1 ? Number.MAX_SAFE_INTEGER : rankA;
-  const safeRankB = rankB === -1 ? Number.MAX_SAFE_INTEGER : rankB;
-  if (safeRankA !== safeRankB) return safeRankA - safeRankB;
+  const rankA = getHomePriorityRank(a, category);
+  const rankB = getHomePriorityRank(b, category);
+  if (rankA !== rankB) return rankA - rankB;
   return category === "Latest Results" ? byFeaturedThenDate(a, b) : byDate(a, b);
 }
 
@@ -364,6 +499,45 @@ function sectionHrefByCategory(category) {
   return sectionMap[category] || "";
 }
 
+const HOME_ANCHOR_BY_CATEGORY = {
+  "Latest Results": "/index.html#latest-results",
+  "Latest Jobs": "/index.html#latest-jobs",
+  "Admit Card": "/index.html#admit-card",
+  "Student News": "/index.html#student-news",
+  Scholarship: "/index.html#scholarship",
+  "Sarkari Yojana": "/index.html#sarkari-yojana"
+};
+
+const RELATED_STOP_WORDS = new Set([
+  "2024", "2025", "2026", "2027", "about", "admit", "after", "against", "alert", "all",
+  "and", "application", "apply", "board", "bihar", "card", "check", "date", "declared",
+  "details", "direct", "download", "exam", "for", "form", "from", "government", "hall",
+  "important", "india", "job", "jobs", "key", "latest", "link", "links", "list", "marks",
+  "notice", "official", "online", "out", "portal", "posts", "result", "results", "score",
+  "scorecard", "soon", "student", "students", "the", "today", "update", "updates", "vacancy",
+  "with", "www", "year", "yesterday"
+]);
+
+function tokenizeRelatedText(...values) {
+  return values
+    .join(" ")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .split(/\s+/)
+    .filter((token) => token.length > 2 && !RELATED_STOP_WORDS.has(token));
+}
+
+function extractIntentTags(...values) {
+  const text = values.join(" ").toLowerCase();
+  const probes = [
+    "bpsc", "bssc", "bpssc", "csbc", "bseb", "bceceb", "btsc", "upsc", "ibps",
+    "ssc", "rrb", "railway", "neet", "jee", "cuet", "police", "constable",
+    "teacher", "inter", "matric", "scholarship", "admission", "counselling",
+    "admit", "result", "verification", "yojana"
+  ];
+  return probes.filter((probe) => text.includes(probe));
+}
+
 function toIsoDateOrEmpty(value) {
   const dt = new Date(value);
   if (Number.isNaN(dt.getTime())) return "";
@@ -387,13 +561,13 @@ function buildHomeSchemaPosts(posts) {
 
   const dedupe = new Set();
   const selected = [];
-  const maxPerCategory = 3;
-  const maxTotal = 21;
+  const maxPerCategory = 4;
+  const maxTotal = 28;
 
   categoryOrder.forEach((category) => {
     const rows = input
       .filter((post) => post?.category === category && String(post?.title || "").trim())
-      .sort(byDate)
+      .sort((left, right) => byHomePriorityThenDate(left, right, category))
       .slice(0, maxPerCategory);
     rows.forEach((post) => {
       const key = post.slug || `${category}-${post.title}`;
@@ -407,7 +581,7 @@ function buildHomeSchemaPosts(posts) {
 
   input
     .filter((post) => String(post?.title || "").trim())
-    .sort(byDate)
+    .sort((left, right) => byHomePriorityThenDate(left, right, cleanSnippet(left?.category || "")))
     .forEach((post) => {
       const key = post.slug || `${post.category || "misc"}-${post.title}`;
       if (dedupe.has(key) || selected.length >= maxTotal) return;
@@ -452,6 +626,28 @@ function setHomeDynamicSchema(posts) {
     };
   });
 
+  const discoverabilityTargets = [];
+  const seenTargets = new Set();
+  const pushTarget = (url) => {
+    const absolute = toAbsoluteSiteUrl(url);
+    if (seenTargets.has(absolute)) return;
+    seenTargets.add(absolute);
+    discoverabilityTargets.push(absolute);
+  };
+
+  [
+    "/sections/latest-results/",
+    "/sections/latest-jobs/",
+    "/sections/admit-card/",
+    "/sections/student-news/",
+    "/sections/scholarship/",
+    "/sections/admission/",
+    "/pages/guides/sarkari-result-bihar.html",
+    "/pages/guides/fast-result-bihar.html",
+    "/pages/guides/result-2026-bihar.html"
+  ].forEach(pushTarget);
+  topPosts.forEach((post) => pushTarget(postHref(post)));
+
   const latestDate = topPosts
     .map((post) => toIsoDateOrEmpty(post.updatedAt || post.publishedAt))
     .filter(Boolean)
@@ -473,11 +669,16 @@ function setHomeDynamicSchema(posts) {
       "Latest Results",
       "Latest Jobs",
       "Admit Card",
+      "Student News",
       "Scholarship",
       "Admission",
       "Sarkari Yojana",
       "Verification Services"
     ],
+    hasPart: discoverabilityTargets.map((url) => ({
+      "@type": "WebPage",
+      url
+    })),
     mainEntity: {
       "@type": "ItemList",
       name: "Latest Posts on BiharResult.live",
@@ -560,6 +761,39 @@ function createListItem(post, options = {}) {
     tags.appendChild(tag);
     body.appendChild(tags);
   }
+  return li;
+}
+
+function createShortcutListItem(shortcut, category = "") {
+  const li = document.createElement("li");
+  li.className = "br-item";
+  li.dataset.searchText = `${cleanSnippet(shortcut?.title || "")} ${cleanSnippet(shortcut?.snippet || "")} ${category}`.toLowerCase();
+  li.dataset.filterMatch = "1";
+
+  const body = document.createElement("div");
+  body.className = "br-item-body";
+
+  const a = document.createElement("a");
+  a.className = "br-link";
+  a.href = sanitizeUrl(shortcut?.href || "#");
+  a.textContent = cleanSnippet(shortcut?.title || "Important Internal Link");
+  body.appendChild(a);
+
+  if (shortcut?.meta) {
+    const meta = document.createElement("div");
+    meta.className = "br-item-meta";
+    meta.textContent = cleanSnippet(shortcut.meta);
+    body.appendChild(meta);
+  }
+
+  if (shortcut?.snippet) {
+    const desc = document.createElement("p");
+    desc.className = "br-item-desc";
+    desc.textContent = cleanSnippet(shortcut.snippet);
+    body.appendChild(desc);
+  }
+
+  li.appendChild(body);
   return li;
 }
 
@@ -906,7 +1140,7 @@ async function renderHome(posts) {
     listEl.replaceChildren(fragment);
 
     const btn = document.querySelector(`.br-view-more[data-target="${listId}"]`);
-    if (!btn) return;
+    if (!btn) continue;
     const hasMore = itemsToRender.length > HOME_SECTION_INITIAL_VISIBLE;
     btn.style.display = hasMore ? "block" : "none";
     btn.textContent = "View More +";
@@ -1679,6 +1913,28 @@ function buildStudentGuideItems(post, summaryRows, feeRows, eligibilityRows) {
   ];
 }
 
+function compressNarrativeCopy(value, maxSentences = 4, maxChars = 540) {
+  const raw = cleanSnippet(value || "");
+  if (!raw) return "";
+
+  const sentences = raw
+    .split(/(?<=[.!?])\s+/)
+    .map((item) => cleanSnippet(item))
+    .filter(Boolean);
+
+  const unique = [];
+  const seen = new Set();
+  sentences.forEach((sentence) => {
+    const key = sentence.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    unique.push(sentence);
+  });
+
+  const compact = unique.slice(0, maxSentences).join(" ");
+  return compact.length > maxChars ? `${compact.slice(0, maxChars - 3).trim()}...` : compact;
+}
+
 function buildDetailedExplanationParagraphs(post, summaryRows, feeRows, eligibilityRows) {
   const deptText = cleanSnippet(post.department || "official department");
   const categoryText = cleanSnippet(post.category || "Latest Update");
@@ -1694,10 +1950,20 @@ function buildDetailedExplanationParagraphs(post, summaryRows, feeRows, eligibil
     ? `${cleanSnippet(eligibilityRows[0].label)}: ${cleanSnippet(eligibilityRows[0].value)}`
     : "Check the official notification for exact eligibility rules.";
 
-  return [
+  const baseParagraphs = [
     `${cleanSnippet(post.title)} is listed under ${categoryText} as a student-friendly update page.`,
-    `This post gathers the main schedule, eligibility points, fee or service note, and official action link shared by ${deptText} so candidates can review the process quickly in one place.`,
-    cleanSnippet(post.longDescription || post.shortInfo || ""),
+    `This post gathers the main schedule, eligibility points, fee or service note, and official action link shared by ${deptText} so candidates can review the process quickly in one place.`
+  ];
+  let descriptiveCopy = compressNarrativeCopy(post.longDescription || post.shortInfo || "");
+  baseParagraphs.forEach((line) => {
+    if (descriptiveCopy.toLowerCase().startsWith(line.toLowerCase())) {
+      descriptiveCopy = descriptiveCopy.slice(line.length).trim();
+    }
+  });
+
+  return [
+    ...baseParagraphs,
+    descriptiveCopy,
     `Key details right now: ${keyDate} ${feeLine} ${eligibilityLine}`,
     `Use ${primaryLabel} from the Important Links section for the next official step, and always verify final rules from the original department notice before taking action.`
   ].filter(Boolean);
@@ -1940,9 +2206,369 @@ function renderBeforeStart(post) {
   fillSimpleList(list, points);
 }
 
-function setPostSchema(post, canonicalUrl) {
+function buildPostFaq(post) {
+  const title = cleanSnippet(post?.title || "this update");
+  const primary = getPrimaryAction(post);
+  const primaryLabel = cleanSnippet(primary?.label || "official link");
+  const category = cleanSnippet(post?.category || "Latest Update");
+
+  const faq = [
+    {
+      q: `What is the main update in ${title}?`,
+      a: `${title} is listed under ${category} on BiharResult.live with the key dates, quick summary, and important links students usually need first.`
+    },
+    {
+      q: `Where should I open the official link for ${title}?`,
+      a: `Use the Important Links or Official Website section on this page to open the ${primaryLabel} and related source pages safely.`
+    },
+    {
+      q: `What should students verify before taking action on ${title}?`,
+      a: "Always match dates, eligibility, login details, and notice text with the official website before applying, downloading, or checking a result."
+    }
+  ];
+
+  if (post?.category === "Latest Results") {
+    faq.push({
+      q: `How can I check the result or score update for ${title}?`,
+      a: "Open the result link, keep your roll number or registration details ready, and verify the downloaded result page before using it for counselling or records."
+    });
+  } else if (post?.category === "Latest Jobs") {
+    faq.push({
+      q: `How should I apply for ${title}?`,
+      a: "Read the eligibility and fee details first, keep documents ready, and then use the official apply link from this page before the last date."
+    });
+  } else if (post?.category === "Admit Card") {
+    faq.push({
+      q: `What should I check after downloading the admit card for ${title}?`,
+      a: "Check your name, exam date, shift, centre, and reporting instructions immediately after downloading the admit card."
+    });
+  }
+
+  return faq.slice(0, 4);
+}
+
+function buildOfficialLinkItems(post) {
+  const officialPattern = /(official|notification|notice|website|portal|apply|result|download|admit|login|counselling|schedule)/i;
+  const govPattern = /(gov\.in|nic\.in|ac\.in|org\.in|results\.biharboardonline\.com|matricbiharboard\.com)/i;
+  const items = [];
+  const seen = new Set();
+
+  const pushItem = (item) => {
+    const url = sanitizeUrl(item?.url || "");
+    if (url === "#" || !/^https?:\/\//i.test(url)) return;
+    const key = url.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    items.push({
+      label: cleanSnippet(item?.label || "Official Link"),
+      note: cleanSnippet(item?.note || "Official source for verification"),
+      url
+    });
+  };
+
+  const officialLinkNote = (label) => {
+    const text = cleanSnippet(label || "");
+    if (/notification|advertisement|advt|pdf|prospectus|brochure/i.test(text)) {
+      return "Primary official notification document for exact rules.";
+    }
+    if (/login|apply|registration|portal/i.test(text)) {
+      return "Official application/login portal published by the authority.";
+    }
+    if (/result|score|mark|status|check/i.test(text)) {
+      return "Official result or status-check source link.";
+    }
+    if (/admit|hall ticket|call letter/i.test(text)) {
+      return "Official admit-card or call-letter download source.";
+    }
+    return "Official department source link for final verification.";
+  };
+
+  (post.importantLinks || []).forEach((item) => {
+    const label = cleanSnippet(item?.label || "");
+    const url = cleanSnippet(item?.url || "");
+    if (!officialPattern.test(label) && !govPattern.test(url)) return;
+    pushItem({ label, note: officialLinkNote(label), url });
+  });
+
+  if (post?.sourceUrl) {
+    pushItem({
+      label: cleanSnippet(post.sourceName || "Official Source"),
+      note: "Secondary source captured for cross-verification.",
+      url: cleanSnippet(post.sourceUrl)
+    });
+  }
+
+  return items.slice(0, 4);
+}
+
+function buildTopicClusterLinks(post) {
+  const combined = `${cleanSnippet(post?.title || "")} ${cleanSnippet(post?.department || "")}`;
+  const items = [];
+  const seen = new Set();
+
+  const pushLink = (href, label) => {
+    const safeHref = sanitizeUrl(href);
+    if (safeHref === "#" || seen.has(safeHref)) return;
+    seen.add(safeHref);
+    items.push({ href: safeHref, label });
+  };
+
+  const archiveHref = sectionHrefByCategory(post?.category);
+  if (archiveHref) pushLink(archiveHref, `${cleanSnippet(post?.category || "Updates")} Archive`);
+  if (HOME_ANCHOR_BY_CATEGORY[post?.category]) pushLink(HOME_ANCHOR_BY_CATEGORY[post.category], `Homepage ${cleanSnippet(post.category)} Section`);
+
+  if (post?.category === "Latest Results") {
+    pushLink("/pages/guides/sarkari-result-bihar.html", "Sarkari Result Bihar Hub");
+    pushLink("/pages/guides/fast-result-bihar.html", "Fast Result Bihar Hub");
+    pushLink("/pages/guides/result-2026-bihar.html", "Result 2026 Bihar Hub");
+    pushLink("/sections/admit-card/", "Admit Card and Exam Date Archive");
+  }
+
+  if (post?.category === "Latest Jobs") {
+    pushLink("/sections/admit-card/", "Admit Card Archive");
+    pushLink("/sections/latest-results/", "Latest Results Archive");
+    pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Bihar Jobs, Result and Admit Card Hub");
+  }
+
+  if (post?.category === "Admit Card") {
+    pushLink("/sections/latest-results/", "Latest Results Archive");
+    pushLink("/sections/latest-jobs/", "Latest Jobs Archive");
+    pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Bihar Jobs, Result and Admit Card Hub");
+  }
+
+  if (post?.category === "Scholarship") {
+    pushLink("/pages/guides/guide-post-matric-scholarship-apply.html", "Post-Matric Scholarship Guide");
+    pushLink("/sections/verification/", "Verification Service Archive");
+  }
+
+  if (post?.category === "Admission") {
+    pushLink("/sections/latest-jobs/", "Latest Jobs Archive");
+    pushLink("/pages/guides/guides.html", "Guide Library");
+  }
+
+  if (post?.category === "Sarkari Yojana") {
+    pushLink("/sections/verification/", "Verification Service Archive");
+    pushLink("/pages/guides/guides.html", "Guide Library");
+  }
+
+  if (post?.category === "Verification") {
+    pushLink("/sections/sarkari-yojana/", "Sarkari Yojana Archive");
+    pushLink("/pages/guides/guides.html", "Guide Library");
+  }
+
+  if (/(bihar board|bseb|matric|inter)/i.test(combined)) {
+    pushLink("/sections/latest-results/bihar-board-10th-result-2026.html", "Bihar Board 10th Result 2026");
+    pushLink("/sections/latest-results/bihar-board-class-12th-result-2026.html", "Bihar Board Class 12th Result 2026");
+  }
+
+  if (/bpsc/i.test(combined)) {
+    pushLink("/sections/admit-card/bpsc-exam-calendar-2026.html", "BPSC Exam Calendar 2026");
+    pushLink("/sections/student-news/bpsc-exam-calendar-student-watch-2026.html", "BPSC Student News Watch");
+  }
+
+  if (/(jee|neet)/i.test(combined)) {
+    pushLink("/sections/admit-card/jee-main-session-2-admit-card-2026-april.html", "JEE Main Admit Card Update");
+    pushLink("/sections/admit-card/neet-ug-2026-city-intimation-admit-update.html", "NEET UG Admit Update");
+  }
+
+  pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Bihar Jobs, Result and Admit Card Hub");
+  pushLink("/pages/guides/guides.html", "Guide Library");
+
+  return items.slice(0, 7);
+}
+
+function buildRelatedPosts(currentPost, posts, limit = 6) {
+  const rows = Array.isArray(posts) ? posts : [];
+  const currentTokens = new Set(
+    tokenizeRelatedText(
+      currentPost?.title || "",
+      currentPost?.department || "",
+      currentPost?.location || "",
+      currentPost?.shortInfo || "",
+      currentPost?.slug || ""
+    )
+  );
+  const currentTags = new Set(
+    extractIntentTags(
+      currentPost?.title || "",
+      currentPost?.department || "",
+      currentPost?.location || "",
+      currentPost?.shortInfo || "",
+      currentPost?.slug || ""
+    )
+  );
+
+  const sameCategory = rows.filter((item) => (
+    item?.slug !== currentPost?.slug
+    && cleanSnippet(item?.category || "") === cleanSnippet(currentPost?.category || "")
+    && cleanSnippet(item?.slug || "")
+  ));
+
+  const scored = sameCategory.map((item) => {
+    const tokens = tokenizeRelatedText(item?.title || "", item?.department || "", item?.location || "", item?.shortInfo || "", item?.slug || "");
+    const tags = extractIntentTags(item?.title || "", item?.department || "", item?.location || "", item?.shortInfo || "", item?.slug || "");
+    let score = 0;
+
+    tokens.forEach((token) => {
+      if (currentTokens.has(token)) score += 2;
+    });
+    tags.forEach((tag) => {
+      if (currentTags.has(tag)) score += 4;
+    });
+
+    if (cleanSnippet(item?.department || "").toLowerCase() && cleanSnippet(item?.department || "").toLowerCase() === cleanSnippet(currentPost?.department || "").toLowerCase()) {
+      score += 6;
+    }
+
+    if (cleanSnippet(item?.location || "").toLowerCase() && cleanSnippet(item?.location || "").toLowerCase() === cleanSnippet(currentPost?.location || "").toLowerCase()) {
+      score += 2;
+    }
+
+    const updatedAt = cleanSnippet(item?.updatedAt || item?.publishedAt || "");
+    if (updatedAt && updatedAt >= "2026-01-01") score += 1;
+
+    return { item, score };
+  });
+
+  const primary = scored
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || byDate(left.item, right.item))
+    .map((entry) => entry.item);
+
+  const fallback = sameCategory
+    .sort(byDate)
+    .filter((item) => !primary.some((candidate) => candidate.slug === item.slug));
+
+  return primary.concat(fallback).slice(0, limit);
+}
+
+function renderBreadcrumb(post) {
+  const categoryAnchor = document.getElementById("post-breadcrumb-category");
+  const current = document.getElementById("post-breadcrumb-current");
+  if (categoryAnchor) {
+    // Keep breadcrumb links crawlable and aligned with the page's primary section archive.
+    categoryAnchor.textContent = cleanSnippet(post?.category || "Latest Updates");
+    categoryAnchor.href = `/${sectionHrefByCategory(post?.category || "").replace(/^\/+/, "")}`;
+  }
+  if (current) current.textContent = cleanSnippet(post?.title || "Post");
+}
+
+function renderOfficialLinks(post) {
+  const section = document.getElementById("official-links-section");
+  const grid = document.getElementById("official-links-grid");
+  if (!section || !grid) return;
+
+  const items = buildOfficialLinkItems(post);
+  if (!items.length) {
+    section.hidden = true;
+    return;
+  }
+
+  grid.replaceChildren();
+  items.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "post-link-card";
+
+    const copy = document.createElement("div");
+    const strong = document.createElement("strong");
+    strong.textContent = item.label;
+    const note = document.createElement("p");
+    note.textContent = item.note;
+    copy.appendChild(strong);
+    copy.appendChild(note);
+
+    const anchor = document.createElement("a");
+    anchor.className = "link-btn secondary";
+    anchor.href = item.url;
+    anchor.target = "_blank";
+    anchor.rel = "noopener noreferrer";
+    anchor.textContent = "Open Official Link";
+
+    card.appendChild(copy);
+    card.appendChild(anchor);
+    grid.appendChild(card);
+  });
+
+  section.hidden = false;
+}
+
+function renderTopicClusterLinks(post) {
+  const container = document.getElementById("topic-cluster-links");
+  if (!container) return;
+
+  const links = buildTopicClusterLinks(post);
+  if (!links.length) return;
+
+  container.replaceChildren();
+  links.forEach((item, index) => {
+    const anchor = document.createElement("a");
+    anchor.className = `link-btn${index === 0 ? "" : " secondary"}`;
+    anchor.href = item.href;
+    anchor.textContent = item.label;
+    container.appendChild(anchor);
+  });
+}
+
+function renderPostFaq(post) {
+  const section = document.getElementById("faq-section");
+  const grid = document.getElementById("post-faq-grid");
+  if (!section || !grid) return [];
+
+  const faqItems = buildPostFaq(post);
+  if (!faqItems.length) {
+    section.hidden = true;
+    return [];
+  }
+
+  grid.replaceChildren();
+  faqItems.forEach((item) => {
+    const box = document.createElement("div");
+    box.className = "post-faq-item";
+    const heading = document.createElement("h3");
+    heading.textContent = item.q;
+    const paragraph = document.createElement("p");
+    paragraph.textContent = item.a;
+    box.appendChild(heading);
+    box.appendChild(paragraph);
+    grid.appendChild(box);
+  });
+  section.hidden = false;
+  return faqItems;
+}
+
+function renderRelatedPosts(post, posts) {
+  const section = document.getElementById("related-posts-section");
+  const grid = document.getElementById("related-posts-grid");
+  if (!section || !grid) return [];
+
+  const relatedPosts = buildRelatedPosts(post, posts);
+  if (!relatedPosts.length) {
+    section.hidden = true;
+    return [];
+  }
+
+  grid.replaceChildren();
+  relatedPosts.forEach((item) => {
+    const card = document.createElement("article");
+    card.className = "post-related-card";
+    const anchor = document.createElement("a");
+    anchor.href = postHref(item);
+    anchor.textContent = item.title;
+    const copy = document.createElement("p");
+    copy.textContent = `${cleanSnippet(item.category || "")} | Updated ${formatDate(item.updatedAt || item.publishedAt || "")}`;
+    card.appendChild(anchor);
+    card.appendChild(copy);
+    grid.appendChild(card);
+  });
+
+  section.hidden = false;
+  return relatedPosts;
+}
+
+function setPostSchema(post, canonicalUrl, faqItems = [], relatedPosts = []) {
   const isJob = post.category === "Latest Jobs";
   const description = buildSeoDescription(post);
+  // Build one JSON-LD graph so Article/Job, breadcrumbs, FAQ, and related-post entities stay in sync.
   const organization = {
     "@type": "Organization",
     name: "BiharResult.live",
@@ -2045,6 +2671,35 @@ function setPostSchema(post, canonicalUrl) {
     });
   }
 
+  if (Array.isArray(faqItems) && faqItems.length) {
+    schema.push({
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: cleanSnippet(item.q),
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: cleanSnippet(item.a)
+        }
+      }))
+    });
+  }
+
+  if (Array.isArray(relatedPosts) && relatedPosts.length) {
+    schema.push({
+      "@type": "ItemList",
+      name: `Related posts for ${post.title}`,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      numberOfItems: relatedPosts.length,
+      itemListElement: relatedPosts.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        url: toAbsoluteSiteUrl(postHref(item))
+      }))
+    });
+  }
+
   const script = document.createElement("script");
   script.type = "application/ld+json";
   script.textContent = JSON.stringify({
@@ -2076,10 +2731,12 @@ function renderPostMeta(post) {
   lineEl.hidden = !publishedText && !updatedText;
 }
 
-function renderPost(post) {
+function renderPost(post, allPosts = []) {
   const titleEl = document.getElementById("post-title");
   if (!titleEl) return;
 
+  // Render supporting SEO sections after the core article so the main content stays stable if JS enhancement is delayed.
+  renderBreadcrumb(post);
   titleEl.textContent = post.title;
   document.getElementById("post-summary").textContent = cleanSnippet(post.shortInfo) || "";
   renderLocalizedPostSummary(post);
@@ -2160,8 +2817,12 @@ function renderPost(post) {
     }
   }
   renderHowToApply(post);
+  renderOfficialLinks(post);
+  renderTopicClusterLinks(post);
+  const faqItems = renderPostFaq(post);
+  const relatedPosts = renderRelatedPosts(post, allPosts);
 
-  setPostSchema(post, canonicalUrl);
+  setPostSchema(post, canonicalUrl, faqItems, relatedPosts);
   expandAllAutoBlocks(document.getElementById("post-root"));
 }
 
@@ -2240,7 +2901,7 @@ async function init() {
           window.location.replace(canonicalHref);
           return;
         }
-        renderPost(post);
+        renderPost(post, mergedPosts);
       }
       hardenExternalLinks(document);
     }

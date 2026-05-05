@@ -1013,9 +1013,7 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 
 .br-link {
   color: #0b34d0;
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 0.14em;
+  text-decoration: none;
   font-size: 12.5px;
   font-weight: 700;
   line-height: 1.4;
@@ -1023,7 +1021,7 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 
 .br-link:hover {
   color: #cc0000;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .br-home-highlight-card-title {
@@ -3262,6 +3260,13 @@ body.br-homepage .br-column[data-home-category="Verification"] .br-header {
 body.br-homepage .br-column[data-home-category="Verification"] .br-item:hover {
   border-left-color: #1f6dff !important;
   background: rgba(31, 109, 255, 0.06) !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+  body.br-homepage .br-column .br-item:hover {
+    border-left-color: transparent !important;
+    background: transparent !important;
+  }
 }
 
 @media (max-width: 820px) {

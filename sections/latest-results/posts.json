@@ -6,7 +6,8 @@
     "path": "sections/latest-results/cbse-aiafa-result-2026.html",
     "title": "CBSE AIAFA Result Notice 2026 Official Update",
     "publishedAt": "2026-04-16",
-    "updatedAt": "2026-05-05"
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
   },
   {
     "slug": "cbse-under-secretary-legal-result-2026",
@@ -15,7 +16,8 @@
     "path": "sections/latest-results/cbse-under-secretary-legal-result-2026.html",
     "title": "CBSE Under Secretary (Legal) Result Notice 2026 Official Update",
     "publishedAt": "2026-04-21",
-    "updatedAt": "2026-05-05"
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
   },
   {
     "slug": "drdo-dipr-paid-intern-final-result-2026",
@@ -24,7 +26,8 @@
     "path": "sections/latest-results/drdo-dipr-paid-intern-final-result-2026.html",
     "title": "DRDO DIPR Paid Intern Final Result 2026 Official Update",
     "publishedAt": "2026-02-28",
-    "updatedAt": "2026-05-05"
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
   },
   {
     "slug": "osssc-pet-provisional-result-2026",
@@ -33,7 +36,8 @@
     "path": "sections/latest-results/osssc-pet-provisional-result-2026.html",
     "title": "OSSSC PET Provisional Result 2026 Official Update",
     "publishedAt": "2026-04-04",
-    "updatedAt": "2026-05-05"
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
   },
   {
     "slug": "upsc-civil-services-main-2025-final-result",
@@ -42,25 +46,8 @@
     "path": "sections/latest-results/upsc-civil-services-main-2025-final-result.html",
     "title": "UPSC Civil Services (Main) Examination 2025 Final Result Official Update",
     "publishedAt": "2026-05-05",
-    "updatedAt": "2026-05-05"
-  },
-  {
-    "slug": "latest-results-today-highlights-2026-04-28",
-    "category": "Latest Results",
-    "folder": "latest-results",
-    "path": "sections/latest-results/latest-results-today-highlights-2026-04-28.html",
-    "title": "Today Latest Results 28 April 2026: Top Result Links and Updates",
-    "publishedAt": "2026-04-28",
-    "updatedAt": "2026-04-28"
-  },
-  {
-    "slug": "latest-results-yesterday-highlights-2026-04-27",
-    "category": "Latest Results",
-    "folder": "latest-results",
-    "path": "sections/latest-results/latest-results-yesterday-highlights-2026-04-27.html",
-    "title": "Yesterday Latest Results 27 April 2026: Top Result Links and Updates",
-    "publishedAt": "2026-04-27",
-    "updatedAt": "2026-04-27"
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
   },
   {
     "slug": "nta-cuet-pg-result-2026-declaration-update",
@@ -69,7 +56,8 @@
     "path": "sections/latest-results/nta-cuet-pg-result-2026-declaration-update.html",
     "title": "NTA CUET PG 2026 Result Declared, Scorecard Download Link",
     "publishedAt": "2026-04-24",
-    "updatedAt": "2026-04-26"
+    "updatedAt": "2026-04-26",
+    "sitemapEligible": true
   },
   {
     "slug": "bceceb-junior-resident-revised-eligible-list-2026",
@@ -78,7 +66,8 @@
     "path": "sections/latest-results/bceceb-junior-resident-revised-eligible-list-2026.html",
     "title": "BCECEB Junior Resident Revised Eligible List 2026 (Health JR)",
     "publishedAt": "2026-03-20",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "bseb-intermediate-special-compartment-scrutiny-2026",
@@ -87,7 +76,8 @@
     "path": "sections/latest-results/bseb-intermediate-special-compartment-scrutiny-2026.html",
     "title": "BSEB Intermediate Special Compartment and Scrutiny Update 2026",
     "publishedAt": "2026-03-25",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "csbc-driver-constable-written-result-2025-26",
@@ -96,7 +86,8 @@
     "path": "sections/latest-results/csbc-driver-constable-written-result-2025-26.html",
     "title": "CSBC Driver Constable Written Result for PET 2026 (Advt No. 02/2025)",
     "publishedAt": "2025-12-30",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "cuet-ug-2026-registration-reopening-update",
@@ -105,7 +96,8 @@
     "path": "sections/latest-results/cuet-ug-2026-registration-reopening-update.html",
     "title": "CUET UG 2026 Registration Reopening and Application Update",
     "publishedAt": "2026-02-23",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "ibps-csa-xv-provisional-allotment-2026",
@@ -114,7 +106,8 @@
     "path": "sections/latest-results/ibps-csa-xv-provisional-allotment-2026.html",
     "title": "IBPS CSA XV Provisional Allotment List 2026",
     "publishedAt": "2026-04-02",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "ibps-rrb-xiv-office-assistant-provisional-allotment-2026",
@@ -123,7 +116,8 @@
     "path": "sections/latest-results/ibps-rrb-xiv-office-assistant-provisional-allotment-2026.html",
     "title": "IBPS RRB XIV Office Assistants Provisional Allotment 2026",
     "publishedAt": "2026-04-10",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "jee-main-session-2-score-card-2026",
@@ -132,7 +126,8 @@
     "path": "sections/latest-results/jee-main-session-2-score-card-2026.html",
     "title": "JEE Main 2026 Session 2 Paper 1 Score Card Download",
     "publishedAt": "2026-04-19",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "jkpsc-lecturer-botany-provisional-selection-list-april-2026",
@@ -141,7 +136,8 @@
     "path": "sections/latest-results/jkpsc-lecturer-botany-provisional-selection-list-april-2026.html",
     "title": "JKPSC Lecturer Botany Provisional Selection List April 2026",
     "publishedAt": "2026-04-24",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "jkpsc-statistical-assistant-departmental-result-2025-declared",
@@ -150,7 +146,8 @@
     "path": "sections/latest-results/jkpsc-statistical-assistant-departmental-result-2025-declared.html",
     "title": "JKPSC Statistical Assistants Departmental Examination 2025 Result Declared",
     "publishedAt": "2026-04-16",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "karnataka-ii-puc-exam-1-result-2026",
@@ -159,7 +156,8 @@
     "path": "sections/latest-results/karnataka-ii-puc-exam-1-result-2026.html",
     "title": "Karnataka II PUC Exam 1 Result 2026 Declared on 09 April",
     "publishedAt": "2026-04-09",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "karnataka-sslc-exam-1-result-2026",
@@ -168,7 +166,8 @@
     "path": "sections/latest-results/karnataka-sslc-exam-1-result-2026.html",
     "title": "Karnataka SSLC Exam 1 Result 2026 Declared on 23 April",
     "publishedAt": "2026-04-23",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "kerala-psc-beat-forest-officer-short-list-2026",
@@ -177,7 +176,8 @@
     "path": "sections/latest-results/kerala-psc-beat-forest-officer-short-list-2026.html",
     "title": "Kerala PSC Beat Forest Officer Short List 2026 (Kollam, Cat No 214/2025)",
     "publishedAt": "2026-04-17",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "kerala-psc-police-constable-trainee-rank-list-2026",
@@ -186,7 +186,8 @@
     "path": "sections/latest-results/kerala-psc-police-constable-trainee-rank-list-2026.html",
     "title": "Kerala PSC Police Constable Trainee Rank List 2026 (Cat No 740/2024)",
     "publishedAt": "2026-04-17",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "neet-ug-2026-application-correction-extension-update",
@@ -195,7 +196,8 @@
     "path": "sections/latest-results/neet-ug-2026-application-correction-extension-update.html",
     "title": "NEET UG 2026 Application Form, Extension and Correction Window Update",
     "publishedAt": "2026-04-12",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "nta-jee-main-paper-1-result-2026-session1-2-update",
@@ -204,7 +206,8 @@
     "path": "sections/latest-results/nta-jee-main-paper-1-result-2026-session1-2-update.html",
     "title": "NTA JEE Main 2026 Session 1 and 2 Paper 1 Result Update",
     "publishedAt": "2026-04-23",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "nta-jee-main-session2-paper2-answer-key-2026-update",
@@ -213,7 +216,8 @@
     "path": "sections/latest-results/nta-jee-main-session2-paper2-answer-key-2026-update.html",
     "title": "NTA JEE Main 2026 Session 2 Paper 2 Answer Key Challenge Update",
     "publishedAt": "2026-04-25",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "opsc-pgt-commerce-final-result-2026",
@@ -222,7 +226,8 @@
     "path": "sections/latest-results/opsc-pgt-commerce-final-result-2026.html",
     "title": "OPSC Post Graduate Teacher Commerce Final Result 2026",
     "publishedAt": "2026-02-13",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "opsc-pgt-english-final-result-2026",
@@ -231,7 +236,8 @@
     "path": "sections/latest-results/opsc-pgt-english-final-result-2026.html",
     "title": "OPSC Post Graduate Teacher English Final Result 2026",
     "publishedAt": "2026-02-11",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "ossc-je-civil-provisional-recommendation-2026",
@@ -240,7 +246,8 @@
     "path": "sections/latest-results/ossc-je-civil-provisional-recommendation-2026.html",
     "title": "OSSC JE Civil Provisional Recommendation List 2026 (746 Candidates)",
     "publishedAt": "2026-04-08",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "ossc-si-excise-si-traffic-marks-2026",
@@ -249,7 +256,8 @@
     "path": "sections/latest-results/ossc-si-excise-si-traffic-marks-2026.html",
     "title": "OSSC SI Excise and SI Traffic Marks Released April 2026",
     "publishedAt": "2026-04-23",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "tnpsc-cts-non-interview-phase8-physical-certificate-verification-2026",
@@ -258,7 +266,8 @@
     "path": "sections/latest-results/tnpsc-cts-non-interview-phase8-physical-certificate-verification-2026.html",
     "title": "TNPSC CTS Non-Interview Phase VIII Physical Certificate Verification List 2026",
     "publishedAt": "2026-04-09",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "tnpsc-field-assistant-mark-rank-list-2026",
@@ -267,7 +276,8 @@
     "path": "sections/latest-results/tnpsc-field-assistant-mark-rank-list-2026.html",
     "title": "TNPSC Field Assistant Mark and Rank Position 2026 Interactive List Update",
     "publishedAt": "2026-04-09",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "tnpsc-group-4-physical-certificate-verification-counselling-2026",
@@ -276,7 +286,8 @@
     "path": "sections/latest-results/tnpsc-group-4-physical-certificate-verification-counselling-2026.html",
     "title": "TNPSC Group IV Physical Certificate Verification and Counselling List 2026",
     "publishedAt": "2026-04-10",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "uppsc-ncc-directorate-result-2026",
@@ -285,7 +296,8 @@
     "path": "sections/latest-results/uppsc-ncc-directorate-result-2026.html",
     "title": "UPPSC Directorate of National Cadet Corps Result 2026 (D-4/E-1/2025)",
     "publishedAt": "2026-04-25",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "uppsc-namami-gange-rural-water-supply-result-2026",
@@ -294,7 +306,8 @@
     "path": "sections/latest-results/uppsc-namami-gange-rural-water-supply-result-2026.html",
     "title": "UPPSC Namami Gange Rural Water Supply Department Result 2026 (D-4/E-1/2025)",
     "publishedAt": "2026-04-25",
-    "updatedAt": "2026-04-25"
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
   },
   {
     "slug": "up-board-class-10th-12th-result-2026",
@@ -303,7 +316,8 @@
     "path": "sections/latest-results/up-board-class-10th-12th-result-2026.html",
     "title": "UP Board Class 10th, 12th Result 2026",
     "publishedAt": "2026-04-22",
-    "updatedAt": "2026-04-22"
+    "updatedAt": "2026-04-22",
+    "sitemapEligible": true
   },
   {
     "slug": "cbse-class-10th-results-2026-download-link",
@@ -312,7 +326,8 @@
     "path": "sections/latest-results/cbse-class-10th-results-2026-download-link.html",
     "title": "CBSE Class 10th Results 2026 Download Link (OUT)",
     "publishedAt": "2026-04-15",
-    "updatedAt": "2026-04-16"
+    "updatedAt": "2026-04-16",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-board-10th-result-2026",
@@ -321,7 +336,8 @@
     "path": "sections/latest-results/bihar-board-10th-result-2026.html",
     "title": "Bihar Board 10th Result 2026 (Declared)",
     "publishedAt": "2026-03-29",
-    "updatedAt": "2026-03-29"
+    "updatedAt": "2026-03-29",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-board-class-10th-topper-list-2026",
@@ -330,7 +346,8 @@
     "path": "sections/latest-results/bihar-board-class-10th-topper-list-2026.html",
     "title": "Bihar Board 10th Topper List 2026",
     "publishedAt": "2026-03-29",
-    "updatedAt": "2026-03-29"
+    "updatedAt": "2026-03-29",
+    "sitemapEligible": true
   },
   {
     "slug": "download-10th-bseb-result",
@@ -339,7 +356,8 @@
     "path": "sections/latest-results/download-10th-bseb-result.html",
     "title": "Download Bihar Board 10th Result 2026 Marksheet",
     "publishedAt": "2026-03-29",
-    "updatedAt": "2026-03-29"
+    "updatedAt": "2026-03-29",
+    "sitemapEligible": true
   },
   {
     "slug": "brlps-jeevika-result-2026",
@@ -348,7 +366,8 @@
     "path": "sections/latest-results/brlps-jeevika-result-2026.html",
     "title": "BRLPS JEEVIKA Result 2026",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "btsc-ecg-technician-dv-list-2026",
@@ -357,7 +376,8 @@
     "path": "sections/latest-results/btsc-ecg-technician-dv-list-2026.html",
     "title": "BTSC ECG Technician DV List 2026",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "btsc-ot-assistant-dv-list-2026",
@@ -366,7 +386,8 @@
     "path": "sections/latest-results/btsc-ot-assistant-dv-list-2026.html",
     "title": "BTSC OT Assistant DV List 2026",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "btsc-x-ray-technician-dv-list-2026",
@@ -375,7 +396,8 @@
     "path": "sections/latest-results/btsc-x-ray-technician-dv-list-2026.html",
     "title": "BTSC X Ray Technician DV List 2026",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "lnmu-semester-4-result-2023-27",
@@ -384,7 +406,8 @@
     "path": "sections/latest-results/lnmu-semester-4-result-2023-27.html",
     "title": "LNMU Semester 4 Result 2023-27",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "magadh-university-semester-5-result-2023-27",
@@ -393,7 +416,8 @@
     "path": "sections/latest-results/magadh-university-semester-5-result-2023-27.html",
     "title": "Magadh University Semester 5 Result 2023-27",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "sav-bihar-class-6-mains-result-2026-27",
@@ -402,7 +426,8 @@
     "path": "sections/latest-results/sav-bihar-class-6-mains-result-2026-27.html",
     "title": "SAV Bihar Class 6 Mains Result 2026-27",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "vksu-semester-1-result-2025-29",
@@ -411,7 +436,8 @@
     "path": "sections/latest-results/vksu-semester-1-result-2025-29.html",
     "title": "VKSU Semester 1 Result 2025-29",
     "publishedAt": "2026-03-28",
-    "updatedAt": "2026-03-28"
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-board-inter-12th-scrutiny-online-application-form-2026",
@@ -420,7 +446,8 @@
     "path": "sections/latest-results/bihar-board-inter-12th-scrutiny-online-application-form-2026.html",
     "title": "Bihar Board Inter 12th Scrutiny Online Application Form 2026",
     "publishedAt": "2026-03-26",
-    "updatedAt": "2026-03-27"
+    "updatedAt": "2026-03-27",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-iti-cat-admission-form-2026",
@@ -429,7 +456,8 @@
     "path": "sections/latest-results/bihar-iti-cat-admission-form-2026.html",
     "title": "Bihar ITI CAT Admission Form 2026",
     "publishedAt": "2026-03-26",
-    "updatedAt": "2026-03-26"
+    "updatedAt": "2026-03-26",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-board-class-12th-result-2026",
@@ -438,7 +466,8 @@
     "path": "sections/latest-results/bihar-board-class-12th-result-2026.html",
     "title": "Bihar Board Class 12th Result 2026 (Declared)",
     "publishedAt": "2026-03-23",
-    "updatedAt": "2026-03-25"
+    "updatedAt": "2026-03-25",
+    "sitemapEligible": true
   },
   {
     "slug": "download-12th-bseb-result",
@@ -447,7 +476,8 @@
     "path": "sections/latest-results/download-12th-bseb-result.html",
     "title": "Download Class 12th Result Link-I | Link-II",
     "publishedAt": "2026-03-25",
-    "updatedAt": "2026-03-25"
+    "updatedAt": "2026-03-25",
+    "sitemapEligible": true
   },
   {
     "slug": "railway-rrb-group-d-online-form-2026",
@@ -456,7 +486,8 @@
     "path": "sections/latest-results/railway-rrb-group-d-online-form-2026.html",
     "title": "Railway RRB Group D Online Form 2026 (22,195 Posts) - Start",
     "publishedAt": "2026-02-20",
-    "updatedAt": "2026-02-20"
+    "updatedAt": "2026-02-20",
+    "sitemapEligible": true
   },
   {
     "slug": "bank-of-maharashtra-generalist-officer-scale-ii-result-2025",
@@ -465,7 +496,8 @@
     "path": "sections/latest-results/bank-of-maharashtra-generalist-officer-scale-ii-result-2025.html",
     "title": "Bank Of Maharashtra Generalist Officer Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-board-class-10th-result-2026-soon",
@@ -474,7 +506,8 @@
     "path": "sections/latest-results/bihar-board-class-10th-result-2026-soon.html",
     "title": "Bihar Board 10th Result 2026 Redirecting",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-bsphcl-cc-store-assistant-technical-gr-3-dv-list-2025-out",
@@ -483,7 +516,8 @@
     "path": "sections/latest-results/bihar-bsphcl-cc-store-assistant-technical-gr-3-dv-list-2025-out.html",
     "title": "Bihar BSPHCL CC/ Store Assistant & Technical Gr-3 DV List 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-bssc-dst-karyalay-parichari-pre-result-2025",
@@ -492,7 +526,8 @@
     "path": "sections/latest-results/bihar-bssc-dst-karyalay-parichari-pre-result-2025.html",
     "title": "Bihar BSSC DST Karyalay Parichari Pre Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-btsc-smo-final-result-2025",
@@ -501,7 +536,8 @@
     "path": "sections/latest-results/bihar-btsc-smo-final-result-2025.html",
     "title": "Bihar BTSC SMO Final Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-btsc-staff-nurse-result-2025",
@@ -510,7 +546,8 @@
     "path": "sections/latest-results/bihar-btsc-staff-nurse-result-2025.html",
     "title": "Bihar BTSC Staff Nurse Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-cet-int-4-years-bed-1st-merit-list-2025",
@@ -519,7 +556,8 @@
     "path": "sections/latest-results/bihar-cet-int-4-years-bed-1st-merit-list-2025.html",
     "title": "Bihar CET INT 4 Years BEd 1st Merit List 2025 Out",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-civil-court-udc-clerk-score-card-2025",
@@ -528,7 +566,8 @@
     "path": "sections/latest-results/bihar-civil-court-udc-clerk-score-card-2025.html",
     "title": "Bihar Civil Court UDC Clerk Score Card 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-shs-ophthalmic-assistant-answer-key-2025",
@@ -537,7 +576,8 @@
     "path": "sections/latest-results/bihar-shs-ophthalmic-assistant-answer-key-2025.html",
     "title": "Bihar SHS Ophthalmic Assistant Answer Key 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-stet-result-2026",
@@ -546,7 +586,8 @@
     "path": "sections/latest-results/bihar-stet-result-2026.html",
     "title": "Bihar STET Result 2025 Out",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-vidha-sabha-security-guard-020305-2023-result-cutoff-marks",
@@ -555,7 +596,8 @@
     "path": "sections/latest-results/bihar-vidha-sabha-security-guard-020305-2023-result-cutoff-marks.html",
     "title": "Bihar Vidha Sabha 02,03,05/2023 Result With Cutoff Marks",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-vidhan-parishad-abo-02-2024-final-result-2025",
@@ -564,7 +606,8 @@
     "path": "sections/latest-results/bihar-vidhan-parishad-abo-02-2024-final-result-2025.html",
     "title": "Bihar Vidhan Parishad ABO 02/2024 Final Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-vidhan-parishad-driver-office-attendant-answer-key-2025",
@@ -573,7 +616,8 @@
     "path": "sections/latest-results/bihar-vidhan-parishad-driver-office-attendant-answer-key-2025.html",
     "title": "Bihar Vidhan Parishad Driver, Office Attendant Answer Key 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-vidhan-sabha-05-2024-mains-result-with-cutoff-marks",
@@ -582,7 +626,8 @@
     "path": "sections/latest-results/bihar-vidhan-sabha-05-2024-mains-result-with-cutoff-marks.html",
     "title": "Bihar Vidhan Sabha 05/2024 Result With Cutoff Marks",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-vidhan-sabha-junior-clerk-pa-0203-2024-result-cutoff-marks",
@@ -591,7 +636,8 @@
     "path": "sections/latest-results/bihar-vidhan-sabha-junior-clerk-pa-0203-2024-result-cutoff-marks.html",
     "title": "Bihar Vidhan Sabha Junior Clerk, PA 02,03/2024 Result With Cutoff Marks",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-vidhan-sabha-security-guard-01-2023-pet-result-cutoff-mark",
@@ -600,7 +646,8 @@
     "path": "sections/latest-results/bihar-vidhan-sabha-security-guard-01-2023-pet-result-cutoff-mark.html",
     "title": "Bihar Vidhan Sabha Security Guard 01/2023 Result With Cutoff Marks",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bpsc-lecturer-mining-engineering-final-result-2025",
@@ -609,7 +656,8 @@
     "path": "sections/latest-results/bpsc-lecturer-mining-engineering-final-result-2025.html",
     "title": "BPSC Lecture Mining Engineering Final Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bpsc-vice-principal-iti-result-2025",
@@ -618,7 +666,8 @@
     "path": "sections/latest-results/bpsc-vice-principal-iti-result-2025.html",
     "title": "BPSC Vice Principal ITI Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bseb-sakshamta-pariksha-ctt-4th-phase-answer-key-2025",
@@ -627,7 +676,8 @@
     "path": "sections/latest-results/bseb-sakshamta-pariksha-ctt-4th-phase-answer-key-2025.html",
     "title": "BSEB Sakshamta Pariksha CTT 4th Phase Answer Key 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bssc-ldc-welfare-organiser-result-2025",
@@ -636,7 +686,8 @@
     "path": "sections/latest-results/bssc-ldc-welfare-organiser-result-2025.html",
     "title": "BSSC LDC & Welfare Organiser Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "mpesb-group-5-paramedical-staff-result-2025",
@@ -645,7 +696,8 @@
     "path": "sections/latest-results/mpesb-group-5-paramedical-staff-result-2025.html",
     "title": "MPESB Group 5 Paramedical Staff Result 2025 Out",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "sav-bihar-class-6-pre-result-2026-27",
@@ -654,7 +706,8 @@
     "path": "sections/latest-results/sav-bihar-class-6-pre-result-2026-27.html",
     "title": "SAV Bihar Class 6 Pre Result 2026-27",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "ukpsc-upper-pcs-2024-mains-result",
@@ -663,7 +716,8 @@
     "path": "sections/latest-results/ukpsc-upper-pcs-2024-mains-result.html",
     "title": "UKPSC Upper PCS 2024 Mains Result",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "uksssc-assistant-inspector-ado-answer-key-2025",
@@ -672,7 +726,8 @@
     "path": "sections/latest-results/uksssc-assistant-inspector-ado-answer-key-2025.html",
     "title": "UKSSSC Assistant Inspector / ADO Answer Key 2025 Out",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "uksssc-forester-group-c-result-2025",
@@ -681,7 +736,8 @@
     "path": "sections/latest-results/uksssc-forester-group-c-result-2025.html",
     "title": "UKSSSC Forester (Group C) Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "uksssc-police-constable-result-2025",
@@ -690,16 +746,8 @@
     "path": "sections/latest-results/uksssc-police-constable-result-2025.html",
     "title": "UKSSSC Police Constable Result 2025",
     "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
-  },
-  {
-    "slug": "utet-result-2025",
-    "category": "Latest Results",
-    "folder": "latest-results",
-    "path": "sections/latest-results/utet-result-2025.html",
-    "title": "UTET Result 2025",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18"
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
   },
   {
     "slug": "bpsc-ldc-2026",
@@ -708,7 +756,8 @@
     "path": "sections/latest-results/bpsc-ldc-2026.html",
     "title": "BPSC LDC Typing Test Result 2026",
     "publishedAt": "2026-02-17",
-    "updatedAt": "2026-02-17"
+    "updatedAt": "2026-02-17",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-police-bpssc-si-prohibition-2025",
@@ -717,7 +766,8 @@
     "path": "sections/latest-results/bihar-police-bpssc-si-prohibition-2025.html",
     "title": "BPSSC Bihar Police SI Prohibition Final Result Marks 2026",
     "publishedAt": "2026-02-17",
-    "updatedAt": "2026-02-17"
+    "updatedAt": "2026-02-17",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-jeevika-2025",
@@ -726,7 +776,8 @@
     "path": "sections/latest-results/bihar-jeevika-2025.html",
     "title": "Bihar JEEVIKA Various Posts Response Sheet 2026",
     "publishedAt": "2026-02-12",
-    "updatedAt": "2026-02-12"
+    "updatedAt": "2026-02-12",
+    "sitemapEligible": true
   },
   {
     "slug": "bpssc-bihar-police-range-officer-of-forest-2025",
@@ -735,7 +786,8 @@
     "path": "sections/latest-results/bpssc-bihar-police-range-officer-of-forest-2025.html",
     "title": "BPSSC Bihar Police Range Officer of Forest Final Result 2026",
     "publishedAt": "2026-02-03",
-    "updatedAt": "2026-02-03"
+    "updatedAt": "2026-02-03",
+    "sitemapEligible": true
   },
   {
     "slug": "ecgc-po-2026",
@@ -744,7 +796,8 @@
     "path": "sections/latest-results/ecgc-po-2026.html",
     "title": "ECGC PO Result 2026",
     "publishedAt": "2026-02-03",
-    "updatedAt": "2026-02-03"
+    "updatedAt": "2026-02-03",
+    "sitemapEligible": true
   },
   {
     "slug": "patna-high-court-stenographer-result-2026",
@@ -753,7 +806,8 @@
     "path": "sections/latest-results/patna-high-court-stenographer-result-2026.html",
     "title": "Patna High Court Stenographer Result 2026",
     "publishedAt": "2026-01-31",
-    "updatedAt": "2026-01-31"
+    "updatedAt": "2026-01-31",
+    "sitemapEligible": true
   },
   {
     "slug": "beltron-programmer-result-cutoff-2026",
@@ -762,7 +816,8 @@
     "path": "sections/latest-results/beltron-programmer-result-cutoff-2026.html",
     "title": "BELTRON Programmer Result / Cutoff 2026",
     "publishedAt": "2026-01-29",
-    "updatedAt": "2026-01-29"
+    "updatedAt": "2026-01-29",
+    "sitemapEligible": true
   },
   {
     "slug": "bpsc-aee-other-post-result-2026",
@@ -771,7 +826,8 @@
     "path": "sections/latest-results/bpsc-aee-other-post-result-2026.html",
     "title": "BPSC AEE, Law Officer, PRO & Jr Lab Assistant Result 2026",
     "publishedAt": "2026-01-28",
-    "updatedAt": "2026-01-28"
+    "updatedAt": "2026-01-28",
+    "sitemapEligible": true
   },
   {
     "slug": "bpsc-mvi-final-result-2026",
@@ -780,7 +836,8 @@
     "path": "sections/latest-results/bpsc-mvi-final-result-2026.html",
     "title": "BPSC MVI Final Result 2026",
     "publishedAt": "2026-01-28",
-    "updatedAt": "2026-01-28"
+    "updatedAt": "2026-01-28",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-shs-anm-result-2026",
@@ -789,7 +846,8 @@
     "path": "sections/latest-results/bihar-shs-anm-result-2026.html",
     "title": "Bihar SHS ANM Result 2026",
     "publishedAt": "2026-01-23",
-    "updatedAt": "2026-01-23"
+    "updatedAt": "2026-01-23",
+    "sitemapEligible": true
   },
   {
     "slug": "bssc-field-assistant-pre-result-2026",
@@ -798,7 +856,8 @@
     "path": "sections/latest-results/bssc-field-assistant-pre-result-2026.html",
     "title": "BSSC Field Assistant Pre Result 2026",
     "publishedAt": "2026-01-22",
-    "updatedAt": "2026-01-23"
+    "updatedAt": "2026-01-23",
+    "sitemapEligible": true
   },
   {
     "slug": "bihar-btsc-tutor-nursing-result-2026",
@@ -807,7 +866,8 @@
     "path": "sections/latest-results/bihar-btsc-tutor-nursing-result-2026.html",
     "title": "Bihar BTSC Tutor Nursing Result 2026",
     "publishedAt": "2026-01-14",
-    "updatedAt": "2026-01-14"
+    "updatedAt": "2026-01-14",
+    "sitemapEligible": true
   },
   {
     "slug": "bpsc-mdo-final-result-2025",
@@ -816,7 +876,8 @@
     "path": "sections/latest-results/bpsc-mdo-final-result-2025.html",
     "title": "BPSC MDO Final Result 2025",
     "publishedAt": "2026-01-06",
-    "updatedAt": "2026-01-07"
+    "updatedAt": "2026-01-07",
+    "sitemapEligible": true
   },
   {
     "slug": "ukpsc-upper-pcs-pre-revised-result-2025",
@@ -825,6 +886,7 @@
     "path": "sections/latest-results/ukpsc-upper-pcs-pre-revised-result-2025.html",
     "title": "UKPSC Upper PCS Pre Revised Result 2025",
     "publishedAt": "2026-01-07",
-    "updatedAt": "2026-01-07"
+    "updatedAt": "2026-01-07",
+    "sitemapEligible": true
   }
 ]
