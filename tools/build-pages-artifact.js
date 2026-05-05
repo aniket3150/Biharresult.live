@@ -138,7 +138,19 @@ function versionAssetUrls(content) {
       `$1$2?v=${VERSION}$3`
     )
     .replace(
+      /((?:href|src)=["'])(\/student-news\.css)(?:\?v=[^"']*)?(["'])/g,
+      `$1$2?v=${VERSION}$3`
+    )
+    .replace(
       /((?:href|src)=["'])(\/script\.js)(?:\?v=[^"']*)?(["'])/g,
+      `$1$2?v=${VERSION}$3`
+    )
+    .replace(
+      /((?:src)=["'])(\/student-news-data\.js)(?:\?v=[^"']*)?(["'])/g,
+      `$1$2?v=${VERSION}$3`
+    )
+    .replace(
+      /((?:src)=["'])(\/student-news\.js)(?:\?v=[^"']*)?(["'])/g,
       `$1$2?v=${VERSION}$3`
     )
     .replace(
@@ -202,7 +214,7 @@ for (const filePath of getFiles(OUTPUT_DIR, ".json")) {
   }
 }
 
-for (const jsFile of ["script.js", "post-legacy.js", "analytics.js"]) {
+for (const jsFile of ["script.js", "post-legacy.js", "analytics.js", "student-news.js", "student-news-data.js"]) {
   const filePath = path.join(OUTPUT_DIR, jsFile);
   if (!fs.existsSync(filePath)) continue;
   const original = fs.readFileSync(filePath, "utf8");

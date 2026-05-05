@@ -8,6 +8,7 @@ const HOME_TOOLS_DATA_PATH = path.join(ROOT, "home-tools-data.json");
 const SLUG_PATHS_PATH = path.join(ROOT, "slug-paths.json");
 const SITEMAP_PATH = path.join(ROOT, "sitemap.xml");
 const SECTIONS_INDEX_PATH = path.join(ROOT, "sections", "sections-index.json");
+const STUDENT_NEWS_POSTS_PATH = path.join(ROOT, "sections", "student-news", "posts.json");
 
 function formatDateInTimeZone(date, timeZone) {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -1799,6 +1800,8 @@ function rebuildSitemap(entries) {
     { loc: "https://biharresult.live/pages/legal/about.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/contact.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
     { loc: "https://biharresult.live/pages/legal/privacy-policy.html", lastmod: "2026-02-18", changefreq: "monthly", priority: "0.6" },
+    { loc: "https://biharresult.live/pages/news/student-news.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.7" },
+    { loc: "https://biharresult.live/sections/student-news/", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
     { loc: "https://biharresult.live/pages/guides/guides.html", lastmod: "2026-03-28", changefreq: "weekly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/india-result-latest-result.html", lastmod: "2026-04-17", changefreq: "weekly", priority: "0.7" },
     { loc: "https://biharresult.live/pages/guides/sarkari-result-bihar.html", lastmod: BUILD_DATE, changefreq: "daily", priority: "0.8" },
@@ -1825,6 +1828,24 @@ function rebuildSitemap(entries) {
     const changefreq = category === "Latest Results" ? "daily" : category === "Latest Jobs" ? "daily" : "weekly";
     const priority = category === "Latest Results" || category === "Latest Jobs" ? "0.8" : "0.7";
     urls.push({ loc: pageUrl(entry.folder, entry.slug), lastmod, changefreq, priority });
+  }
+
+  if (fs.existsSync(STUDENT_NEWS_POSTS_PATH)) {
+    try {
+      const studentNewsPosts = JSON.parse(fs.readFileSync(STUDENT_NEWS_POSTS_PATH, "utf8"));
+      studentNewsPosts.forEach((post) => {
+        const slug = cleanText(post.slug || "");
+        if (!slug) return;
+        urls.push({
+          loc: `https://biharresult.live/sections/student-news/${slug}.html`,
+          lastmod: cleanText(post.updatedAt || post.publishedAt || BUILD_DATE),
+          changefreq: "weekly",
+          priority: "0.7"
+        });
+      });
+    } catch (error) {
+      console.error("[student-news] Failed to add student news sitemap entries", error);
+    }
   }
 
   const seen = new Set();

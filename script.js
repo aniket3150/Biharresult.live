@@ -1,6 +1,7 @@
 const HOME_ASSET_VERSION = resolveHomeAssetVersion();
 const HOME_DATA_FILE = withHomeAssetVersion("home-data.json");
 const HOME_TOOLS_DATA_FILE = withHomeAssetVersion("home-tools-data.json");
+const HOME_STUDENT_NEWS_FILE = withHomeAssetVersion("student-news-home.json");
 const MAX_COLLAPSED_HEIGHT_CLASS = "br-list-expanded";
 const HOME_SECTION_INITIAL_VISIBLE = 12;
 const HOME_SEARCH_DEBOUNCE_MS = 120;
@@ -11,6 +12,7 @@ const HOME_MAP = {
   "Latest Results": "results-list",
   "Latest Jobs": "jobs-list",
   "Admit Card": "admit-list",
+  "Student News": "student-news-list",
   "Scholarship": "scholarship-list",
   "Sarkari Yojana": "yojana-list"
 };
@@ -117,6 +119,7 @@ function buildSeoDescription(post) {
     "Latest Results": "Check result status, cut off, official result links, and fast result updates",
     "Latest Jobs": "Check eligibility, vacancy, dates, and apply link",
     "Admit Card": "Check exam date, shift details, and admit card download link",
+    "Student News": "Read a quick Hinglish summary, key student point, and related full update link",
     Scholarship: "Check eligibility, required documents, and apply process",
     Admission: "Check admission dates, eligibility, and application steps",
     "Sarkari Yojana": "Check beneficiary rules, documents, and official apply process",
@@ -125,7 +128,8 @@ function buildSeoDescription(post) {
   const keywordTailByCategory = {
     "Latest Results": "Useful for Sarkari Result India, board and exam score updates, and official result-link searches.",
     "Latest Jobs": "Useful for all India online form, vacancy, and Sarkari Naukri job searches.",
-    "Admit Card": "Useful for admit card download, exam city updates, and hall ticket searches across India."
+    "Admit Card": "Useful for admit card download, exam city updates, and hall ticket searches across India.",
+    "Student News": "Useful for students who want result, job, board, admission, and exam news in simple Hinglish."
   };
 
   const actionText = actionByCategory[category] || "Check important dates, eligibility, and official links";
@@ -137,13 +141,19 @@ function buildSeoDescription(post) {
 
 async function loadData() {
   try {
-    const response = await fetch(HOME_DATA_FILE, { cache: "default" });
-    if (!response.ok) {
-      throw new Error(`Failed to load home-data.json (${response.status})`);
+    const [homeResponse, studentNewsResponse] = await Promise.all([
+      fetch(HOME_DATA_FILE, { cache: "default" }),
+      fetch(HOME_STUDENT_NEWS_FILE, { cache: "default" })
+    ]);
+    if (!homeResponse.ok) {
+      throw new Error(`Failed to load home-data.json (${homeResponse.status})`);
     }
 
-    const data = await response.json();
-    return Array.isArray(data) ? data : [];
+    const data = await homeResponse.json();
+    const studentNewsData = studentNewsResponse.ok ? await studentNewsResponse.json() : [];
+    const homePosts = Array.isArray(data) ? data : [];
+    const studentNewsPosts = Array.isArray(studentNewsData) ? studentNewsData : [];
+    return homePosts.concat(studentNewsPosts);
   } catch (error) {
     console.error("[BiharResult.live] Failed to load homepage data.", error);
     return [];
@@ -317,6 +327,7 @@ function postHref(post) {
     "Latest Results": "latest-results",
     "Latest Jobs": "latest-jobs",
     "Admit Card": "admit-card",
+    "Student News": "student-news",
     "Scholarship": "scholarship",
     "Sarkari Yojana": "sarkari-yojana",
     "Admission": "admission",
@@ -344,6 +355,7 @@ function sectionHrefByCategory(category) {
     "Latest Results": "sections/latest-results/",
     "Latest Jobs": "sections/latest-jobs/",
     "Admit Card": "sections/admit-card/",
+    "Student News": "sections/student-news/",
     Scholarship: "sections/scholarship/",
     Admission: "sections/admission/",
     "Sarkari Yojana": "sections/sarkari-yojana/",
@@ -366,6 +378,7 @@ function buildHomeSchemaPosts(posts) {
     "Latest Results",
     "Latest Jobs",
     "Admit Card",
+    "Student News",
     "Scholarship",
     "Admission",
     "Sarkari Yojana",
