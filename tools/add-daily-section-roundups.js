@@ -70,6 +70,8 @@ const SECTION_CONFIG = {
   }
 };
 
+const ENABLE_DAILY_ROUNDUPS = process.env.ENABLE_DAILY_ROUNDUPS === "1";
+const PRUNE_EXISTING_DAILY_ROUNDUPS = process.env.PRUNE_EXISTING_DAILY_ROUNDUPS !== "0";
 const ROUNDUP_CATEGORIES = new Set(["Latest Results", "Latest Jobs", "Admit Card"]);
 
 function formatDateInTimeZone(date, timeZone) {
@@ -233,12 +235,25 @@ function buildEntry(category, round, topPosts, existing = {}) {
 }
 
 function main() {
-  const ROUNDUP_DATES = getRoundupDates();
   const data = readJson(DATA_PATH);
   const basePosts = data.filter((post) => !isRoundupSlug(post.slug));
-  const next = [...basePosts];
+  const next = PRUNE_EXISTING_DAILY_ROUNDUPS ? [...basePosts] : [...data];
+  const prunedRoundups = data.length - basePosts.length;
   let addedOrUpdatedRoundups = 0;
 
+  if (!ENABLE_DAILY_ROUNDUPS) {
+    next.sort(byRecent);
+    writeJson(DATA_PATH, next);
+    console.log(JSON.stringify({
+      enabled: false,
+      prunedRoundups: PRUNE_EXISTING_DAILY_ROUNDUPS ? prunedRoundups : 0,
+      addedOrUpdatedRoundups,
+      totalPosts: next.length
+    }, null, 2));
+    return;
+  }
+
+  const ROUNDUP_DATES = getRoundupDates();
   for (const [category, config] of Object.entries(SECTION_CONFIG)) {
     if (!ROUNDUP_CATEGORIES.has(category)) continue;
     const sectionPosts = basePosts
@@ -258,6 +273,8 @@ function main() {
   next.sort(byRecent);
   writeJson(DATA_PATH, next);
   console.log(JSON.stringify({
+    enabled: true,
+    prunedRoundups: PRUNE_EXISTING_DAILY_ROUNDUPS ? prunedRoundups : 0,
     addedOrUpdatedRoundups,
     totalPosts: next.length
   }, null, 2));

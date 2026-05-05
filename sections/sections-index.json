@@ -1290,46 +1290,6 @@
     "sitemapEligible": true
   },
   {
-    "slug": "bihar-verification-service-link-42-42",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-42-42.html",
-    "title": "Bihar Bhumi Jamabandi Record Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-verification-service-link-37-37",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-37-37.html",
-    "title": "Bihar Bhumi Jankari Advanced Land Search Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-verification-service-link-39-39",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-39-39.html",
-    "title": "Bihar Bhumi Jankari Circle Rate Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-verification-service-link-38-38",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-38-38.html",
-    "title": "Bihar Bhumi Jankari MVR Land Value Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
     "slug": "bihar-board-10th-12th-time-table-2025",
     "category": "Admit Card",
     "folder": "admit-card",
@@ -1570,36 +1530,6 @@
     "sitemapEligible": true
   },
   {
-    "slug": "bihar-verification-service-link-43-43",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-43-43.html",
-    "title": "Bihar Nibandhan NEC Certificate Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-verification-service-link-44-44",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-44-44.html",
-    "title": "Bihar Nibandhan Online NEC Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-verification-service-link-41-41",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-41-41.html",
-    "title": "Bihar Parimarjan Mutation Status Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
     "slug": "bpssc-si-prohibition-2026",
     "category": "Latest Jobs",
     "folder": "latest-jobs",
@@ -1628,16 +1558,6 @@
     "publishedAt": "2026-02-18",
     "updatedAt": "2026-02-18",
     "sitemapEligible": true
-  },
-  {
-    "slug": "bihar-verification-service-link-34-34",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-34-34.html",
-    "title": "Bihar RTPS Land Certificate Verification Service 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
   },
   {
     "slug": "bihar-scholarship-update-inter2024-6",
@@ -1718,56 +1638,6 @@
     "publishedAt": "2026-02-18",
     "updatedAt": "2026-02-18",
     "sitemapEligible": true
-  },
-  {
-    "slug": "bihar-scholarship-official-update-36-36",
-    "category": "Scholarship",
-    "folder": "scholarship",
-    "path": "sections/scholarship/bihar-scholarship-official-update-36-36.html",
-    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-scholarship-official-update-37-37",
-    "category": "Scholarship",
-    "folder": "scholarship",
-    "path": "sections/scholarship/bihar-scholarship-official-update-37-37.html",
-    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-scholarship-official-update-38-38",
-    "category": "Scholarship",
-    "folder": "scholarship",
-    "path": "sections/scholarship/bihar-scholarship-official-update-38-38.html",
-    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-scholarship-official-update-39-39",
-    "category": "Scholarship",
-    "folder": "scholarship",
-    "path": "sections/scholarship/bihar-scholarship-official-update-39-39.html",
-    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-scholarship-official-update-40-40",
-    "category": "Scholarship",
-    "folder": "scholarship",
-    "path": "sections/scholarship/bihar-scholarship-official-update-40-40.html",
-    "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
   },
   {
     "slug": "bihar-scholarship-update-pms-maindefault-13",
@@ -1890,26 +1760,6 @@
     "sitemapEligible": true
   },
   {
-    "slug": "bihar-verification-service-link-20-20",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-20-20.html",
-    "title": "Bihar ServiceOnline Application Status Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
-    "slug": "bihar-verification-service-link-25-25",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-25-25.html",
-    "title": "Bihar ServiceOnline Application Status Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
-  },
-  {
     "slug": "bihar-shs-ophthalmic-assistant-answer-key-2025",
     "category": "Latest Results",
     "folder": "latest-results",
@@ -1938,16 +1788,6 @@
     "publishedAt": "2026-02-18",
     "updatedAt": "2026-02-18",
     "sitemapEligible": true
-  },
-  {
-    "slug": "bihar-verification-service-link-35-35",
-    "category": "Verification",
-    "folder": "verification",
-    "path": "sections/verification/bihar-verification-service-link-35-35.html",
-    "title": "Bihar SWCS RTPS Certificate Download Verification 2026",
-    "publishedAt": "2026-02-18",
-    "updatedAt": "2026-02-18",
-    "sitemapEligible": false
   },
   {
     "slug": "bihar-vidha-sabha-security-guard-020305-2023-result-cutoff-marks",

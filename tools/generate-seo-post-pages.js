@@ -375,17 +375,25 @@ function computePostQuality(post, folder) {
   const shortInfo = cleanText(post?.shortInfo || "");
   const longDescription = cleanText(post?.longDescription || "");
   const category = cleanText(post?.category || FOLDER_TO_CATEGORY[folder] || "Latest Results");
+  const forceIndexable = FORCE_INDEXABLE_SLUGS.has(slug);
   const importantDatesCount = Array.isArray(post?.importantDates) ? post.importantDates.length : 0;
   const eligibilityCount = Array.isArray(post?.eligibility) ? post.eligibility.length : 0;
   const linkCount = Array.isArray(post?.importantLinks) ? post.importantLinks.length : 0;
   const externalLinks = extractExternalLinks(post);
   const authorityExternalCount = externalLinks.filter((url) => TRUSTED_AUTHORITY_HOST_PATTERN.test(urlHost(url))).length;
 
+  const isRoundupSlug = ROUNDUP_SLUG_PATTERN.test(slug);
+  const isOfficialUpdateSlug = OFFICIAL_UPDATE_SLUG_PATTERN.test(slug);
   const weakSlug = WEAK_SLUG_PATTERN.test(slug);
   const serviceStyleSlug = /(service-link-\d+-\d+|official-information-\d+-\d+|official-portal-link-\d+-\d+)/i.test(slug);
   const genericTitle = GENERIC_TITLE_PATTERN.test(title);
   const selfSource = isInternalSiteUrl(post?.sourceUrl || "");
   const staleRoundup = /(?:today|yesterday)-highlights-\d{4}-\d{2}-\d{2}$/i.test(slug) && dayDiffFromBuild(post?.updatedAt || post?.publishedAt || "") > 4;
+  const lowValueTemplateCategory = ["Admission", "Scholarship", "Sarkari Yojana", "Verification"].includes(category);
+  const hardBlockLowValueTemplate = !forceIndexable && (
+    isRoundupSlug
+    || ((isOfficialUpdateSlug || serviceStyleSlug) && lowValueTemplateCategory)
+  );
 
   let score = 0;
   const reasons = [];
@@ -441,8 +449,10 @@ function computePostQuality(post, folder) {
     reasons.push("verification-without-authority-link");
   }
 
-  const forceIndexable = FORCE_INDEXABLE_SLUGS.has(slug);
-  const indexable = forceIndexable || score >= 4;
+  const indexable = (forceIndexable || score >= 4) && !hardBlockLowValueTemplate;
+  if (hardBlockLowValueTemplate) {
+    reasons.push("hard-blocked-low-value-template");
+  }
   const canonicalHref = indexable ? pageUrl(folder, slug) : sectionUrl(folder);
   const robotsMeta = indexable
     ? "index, follow, max-image-preview:large, max-snippet:-1"
@@ -456,6 +466,16 @@ function computePostQuality(post, folder) {
     robotsMeta,
     qualityTier: forceIndexable ? "high" : (indexable ? "standard" : "low")
   };
+}
+
+function shouldExcludeFromCatalog(post, folder) {
+  const quality = {
+    indexable: post?.indexable !== false,
+    score: Number(post?.qualityScore || 0),
+    reasons: Array.isArray(post?.qualityReasons) ? post.qualityReasons : []
+  };
+  const action = classifyDiscoveryRiskGroup(post, folder, quality);
+  return action?.group === "delete_or_stop_generating" || action?.group === "merge_with_stronger_page";
 }
 
 function discoveryGroupReason(groupKey) {
@@ -1487,8 +1507,12 @@ function buildDataCatalog(sectionFiles, existingDataMap) {
     .map((filePath) => {
       const slug = path.basename(filePath, ".html");
       const content = fs.readFileSync(filePath, "utf8");
-      return buildCatalogPost(filePath, content, existingDataMap.get(slug) || {});
+      const post = buildCatalogPost(filePath, content, existingDataMap.get(slug) || {});
+      const folder = path.basename(path.dirname(filePath));
+      if (shouldExcludeFromCatalog(post, folder)) return null;
+      return post;
     })
+    .filter(Boolean)
     .sort(compareEntriesByDate);
 }
 
@@ -1905,6 +1929,7 @@ function buildRelatedEntries(post, catalog, currentFolder, limit = 6) {
   const sameCategory = rows.filter((item) => (
     cleanText(item.slug) !== currentSlug
     && cleanText(item.category) === cleanText(post.category)
+    && item.indexable !== false
     && cleanText(item.slug)
   ));
 

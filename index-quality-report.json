@@ -1,43 +1,43 @@
 {
   "buildDate": "2026-05-05",
-  "total": 416,
-  "indexable": 286,
-  "blocked": 130,
+  "total": 294,
+  "indexable": 270,
+  "blocked": 24,
   "byCategory": {
     "Latest Results": {
-      "total": 92,
+      "total": 90,
       "indexable": 89,
-      "blocked": 3
+      "blocked": 1
     },
     "Admit Card": {
-      "total": 70,
+      "total": 68,
       "indexable": 68,
-      "blocked": 2
+      "blocked": 0
     },
     "Latest Jobs": {
-      "total": 86,
+      "total": 84,
       "indexable": 84,
-      "blocked": 2
+      "blocked": 0
     },
     "Admission": {
-      "total": 42,
+      "total": 9,
       "indexable": 9,
-      "blocked": 33
-    },
-    "Sarkari Yojana": {
-      "total": 42,
-      "indexable": 0,
-      "blocked": 42
-    },
-    "Scholarship": {
-      "total": 42,
-      "indexable": 25,
-      "blocked": 17
+      "blocked": 0
     },
     "Verification": {
-      "total": 42,
-      "indexable": 11,
-      "blocked": 31
+      "total": 11,
+      "indexable": 0,
+      "blocked": 11
+    },
+    "Sarkari Yojana": {
+      "total": 2,
+      "indexable": 0,
+      "blocked": 2
+    },
+    "Scholarship": {
+      "total": 30,
+      "indexable": 20,
+      "blocked": 10
     }
   },
   "discoveredNotIndexedRiskGroups": {
@@ -62,30 +62,9 @@
         "sections/*/*-today-highlights-YYYY-MM-DD.html",
         "sections/*/*-yesterday-highlights-YYYY-MM-DD.html"
       ],
-      "count": 14,
-      "categories": [
-        "Admission",
-        "Admit Card",
-        "Latest Jobs",
-        "Latest Results",
-        "Sarkari Yojana",
-        "Scholarship",
-        "Verification"
-      ],
-      "sampleUrls": [
-        "https://biharresult.live/sections/admission/admission-today-highlights-2026-04-28.html",
-        "https://biharresult.live/sections/admit-card/admit-card-today-highlights-2026-04-28.html",
-        "https://biharresult.live/sections/latest-jobs/latest-jobs-today-highlights-2026-04-28.html",
-        "https://biharresult.live/sections/latest-results/latest-results-today-highlights-2026-04-28.html",
-        "https://biharresult.live/sections/sarkari-yojana/sarkari-yojana-today-highlights-2026-04-28.html",
-        "https://biharresult.live/sections/scholarship/scholarship-today-highlights-2026-04-28.html",
-        "https://biharresult.live/sections/verification/verification-today-highlights-2026-04-28.html",
-        "https://biharresult.live/sections/admission/admission-yesterday-highlights-2026-04-27.html",
-        "https://biharresult.live/sections/admit-card/admit-card-yesterday-highlights-2026-04-27.html",
-        "https://biharresult.live/sections/latest-jobs/latest-jobs-yesterday-highlights-2026-04-27.html",
-        "https://biharresult.live/sections/latest-results/latest-results-yesterday-highlights-2026-04-27.html",
-        "https://biharresult.live/sections/sarkari-yojana/sarkari-yojana-yesterday-highlights-2026-04-27.html"
-      ]
+      "count": 0,
+      "categories": [],
+      "sampleUrls": []
     },
     "noindex_intentionally": {
       "label": "noindex intentionally",
@@ -96,31 +75,10 @@
         "sections/scholarship/*official-portal-link-#-#.html",
         "sections/verification/*service-link-#-#.html"
       ],
-      "count": 7,
-      "categories": [
-        "Sarkari Yojana",
-        "Scholarship"
-      ],
-      "sampleUrls": [
-        "https://biharresult.live/sections/sarkari-yojana/bihar-sarkari-yojana-official-update-39-39.html",
-        "https://biharresult.live/sections/sarkari-yojana/bihar-sarkari-yojana-official-update-40-40.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-31-31.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-32-32.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-33-33.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-34-34.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-35-35.html"
-      ]
-    },
-    "remove_from_sitemap": {
-      "label": "remove from sitemap",
-      "reason": "Keep accessible for users, but do not promote these weaker templates in XML sitemap.",
-      "urlPatterns": [
-        "sections/verification/*service-link-#-#.html (borderline quality)",
-        "sections/scholarship/*official-update-#-#.html (borderline quality)"
-      ],
-      "count": 16,
+      "count": 23,
       "categories": [
         "Verification",
+        "Sarkari Yojana",
         "Scholarship"
       ],
       "sampleUrls": [
@@ -132,11 +90,22 @@
         "https://biharresult.live/sections/verification/bihar-verification-service-link-44-44.html",
         "https://biharresult.live/sections/verification/bihar-verification-service-link-41-41.html",
         "https://biharresult.live/sections/verification/bihar-verification-service-link-34-34.html",
+        "https://biharresult.live/sections/sarkari-yojana/bihar-sarkari-yojana-official-update-39-39.html",
+        "https://biharresult.live/sections/sarkari-yojana/bihar-sarkari-yojana-official-update-40-40.html",
         "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-36-36.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-37-37.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-38-38.html",
-        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-39-39.html"
+        "https://biharresult.live/sections/scholarship/bihar-scholarship-official-update-37-37.html"
       ]
+    },
+    "remove_from_sitemap": {
+      "label": "remove from sitemap",
+      "reason": "Keep accessible for users, but do not promote these weaker templates in XML sitemap.",
+      "urlPatterns": [
+        "sections/verification/*service-link-#-#.html (borderline quality)",
+        "sections/scholarship/*official-update-#-#.html (borderline quality)"
+      ],
+      "count": 0,
+      "categories": [],
+      "sampleUrls": []
     },
     "delete_or_stop_generating": {
       "label": "delete or stop generating",
@@ -144,650 +113,280 @@
       "urlPatterns": [
         "sections/(admission|sarkari-yojana|verification|scholarship)/*(official-update|official-information|official-portal-link|service-link)-#-#.html"
       ],
-      "count": 108,
-      "categories": [
-        "Sarkari Yojana",
-        "Admission",
-        "Verification",
-        "Scholarship"
-      ],
-      "sampleUrls": [
-        "https://biharresult.live/sections/sarkari-yojana/bihar-yojana-official-information-27-27.html",
-        "https://biharresult.live/sections/sarkari-yojana/bihar-sarkari-yojana-service-link-6-6.html",
-        "https://biharresult.live/sections/sarkari-yojana/bihar-sarkari-yojana-service-link-7-7.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-13-13.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-14-14.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-15-15.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-16-16.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-17-17.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-18-18.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-19-19.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-34-34.html",
-        "https://biharresult.live/sections/admission/bihar-admission-official-update-35-35.html"
-      ]
+      "count": 0,
+      "categories": [],
+      "sampleUrls": []
     }
   },
   "blockedSamples": [
     {
-      "slug": "admission-today-highlights-2026-04-28",
-      "category": "Admission",
-      "title": "Today Admission Updates 28 April 2026: Latest Form and Counselling Posts",
-      "score": -8,
+      "slug": "bihar-verification-service-link-42-42",
+      "category": "Verification",
+      "title": "Bihar Bhumi Jamabandi Record Verification 2026",
+      "score": 4,
       "reasons": [
         "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup"
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "admit-card-today-highlights-2026-04-28",
-      "category": "Admit Card",
-      "title": "Today Admit Card Updates 28 April 2026: Top Download and Exam Notices",
-      "score": -5,
+      "slug": "bihar-verification-service-link-37-37",
+      "category": "Verification",
+      "title": "Bihar Bhumi Jankari Advanced Land Search Verification 2026",
+      "score": 4,
       "reasons": [
         "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "no-authority-source",
-        "stale-roundup"
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "latest-jobs-today-highlights-2026-04-28",
-      "category": "Latest Jobs",
-      "title": "Today Latest Jobs 28 April 2026: Top Online Form and Vacancy Updates",
-      "score": -5,
+      "slug": "bihar-verification-service-link-39-39",
+      "category": "Verification",
+      "title": "Bihar Bhumi Jankari Circle Rate Verification 2026",
+      "score": 4,
       "reasons": [
         "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "no-authority-source",
-        "stale-roundup"
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "latest-results-today-highlights-2026-04-28",
-      "category": "Latest Results",
-      "title": "Today Latest Results 28 April 2026: Top Result Links and Updates",
-      "score": -5,
+      "slug": "bihar-verification-service-link-38-38",
+      "category": "Verification",
+      "title": "Bihar Bhumi Jankari MVR Land Value Verification 2026",
+      "score": 4,
       "reasons": [
         "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "no-authority-source",
-        "stale-roundup"
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "sarkari-yojana-today-highlights-2026-04-28",
+      "slug": "bihar-verification-service-link-43-43",
+      "category": "Verification",
+      "title": "Bihar Nibandhan NEC Certificate Verification 2026",
+      "score": 4,
+      "reasons": [
+        "weak-pattern-slug",
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-verification-service-link-44-44",
+      "category": "Verification",
+      "title": "Bihar Nibandhan Online NEC Verification 2026",
+      "score": 4,
+      "reasons": [
+        "weak-pattern-slug",
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-verification-service-link-41-41",
+      "category": "Verification",
+      "title": "Bihar Parimarjan Mutation Status Verification 2026",
+      "score": 4,
+      "reasons": [
+        "weak-pattern-slug",
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-verification-service-link-34-34",
+      "category": "Verification",
+      "title": "Bihar RTPS Land Certificate Verification Service 2026",
+      "score": 4,
+      "reasons": [
+        "weak-pattern-slug",
+        "directory-style-service-slug",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-sarkari-yojana-official-update-39-39",
       "category": "Sarkari Yojana",
-      "title": "Today Sarkari Yojana Updates 28 April 2026: Latest Scheme and Service Posts",
-      "score": -8,
+      "title": "Bihar Sarkari Yojana Official Update 39",
+      "score": 2,
       "reasons": [
         "weak-pattern-slug",
-        "weak-slug-without-authority-links",
+        "generic-title-pattern",
         "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup"
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "scholarship-today-highlights-2026-04-28",
+      "slug": "bihar-sarkari-yojana-official-update-40-40",
+      "category": "Sarkari Yojana",
+      "title": "Bihar Sarkari Yojana Official Update 40",
+      "score": 2,
+      "reasons": [
+        "weak-pattern-slug",
+        "generic-title-pattern",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-36-36",
       "category": "Scholarship",
-      "title": "Today Scholarship Updates 28 April 2026: Latest Portal and Benefit Posts",
-      "score": -8,
+      "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+      "score": 5,
       "reasons": [
         "weak-pattern-slug",
-        "weak-slug-without-authority-links",
         "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup"
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "verification-today-highlights-2026-04-28",
-      "category": "Verification",
-      "title": "Today Verification Updates 28 April 2026: Latest Service and Status Posts",
-      "score": -10,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup",
-        "verification-without-authority-link"
-      ]
-    },
-    {
-      "slug": "admission-yesterday-highlights-2026-04-27",
-      "category": "Admission",
-      "title": "Yesterday Admission Updates 27 April 2026: Latest Form and Counselling Posts",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup"
-      ]
-    },
-    {
-      "slug": "admit-card-yesterday-highlights-2026-04-27",
-      "category": "Admit Card",
-      "title": "Yesterday Admit Card Updates 27 April 2026: Top Download and Exam Notices",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "no-authority-source",
-        "stale-roundup"
-      ]
-    },
-    {
-      "slug": "latest-jobs-yesterday-highlights-2026-04-27",
-      "category": "Latest Jobs",
-      "title": "Yesterday Latest Jobs 27 April 2026: Top Online Form and Vacancy Updates",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "no-authority-source",
-        "stale-roundup"
-      ]
-    },
-    {
-      "slug": "latest-results-yesterday-highlights-2026-04-27",
-      "category": "Latest Results",
-      "title": "Yesterday Latest Results 27 April 2026: Top Result Links and Updates",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "no-authority-source",
-        "stale-roundup"
-      ]
-    },
-    {
-      "slug": "sarkari-yojana-yesterday-highlights-2026-04-27",
-      "category": "Sarkari Yojana",
-      "title": "Yesterday Sarkari Yojana Updates 27 April 2026: Latest Scheme and Service Posts",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup"
-      ]
-    },
-    {
-      "slug": "scholarship-yesterday-highlights-2026-04-27",
+      "slug": "bihar-scholarship-official-update-37-37",
       "category": "Scholarship",
-      "title": "Yesterday Scholarship Updates 27 April 2026: Latest Portal and Benefit Posts",
-      "score": -8,
+      "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+      "score": 5,
       "reasons": [
         "weak-pattern-slug",
-        "weak-slug-without-authority-links",
         "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup"
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "verification-yesterday-highlights-2026-04-27",
+      "slug": "bihar-scholarship-official-update-38-38",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+      "score": 5,
+      "reasons": [
+        "weak-pattern-slug",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-39-39",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+      "score": 5,
+      "reasons": [
+        "weak-pattern-slug",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-40-40",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship MedhaSoft Official Portal Update 2026",
+      "score": 5,
+      "reasons": [
+        "weak-pattern-slug",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-31-31",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship Official Update 31",
+      "score": 2,
+      "reasons": [
+        "weak-pattern-slug",
+        "generic-title-pattern",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-32-32",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship Official Update 32",
+      "score": 2,
+      "reasons": [
+        "weak-pattern-slug",
+        "generic-title-pattern",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-33-33",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship Official Update 33",
+      "score": 2,
+      "reasons": [
+        "weak-pattern-slug",
+        "generic-title-pattern",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-34-34",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship Official Update 34",
+      "score": 2,
+      "reasons": [
+        "weak-pattern-slug",
+        "generic-title-pattern",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-scholarship-official-update-35-35",
+      "category": "Scholarship",
+      "title": "Bihar Scholarship Official Update 35",
+      "score": 2,
+      "reasons": [
+        "weak-pattern-slug",
+        "generic-title-pattern",
+        "weak-category-patterned-page",
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "bihar-verification-service-link-20-20",
       "category": "Verification",
-      "title": "Yesterday Verification Updates 27 April 2026: Latest Service and Status Posts",
-      "score": -10,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source",
-        "stale-roundup",
-        "verification-without-authority-link"
-      ]
-    },
-    {
-      "slug": "bihar-yojana-official-information-27-27",
-      "category": "Sarkari Yojana",
-      "title": "Ayushman Bharat PM-JAY Bihar Yojana Update 2026",
-      "score": 0,
+      "title": "Bihar ServiceOnline Application Status Verification 2026",
+      "score": 4,
       "reasons": [
         "weak-pattern-slug",
         "directory-style-service-slug",
-        "weak-category-patterned-page"
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "bihar-sarkari-yojana-service-link-6-6",
-      "category": "Sarkari Yojana",
-      "title": "Bihar 7 Nischay Yuva Up Mission Scheme Update 2026",
-      "score": 0,
-      "reasons": [
-        "weak-pattern-slug",
-        "directory-style-service-slug",
-        "weak-category-patterned-page"
-      ]
-    },
-    {
-      "slug": "bihar-sarkari-yojana-service-link-7-7",
-      "category": "Sarkari Yojana",
-      "title": "Bihar 7 Nischay Yuva Up Mission Scheme Update 2026",
-      "score": 0,
-      "reasons": [
-        "weak-pattern-slug",
-        "directory-style-service-slug",
-        "weak-category-patterned-page"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-13-13",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 13)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-14-14",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 14)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-15-15",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 15)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-16-16",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 16)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-17-17",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 17)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-18-18",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 18)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-19-19",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 19)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-34-34",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 34)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-35-35",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 35)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-36-36",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 36)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-37-37",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 37)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-38-38",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 38)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-39-39",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 39)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-40-40",
-      "category": "Admission",
-      "title": "Bihar Admission 2026 Latest Official Update (Notice 40)",
-      "score": -5,
-      "reasons": [
-        "weak-pattern-slug",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-10-10",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 10",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-11-11",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 11",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-12-12",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 12",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-20-20",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 20",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-21-21",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 21",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-22-22",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 22",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-23-23",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 23",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-24-24",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 24",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-25-25",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 25",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-26-26",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 26",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-27-27",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 27",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-28-28",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 28",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-29-29",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 29",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-30-30",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 30",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-31-31",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 31",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-32-32",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 32",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-admission-official-update-33-33",
-      "category": "Admission",
-      "title": "Bihar Admission Official Update 33",
-      "score": -8,
-      "reasons": [
-        "weak-pattern-slug",
-        "generic-title-pattern",
-        "weak-slug-without-authority-links",
-        "weak-category-patterned-page",
-        "no-authority-source"
-      ]
-    },
-    {
-      "slug": "bihar-verification-service-link-36-36",
+      "slug": "bihar-verification-service-link-25-25",
       "category": "Verification",
-      "title": "Bihar Bhumi Jankari Land Record Verification Portal 2026",
-      "score": 0,
+      "title": "Bihar ServiceOnline Application Status Verification 2026",
+      "score": 4,
       "reasons": [
         "weak-pattern-slug",
         "directory-style-service-slug",
-        "weak-category-patterned-page"
+        "hard-blocked-low-value-template"
       ]
     },
     {
-      "slug": "bihar-yojana-official-information-28-28",
-      "category": "Sarkari Yojana",
-      "title": "Bihar BOCW Welfare Board Yojana Update 2026",
-      "score": 0,
+      "slug": "bihar-verification-service-link-35-35",
+      "category": "Verification",
+      "title": "Bihar SWCS RTPS Certificate Download Verification 2026",
+      "score": 4,
       "reasons": [
         "weak-pattern-slug",
         "directory-style-service-slug",
-        "weak-category-patterned-page"
+        "hard-blocked-low-value-template"
+      ]
+    },
+    {
+      "slug": "utet-result-2025",
+      "category": "Latest Results",
+      "title": "UTET Result 2025",
+      "score": 3,
+      "reasons": [
+        "short-title",
+        "no-authority-source"
       ]
     }
   ]
