@@ -48,6 +48,7 @@ const HOME_PRIORITY_SLUG_ORDER = [
 ];
 const HOME_CATEGORY_PRIORITY_SLUG_ORDER = {
   "Latest Results": [
+    "nta-jee-mains-session-ii-paper-ii-result-2026-check-now",
     "bihar-board-10th-result-2026",
     "bihar-board-class-12th-result-2026",
     "bihar-board-class-10th-topper-list-2026",
