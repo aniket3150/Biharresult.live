@@ -48,6 +48,7 @@ const HOME_PRIORITY_SLUG_ORDER = [
 ];
 const HOME_CATEGORY_PRIORITY_SLUG_ORDER = {
   "Latest Results": [
+    "bpsc-72nd-pre-recruitment-2026",
     "nta-jee-mains-session-ii-paper-ii-result-2026-check-now",
     "bihar-board-10th-result-2026",
     "bihar-board-class-12th-result-2026",
@@ -1128,16 +1129,26 @@ async function renderHome(posts) {
       .filter((post) => post.category === category)
       .sort((a, b) => byHomePriorityThenDate(a, b, category));
     const fragment = document.createDocumentFragment();
-    
+
     // Capping DOM creation prevents main thread blocking & improves INP
     const itemsToRender = items.slice(0, 60);
     const showSnippet = false;
-    itemsToRender.forEach((post, idx) => {
-      fragment.appendChild(createListItem(post, {
-        showSnippet,
-        isPriorityFlash: idx < 5
-      }));
-    });
+    if (itemsToRender.length === 0) {
+      const fallback = document.createElement("li");
+      fallback.className = "br-item";
+      fallback.style.display = "flex";
+      fallback.style.padding = "10px";
+      fallback.textContent = "No updates available right now. Please refresh after a moment.";
+      fallback.dataset.searchText = fallback.textContent.toLowerCase();
+      fragment.appendChild(fallback);
+    } else {
+      itemsToRender.forEach((post, idx) => {
+        fragment.appendChild(createListItem(post, {
+          showSnippet,
+          isPriorityFlash: idx < 5
+        }));
+      });
+    }
     listEl.replaceChildren(fragment);
 
     const btn = document.querySelector(`.br-view-more[data-target="${listId}"]`);

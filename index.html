@@ -10,10 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-  <link rel="preload" href="/style.css?v=20260426" as="style">
+  <link rel="preload" href="style.css?v=20260426" as="style">
 
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data: blob:; connect-src 'self' https:; font-src 'self' https: data:; frame-src 'self' https:; object-src 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -298,7 +298,7 @@
   </style>
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <link rel="stylesheet" href="/style.css?v=20260426" />
+  <link rel="stylesheet" href="style.css?v=20260426" />
   <style>
     :root { --br-home-navy:#132658; --br-home-blue:#2f67ff; --br-home-gold:#ffc857; --br-home-ink:#16223a; --br-home-muted:#60708e; --br-home-line:rgba(18,34,77,.11); --br-home-paper:rgba(255,255,255,.9); --br-home-shadow:0 24px 60px rgba(17,34,77,.12); --br-home-soft:0 14px 32px rgba(17,34,77,.08); --br-home-heading:"Sora","Segoe UI",sans-serif; --br-home-body:"Plus Jakarta Sans","Segoe UI",sans-serif; }
     body.br-homepage { background:radial-gradient(circle at top left, rgba(47,103,255,.14), transparent 24%),radial-gradient(circle at 88% 6%, rgba(255,200,87,.18), transparent 18%),linear-gradient(180deg,#f4f7ff 0%,#eef3ff 30%,#f8fafc 68%,#f5efe5 100%); color:var(--br-home-ink); font-family:var(--br-home-body); }
@@ -789,13 +789,18 @@
           <div class="br-column">
             <h2 class="br-header-result" id="latest-results" tabindex="-1">Latest Result</h2>
             <p class="br-home-panel-note">Board and recruitment result pages with direct result, score, cutoff, and archive access.</p>
-            <ul class="br-list-container br-result-list" id="results-list"></ul>
+            <ul class="br-list-container br-result-list" id="results-list">
+              <!-- Fallback visible if JS fails -->
+              <li class="br-item" style="display:flex; padding:10px;">Loading results from script...</li>
+            </ul>
             <button class="br-view-more" data-target="results-list" type="button">View More +</button>
           </div>
           <div class="br-column">
             <h2 class="br-header br-header-navy" id="latest-jobs" tabindex="-1">Latest Jobs</h2>
             <p class="br-home-panel-note">Fresh recruitment forms, key dates, and official application routes.</p>
-            <ul class="br-list-container" id="jobs-list"></ul>
+            <ul class="br-list-container" id="jobs-list">
+              <li class="br-item" style="display:flex; padding:10px;">Loading jobs from script...</li>
+            </ul>
             <button class="br-view-more" data-target="jobs-list" type="button">View More +</button>
           </div>
           <div class="br-column">
