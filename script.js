@@ -48,7 +48,6 @@ const HOME_PRIORITY_SLUG_ORDER = [
 ];
 const HOME_CATEGORY_PRIORITY_SLUG_ORDER = {
   "Latest Results": [
-    "bpsc-72nd-pre-recruitment-2026",
     "nta-jee-mains-session-ii-paper-ii-result-2026-check-now",
     "bihar-board-10th-result-2026",
     "bihar-board-class-12th-result-2026",
@@ -58,6 +57,7 @@ const HOME_CATEGORY_PRIORITY_SLUG_ORDER = {
     "bihar-board-inter-12th-scrutiny-online-application-form-2026"
   ],
   "Latest Jobs": [
+    "bpsc-72nd-pre-recruitment-2026",
     "bpsc-school-teacher-tre-4-0-2026",
     "railway-rrb-alp-recruitment-2026",
     "csbc-constable-operator-online-form-2026",
