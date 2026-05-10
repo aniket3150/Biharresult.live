@@ -1025,9 +1025,7 @@ body.br-has-left-rail-ad.br-has-right-rail-ad .br-footer-ad-wrap {
 }
 
 .br-home-highlight-card-title {
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 0.16em;
+  text-decoration: none;
 }
 
 .br-new-tag {

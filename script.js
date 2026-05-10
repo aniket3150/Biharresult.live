@@ -57,6 +57,7 @@ const HOME_CATEGORY_PRIORITY_SLUG_ORDER = {
     "bihar-board-inter-12th-scrutiny-online-application-form-2026"
   ],
   "Latest Jobs": [
+    "bihar-cet-bed-online-form-2026-apply-now",
     "bpsc-72nd-pre-recruitment-2026",
     "bpsc-school-teacher-tre-4-0-2026",
     "railway-rrb-alp-recruitment-2026",

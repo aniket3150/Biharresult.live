@@ -1,852 +1,862 @@
 [
-    {
-        "slug":  "bpsc-72nd-pre-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-72nd-pre-recruitment-2026.html",
-        "title":  "BPSC 72nd Pre Recruitment 2026",
-        "publishedAt":  "2026-05-09",
-        "updatedAt":  "2026-05-09",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "incois-recruitment-2026-advt-01",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/incois-recruitment-2026-advt-01.html",
-        "title":  "INCOIS Recruitment 2026 Advt. No. INCOIS/RMT/01/2026",
-        "publishedAt":  "2026-05-05",
-        "updatedAt":  "2026-05-05",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ministry-of-ports-shipping-vacancy-portal-may-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ministry-of-ports-shipping-vacancy-portal-may-2026.html",
-        "title":  "Ministry of Ports Shipping Vacancy Portal Openings May 2026",
-        "publishedAt":  "2026-05-01",
-        "updatedAt":  "2026-05-05",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "vssc-advertisement-339-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/vssc-advertisement-339-2026.html",
-        "title":  "VSSC Advertisement No. 339 2026 Online Application Update",
-        "publishedAt":  "2026-04-20",
-        "updatedAt":  "2026-05-05",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "btsc-iti-instructor-recruitment-2026-advt-14-23",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/btsc-iti-instructor-recruitment-2026-advt-14-23.html",
-        "title":  "BTSC ITI Instructor Recruitment 2026 Apply Online (Advt No. 14/2026 to 23/2026)",
-        "publishedAt":  "2026-04-15",
-        "updatedAt":  "2026-04-26",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bceceb-senior-resident-tutor-online-form-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bceceb-senior-resident-tutor-online-form-2026.html",
-        "title":  "BCECEB Senior Resident Tutor Online Form 2026 (Health Dept Bihar)",
-        "publishedAt":  "2026-04-14",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "csbc-constable-operator-online-form-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/csbc-constable-operator-online-form-2026.html",
-        "title":  "CSBC Bihar Police Constable Operator Online Form 2026 (Advt No. 02/2026)",
-        "publishedAt":  "2026-02-23",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "csbc-special-branch-constable-online-form-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/csbc-special-branch-constable-online-form-2026.html",
-        "title":  "CSBC Special Branch Constable GD Online Form 2026 (Advt No. 01/2026)",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ibps-csa-xvi-2026-27-exam-calendar",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ibps-csa-xvi-2026-27-exam-calendar.html",
-        "title":  "IBPS Clerk CSA XVI 2026-27 Exam Calendar Prelims and Mains",
-        "publishedAt":  "2026-01-16",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ibps-crp-calendar-2026-27-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ibps-crp-calendar-2026-27-update.html",
-        "title":  "IBPS CRP Calendar 2026-27 for PSBs and RRBs (PO, Clerk, SO, RRB)",
-        "publishedAt":  "2026-01-16",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ibps-po-mt-xvi-2026-27-exam-calendar",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ibps-po-mt-xvi-2026-27-exam-calendar.html",
-        "title":  "IBPS PO MT XVI 2026-27 Exam Calendar Prelims and Mains Schedule",
-        "publishedAt":  "2026-01-16",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ibps-rrb-xv-2026-27-exam-calendar",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ibps-rrb-xv-2026-27-exam-calendar.html",
-        "title":  "IBPS RRB XV 2026-27 Officer and Office Assistant Exam Calendar",
-        "publishedAt":  "2026-01-16",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ibps-so-spl-xvi-2026-27-exam-calendar",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ibps-so-spl-xvi-2026-27-exam-calendar.html",
-        "title":  "IBPS Specialist Officer SPL XVI 2026-27 Exam Calendar Update",
-        "publishedAt":  "2026-01-16",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "isro-iist-registrar-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/isro-iist-registrar-recruitment-2026.html",
-        "title":  "ISRO IIST Registrar Recruitment 2026 (Advertisement IIST/Admin/RMT/14-2026)",
-        "publishedAt":  "2026-02-14",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "isro-sac-scientist-engineer-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/isro-sac-scientist-engineer-recruitment-2026.html",
-        "title":  "ISRO SAC Scientist Engineer Recruitment 2026 (SAC:01:2026)",
-        "publishedAt":  "2026-01-23",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "isro-ursc-scientist-engineer-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/isro-ursc-scientist-engineer-recruitment-2026.html",
-        "title":  "ISRO URSC Scientist Engineer Recruitment 2026 (URSC:01:2026)",
-        "publishedAt":  "2026-03-21",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "opsc-assistant-agriculture-officer-update-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/opsc-assistant-agriculture-officer-update-2026.html",
-        "title":  "OPSC Assistant Agriculture Officer Recruitment Update 2026 (Advt 06/2025-26)",
-        "publishedAt":  "2026-02-10",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "opsc-assistant-professor-broad-speciality-update-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/opsc-assistant-professor-broad-speciality-update-2026.html",
-        "title":  "OPSC Assistant Professor Broad Speciality Update 2026 (Advt 03/2025-26)",
-        "publishedAt":  "2026-02-11",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ossc-chsl-specialist-posts-recruitment-update-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ossc-chsl-specialist-posts-recruitment-update-2026.html",
-        "title":  "OSSC CHSL Specialist Posts Recruitment 2025 Application Update 2026",
-        "publishedAt":  "2026-03-07",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ossc-cpglre-2025-application-update-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ossc-cpglre-2025-application-update-2026.html",
-        "title":  "OSSC CPGLRE 2025 Application and Preliminary Exam Update 2026",
-        "publishedAt":  "2026-02-02",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "sbi-group-chief-economic-advisor-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/sbi-group-chief-economic-advisor-recruitment-2026.html",
-        "title":  "SBI Group Chief Economic Advisor Recruitment 2026 Apply Online",
-        "publishedAt":  "2026-04-13",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "sbi-lead-business-analyst-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/sbi-lead-business-analyst-recruitment-2026.html",
-        "title":  "SBI Lead Business Analyst Recruitment 2026 Apply Online (Last Date 04 May)",
-        "publishedAt":  "2026-04-13",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "tnpsc-cts-non-interview-notification-date-2026-planner",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/tnpsc-cts-non-interview-notification-date-2026-planner.html",
-        "title":  "TNPSC Combined Technical Services Non-Interview 2026 Notification Planner Update",
-        "publishedAt":  "2025-12-03",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "tnpsc-group-1-notification-date-2026-planner",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/tnpsc-group-1-notification-date-2026-planner.html",
-        "title":  "TNPSC Group I Services 2026 Notification Date and Exam Planner Update",
-        "publishedAt":  "2025-12-03",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "tnpsc-group-2-2a-notification-date-2026-planner",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/tnpsc-group-2-2a-notification-date-2026-planner.html",
-        "title":  "TNPSC Group II and IIA Services 2026 Notification and Exam Date Planner",
-        "publishedAt":  "2025-12-03",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "tnpsc-group-4-notification-date-2026-planner",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/tnpsc-group-4-notification-date-2026-planner.html",
-        "title":  "TNPSC Group IV Services 2026 Notification Date and Exam Planner",
-        "publishedAt":  "2025-12-03",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "uppsc-assistant-teacher-tgt-notice-2025-26",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/uppsc-assistant-teacher-tgt-notice-2025-26.html",
-        "title":  "UPPSC Assistant Teacher TGT Recruitment Notice 2025-26 (Advt A-5/E-1/2025)",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "uppsc-lecturer-gic-notice-2025-26",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/uppsc-lecturer-gic-notice-2025-26.html",
-        "title":  "UPPSC Lecturer Government Inter College Notice 2025-26 (Advt A-6/E-1/2025)",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-capf-acs-2026-active-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-capf-acs-2026-active-update.html",
-        "title":  "UPSC CAPF Assistant Commandants Examination 2026 Active Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-cbi-dsp-ldce-forthcoming-exam-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-cbi-dsp-ldce-forthcoming-exam-2026.html",
-        "title":  "UPSC CBI (DSP) LDCE Forthcoming Exam 2026 Notification Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-cds-1-2026-active-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-cds-1-2026-active-update.html",
-        "title":  "UPSC CDS (I) Examination 2026 Active Recruitment Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-cisf-ac-exe-ldce-2026-active-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-cisf-ac-exe-ldce-2026-active-update.html",
-        "title":  "UPSC CISF AC(EXE) LDCE 2026 Active Exam Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-civil-services-prelims-2026-active-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-civil-services-prelims-2026-active-update.html",
-        "title":  "UPSC Civil Services Preliminary Examination 2026 Active Exam Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-cds-2-2026-forthcoming-exam-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-cds-2-2026-forthcoming-exam-update.html",
-        "title":  "UPSC Combined Defence Services Examination (II) 2026 Forthcoming Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-combined-geo-scientist-prelims-2026-active-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-combined-geo-scientist-prelims-2026-active-update.html",
-        "title":  "UPSC Combined Geo-Scientist (Preliminary) Examination 2026 Active Exam Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-engineering-services-prelims-2026-active-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-engineering-services-prelims-2026-active-update.html",
-        "title":  "UPSC Engineering Services Preliminary Examination 2026 Active Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-nda-na-2-2026-forthcoming-exam-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-nda-na-2-2026-forthcoming-exam-update.html",
-        "title":  "UPSC NDA and NA Examination (II) 2026 Forthcoming Exam Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "upsc-nda-na-1-2026-active-update",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/upsc-nda-na-1-2026-active-update.html",
-        "title":  "UPSC NDA NA (I) 2026 Active Examination Update",
-        "publishedAt":  "2026-04-25",
-        "updatedAt":  "2026-04-25",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-school-teacher-tre-4-0-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
-        "title":  "BPSC School Teacher TRE 4.0 Online Form 2026 (44000+ Posts)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-04-24",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "railway-rrb-alp-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/railway-rrb-alp-recruitment-2026.html",
-        "title":  "Railway RRB ALP Recruitment 2026 (Approx. 11,127 Posts)",
-        "publishedAt":  "2026-04-24",
-        "updatedAt":  "2026-04-24",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-btsc-lab-assistant-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-btsc-lab-assistant-recruitment-2026.html",
-        "title":  "BTSC Lab Assistant Recruitment 2026 Online Form 1091 Posts",
-        "publishedAt":  "2026-04-03",
-        "updatedAt":  "2026-04-03",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-police-constable-gd-close-cadre-vacancy-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-police-constable-gd-close-cadre-vacancy-2026.html",
-        "title":  "Bihar Police Constable GD Close Cadre Vacancy 2026",
-        "publishedAt":  "2026-03-28",
-        "updatedAt":  "2026-03-28",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-police-constable-operator-vacancy-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-police-constable-operator-vacancy-2026.html",
-        "title":  "Bihar Police Constable Operator Vacancy 2026",
-        "publishedAt":  "2026-03-28",
-        "updatedAt":  "2026-03-28",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-physics-chemistry-professor-vacancy-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-physics-chemistry-professor-vacancy-2026.html",
-        "title":  "BPSC Physics, Chemistry Professor Vacancy 2026",
-        "publishedAt":  "2026-03-28",
-        "updatedAt":  "2026-03-28",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-prosecution-officer-online-form-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-prosecution-officer-online-form-2026.html",
-        "title":  "BPSC Prosecution Officer Online Form 2026",
-        "publishedAt":  "2026-03-28",
-        "updatedAt":  "2026-03-28",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-33rd-judicial-service-civil-judge-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-33rd-judicial-service-civil-judge-recruitment-2026.html",
-        "title":  "BPSC 33rd Judicial Service Civil Judge Recruitment 2026",
-        "publishedAt":  "2026-02-24",
-        "updatedAt":  "2026-02-24",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bank-of-maharashtra-apprentice-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bank-of-maharashtra-apprentice-recruitment-2026.html",
-        "title":  "Bank of Maharashtra Apprentice Recruitment 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bcece-sr-resident-tutor-online-form-2025-re-open",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bcece-sr-resident-tutor-online-form-2025-re-open.html",
-        "title":  "Bihar BCECE Sr. Resident/ Tutor Online Form 2025- Last Date",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bpsc-auditor-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bpsc-auditor-2026.html",
-        "title":  "Bihar BPSC Auditor Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bseb-sakshamta-pariksha-phase-5th-online-form-2026-apply-now",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bseb-sakshamta-pariksha-phase-5th-online-form-2026-apply-now.html",
-        "title":  "Bihar BSEB Sakshamta Pariksha Phase 5th Online Form 2026 Last Date",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bssc-4th-graduate-level-online-form-2025-last-date",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bssc-4th-graduate-level-online-form-2025-last-date.html",
-        "title":  "Bihar BSSC 4th Graduate Level Online Form 2025",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bssc-office-attendant-online-form-2025-last-date",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bssc-office-attendant-online-form-2025-last-date.html",
-        "title":  "Bihar BSSC Office Attendant Online Form 2025",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bssc-bihar-sports-trainer-recruitment-2025",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bssc-bihar-sports-trainer-recruitment-2025.html",
-        "title":  "Bihar BSSC Sports Trainer Online Form 2025",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bssc-stenographer-online-form-2025",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bssc-stenographer-online-form-2025.html",
-        "title":  "Bihar BSSC Stenographer Online Form 2025",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-btsc-sports-trainer-recruitment-2026-last-date",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-btsc-sports-trainer-recruitment-2026-last-date.html",
-        "title":  "Bihar BTSC Sports Trainer Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpssc-si-prohibition-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpssc-si-prohibition-2026.html",
-        "title":  "Bihar Police BPSSC SI Prohibition Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-vidhan-parishad-pa-deo-ldc-stenographer-online-form-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-vidhan-parishad-pa-deo-ldc-stenographer-online-form-2026.html",
-        "title":  "Bihar Vidhan Parishad PA, DEO, LDC \u0026 Stenographer Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-professor-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-professor-2026.html",
-        "title":  "BPSC Professor Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-project-manager-online-form-2026-apply-now",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-project-manager-online-form-2026-apply-now.html",
-        "title":  "BPSC Project Manager Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpssc-bihar-police-havildar-clerk-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpssc-bihar-police-havildar-clerk-2026.html",
-        "title":  "BPSSC Bihar Police Havildar Clerk Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bseb-bihar-d-el-ed-spot-admission-online-form-2025-27",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bseb-bihar-d-el-ed-spot-admission-online-form-2025-27.html",
-        "title":  "BSEB Bihar D.El.Ed Spot Admission Online Form 2025 -27",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-btsc-dental-hygienist-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-btsc-dental-hygienist-recruitment-2026.html",
-        "title":  "BTSC Dental Hygienist Online Form 2026 (702 Posts)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "btsc-hostel-manager-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/btsc-hostel-manager-recruitment-2026.html",
-        "title":  "BTSC Hostel Manager Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-btsc-junior-engineer-recruitment-2026-last-date",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-btsc-junior-engineer-recruitment-2026-last-date.html",
-        "title":  "BTSC Junior Engineer Online Form 2026 (2809 Posts) Last Date",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "btsc-pump-operator-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/btsc-pump-operator-2026.html",
-        "title":  "BTSC Pump Operator Online Form 2026 Re-Open",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "btsc-work-inspector-mechanical-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/btsc-work-inspector-mechanical-2026.html",
-        "title":  "BTSC Work Inspector Mechanical Online Form 2026 Re-Open",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-btsc-work-inspector-recruitment-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-btsc-work-inspector-recruitment-2026.html",
-        "title":  "BTSC Work Inspector Online Form 2026 (1114 Posts)",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "csbc-bihar-prohibition-constable-recruitment-03-2025-rejected-list-gender-correction",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/csbc-bihar-prohibition-constable-recruitment-03-2025-rejected-list-gender-correction.html",
-        "title":  "CSBC Bihar Prohibition Constable Recruitment 03/2025 Rejected List/ Gender Correction",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "railway-rrc-ecr-patna-apprentice-online-form-2025",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/railway-rrc-ecr-patna-apprentice-online-form-2025.html",
-        "title":  "Railway RRC ECR Patna Apprentice Online Form 2025 Last Date",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ssc-gd-constable-syllabus-exam-pattern-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ssc-gd-constable-syllabus-exam-pattern-2026.html",
-        "title":  "SSC GD Constable Syllabus / Exam Pattern 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ukmssb-nursing-officer-online-form-2025",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ukmssb-nursing-officer-online-form-2025.html",
-        "title":  "UKMSSB Nursing Officer Online Form-2025",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "ukpsc-lecturer-recruitment-2026-apply",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/ukpsc-lecturer-recruitment-2026-apply.html",
-        "title":  "UKPSC Lecturer Online Form 2026",
-        "publishedAt":  "2026-02-18",
-        "updatedAt":  "2026-02-18",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bssc-inter-level-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bssc-inter-level-2026.html",
-        "title":  "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) - Last Date Today",
-        "publishedAt":  "2026-02-16",
-        "updatedAt":  "2026-02-17",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-police-bpssc-asi-operation-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-police-bpssc-asi-operation-2026.html",
-        "title":  "BPSSC ASI Operation Online Form 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-17",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-btsc-dairy-field-officer-dairy-technical-officer-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-btsc-dairy-field-officer-dairy-technical-officer-2026.html",
-        "title":  "Bihar BTSC Dairy Field Officer/ Dairy Technical Officer Online Form 2026",
-        "publishedAt":  "2026-02-14",
-        "updatedAt":  "2026-02-14",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-police-csbc-constable-gd-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-police-csbc-constable-gd-2026.html",
-        "title":  "Bihar Police CSBC Constable GD Online Form 2026",
-        "publishedAt":  "2026-02-11",
-        "updatedAt":  "2026-02-11",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bsnl-senior-executive-trainee-set-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bsnl-senior-executive-trainee-set-2026.html",
-        "title":  "BSNL Senior Executive Trainee SET Online Form 2026",
-        "publishedAt":  "2026-02-11",
-        "updatedAt":  "2026-02-11",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bihar-bcece-junior-resident-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bihar-bcece-junior-resident-2026.html",
-        "title":  "Bihar BCECE Junior Resident Online Form 2026 - Last Date",
-        "publishedAt":  "2026-02-06",
-        "updatedAt":  "2026-02-07",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-atps-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-atps-2026.html",
-        "title":  "Bihar BPSC ATPS Online Form 2026",
-        "publishedAt":  "2026-02-05",
-        "updatedAt":  "2026-02-06",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpssc-bihar-home-guard-havildar-clerk-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpssc-bihar-home-guard-havildar-clerk-2026.html",
-        "title":  "BPSSC Bihar Home Guard Havildar Clerk Online Form 2026",
-        "publishedAt":  "2026-02-05",
-        "updatedAt":  "2026-02-06",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-boiler-inspector-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-boiler-inspector-2026.html",
-        "title":  "BPSC Boiler Inspector Online Form 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-04",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-deputy-director-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-deputy-director-2026.html",
-        "title":  "BPSC Deputy Director Online Form 2026",
-        "publishedAt":  "2026-02-03",
-        "updatedAt":  "2026-02-04",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-acf-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-acf-2026.html",
-        "title":  "Bihar BPSC ACF Online Form 2026",
-        "publishedAt":  "2026-02-02",
-        "updatedAt":  "2026-02-03",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-factory-inspector-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-factory-inspector-2026.html",
-        "title":  "Bihar BPSC Factory Inspector Online Form 2026 - Last Date",
-        "publishedAt":  "2026-02-02",
-        "updatedAt":  "2026-02-03",
-        "sitemapEligible":  true
-    },
-    {
-        "slug":  "bpsc-stenographer-2026",
-        "category":  "Latest Jobs",
-        "folder":  "latest-jobs",
-        "path":  "sections/latest-jobs/bpsc-stenographer-2026.html",
-        "title":  "Bihar BPSC Stenographer Online Form 2026",
-        "publishedAt":  "2026-02-02",
-        "updatedAt":  "2026-02-03",
-        "sitemapEligible":  true
-    }
+  {
+    "slug": "bihar-cet-bed-online-form-2026-apply-now",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-cet-bed-online-form-2026-apply-now.html",
+    "title": "Bihar CET B.Ed Online Form 2026 Apply Now",
+    "publishedAt": "2026-05-10",
+    "updatedAt": "2026-05-10",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-72nd-pre-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-72nd-pre-recruitment-2026.html",
+    "title": "BPSC 72nd Pre Recruitment 2026",
+    "publishedAt": "2026-05-07",
+    "updatedAt": "2026-05-10",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-school-teacher-tre-4-0-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-school-teacher-tre-4-0-2026.html",
+    "title": "BPSC School Teacher TRE 4.0 Online Form 2026 (46595 Posts Tentative)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-05-09",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "incois-recruitment-2026-advt-01",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/incois-recruitment-2026-advt-01.html",
+    "title": "INCOIS Recruitment 2026 Advt. No. INCOIS/RMT/01/2026",
+    "publishedAt": "2026-05-05",
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ministry-of-ports-shipping-vacancy-portal-may-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ministry-of-ports-shipping-vacancy-portal-may-2026.html",
+    "title": "Ministry of Ports Shipping Vacancy Portal Openings May 2026",
+    "publishedAt": "2026-05-01",
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "vssc-advertisement-339-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/vssc-advertisement-339-2026.html",
+    "title": "VSSC Advertisement No. 339 2026 Online Application Update",
+    "publishedAt": "2026-04-20",
+    "updatedAt": "2026-05-05",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "btsc-iti-instructor-recruitment-2026-advt-14-23",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/btsc-iti-instructor-recruitment-2026-advt-14-23.html",
+    "title": "BTSC ITI Instructor Recruitment 2026 Apply Online (Advt No. 14/2026 to 23/2026)",
+    "publishedAt": "2026-04-15",
+    "updatedAt": "2026-04-26",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bceceb-senior-resident-tutor-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bceceb-senior-resident-tutor-online-form-2026.html",
+    "title": "BCECEB Senior Resident Tutor Online Form 2026 (Health Dept Bihar)",
+    "publishedAt": "2026-04-14",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "csbc-constable-operator-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-constable-operator-online-form-2026.html",
+    "title": "CSBC Bihar Police Constable Operator Online Form 2026 (Advt No. 02/2026)",
+    "publishedAt": "2026-02-23",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "csbc-special-branch-constable-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-special-branch-constable-online-form-2026.html",
+    "title": "CSBC Special Branch Constable GD Online Form 2026 (Advt No. 01/2026)",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ibps-csa-xvi-2026-27-exam-calendar",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ibps-csa-xvi-2026-27-exam-calendar.html",
+    "title": "IBPS Clerk CSA XVI 2026-27 Exam Calendar Prelims and Mains",
+    "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ibps-crp-calendar-2026-27-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ibps-crp-calendar-2026-27-update.html",
+    "title": "IBPS CRP Calendar 2026-27 for PSBs and RRBs (PO, Clerk, SO, RRB)",
+    "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ibps-po-mt-xvi-2026-27-exam-calendar",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ibps-po-mt-xvi-2026-27-exam-calendar.html",
+    "title": "IBPS PO MT XVI 2026-27 Exam Calendar Prelims and Mains Schedule",
+    "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ibps-rrb-xv-2026-27-exam-calendar",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ibps-rrb-xv-2026-27-exam-calendar.html",
+    "title": "IBPS RRB XV 2026-27 Officer and Office Assistant Exam Calendar",
+    "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ibps-so-spl-xvi-2026-27-exam-calendar",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ibps-so-spl-xvi-2026-27-exam-calendar.html",
+    "title": "IBPS Specialist Officer SPL XVI 2026-27 Exam Calendar Update",
+    "publishedAt": "2026-01-16",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "isro-iist-registrar-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-iist-registrar-recruitment-2026.html",
+    "title": "ISRO IIST Registrar Recruitment 2026 (Advertisement IIST/Admin/RMT/14-2026)",
+    "publishedAt": "2026-02-14",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "isro-sac-scientist-engineer-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-sac-scientist-engineer-recruitment-2026.html",
+    "title": "ISRO SAC Scientist Engineer Recruitment 2026 (SAC:01:2026)",
+    "publishedAt": "2026-01-23",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "isro-ursc-scientist-engineer-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/isro-ursc-scientist-engineer-recruitment-2026.html",
+    "title": "ISRO URSC Scientist Engineer Recruitment 2026 (URSC:01:2026)",
+    "publishedAt": "2026-03-21",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "opsc-assistant-agriculture-officer-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/opsc-assistant-agriculture-officer-update-2026.html",
+    "title": "OPSC Assistant Agriculture Officer Recruitment Update 2026 (Advt 06/2025-26)",
+    "publishedAt": "2026-02-10",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "opsc-assistant-professor-broad-speciality-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/opsc-assistant-professor-broad-speciality-update-2026.html",
+    "title": "OPSC Assistant Professor Broad Speciality Update 2026 (Advt 03/2025-26)",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ossc-chsl-specialist-posts-recruitment-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ossc-chsl-specialist-posts-recruitment-update-2026.html",
+    "title": "OSSC CHSL Specialist Posts Recruitment 2025 Application Update 2026",
+    "publishedAt": "2026-03-07",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ossc-cpglre-2025-application-update-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ossc-cpglre-2025-application-update-2026.html",
+    "title": "OSSC CPGLRE 2025 Application and Preliminary Exam Update 2026",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "sbi-group-chief-economic-advisor-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/sbi-group-chief-economic-advisor-recruitment-2026.html",
+    "title": "SBI Group Chief Economic Advisor Recruitment 2026 Apply Online",
+    "publishedAt": "2026-04-13",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "sbi-lead-business-analyst-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/sbi-lead-business-analyst-recruitment-2026.html",
+    "title": "SBI Lead Business Analyst Recruitment 2026 Apply Online (Last Date 04 May)",
+    "publishedAt": "2026-04-13",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "tnpsc-cts-non-interview-notification-date-2026-planner",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/tnpsc-cts-non-interview-notification-date-2026-planner.html",
+    "title": "TNPSC Combined Technical Services Non-Interview 2026 Notification Planner Update",
+    "publishedAt": "2025-12-03",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "tnpsc-group-1-notification-date-2026-planner",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/tnpsc-group-1-notification-date-2026-planner.html",
+    "title": "TNPSC Group I Services 2026 Notification Date and Exam Planner Update",
+    "publishedAt": "2025-12-03",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "tnpsc-group-2-2a-notification-date-2026-planner",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/tnpsc-group-2-2a-notification-date-2026-planner.html",
+    "title": "TNPSC Group II and IIA Services 2026 Notification and Exam Date Planner",
+    "publishedAt": "2025-12-03",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "tnpsc-group-4-notification-date-2026-planner",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/tnpsc-group-4-notification-date-2026-planner.html",
+    "title": "TNPSC Group IV Services 2026 Notification Date and Exam Planner",
+    "publishedAt": "2025-12-03",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "uppsc-assistant-teacher-tgt-notice-2025-26",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/uppsc-assistant-teacher-tgt-notice-2025-26.html",
+    "title": "UPPSC Assistant Teacher TGT Recruitment Notice 2025-26 (Advt A-5/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "uppsc-lecturer-gic-notice-2025-26",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/uppsc-lecturer-gic-notice-2025-26.html",
+    "title": "UPPSC Lecturer Government Inter College Notice 2025-26 (Advt A-6/E-1/2025)",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-capf-acs-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-capf-acs-2026-active-update.html",
+    "title": "UPSC CAPF Assistant Commandants Examination 2026 Active Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-cbi-dsp-ldce-forthcoming-exam-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cbi-dsp-ldce-forthcoming-exam-2026.html",
+    "title": "UPSC CBI (DSP) LDCE Forthcoming Exam 2026 Notification Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-cds-1-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cds-1-2026-active-update.html",
+    "title": "UPSC CDS (I) Examination 2026 Active Recruitment Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-cisf-ac-exe-ldce-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cisf-ac-exe-ldce-2026-active-update.html",
+    "title": "UPSC CISF AC(EXE) LDCE 2026 Active Exam Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-civil-services-prelims-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-civil-services-prelims-2026-active-update.html",
+    "title": "UPSC Civil Services Preliminary Examination 2026 Active Exam Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-cds-2-2026-forthcoming-exam-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-cds-2-2026-forthcoming-exam-update.html",
+    "title": "UPSC Combined Defence Services Examination (II) 2026 Forthcoming Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-combined-geo-scientist-prelims-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-combined-geo-scientist-prelims-2026-active-update.html",
+    "title": "UPSC Combined Geo-Scientist (Preliminary) Examination 2026 Active Exam Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-engineering-services-prelims-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-engineering-services-prelims-2026-active-update.html",
+    "title": "UPSC Engineering Services Preliminary Examination 2026 Active Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-nda-na-2-2026-forthcoming-exam-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-nda-na-2-2026-forthcoming-exam-update.html",
+    "title": "UPSC NDA and NA Examination (II) 2026 Forthcoming Exam Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "upsc-nda-na-1-2026-active-update",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/upsc-nda-na-1-2026-active-update.html",
+    "title": "UPSC NDA NA (I) 2026 Active Examination Update",
+    "publishedAt": "2026-04-25",
+    "updatedAt": "2026-04-25",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "railway-rrb-alp-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/railway-rrb-alp-recruitment-2026.html",
+    "title": "Railway RRB ALP Recruitment 2026 (Approx. 11,127 Posts)",
+    "publishedAt": "2026-04-24",
+    "updatedAt": "2026-04-24",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-btsc-lab-assistant-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-lab-assistant-recruitment-2026.html",
+    "title": "BTSC Lab Assistant Recruitment 2026 Online Form 1091 Posts",
+    "publishedAt": "2026-04-03",
+    "updatedAt": "2026-04-03",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-police-constable-gd-close-cadre-vacancy-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-police-constable-gd-close-cadre-vacancy-2026.html",
+    "title": "Bihar Police Constable GD Close Cadre Vacancy 2026",
+    "publishedAt": "2026-03-28",
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-police-constable-operator-vacancy-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-police-constable-operator-vacancy-2026.html",
+    "title": "Bihar Police Constable Operator Vacancy 2026",
+    "publishedAt": "2026-03-28",
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-physics-chemistry-professor-vacancy-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-physics-chemistry-professor-vacancy-2026.html",
+    "title": "BPSC Physics, Chemistry Professor Vacancy 2026",
+    "publishedAt": "2026-03-28",
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-prosecution-officer-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-prosecution-officer-online-form-2026.html",
+    "title": "BPSC Prosecution Officer Online Form 2026",
+    "publishedAt": "2026-03-28",
+    "updatedAt": "2026-03-28",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-33rd-judicial-service-civil-judge-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-33rd-judicial-service-civil-judge-recruitment-2026.html",
+    "title": "BPSC 33rd Judicial Service Civil Judge Recruitment 2026",
+    "publishedAt": "2026-02-24",
+    "updatedAt": "2026-02-24",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bank-of-maharashtra-apprentice-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bank-of-maharashtra-apprentice-recruitment-2026.html",
+    "title": "Bank of Maharashtra Apprentice Recruitment 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bcece-sr-resident-tutor-online-form-2025-re-open",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bcece-sr-resident-tutor-online-form-2025-re-open.html",
+    "title": "Bihar BCECE Sr. Resident/ Tutor Online Form 2025- Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bpsc-auditor-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bpsc-auditor-2026.html",
+    "title": "Bihar BPSC Auditor Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bseb-sakshamta-pariksha-phase-5th-online-form-2026-apply-now",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bseb-sakshamta-pariksha-phase-5th-online-form-2026-apply-now.html",
+    "title": "Bihar BSEB Sakshamta Pariksha Phase 5th Online Form 2026 Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bssc-4th-graduate-level-online-form-2025-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-4th-graduate-level-online-form-2025-last-date.html",
+    "title": "Bihar BSSC 4th Graduate Level Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bssc-office-attendant-online-form-2025-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-office-attendant-online-form-2025-last-date.html",
+    "title": "Bihar BSSC Office Attendant Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bssc-bihar-sports-trainer-recruitment-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bssc-bihar-sports-trainer-recruitment-2025.html",
+    "title": "Bihar BSSC Sports Trainer Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bssc-stenographer-online-form-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-stenographer-online-form-2025.html",
+    "title": "Bihar BSSC Stenographer Online Form 2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-btsc-sports-trainer-recruitment-2026-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-sports-trainer-recruitment-2026-last-date.html",
+    "title": "Bihar BTSC Sports Trainer Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpssc-si-prohibition-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpssc-si-prohibition-2026.html",
+    "title": "Bihar Police BPSSC SI Prohibition Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-vidhan-parishad-pa-deo-ldc-stenographer-online-form-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-vidhan-parishad-pa-deo-ldc-stenographer-online-form-2026.html",
+    "title": "Bihar Vidhan Parishad PA, DEO, LDC & Stenographer Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-professor-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-professor-2026.html",
+    "title": "BPSC Professor Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-project-manager-online-form-2026-apply-now",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-project-manager-online-form-2026-apply-now.html",
+    "title": "BPSC Project Manager Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpssc-bihar-police-havildar-clerk-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpssc-bihar-police-havildar-clerk-2026.html",
+    "title": "BPSSC Bihar Police Havildar Clerk Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bseb-bihar-d-el-ed-spot-admission-online-form-2025-27",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bseb-bihar-d-el-ed-spot-admission-online-form-2025-27.html",
+    "title": "BSEB Bihar D.El.Ed Spot Admission Online Form 2025 -27",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-btsc-dental-hygienist-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-dental-hygienist-recruitment-2026.html",
+    "title": "BTSC Dental Hygienist Online Form 2026 (702 Posts)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "btsc-hostel-manager-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/btsc-hostel-manager-recruitment-2026.html",
+    "title": "BTSC Hostel Manager Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-btsc-junior-engineer-recruitment-2026-last-date",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-junior-engineer-recruitment-2026-last-date.html",
+    "title": "BTSC Junior Engineer Online Form 2026 (2809 Posts) Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "btsc-pump-operator-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/btsc-pump-operator-2026.html",
+    "title": "BTSC Pump Operator Online Form 2026 Re-Open",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "btsc-work-inspector-mechanical-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/btsc-work-inspector-mechanical-2026.html",
+    "title": "BTSC Work Inspector Mechanical Online Form 2026 Re-Open",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-btsc-work-inspector-recruitment-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-work-inspector-recruitment-2026.html",
+    "title": "BTSC Work Inspector Online Form 2026 (1114 Posts)",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "csbc-bihar-prohibition-constable-recruitment-03-2025-rejected-list-gender-correction",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/csbc-bihar-prohibition-constable-recruitment-03-2025-rejected-list-gender-correction.html",
+    "title": "CSBC Bihar Prohibition Constable Recruitment 03/2025 Rejected List/ Gender Correction",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "railway-rrc-ecr-patna-apprentice-online-form-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/railway-rrc-ecr-patna-apprentice-online-form-2025.html",
+    "title": "Railway RRC ECR Patna Apprentice Online Form 2025 Last Date",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ssc-gd-constable-syllabus-exam-pattern-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ssc-gd-constable-syllabus-exam-pattern-2026.html",
+    "title": "SSC GD Constable Syllabus / Exam Pattern 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ukmssb-nursing-officer-online-form-2025",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ukmssb-nursing-officer-online-form-2025.html",
+    "title": "UKMSSB Nursing Officer Online Form-2025",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "ukpsc-lecturer-recruitment-2026-apply",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/ukpsc-lecturer-recruitment-2026-apply.html",
+    "title": "UKPSC Lecturer Online Form 2026",
+    "publishedAt": "2026-02-18",
+    "updatedAt": "2026-02-18",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bssc-inter-level-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bssc-inter-level-2026.html",
+    "title": "Bihar BSSC Inter Level Online Form 2026 (25,311 Posts) - Last Date Today",
+    "publishedAt": "2026-02-16",
+    "updatedAt": "2026-02-17",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-police-bpssc-asi-operation-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-police-bpssc-asi-operation-2026.html",
+    "title": "BPSSC ASI Operation Online Form 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-17",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-btsc-dairy-field-officer-dairy-technical-officer-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-btsc-dairy-field-officer-dairy-technical-officer-2026.html",
+    "title": "Bihar BTSC Dairy Field Officer/ Dairy Technical Officer Online Form 2026",
+    "publishedAt": "2026-02-14",
+    "updatedAt": "2026-02-14",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-police-csbc-constable-gd-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-police-csbc-constable-gd-2026.html",
+    "title": "Bihar Police CSBC Constable GD Online Form 2026",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-02-11",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bsnl-senior-executive-trainee-set-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bsnl-senior-executive-trainee-set-2026.html",
+    "title": "BSNL Senior Executive Trainee SET Online Form 2026",
+    "publishedAt": "2026-02-11",
+    "updatedAt": "2026-02-11",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bihar-bcece-junior-resident-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bihar-bcece-junior-resident-2026.html",
+    "title": "Bihar BCECE Junior Resident Online Form 2026 - Last Date",
+    "publishedAt": "2026-02-06",
+    "updatedAt": "2026-02-07",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-atps-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-atps-2026.html",
+    "title": "Bihar BPSC ATPS Online Form 2026",
+    "publishedAt": "2026-02-05",
+    "updatedAt": "2026-02-06",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpssc-bihar-home-guard-havildar-clerk-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpssc-bihar-home-guard-havildar-clerk-2026.html",
+    "title": "BPSSC Bihar Home Guard Havildar Clerk Online Form 2026",
+    "publishedAt": "2026-02-05",
+    "updatedAt": "2026-02-06",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-boiler-inspector-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-boiler-inspector-2026.html",
+    "title": "BPSC Boiler Inspector Online Form 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-04",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-deputy-director-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-deputy-director-2026.html",
+    "title": "BPSC Deputy Director Online Form 2026",
+    "publishedAt": "2026-02-03",
+    "updatedAt": "2026-02-04",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-acf-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-acf-2026.html",
+    "title": "Bihar BPSC ACF Online Form 2026",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-02-03",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-factory-inspector-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-factory-inspector-2026.html",
+    "title": "Bihar BPSC Factory Inspector Online Form 2026 - Last Date",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-02-03",
+    "sitemapEligible": true
+  },
+  {
+    "slug": "bpsc-stenographer-2026",
+    "category": "Latest Jobs",
+    "folder": "latest-jobs",
+    "path": "sections/latest-jobs/bpsc-stenographer-2026.html",
+    "title": "Bihar BPSC Stenographer Online Form 2026",
+    "publishedAt": "2026-02-02",
+    "updatedAt": "2026-02-03",
+    "sitemapEligible": true
+  }
 ]
