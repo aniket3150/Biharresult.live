@@ -1,18 +1,18 @@
 {
-  "buildDate": "2026-05-10",
-  "total": 297,
-  "indexable": 273,
+  "buildDate": "2026-05-11",
+  "total": 298,
+  "indexable": 274,
   "blocked": 24,
   "byCategory": {
+    "Latest Results": {
+      "total": 92,
+      "indexable": 91,
+      "blocked": 1
+    },
     "Latest Jobs": {
       "total": 86,
       "indexable": 86,
       "blocked": 0
-    },
-    "Latest Results": {
-      "total": 91,
-      "indexable": 90,
-      "blocked": 1
     },
     "Admit Card": {
       "total": 68,

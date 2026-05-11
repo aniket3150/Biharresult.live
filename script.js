@@ -258,14 +258,14 @@ function buildSeoDescription(post) {
     Verification: "Check document status, verification process, and official links"
   };
   const keywordTailByCategory = {
-    "Latest Results": "Useful for Sarkari Result India, board and exam score updates, and official result-link searches.",
-    "Latest Jobs": "Useful for all India online form, vacancy, and Sarkari Naukri job searches.",
-    "Admit Card": "Useful for admit card download, exam city updates, and hall ticket searches across India.",
+    "Latest Results": "Useful for Bihar Result 2026, Bihar Board Result 2026, Bihar University Result 2026, and Sarkari Result Bihar searches.",
+    "Latest Jobs": "Useful for Bihar Latest Jobs 2026, Bihar Government Jobs, Bihar Vacancy 2026, and Bihar Sarkari Naukri searches.",
+    "Admit Card": "Useful for Bihar Admit Card 2026, Bihar exam date, hall ticket, and admit card direct-link searches.",
     "Student News": "Useful for students who want result, job, board, admission, and exam news in simple Hinglish."
   };
 
   const actionText = actionByCategory[category] || "Check important dates, eligibility, and official links";
-  const keywordTail = keywordTailByCategory[category] || "Fast and reliable all India student update on BiharResult.live.";
+  const keywordTail = keywordTailByCategory[category] || "Fast and reliable Bihar student update on BiharResult.live.";
   const keyLine = cleanSnippet(findLastDate(post));
   const template = `${title}: ${actionText}. ${department ? `${department} official update. ` : ""}${keyLine ? `Key detail: ${keyLine}. ` : ""}${keywordTail}`;
   return trimForMeta(template, 158);
@@ -2329,36 +2329,36 @@ function buildTopicClusterLinks(post) {
   };
 
   const archiveHref = sectionHrefByCategory(post?.category);
-  if (archiveHref) pushLink(archiveHref, `${cleanSnippet(post?.category || "Updates")} Archive`);
-  if (HOME_ANCHOR_BY_CATEGORY[post?.category]) pushLink(HOME_ANCHOR_BY_CATEGORY[post.category], `Homepage ${cleanSnippet(post.category)} Section`);
+  if (archiveHref) pushLink(archiveHref, `Check ${cleanSnippet(post?.category || "Bihar Updates")} 2026 Updates`);
+  if (HOME_ANCHOR_BY_CATEGORY[post?.category]) pushLink(HOME_ANCHOR_BY_CATEGORY[post.category], `View Bihar ${cleanSnippet(post.category)} Section`);
 
   if (post?.category === "Latest Results") {
-    pushLink("/pages/guides/sarkari-result-bihar.html", "Sarkari Result Bihar Hub");
-    pushLink("/pages/guides/fast-result-bihar.html", "Fast Result Bihar Hub");
-    pushLink("/pages/guides/result-2026-bihar.html", "Result 2026 Bihar Hub");
-    pushLink("/sections/admit-card/", "Admit Card and Exam Date Archive");
+    pushLink("/pages/guides/sarkari-result-bihar.html", "Check Bihar Result 2026");
+    pushLink("/pages/guides/fast-result-bihar.html", "Bihar Result Direct Link Hub");
+    pushLink("/pages/guides/result-2026-bihar.html", "Latest Bihar Board and University Result 2026");
+    pushLink("/sections/admit-card/", "Download Bihar Admit Card 2026");
   }
 
   if (post?.category === "Latest Jobs") {
-    pushLink("/sections/admit-card/", "Admit Card Archive");
-    pushLink("/sections/latest-results/", "Latest Results Archive");
-    pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Bihar Jobs, Result and Admit Card Hub");
+    pushLink("/sections/admit-card/", "Download Bihar Admit Card 2026");
+    pushLink("/sections/latest-results/", "Check Bihar Result 2026");
+    pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Apply for Bihar Latest Jobs");
   }
 
   if (post?.category === "Admit Card") {
-    pushLink("/sections/latest-results/", "Latest Results Archive");
-    pushLink("/sections/latest-jobs/", "Latest Jobs Archive");
-    pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Bihar Jobs, Result and Admit Card Hub");
+    pushLink("/sections/latest-results/", "Check Bihar Result 2026");
+    pushLink("/sections/latest-jobs/", "Apply for Bihar Latest Jobs");
+    pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Read BPSC Latest Notification");
   }
 
   if (post?.category === "Scholarship") {
-    pushLink("/pages/guides/guide-post-matric-scholarship-apply.html", "Post-Matric Scholarship Guide");
-    pushLink("/sections/verification/", "Verification Service Archive");
+    pushLink("/pages/guides/guide-post-matric-scholarship-apply.html", "View Bihar Scholarship Update");
+    pushLink("/sections/verification/", "Check Bihar Student Verification Notice");
   }
 
   if (post?.category === "Admission") {
-    pushLink("/sections/latest-jobs/", "Latest Jobs Archive");
-    pushLink("/pages/guides/guides.html", "Guide Library");
+    pushLink("/sections/latest-jobs/", "Apply for Bihar Latest Jobs");
+    pushLink("/pages/guides/guides.html", "See Bihar Admission Details");
   }
 
   if (post?.category === "Sarkari Yojana") {
@@ -2386,8 +2386,8 @@ function buildTopicClusterLinks(post) {
     pushLink("/sections/admit-card/neet-ug-2026-city-intimation-admit-update.html", "NEET UG Admit Update");
   }
 
-  pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Bihar Jobs, Result and Admit Card Hub");
-  pushLink("/pages/guides/guides.html", "Guide Library");
+  pushLink("/pages/guides/guide-bihar-job-result-admit-card-hub.html", "Read BPSC Latest Notification");
+  pushLink("/pages/guides/guides.html", "Check Bihar Police Latest Notice");
 
   return items.slice(0, 7);
 }
@@ -2620,7 +2620,7 @@ function setPostSchema(post, canonicalUrl, faqItems = [], relatedPosts = []) {
         },
         applicantLocationRequirements: {
           "@type": "Country",
-          name: "India"
+          name: "Bihar, India"
         },
         inLanguage: "en-IN",
         isAccessibleForFree: true,

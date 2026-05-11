@@ -150,86 +150,86 @@ const DISCOVERED_RISK_GROUPS = {
 
 const SECTION_INDEX_META = {
   "latest-results": {
-    pageTitle: "Sarkari Result Bihar, Fast Result, Bihar Result 2026, Board Result, Direct Links | BiharResult.live",
-    socialTitle: "Sarkari Result Bihar, Fast Result, Bihar Result 2026, Board Result, Direct Links",
-    description: "Check Sarkari Result Bihar, fast result links, Bihar Result 2026, latest board results, recruitment results, cutoff notices, score card pages, and direct official links on BiharResult.live.",
-    socialDescription: "Browse BiharResult.live latest Bihar result, Sarkari Result Bihar, fast result, board result, and recruitment result updates with official links and notices.",
-    keywords: "Sarkari Result Bihar, Fast Result, Result 2026, Bihar Result 2026, latest results Bihar, Bihar board result, Bihar job result, BSEB result, direct result link",
-    heading: "Sarkari Result Bihar and Fast Result 2026",
-    intro: "Browse official Bihar result updates and open each post for fast result links, check links, cutoff details, score card guidance, and update timeline.",
-    summary: "This page helps users searching Sarkari Result Bihar, fast result, Result 2026, Bihar Board result, score card updates, and direct result links. Browse every published result post below.",
+    pageTitle: "Latest Bihar Result 2026, Bihar Board Result 2026, Bihar University Result 2026 | BiharResult.live",
+    socialTitle: "Latest Bihar Result 2026 and Sarkari Result Bihar Direct Links",
+    description: "Check Latest Bihar Result 2026, Bihar Board Result 2026, Bihar University Result 2026, Sarkari Result Bihar, and Bihar Result direct links with official updates on BiharResult.live.",
+    socialDescription: "Browse Bihar Result 2026 updates with Bihar Board, university, recruitment result direct links, merit list, cut off, and answer key routes.",
+    keywords: "Latest Bihar Result, Bihar Result 2026, Bihar Board Result 2026, Bihar University Result 2026, Sarkari Result Bihar, Bihar Result Direct Link",
+    heading: "Latest Bihar Result 2026 and Sarkari Result Bihar Updates",
+    intro: "Browse official Bihar result updates and open each post for Bihar result direct links, cutoff, answer key, merit list, and score card guidance.",
+    summary: "This page targets Latest Bihar Result, Bihar Board Result 2026, Bihar University Result 2026, Sarkari Result Bihar, and Bihar Result Direct Link searches.",
     usefulHeading: "Popular Result Links",
     archiveHeading: "Latest Result Archive",
     usefulLinks: [
-      { href: "../../index.html#latest-results", label: "Homepage Latest Result Updates" },
+      { href: "../../index.html#latest-results", label: "Check Bihar Result 2026" },
       { href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html", label: "Bihar Jobs, Result and Admit Card Hub" },
-      { href: "../../pages/guides/guides.html", label: "Guide Library" }
+      { href: "../../pages/guides/guides.html", label: "Bihar University Result and Board Guide Library" }
     ]
   },
   "latest-jobs": {
-    pageTitle: "Bihar Latest Job 2026, Online Form, Vacancy, Sarkari Result Bihar | BiharResult.live",
-    socialTitle: "Bihar Latest Job 2026, Online Form, Vacancy, Sarkari Result Bihar",
-    description: "Check Bihar latest job 2026, online form, vacancy, Sarkari Result Bihar job updates, eligibility details, and official recruitment notices on BiharResult.live.",
-    socialDescription: "Browse BiharResult.live latest Bihar job, online form, and vacancy updates with official links, eligibility highlights, and important dates.",
-    keywords: "Bihar Latest Job 2026, Bihar Online Form, Bihar Vacancy 2026, Sarkari Result Bihar Job, Bihar Government Jobs 2026, Bihar recruitment",
-    heading: "Bihar Latest Job 2026",
+    pageTitle: "Bihar Latest Jobs 2026, Bihar Government Jobs, Bihar Vacancy 2026 | BiharResult.live",
+    socialTitle: "Bihar Latest Jobs 2026 and Bihar Sarkari Naukri Updates",
+    description: "Check Bihar Latest Jobs 2026, Bihar Government Jobs, Bihar Vacancy 2026, Bihar Sarkari Naukri notices, and Apply Online Bihar Job links with official updates.",
+    socialDescription: "Browse Bihar latest vacancy updates, online form links, and official recruitment notices for BPSC, Bihar Police, BPSSC, CSBC, and teacher recruitment.",
+    keywords: "Bihar Latest Jobs 2026, Bihar Government Jobs, Bihar Vacancy 2026, Bihar Sarkari Naukri, Apply Online Bihar Job",
+    heading: "Bihar Latest Jobs 2026 and Bihar Government Jobs Updates",
     intro: "Browse the latest Bihar job notifications, online form links, and vacancy pages. Open each post for eligibility, fees, age criteria, and official links.",
     summary: "This archive targets searches like Bihar latest job 2026, Bihar online form, Bihar vacancy, Sarkari Result Bihar job update, and Bihar recruitment notices. Browse every published job post below.",
     usefulHeading: "Useful Job Links",
     archiveHeading: "Latest Job Archive",
     usefulLinks: [
-      { href: "../../index.html#latest-jobs", label: "Homepage Latest Jobs Section" },
+      { href: "../../index.html#latest-jobs", label: "Apply for Bihar Latest Jobs" },
       { href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html", label: "Bihar Jobs, Result and Admit Card Hub" },
-      { href: "../../pages/guides/guides.html", label: "Guide Library for Form Fill and Eligibility" }
+      { href: "../../pages/guides/guides.html", label: "Bihar Sarkari Naukri Form Fill and Eligibility Guide" }
     ]
   },
   "admit-card": {
-    pageTitle: "Bihar Admit Card 2026, Exam Date, Hall Ticket, Sarkari Result Bihar | BiharResult.live",
-    socialTitle: "Bihar Admit Card 2026, Exam Date, Hall Ticket, Sarkari Result Bihar",
-    description: "Check Bihar Admit Card 2026 updates, exam date notices, hall ticket download links, DV call letter, and Sarkari Result Bihar admit card instructions on BiharResult.live.",
-    socialDescription: "Browse Bihar admit card and exam date updates with download steps, reporting instructions, DV notice, and official links.",
-    keywords: "Bihar Admit Card 2026, exam date Bihar, hall ticket download, Sarkari Result Bihar Admit Card, DV call letter Bihar, Bihar exam admit card",
-    heading: "Bihar Admit Card 2026",
+    pageTitle: "Bihar Admit Card 2026, Latest Admit Card Bihar, Exam Date Direct Links | BiharResult.live",
+    socialTitle: "Bihar Admit Card 2026 and Bihar Exam Date Updates",
+    description: "Check Bihar Admit Card 2026, Latest Admit Card Bihar, Download Admit Card Bihar links, exam date schedules, and hall ticket direct routes on BiharResult.live.",
+    socialDescription: "Browse Bihar admit card, exam date, call letter, and hall-ticket updates with official download links and reporting guidance.",
+    keywords: "Bihar Admit Card 2026, Latest Admit Card Bihar, Download Admit Card Bihar, Exam Admit Card Direct Link, Bihar Exam Date 2026",
+    heading: "Bihar Admit Card 2026 and Exam Date Updates",
     intro: "Browse Bihar admit card updates and open each post for download links, exam date, hall ticket, DV call letter, and reporting instructions.",
     summary: "This admit card archive is useful for searches like Bihar Admit Card 2026, exam date update, hall ticket download, Sarkari Result Bihar admit card, and official admit card notice. Browse every published admit card post below.",
     usefulHeading: "Useful Admit Card Links",
     archiveHeading: "Admit Card Archive",
     usefulLinks: [
-      { href: "../../index.html#admit-card", label: "Homepage Admit Card Section" },
+      { href: "../../index.html#admit-card", label: "Download Bihar Admit Card 2026" },
       { href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html", label: "Bihar Jobs, Result and Admit Card Hub" },
-      { href: "../../pages/guides/guides.html", label: "Guide Library for Exam and Form Support" }
+      { href: "../../pages/guides/guides.html", label: "Bihar Exam Date and Admit Card Support Guide" }
     ]
   },
   admission: {
-    pageTitle: "Bihar Admission 2026, Admission Form, Counselling Notice | BiharResult.live",
-    socialTitle: "Bihar Admission 2026, Admission Form, Counselling Notice",
-    description: "Check Bihar Admission 2026 latest notices, application guidance, admission form links, and counselling updates for Bihar students.",
-    socialDescription: "Browse Bihar admission notices, admission form links, and counselling updates for students.",
-    keywords: "Bihar Admission 2026, Bihar admission form, counselling notice Bihar, college admission Bihar, Bihar student admission",
-    heading: "Admission",
+    pageTitle: "Bihar Admission 2026, Apply Online Admission Bihar, College Admission Updates | BiharResult.live",
+    socialTitle: "Bihar Admission 2026 and Bihar College Admission Updates",
+    description: "Check Bihar Admission 2026, Apply Online Admission Bihar links, Bihar College Admission updates, counselling notices, and official student admission routes.",
+    socialDescription: "Browse Bihar admission forms, counselling dates, and college admission notices for Bihar students with official links.",
+    keywords: "Bihar Admission 2026, Apply Online Admission Bihar, Bihar College Admission Update, Bihar admission form, Bihar student admission",
+    heading: "Bihar Admission 2026 Updates",
     intro: "Browse admission notices, forms, counselling updates, and official institution links.",
     summary: "This archive targets searches like Bihar Admission 2026, Bihar admission form, college counselling update, and admission notice for students in Bihar. Browse every published admission post below.",
     usefulHeading: "Useful Admission Links",
     archiveHeading: "Admission Archive",
     usefulLinks: [
-      { href: "../../index.html#admission", label: "Homepage Admission Section" },
-      { href: "../../pages/guides/guides.html", label: "Guide Library for Admission and Documents" }
+      { href: "../../index.html#admission", label: "See Bihar Admission Details" },
+      { href: "../../pages/guides/guides.html", label: "Apply Online Admission Bihar Guide" }
     ]
   },
   scholarship: {
-    pageTitle: "Bihar Scholarship 2026, Eligibility, Portal Link, Payment Status | BiharResult.live",
-    socialTitle: "Bihar Scholarship 2026, Eligibility, Portal Link, Payment Status",
-    description: "Check Bihar Scholarship 2026 updates, eligibility notes, official portal links, document guidance, and payment status resources on BiharResult.live.",
-    socialDescription: "Browse Bihar scholarship updates with official portal links, eligibility notes, and payment status resources.",
-    keywords: "Bihar Scholarship 2026, Bihar scholarship portal, scholarship eligibility Bihar, payment status scholarship, Bihar student scholarship",
-    heading: "Scholarship",
+    pageTitle: "Bihar Scholarship 2026, Scholarship Apply Online Bihar, Student Updates | BiharResult.live",
+    socialTitle: "Bihar Scholarship 2026 and Bihar Student Scholarship Update",
+    description: "Check Bihar Scholarship 2026, Scholarship Apply Online Bihar links, eligibility rules, required documents, and Bihar student scholarship updates.",
+    socialDescription: "Browse Bihar scholarship official links, apply steps, eligibility notes, and student scholarship payment-status updates.",
+    keywords: "Bihar Scholarship 2026, Scholarship Apply Online Bihar, Bihar Student Scholarship Update, Bihar scholarship portal, scholarship eligibility Bihar",
+    heading: "Bihar Scholarship 2026 Updates",
     intro: "Browse scholarship posts for eligibility, portal links, and important official notices.",
     summary: "This page helps students searching Bihar Scholarship 2026, scholarship portal link, eligibility details, and payment status updates. Browse every published scholarship post below.",
     usefulHeading: "Useful Scholarship Links",
     archiveHeading: "Scholarship Archive",
     usefulLinks: [
-      { href: "../../index.html#scholarship", label: "Homepage Scholarship Section" },
-      { href: "../../pages/guides/guide-post-matric-scholarship-apply.html", label: "Bihar Post-Matric Scholarship Guide" }
+      { href: "../../index.html#scholarship", label: "View Bihar Scholarship Update" },
+      { href: "../../pages/guides/guide-post-matric-scholarship-apply.html", label: "Scholarship Apply Online Bihar Guide" }
     ]
   },
   "sarkari-yojana": {
@@ -578,31 +578,138 @@ function pageUrl(folder, slug) {
   return `https://biharresult.live/sections/${folder}/${slug}.html`;
 }
 
+function getKeywordPlan(post) {
+  const category = cleanText(post?.category || "");
+  const combined = `${cleanText(post?.title || "")} ${cleanText(post?.department || "")}`.toLowerCase();
+
+  const plans = {
+    "Latest Results": {
+      primary: "Bihar Result 2026",
+      related: [
+        "Latest Bihar Result",
+        "Bihar Board Result 2026",
+        "Bihar University Result 2026",
+        "Sarkari Result Bihar",
+        "Bihar Result Direct Link"
+      ],
+      heading: "Latest Bihar Result 2026 Summary"
+    },
+    "Latest Jobs": {
+      primary: "Bihar Latest Jobs 2026",
+      related: [
+        "Bihar Government Jobs",
+        "Bihar Vacancy 2026",
+        "Bihar Sarkari Naukri",
+        "Apply Online Bihar Job",
+        "Bihar Job Alert May 2026"
+      ],
+      heading: "Bihar Latest Jobs 2026 Summary"
+    },
+    "Admit Card": {
+      primary: "Bihar Admit Card 2026",
+      related: [
+        "Latest Admit Card Bihar",
+        "Download Admit Card Bihar",
+        "Exam Admit Card Direct Link",
+        "Bihar Exam Date 2026",
+        "Bihar Police Admit Card 2026"
+      ],
+      heading: "Bihar Admit Card 2026 Summary"
+    },
+    Scholarship: {
+      primary: "Bihar Scholarship 2026",
+      related: [
+        "Scholarship Apply Online Bihar",
+        "Bihar Student Scholarship Update",
+        "Bihar Student Update",
+        "Bihar Exam News"
+      ],
+      heading: "Bihar Scholarship 2026 Summary"
+    },
+    Admission: {
+      primary: "Bihar Admission 2026",
+      related: [
+        "Apply Online Admission Bihar",
+        "Bihar College Admission Update",
+        "Bihar University Result 2026",
+        "Bihar Student Update"
+      ],
+      heading: "Bihar Admission 2026 Summary"
+    },
+    "Sarkari Yojana": {
+      primary: "Bihar Student Update",
+      related: [
+        "Bihar Scholarship 2026",
+        "Bihar Admission 2026",
+        "Bihar Notification 2026",
+        "Bihar Exam News"
+      ],
+      heading: "Bihar Student Support Summary"
+    },
+    Verification: {
+      primary: "Bihar Student Update",
+      related: [
+        "Bihar Result Direct Link",
+        "Bihar Notification 2026",
+        "Bihar Exam Date 2026",
+        "Bihar Exam News"
+      ],
+      heading: "Bihar Verification and Student Update Summary"
+    }
+  };
+
+  const chosen = plans[category] || {
+    primary: "Bihar Student Update",
+    related: ["Bihar Result 2026", "Bihar Latest Jobs 2026", "Bihar Admit Card 2026"],
+    heading: "Bihar Student Update Summary"
+  };
+
+  const trendRelated = [];
+  if (combined.includes("bpsc") || combined.includes("72nd")) {
+    trendRelated.push("BPSC 72nd CCE 2026", "BPSC 72nd apply online", "BPSC 72nd eligibility", "BPSC 72nd last date");
+  }
+  if (combined.includes("bihar police") || combined.includes("constable")) {
+    trendRelated.push("Bihar Police Constable DV 2026", "Special Branch Constable 2026", "Driver Constable Result 2026");
+  }
+  if (combined.includes("bpssc") || combined.includes("havildar")) {
+    trendRelated.push("BPSSC Havildar Clerk Admit Card 2026");
+  }
+  if (combined.includes("teacher")) {
+    trendRelated.push("Bihar Teacher Recruitment 2026");
+  }
+
+  return {
+    primary: chosen.primary,
+    related: Array.from(new Set([...chosen.related, ...trendRelated])).slice(0, 8),
+    heading: chosen.heading
+  };
+}
+
 function detectCategoryMeta(category) {
   const meta = {
     "Latest Results": {
-      suffix: "Direct Link, Result Details",
-      action: "Check result status, cut off, score card details, official result links, and fast result updates",
+      suffix: "Bihar Result 2026, Direct Link, Result Details",
+      action: "Check Bihar result status, answer key route, cut off, score card details, and official result links",
       badge: "Result Update"
     },
     "Latest Jobs": {
-      suffix: "Apply Link, Eligibility, Dates",
-      action: "Check eligibility, vacancy details, last date, and official apply link",
+      suffix: "Bihar Latest Jobs 2026, Apply Link, Eligibility, Dates",
+      action: "Check Bihar Government jobs eligibility, Bihar vacancy details, last date, and official apply link",
       badge: "Application Update"
     },
     "Admit Card": {
-      suffix: "Download Link, Exam Date",
-      action: "Check exam date, shift timing, and admit card download instructions",
+      suffix: "Bihar Admit Card 2026, Download Link, Exam Date",
+      action: "Check Bihar exam date, shift timing, and Bihar admit card download instructions",
       badge: "Admit Card Update"
     },
     Scholarship: {
-      suffix: "Apply Link, Eligibility, Last Date",
-      action: "Check eligibility, required documents, and scholarship application steps",
+      suffix: "Bihar Scholarship 2026, Apply Link, Eligibility, Last Date",
+      action: "Check scholarship eligibility, required documents, and Bihar scholarship apply steps",
       badge: "Scholarship Update"
     },
     Admission: {
-      suffix: "Apply Link, Eligibility, Dates",
-      action: "Check admission dates, eligibility, counselling process, and official links",
+      suffix: "Bihar Admission 2026, Apply Link, Eligibility, Dates",
+      action: "Check Bihar admission dates, eligibility, counselling process, and official links",
       badge: "Admission Update"
     },
     "Sarkari Yojana": {
@@ -637,6 +744,7 @@ function buildSeoDescription(post) {
   const title = cleanText(post.title || "Latest update");
   const section = cleanText(post.category || "Latest Update");
   const department = cleanText(post.department || "");
+  const keywordPlan = getKeywordPlan(post);
   const summaryRows = buildDetailedDateRows(post);
   const firstKey = summaryRows[0]
     ? `${cleanText(summaryRows[0].label)}: ${cleanText(summaryRows[0].value)}`
@@ -647,10 +755,11 @@ function buildSeoDescription(post) {
     : intro;
   const actionLine = detectCategoryMeta(post.category).action;
   const parts = [
-    `${title} ${section} update`,
+    `${title} ${section} update for ${keywordPlan.primary}`,
     department ? `${department} notice summary` : "",
     firstKey ? `Key update: ${firstKey}` : "",
     actionLine,
+    keywordPlan.related.length ? `Also useful for: ${keywordPlan.related.slice(0, 3).join(", ")}` : "",
     cleanedIntro || "Check dates, eligibility, and official links before taking action.",
     "Use official source links for final verification."
   ].filter(Boolean);
@@ -660,16 +769,19 @@ function buildSeoDescription(post) {
 
 function buildKeywords(post) {
   const title = cleanText(post.title || "");
+  const keywordPlan = getKeywordPlan(post);
   const parts = [
+    keywordPlan.primary,
     title,
-    `${post.category || "India Sarkari update"} 2026`,
+    `${post.category || "Bihar Sarkari update"} 2026`,
     post.department || "",
     `${title} direct link`,
     `${title} official link`,
-    post.category === "Latest Results" ? "Sarkari Result India" : "",
-    post.category === "Latest Results" ? "Fast Result India" : "",
-    post.category === "Latest Jobs" ? "Sarkari Naukri India" : "",
-    post.category === "Admit Card" ? "Admit Card India" : "",
+    ...keywordPlan.related,
+    post.category === "Latest Results" ? "Sarkari Result Bihar" : "",
+    post.category === "Latest Results" ? "Bihar Board Result 2026" : "",
+    post.category === "Latest Jobs" ? "Bihar Government Jobs 2026" : "",
+    post.category === "Admit Card" ? "Bihar Exam Date 2026" : "",
     "BiharResult.live"
   ]
     .map(cleanText)
@@ -1709,7 +1821,7 @@ function buildTopicClusterLinks(post, currentFolder) {
 
   items.push({
     href: relativeSectionHref(currentFolder, post.category),
-    label: `Open ${SECTION_LABELS[post.category] || post.category} Archive`,
+    label: `Check ${SECTION_LABELS[post.category] || post.category} 2026 Updates`,
     note: "Browse more updates from the same category."
   });
 
@@ -1717,7 +1829,7 @@ function buildTopicClusterLinks(post, currentFolder) {
   if (homeAnchor) {
     items.push({
       href: homeAnchor,
-      label: `Homepage ${SECTION_LABELS[post.category] || post.category} Section`,
+      label: `View Bihar ${SECTION_LABELS[post.category] || post.category} Section`,
       note: "Jump back to the main homepage update stream."
     });
   }
@@ -1726,22 +1838,22 @@ function buildTopicClusterLinks(post, currentFolder) {
     items.push(
       {
         href: "../../pages/guides/sarkari-result-bihar.html",
-        label: "Sarkari Result Bihar Hub",
+        label: "Check Bihar Result 2026",
         note: "Broader result-intent cluster page."
       },
       {
         href: "../../pages/guides/fast-result-bihar.html",
-        label: "Fast Result Bihar Hub",
+        label: "Bihar Result Direct Link Hub",
         note: "Quick routes for high-intent result checks."
       },
       {
         href: "../../pages/guides/result-2026-bihar.html",
-        label: "Result 2026 Bihar Hub",
+        label: "Latest Bihar Board and University Result 2026",
         note: "Board and recruitment result support page."
       },
       {
         href: "../../sections/admit-card/",
-        label: "Admit Card and Exam Date Archive",
+        label: "Download Bihar Admit Card 2026",
         note: "Useful next step when result posts mention upcoming exams."
       }
     );
@@ -1751,17 +1863,17 @@ function buildTopicClusterLinks(post, currentFolder) {
     items.push(
       {
         href: "../../sections/admit-card/",
-        label: "Admit Card Archive",
+        label: "Download Bihar Admit Card 2026",
         note: "Track hall-ticket and exam-date updates for related recruitments."
       },
       {
         href: "../../sections/latest-results/",
-        label: "Latest Results Archive",
+        label: "Check Bihar Result 2026",
         note: "Follow selection-result updates for similar posts."
       },
       {
         href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html",
-        label: "Bihar Jobs, Result and Admit Card Hub",
+        label: "Apply for Bihar Latest Jobs",
         note: "Cross-category internal hub for related exam stages."
       }
     );
@@ -1771,17 +1883,17 @@ function buildTopicClusterLinks(post, currentFolder) {
     items.push(
       {
         href: "../../sections/latest-results/",
-        label: "Latest Results Archive",
+        label: "Check Bihar Result 2026",
         note: "Check result announcements for the same exam families."
       },
       {
         href: "../../sections/latest-jobs/",
-        label: "Latest Jobs Archive",
+        label: "Apply for Bihar Latest Jobs",
         note: "Follow original recruitment notices and related cycles."
       },
       {
         href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html",
-        label: "Bihar Jobs, Result and Admit Card Hub",
+        label: "Read BPSC Latest Notification",
         note: "One-page route across application, admit card, and result stages."
       }
     );
@@ -1791,12 +1903,12 @@ function buildTopicClusterLinks(post, currentFolder) {
     items.push(
       {
         href: "../../pages/guides/guide-post-matric-scholarship-apply.html",
-        label: "Post-Matric Scholarship Guide",
+        label: "View Bihar Scholarship Update",
         note: "Step-by-step scholarship application guidance."
       },
       {
         href: "../../sections/verification/",
-        label: "Verification Service Archive",
+        label: "Check Bihar Student Verification Notice",
         note: "Useful for status-check and document verification steps."
       }
     );
@@ -1806,12 +1918,12 @@ function buildTopicClusterLinks(post, currentFolder) {
     items.push(
       {
         href: "../../sections/latest-jobs/",
-        label: "Latest Jobs Archive",
+        label: "Apply for Bihar Latest Jobs",
         note: "Track recruitment-linked admissions and course notices."
       },
       {
         href: "../../pages/guides/guides.html",
-        label: "Guide Library",
+        label: "See Bihar Admission Details",
         note: "Form-fill, documents, and counselling support guides."
       }
     );
@@ -1850,12 +1962,12 @@ function buildTopicClusterLinks(post, currentFolder) {
   items.push(
     {
       href: "../../pages/guides/guide-bihar-job-result-admit-card-hub.html",
-      label: "Bihar Jobs, Result and Admit Card Hub",
+      label: "Read BPSC Latest Notification",
       note: "Broad internal hub connecting similar high-intent pages."
     },
     {
       href: "../../pages/guides/guides.html",
-      label: "Guide Library",
+      label: "Check Bihar Police Latest Notice",
       note: "Practical guides for form fill, eligibility, and result workflows."
     }
   );
@@ -1984,6 +2096,7 @@ function buildRelatedEntries(post, catalog, currentFolder, limit = 6) {
 function buildHeroLead(post) {
   const section = cleanText(post.category || "Latest Update");
   const department = cleanText(post.department || "Official department");
+  const keywordPlan = getKeywordPlan(post);
   const actionByCategory = {
     "Latest Jobs": "Recruitment update",
     "Latest Results": "Result update",
@@ -2002,7 +2115,7 @@ function buildHeroLead(post) {
   const keyLine = keyRow ? `${cleanText(keyRow.label)}: ${cleanText(keyRow.value)}` : "";
 
   const leadParts = [
-    `${actionLabel} for ${department} is available with key details and official links on this page.`,
+    `${keywordPlan.primary} support update: ${actionLabel} for ${department} is available with key details and official links on this page.`,
     keyLine ? `Key update: ${keyLine}.` : "",
     `Verify final instructions through ${primaryLabel} before taking action.`
   ].filter(Boolean);
@@ -2036,6 +2149,7 @@ function buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows) {
   const title = cleanText(post.title || "This update");
   const dept = cleanText(post.department || "the concerned department");
   const category = cleanText(post.category || "official update");
+  const keywordPlan = getKeywordPlan(post);
   const primary = getPrimaryLink(post);
   const primaryLabel = cleanText(primary?.label || "Official Link");
   const keyDate = summaryRows[0]
@@ -2048,8 +2162,9 @@ function buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows) {
     ? `${cleanText(eligibilityRows[0].label)}: ${cleanText(eligibilityRows[0].value)}`
     : "Check the official notification for exact eligibility rules.";
   const paragraphs = [
-    `${title} is published in the ${category} section with key points extracted from authority notices and official portal updates.`,
-    `This page summarizes schedule, eligibility checkpoints, fee/service notes, and trusted source links from ${dept} so users can review critical details quickly.`,
+    `${title} is published in the ${category} section and supports ${keywordPlan.primary} searches with key points extracted from authority notices and official portal updates.`,
+    `This page summarizes schedule, eligibility checkpoints, fee/service notes, and trusted source links from ${dept} so Bihar students can review critical details quickly.`,
+    keywordPlan.related.length ? `Related search topics covered naturally on this page include ${keywordPlan.related.slice(0, 4).join(", ")}.` : "",
     `Priority checks: ${keyDate} ${feeLine} ${eligibilityLine}`,
     `Before submitting, downloading, or checking status, open ${primaryLabel} and confirm final rules from the official notification/website.`
   ];
@@ -2058,24 +2173,7 @@ function buildSummaryParagraphs(post, summaryRows, feeRows, eligibilityRows) {
 }
 
 function buildSectionTitle(post) {
-  switch (post.category) {
-    case "Latest Results":
-      return "Result Summary";
-    case "Latest Jobs":
-      return "Recruitment Summary";
-    case "Admit Card":
-      return "Admit Card Summary";
-    case "Admission":
-      return "Admission Summary";
-    case "Scholarship":
-      return "Scholarship Summary";
-    case "Sarkari Yojana":
-      return "Scheme Summary";
-    case "Verification":
-      return "Verification Summary";
-    default:
-      return "Summary";
-  }
+  return getKeywordPlan(post).heading;
 }
 
 function buildSchema(post, folder, canonicalUrl, faq, howToApply, relatedPosts = []) {
@@ -2103,7 +2201,7 @@ function buildSchema(post, folder, canonicalUrl, faq, howToApply, relatedPosts =
     about: [
       cleanText(post.category || "Latest Update"),
       cleanText(post.department || "Official Department"),
-      cleanText(post.location || "India")
+      cleanText(post.location || "Bihar")
     ].filter(Boolean),
     primaryImageOfPage: {
       "@type": "ImageObject",
@@ -2130,7 +2228,7 @@ function buildSchema(post, folder, canonicalUrl, faq, howToApply, relatedPosts =
     about: [
       cleanText(post.category || "Latest Update"),
       cleanText(post.department || "Official Department"),
-      cleanText(post.location || "India")
+      cleanText(post.location || "Bihar")
     ].filter(Boolean),
     keywords: buildKeywords(post)
   };
@@ -2220,6 +2318,7 @@ function buildHtml(post, folder, catalog = []) {
   const quality = computePostQuality(post, folder);
   const canonicalUrl = quality.canonicalHref;
   const pageUrlSelf = pageUrl(folder, post.slug);
+  const keywordPlan = getKeywordPlan(post);
   const lead = buildHeroLead(post);
   const description = buildSeoDescription(post);
   const title = buildSeoTitle(post);
@@ -2260,6 +2359,7 @@ function buildHtml(post, folder, catalog = []) {
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
   <meta name="keywords" content="${escapeHtml(keywords)}" />
+  <meta name="news_keywords" content="${escapeHtml([keywordPlan.primary, ...keywordPlan.related].slice(0, 6).join(", "))}" />
   <meta name="author" content="BiharResult.live Editorial Team" />
   <meta name="robots" content="${escapeHtml(quality.robotsMeta)}" />
   <meta name="googlebot" content="${escapeHtml(quality.robotsMeta)}, max-video-preview:-1" />
