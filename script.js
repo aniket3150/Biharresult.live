@@ -19,6 +19,7 @@ const HOME_MAP = {
 const HOME_EXCLUDED_CATEGORIES = new Set(["Verification"]);
 let HOME_SECTIONS = [];
 const HOME_PRIORITY_SLUG_ORDER = [
+  "cbse-board-12th-result-2026",
   "nta-cuet-pg-result-2026-declaration-update",
   "nta-jee-main-paper-1-result-2026-session1-2-update",
   "nta-nchm-jee-admit-card-2026-update",
@@ -48,6 +49,7 @@ const HOME_PRIORITY_SLUG_ORDER = [
 ];
 const HOME_CATEGORY_PRIORITY_SLUG_ORDER = {
   "Latest Results": [
+    "cbse-board-12th-result-2026",
     "nta-jee-mains-session-ii-paper-ii-result-2026-check-now",
     "bihar-board-10th-result-2026",
     "bihar-board-class-12th-result-2026",
