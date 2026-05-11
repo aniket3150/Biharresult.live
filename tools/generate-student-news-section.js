@@ -12,6 +12,43 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
+function repairMojibake(value) {
+  const raw = String(value ?? "");
+  if (!raw) return "";
+  if (!/[à-ÿ]/.test(raw)) return raw;
+  try {
+    const repaired = Buffer.from(raw, "latin1").toString("utf8");
+    if (/[ऀ-ॿ]/.test(repaired) || (/[^\x00-\x7F]/.test(repaired) && !/[à-ÿ]/.test(repaired))) {
+      return repaired;
+    }
+  } catch (error) {
+    // no-op fallback
+  }
+  return raw;
+}
+
+function cleanText(value) {
+  return repairMojibake(value).replace(/\s+/g, " ").trim();
+}
+
+function normalizeSourceItem(item) {
+  return {
+    ...item,
+    slug: cleanText(item?.slug || ""),
+    headline: cleanText(item?.headline || ""),
+    summary: cleanText(item?.summary || ""),
+    category: cleanText(item?.category || ""),
+    categoryLabel: cleanText(item?.categoryLabel || ""),
+    source: cleanText(item?.source || ""),
+    sourceType: cleanText(item?.sourceType || ""),
+    relatedPostUrl: cleanText(item?.relatedPostUrl || ""),
+    relatedPostLabel: cleanText(item?.relatedPostLabel || ""),
+    metaDescription: cleanText(item?.metaDescription || ""),
+    keywords: cleanText(item?.keywords || ""),
+    details: Array.isArray(item?.details) ? item.details.map((row) => cleanText(row)).filter(Boolean) : []
+  };
+}
+
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
@@ -46,7 +83,7 @@ function sortItems(items) {
 }
 
 function normalizeIntentKey(item) {
-  return String(item.headline || "")
+  return cleanText(item.headline || "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, " ")
     .replace(/\b(2024|2025|2026|2027|today|latest|update|news|official)\b/g, " ")
@@ -55,10 +92,10 @@ function normalizeIntentKey(item) {
 }
 
 function isHighValueStudentNewsItem(item) {
-  const headline = String(item?.headline || "").trim();
-  const summary = String(item?.summary || "").trim();
-  const details = Array.isArray(item?.details) ? item.details.map((row) => String(row || "").trim()).filter(Boolean) : [];
-  const relatedPostUrl = String(item?.relatedPostUrl || "").trim();
+  const headline = cleanText(item?.headline || "");
+  const summary = cleanText(item?.summary || "");
+  const details = Array.isArray(item?.details) ? item.details.map((row) => cleanText(row)).filter(Boolean) : [];
+  const relatedPostUrl = cleanText(item?.relatedPostUrl || "");
   if (!headline || headline.length < 28) return false;
   if (!summary || summary.length < 80) return false;
   if (!details.length || details.join(" ").length < 180) return false;
@@ -74,7 +111,7 @@ function buildHomeJson(items) {
     title: item.headline,
     category: "Student News",
     department: item.source,
-    location: "India",
+    location: "Bihar, India",
     shortInfo: item.summary,
     longDescription: item.details.join(" "),
     publishedAt: item.date,
@@ -333,6 +370,8 @@ function buildLegacyRedirect() {
   <script>window.location.replace("/sections/student-news/");</script>
 </head>
 <body>
+  <h1>Student News Redirect - BiharResult.live</h1>
+  <p>This legacy URL now points to the main Student News archive for Bihar student updates.</p>
   <p><a href="/sections/student-news/">Open Student News</a></p>
 </body>
 </html>
@@ -341,11 +380,12 @@ function buildLegacyRedirect() {
 
 function main() {
   const rawItems = readJson(SOURCE_PATH);
+  const normalized = rawItems.map(normalizeSourceItem);
   const seenSlug = new Set();
   const seenIntent = new Set();
-  const items = rawItems.filter((item) => {
+  const items = normalized.filter((item) => {
     if (!isHighValueStudentNewsItem(item)) return false;
-    const slug = String(item.slug || "").trim();
+    const slug = cleanText(item.slug || "");
     if (!slug || seenSlug.has(slug)) return false;
     seenSlug.add(slug);
     const intent = normalizeIntentKey(item);

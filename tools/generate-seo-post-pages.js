@@ -339,6 +339,34 @@ function isInternalSiteUrl(url) {
   return !host || host === "biharresult.live" || host.endsWith(".biharresult.live");
 }
 
+function isWeakActionLabel(label) {
+  const text = cleanText(label || "").toLowerCase();
+  if (!text) return true;
+  return /^(open link|click here|source link|official link|open post|open biharresult\.live post)$/i.test(text)
+    || /open biharresult\.live post/i.test(text);
+}
+
+function defaultPrimaryLabelByCategory(category) {
+  const key = cleanText(category || "");
+  if (key === "Latest Results") return "Bihar Result Check Link";
+  if (key === "Admit Card") return "Bihar Admit Card Download Link";
+  if (key === "Latest Jobs") return "Bihar Job Application Link";
+  if (key === "Scholarship") return "Bihar Scholarship Portal Link";
+  if (key === "Admission") return "Bihar Admission Portal Link";
+  if (key === "Verification") return "Verification Status Link";
+  if (key === "Sarkari Yojana") return "Yojana Official Portal Link";
+  return "Official Website Link";
+}
+
+function normalizePrimaryLabel(label, url, category) {
+  const cleaned = cleanText(label || "");
+  const safeUrl = cleanText(url || "");
+  if (isInternalSiteUrl(safeUrl) || isWeakActionLabel(cleaned)) {
+    return defaultPrimaryLabelByCategory(category);
+  }
+  return cleaned;
+}
+
 function normalizeIsoDay(value) {
   const iso = normalizeIsoDate(value);
   if (!iso) return "";
@@ -1096,11 +1124,34 @@ function findLastDate(post) {
 
 function getPrimaryLink(post) {
   const links = Array.isArray(post.importantLinks) ? post.importantLinks : [];
-  return (
-    links.find((item) => /apply|download|check|official|notification|result/i.test(String(item.label || ""))) ||
-    links[0] ||
-    null
-  );
+  if (!links.length) return null;
+
+  const scored = links
+    .map((item) => {
+      const label = cleanText(item?.label || "");
+      const url = cleanText(item?.url || "");
+      if (!/^https?:\/\//i.test(url)) return null;
+
+      let score = 0;
+      if (!isInternalSiteUrl(url)) score += 8;
+      if (TRUSTED_AUTHORITY_HOST_PATTERN.test(urlHost(url))) score += 6;
+      if (/apply|download|check|official|notification|result|admit|portal|login|status/i.test(label)) score += 4;
+      if (!isWeakActionLabel(label)) score += 3;
+      if (cleanText(item?.type || "").toLowerCase() === "secondary") score += 1;
+
+      return { item, score, label, url };
+    })
+    .filter(Boolean)
+    .sort((left, right) => right.score - left.score);
+
+  const best = scored[0];
+  if (!best) return null;
+
+  return {
+    ...best.item,
+    label: normalizePrimaryLabel(best.label, best.url, post.category),
+    url: best.url
+  };
 }
 
 function defaultHowToApply(post) {
@@ -1733,14 +1784,14 @@ function officialLinkNote(label) {
 
 function buildSourceList(post) {
   const items = [];
-  if (cleanText(post.sourceUrl)) {
+  if (cleanText(post.sourceUrl) && !isInternalSiteUrl(cleanText(post.sourceUrl))) {
     items.push({
       label: normalizeSourceLabel(post.sourceName || post.sourceUrl, post.sourceUrl),
       url: cleanText(post.sourceUrl)
     });
   }
   for (const link of post.importantLinks || []) {
-    if (/^https?:\/\//i.test(String(link.url || ""))) {
+    if (/^https?:\/\//i.test(String(link.url || "")) && !isInternalSiteUrl(String(link.url || ""))) {
       items.push({
         label: normalizeSourceLabel(link.label || link.url, link.url),
         url: cleanText(link.url)
@@ -1790,10 +1841,12 @@ function buildOfficialLinkItems(post, sourceItems) {
   const items = [];
 
   (post.importantLinks || []).forEach((item) => {
-    const label = cleanText(item.label || "Official Link");
+    const rawLabel = cleanText(item.label || "Official Link");
     const url = cleanText(item.url || "");
     if (!/^https?:\/\//i.test(url)) return;
-    if (!officialPattern.test(label) && !govPattern.test(url)) return;
+    if (isInternalSiteUrl(url)) return;
+    if (!officialPattern.test(rawLabel) && !govPattern.test(url)) return;
+    const label = normalizePrimaryLabel(rawLabel, url, post.category);
     items.push({
       label,
       note: officialLinkNote(label),
@@ -2463,7 +2516,7 @@ ${schemaTag}
         ${feeRows.length ? `<section class="mt-6"><h2 class="table-title table-title--fee">Application Fee / Service Fee</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(feeRows)}</table></div></section>` : ""}
         ${eligibilityRows.length ? `<section class="mt-6"><h2 class="table-title table-title--eligibility">Eligibility Details</h2><div class="overflow-x-auto"><table class="info-table">${renderTableRows(eligibilityRows)}</table></div></section>` : ""}
         ${vacancyRows.length ? `<section class="mt-6"><h2 class="table-title table-title--vacancy">Vacancy / Seat / Category Details</h2><div class="overflow-x-auto"><table class="info-table">${renderVacancyRows(vacancyRows)}</table></div></section>` : ""}
-        ${(post.importantLinks || []).length ? `<section class="mt-6"><h2 class="table-title table-title--links">Important Links</h2><div class="seo-post-links">${(post.importantLinks || []).slice(0, 6).map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(cleanText(item.label || "Official Link"))}</strong><small>${escapeHtml(cleanText(post.title || ""))}</small></div><a href="${escapeHtml(cleanText(item.url || "#"))}" target="_blank" rel="noopener noreferrer" class="link-btn result-link-btn${item.type === "secondary" ? " secondary" : ""}">Open Link</a></div>`).join("\n")}</div></section>` : ""}
+        ${(post.importantLinks || []).length ? `<section class="mt-6"><h2 class="table-title table-title--links">Important Links</h2><div class="seo-post-links">${(post.importantLinks || []).slice(0, 6).map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(normalizePrimaryLabel(item.label || "Official Link", item.url || "", post.category))}</strong><small>${escapeHtml(cleanText(post.title || ""))}</small></div><a href="${escapeHtml(cleanText(item.url || "#"))}" target="_blank" rel="noopener noreferrer" class="link-btn result-link-btn${item.type === "secondary" ? " secondary" : ""}">Open Link</a></div>`).join("\n")}</div></section>` : ""}
         ${officialLinks.length ? `<section class="mt-6"><h2 class="table-title table-title--links">Official Website and Notification</h2><div class="seo-post-links">${officialLinks.map((item) => `<div class="seo-post-link-card"><div><strong>${escapeHtml(item.label)}</strong><small>${escapeHtml(item.note)}</small></div><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="link-btn result-link-btn secondary">Open Official Link</a></div>`).join("\n")}</div></section>` : ""}
         ${beforeStart.length ? `<section class="mt-6"><h2 class="table-title table-title--before">Before You Start</h2><ul class="post-checklist">${beforeStart.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ul></section>` : ""}
         ${howToApply.length ? `<section class="mt-6"><h2 class="table-title table-title--process">How To Proceed</h2><ol class="post-steps">${howToApply.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n")}</ol></section>` : ""}

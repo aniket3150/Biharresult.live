@@ -373,6 +373,46 @@ function isUsableUrl(url) {
   return sanitizeUrl(url) !== "#";
 }
 
+function urlHost(url) {
+  try {
+    return new URL(sanitizeUrl(url), window.location.origin).hostname.toLowerCase();
+  } catch (error) {
+    return "";
+  }
+}
+
+function isInternalSiteUrl(url) {
+  const host = urlHost(url);
+  return !host || host === "biharresult.live" || host.endsWith(".biharresult.live");
+}
+
+function isWeakActionLabel(label) {
+  const text = cleanSnippet(label || "").toLowerCase();
+  if (!text) return true;
+  return /^(open link|click here|source link|official link|open post|open biharresult\.live post)$/i.test(text)
+    || /open biharresult\.live post/i.test(text);
+}
+
+function defaultPrimaryLabelByCategory(category) {
+  const key = cleanSnippet(category || "");
+  if (key === "Latest Results") return "Bihar Result Check Link";
+  if (key === "Admit Card") return "Bihar Admit Card Download Link";
+  if (key === "Latest Jobs") return "Bihar Job Application Link";
+  if (key === "Scholarship") return "Bihar Scholarship Portal Link";
+  if (key === "Admission") return "Bihar Admission Portal Link";
+  if (key === "Verification") return "Verification Status Link";
+  if (key === "Sarkari Yojana") return "Yojana Official Portal Link";
+  return "Official Website Link";
+}
+
+function normalizePrimaryLabel(label, url, category) {
+  const cleaned = cleanSnippet(label || "");
+  if (isInternalSiteUrl(url) || isWeakActionLabel(cleaned)) {
+    return defaultPrimaryLabelByCategory(category);
+  }
+  return cleaned;
+}
+
 function isCriticalActionLabel(label) {
   return /apply|download|notification|official|check result|view notice/i.test(String(label || ""));
 }
@@ -1985,11 +2025,33 @@ function buildDetailedExplanationParagraphs(post, summaryRows, feeRows, eligibil
 }
 
 function getPrimaryAction(post) {
-  const links = post.importantLinks || [];
-  const preferred = links.find((x) => /apply|check|download|view|result|official/i.test(x.label || "") && isUsableUrl(x.url));
-  if (preferred) return preferred;
-  const fallback = links.find((x) => isUsableUrl(x.url));
-  return fallback || null;
+  const links = Array.isArray(post?.importantLinks) ? post.importantLinks : [];
+  if (!links.length) return null;
+
+  const scored = links
+    .map((item) => {
+      const url = sanitizeUrl(item?.url || "");
+      if (url === "#" || !/^https?:\/\//i.test(url)) return null;
+      const label = cleanSnippet(item?.label || "");
+      let score = 0;
+      if (!isInternalSiteUrl(url)) score += 8;
+      if (/(gov\.in|nic\.in|ac\.in|edu\.in|upsc\.gov\.in|cbse\.gov\.in|nta\.ac\.in)/i.test(urlHost(url))) score += 6;
+      if (/apply|check|download|view|result|official|notification|admit|portal|login|status/i.test(label)) score += 4;
+      if (!isWeakActionLabel(label)) score += 3;
+      if (cleanSnippet(item?.type || "").toLowerCase() === "secondary") score += 1;
+      return { item, url, label, score };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score);
+
+  const best = scored[0];
+  if (!best) return null;
+
+  return {
+    ...best.item,
+    url: best.url,
+    label: normalizePrimaryLabel(best.label, best.url, post?.category)
+  };
 }
 
 function renderPostFacts(post) {
@@ -2299,13 +2361,15 @@ function buildOfficialLinkItems(post) {
   };
 
   (post.importantLinks || []).forEach((item) => {
-    const label = cleanSnippet(item?.label || "");
+    const rawLabel = cleanSnippet(item?.label || "");
     const url = cleanSnippet(item?.url || "");
-    if (!officialPattern.test(label) && !govPattern.test(url)) return;
+    if (isInternalSiteUrl(url)) return;
+    if (!officialPattern.test(rawLabel) && !govPattern.test(url)) return;
+    const label = normalizePrimaryLabel(rawLabel, url, post?.category);
     pushItem({ label, note: officialLinkNote(label), url });
   });
 
-  if (post?.sourceUrl) {
+  if (post?.sourceUrl && !isInternalSiteUrl(post.sourceUrl)) {
     pushItem({
       label: cleanSnippet(post.sourceName || "Official Source"),
       note: "Secondary source captured for cross-verification.",
@@ -2820,7 +2884,7 @@ function renderPost(post, allPosts = []) {
       if (post.category === "Verification" && /official government link|fill \/ verify details/i.test(item.label || "")) {
         a.classList.add("official-glow");
       }
-      a.textContent = item.label;
+      a.textContent = normalizePrimaryLabel(item.label || "Official Link", safeUrl, post.category);
       linksEl.appendChild(a);
       renderedCount += 1;
     });
