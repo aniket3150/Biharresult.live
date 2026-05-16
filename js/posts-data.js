@@ -193,6 +193,51 @@ const postsData = [
     badge: "Application Update",
     priority: true,
     keywords: ["BPSC Physics, Chemistry Professor Vacancy 2026", "Bihar Latest Jobs 2026", "Bihar Vacancy 2026", "Apply Online Bihar Job", "BPSC official link"]
+  },
+  {
+    id: 14,
+    title: "BPSSC Bihar ASI Technical Vacancy 2026 Online Form 22 Posts",
+    category: "BPSC",
+    status: "Latest Update",
+    date: "2026-05-16",
+    lastUpdated: "2026-05-16",
+    organization: "Bihar Police Subordinate Services Commission",
+    shortName: "BPSSC",
+    url: "posts/jobs/bpssc-bihar-asi-technical-vacancy-2026-online-form-22-posts.html",
+    officialWebsite: "https://bpssc.bihar.gov.in",
+    badge: "Application Update",
+    priority: true,
+    keywords: ["BPSSC ASI Technical 2026", "Bihar ASI Technical 22 posts", "BPSSC Advt 07/2026", "Bihar Police Radio Wireless Recruitment", "bpssc.bihar.gov.in"]
+  },
+  {
+    id: 15,
+    title: "Bihar Board Class 10th, 12th Compartmental Result 2026",
+    category: "Answer Key,Bihar Board",
+    status: "Expected",
+    date: "2026-05-16",
+    lastUpdated: "2026-05-16",
+    organization: "Bihar School Examination Board",
+    shortName: "BSEB",
+    url: "posts/answer-key/bihar-board-class-10th-12th-compartmental-result-2026.html",
+    officialWebsite: "https://biharboardonline.com",
+    badge: "Result Update",
+    priority: true,
+    keywords: ["Bihar Board Compartmental Result 2026", "BSEB 10th 12th compartmental special exam result", "Bihar board compartmental download", "biharboardonline.com", "BSEB special examination 2026"]
+  },
+  {
+    id: 16,
+    title: "DCECE Bihar Polytechnic Admit Card 2026 Download (OUT)",
+    category: "Admit Card",
+    status: "Released",
+    date: "2026-05-16",
+    lastUpdated: "2026-05-16",
+    organization: "Bihar Combined Entrance Competitive Examination Board",
+    shortName: "BCECEB",
+    url: "posts/admit-card/dcece-bihar-polytechnic-admit-card-2026-download-out.html",
+    officialWebsite: "https://bceceboard.bihar.gov.in",
+    badge: "Admit Card Out",
+    priority: true,
+    keywords: ["DCECE Bihar Polytechnic Admit Card 2026 Download OUT", "BCECEB DCECE PE PM PMM Admit Card", "Bihar Polytechnic admission admit card 2026", "bceceboard.bihar.gov.in", "DCECE exam 23 24 May 2026"]
   }
 ];
 

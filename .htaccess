@@ -1,0 +1,102 @@
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml text/xml image/svg+xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 week"
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType font/truetype "access plus 1 month"
+  ExpiresByType font/opentype "access plus 1 month"
+  ExpiresByType application/font-woff "access plus 1 month"
+  ExpiresByType application/font-woff2 "access plus 1 month"
+</IfModule>
+
+# Cache Control Headers
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=604800"
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|gif|ico|webp|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # Security Headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Enable ETags
+<IfModule mod_expires.c>
+  FileETag MTime Size
+</IfModule>
+
+# Rewrite Rules
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Remove trailing slashes (except for directories)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+  # Redirect to HTTPS (uncomment when HTTPS is available)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Remove www. prefix
+  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  # RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Disable directory listing
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Block malicious user agents
+<IfModule mod_setenvif.c>
+  SetEnvIfNoCase User-Agent "^DotBot" bad_bot
+  SetEnvIfNoCase User-Agent "^AhrefsBot" bad_bot
+  SetEnvIfNoCase User-Agent "^SemrushBot" bad_bot
+  SetEnvIfNoCase User-Agent "^MJ12bot" bad_bot
+  Order allow,deny
+  Allow from all
+  Deny from env=bad_bot
+</IfModule>
+
+# Block access to sensitive files
+<FilesMatch "\.env|\.git|\.htaccess|robots\.txt|sitemap\.xml">
+  <IfModule mod_headers.c>
+    Header set X-Content-Type-Options nosniff
+  </IfModule>
+</FilesMatch>
+
+# Set character encoding
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .xml .js .css .json
+
+# MIME Types
+AddType application/json .json
+AddType application/rss+xml .xml .rss
+AddType text/plain .txt
+AddEncoding gzip .gz

@@ -8,7 +8,8 @@ function getSortedPosts() {
   return data.slice().sort((a, b) => {
     const aTime = parseDate(a.lastUpdated || a.date);
     const bTime = parseDate(b.lastUpdated || b.date);
-    return bTime - aTime;
+    if (bTime !== aTime) return bTime - aTime;
+    return Number(b.id || 0) - Number(a.id || 0);
   });
 }
 
@@ -113,7 +114,11 @@ function renderPriorityUpdates() {
 function matchesCategory(post, categoryFilter) {
   if (!categoryFilter) return false;
   const filters = categoryFilter.split(",").map((item) => item.trim().toLowerCase());
-  return filters.includes(String(post.category || "").toLowerCase());
+  const postCategories = String(post.category || "")
+    .split(",")
+    .map((item) => item.trim().toLowerCase())
+    .filter(Boolean);
+  return postCategories.some((item) => filters.includes(item));
 }
 
 function renderCategoryLists() {

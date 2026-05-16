@@ -4,20 +4,27 @@
 // Fields: title, url, updated
 window.latestUpdatesManual = [
   {
+    title: "Bihar Board Class 10th, 12th Compartmental Result 2026",
+    url: "posts/answer-key/bihar-board-class-10th-12th-compartmental-result-2026.html",
+    updated: "2026-05-16"
+  },
+  {
+    title: "BPSSC Bihar ASI Technical Vacancy 2026 Online Form 22 Posts",
+    url: "posts/jobs/bpssc-bihar-asi-technical-vacancy-2026-online-form-22-posts.html",
+    updated: "2026-05-16"
+  },
+    {
+    title: "DCECE Bihar Polytechnic Admit Card 2026 Download (OUT)",
+    url: "posts/admit-card/dcece-bihar-polytechnic-admit-card-2026-download-out.html",
+    updated: "2026-05-16"
+  },
+  {
     title: "BPSC School Teacher TRE 4.0 Online Form 2026 (46595 Posts Tentative)",
     url: "posts/jobs/bpsc-tre-4-vacancy-2026.html",
     updated: "2026-05-16"
   },
-  // {
-  //   title: "Bihar Police Constable Admit Card 2026",
-  //   url: "posts/admit-card/bihar-police-constable-admit-card-2026.html",
-  //   updated: "2026-05-16"
-  // },
-  // {
-  //   title: "BSSC Office Attendant Main Admit Card 2026",
-  //   url: "posts/admit-card/bssc-office-attendant-main-admit-card-2026.html",
-  //   updated: "2026-05-16"
-  // },
+  
+
   // {
   //   title: "Bihar Paramedical Admit Card 2026",
   //   url: "posts/admit-card/bihar-paramedical-admit-card-2026.html",

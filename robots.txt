@@ -1,4 +1,34 @@
 User-agent: *
 Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Allow: /posts/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /search?q=
+Crawl-delay: 1
+Request-rate: 10/1s
+
+User-agent: Googlebot
+Allow: /
+Request-rate: 100/1s
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Request-rate: 50/1s
+Crawl-delay: 1
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
 
 Sitemap: https://biharresult.live/sitemap.xml
+Sitemap: https://biharresult.live/sitemap-posts.xml
