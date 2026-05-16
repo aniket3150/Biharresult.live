@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">BiharResult Live Logo</title>
+  <desc id="desc">A badge style logo with BR letters.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#123f79"/>
+      <stop offset="100%" stop-color="#d63b2f"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g)"/>
+  <circle cx="60" cy="60" r="38" fill="#ffffff" opacity="0.18"/>
+  <text x="60" y="70" font-family="Trebuchet MS, sans-serif" font-size="44" text-anchor="middle" fill="#ffffff" font-weight="700">BR</text>
+</svg>

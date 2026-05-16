@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /legacy/
-Disallow: /_site/
-Disallow: /.chrome-headless/
-Disallow: /.chrome-headless-2/
 
-Host: biharresult.live
 Sitemap: https://biharresult.live/sitemap.xml
