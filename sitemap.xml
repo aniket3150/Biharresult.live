@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://biharresult.live/</loc><lastmod>2026-05-16</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://biharresult.live/</loc><lastmod>2026-05-17</lastmod><changefreq>always</changefreq><priority>1.0</priority></url>
   <url><loc>https://biharresult.live/about.html</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://biharresult.live/contact.html</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://biharresult.live/privacy-policy.html</loc><lastmod>2026-05-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
@@ -42,4 +42,7 @@
   <url><loc>https://biharresult.live/posts/answer-key/bihar-deled-answer-key-2026.html</loc><lastmod>2026-05-16</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://biharresult.live/posts/answer-key/bihar-board-class-10th-12th-compartmental-result-2026.html</loc><lastmod>2026-05-16</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://biharresult.live/posts/syllabus/bpsc-67th-syllabus-2026.html</loc><lastmod>2026-05-16</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://biharresult.live/posts/jobs/bpssc-bihar-asi-technical-vacancy-2026-online-form-22-posts.html</loc><lastmod>2026-05-16</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://biharresult.live/posts/admit-card/dcece-bihar-polytechnic-admit-card-2026-download-out.html</loc><lastmod>2026-05-16</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://biharresult.live/posts/jobs/bpssc-bihar-havildar-instructor-vacancy-2026-online-form.html</loc><lastmod>2026-05-17</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
 </urlset>

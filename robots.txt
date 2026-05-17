@@ -31,4 +31,3 @@ User-agent: DotBot
 Disallow: /
 
 Sitemap: https://biharresult.live/sitemap.xml
-Sitemap: https://biharresult.live/sitemap-posts.xml

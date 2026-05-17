@@ -4,6 +4,11 @@
 // Fields: title, url, updated
 window.latestUpdatesManual = [
   {
+    title: "BPSSC Bihar Havildar Instructor Vacancy 2026 Online Form",
+    url: "posts/jobs/bpssc-bihar-havildar-instructor-vacancy-2026-online-form.html",
+    updated: "2026-05-17"
+  },
+  {
     title: "Bihar Board Class 10th, 12th Compartmental Result 2026",
     url: "posts/answer-key/bihar-board-class-10th-12th-compartmental-result-2026.html",
     updated: "2026-05-16"
