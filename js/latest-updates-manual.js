@@ -4,6 +4,11 @@
 // Fields: title, url, updated
 window.latestUpdatesManual = [
   {
+    title: "RRB ALP Recruitment 2026 Apply Online, Syllabus PDF",
+    url: "posts/jobs/rrb-alp-recruitment-2026-apply-online-syllabus-pdf.html",
+    updated: "2026-05-13"
+  },
+  {
     title: "BPSSC Bihar Havildar Instructor Vacancy 2026 Online Form",
     url: "posts/jobs/bpssc-bihar-havildar-instructor-vacancy-2026-online-form.html",
     updated: "2026-05-17"

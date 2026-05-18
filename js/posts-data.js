@@ -358,6 +358,51 @@ const postsData = [
     badge: "Provisional List Out",
     priority: true,
     keywords: ["BCECE Senior Resident Tutor Provisional List 2026", "Bihar Senior Resident Tutor Provisional List", "BCECE Senior Resident Tutor Vacancy 2026", "BCECEB Senior Resident Tutor Recruitment 2026", "Bihar Senior Resident Tutor Apply Online"]
+  },
+  {
+    id: 25,
+    title: "RRB ALP Recruitment 2026 Apply Online, Syllabus PDF",
+    category: "Latest Jobs,RRB,Railway",
+    status: "Latest Update",
+    date: "2026-05-18",
+    lastUpdated: "2026-05-18",
+    organization: "Railway Recruitment Board",
+    shortName: "RRB",
+    url: "posts/jobs/rrb-alp-recruitment-2026-apply-online-syllabus-pdf.html",
+    officialWebsite: "https://www.rrbapply.gov.in/",
+    badge: "Application Update",
+    priority: true,
+    keywords: ["RRB ALP Recruitment 2026", "RRB ALP Apply Online 2026", "Assistant Loco Pilot Recruitment 2026", "RRB ALP Vacancy 11127", "RRB ALP Syllabus PDF 2026"]
+  },
+  {
+    id: 26,
+    title: "Indian Army Agniveer Admit Card 2026 Download (OUT)",
+    category: "Admit Card",
+    status: "Released",
+    date: "2026-05-18",
+    lastUpdated: "2026-05-18",
+    organization: "Join Indian Army",
+    shortName: "Indian Army",
+    url: "posts/admit-card/indian-army-agniveer-admit-card-2026-download-out.html",
+    officialWebsite: "https://joinindianarmy.nic.in/",
+    badge: "Admit Card Released",
+    priority: true,
+    keywords: ["Indian Army Agniveer Admit Card 2026", "Army Agniveer Admit Card 2026", "Agniveer CEE Admit Card 2026", "Join Indian Army Admit Card", "Agniveer Exam Date 2026"]
+  },
+  {
+    id: 27,
+    title: "UP TET 2026 Online Application Form uptet.upessc.org",
+    category: "Latest Jobs",
+    status: "Latest Update",
+    date: "2026-05-18",
+    lastUpdated: "2026-05-18",
+    organization: "Uttar Pradesh Education Service Selection Commission",
+    shortName: "UPESSC",
+    url: "posts/jobs/up-tet-2026-online-application-form.html",
+    officialWebsite: "https://uptet.upessc.org/",
+    badge: "Application Update",
+    priority: true,
+    keywords: ["UP TET 2026 Online Form", "UPTET 2026 Apply Online", "UP TET Application Form 2026", "UP Teacher Eligibility Test 2026", "uptet.upessc.org"]
   }
 ];
 
