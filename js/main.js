@@ -139,6 +139,7 @@ function renderCategoryLists() {
       .map(
         (post) => `
       <li>
+        ${post.comingSoon ? `<span class="blink-red-tag coming-soon-alert" aria-label="Coming soon alert">&#9888; Coming Soon</span>` : ""}
         <a href="${post.url}">${post.title}</a>
         <div class="meta-row">
           <span>Updated: ${formatDate(post.lastUpdated || post.date)}</span>

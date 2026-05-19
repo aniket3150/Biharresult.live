@@ -7,19 +7,25 @@ Allow: /posts/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
-Disallow: /search?q=
-Crawl-delay: 1
-Request-rate: 10/1s
+Disallow: /search
+Disallow: /*?*utm_
+Disallow: /*?*fbclid=
+Disallow: /*?*gclid=
 
-User-agent: Googlebot
+User-agent: GPTBot
 Allow: /
-Request-rate: 100/1s
-Crawl-delay: 0
 
-User-agent: Bingbot
+User-agent: ChatGPT-User
 Allow: /
-Request-rate: 50/1s
-Crawl-delay: 1
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
 
 User-agent: AhrefsBot
 Disallow: /

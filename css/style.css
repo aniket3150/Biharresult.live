@@ -336,6 +336,12 @@ main section {
   animation: redBlink 1s infinite;
 }
 
+.coming-soon-alert {
+  display: inline-block;
+  margin-right: 0.45rem;
+  vertical-align: middle;
+}
+
 .latest-result-blink-list li {
   padding: 0.3rem 0;
 }

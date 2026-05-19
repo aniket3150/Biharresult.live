@@ -418,6 +418,38 @@ const postsData = [
     badge: "Admit Card Date Out",
     priority: true,
     keywords: ["Bihar DElEd Admit Card 2026", "BSEB DElEd Admit Card", "DElEd Entrance Exam 2026", "Bihar DElEd Exam Date", "form.bsebdled.com login"]
+  },
+  {
+    id: 29,
+    title: "Bihar Board Scrutiny Result 2026 Class 10th, 12th Download",
+    category: "Result,Bihar Board",
+    status: "Expected",
+    date: "2026-05-19",
+    lastUpdated: "2026-05-19",
+    organization: "Bihar School Examination Board",
+    shortName: "BSEB",
+    url: "bihar-board-scrutiny-result-2026-class-10th-12th-download.html",
+    officialWebsite: "https://biharboardonline.bihar.gov.in/",
+    badge: "Link Active Soon",
+    priority: true,
+    comingSoon: true,
+    keywords: ["Bihar Board Scrutiny Result 2026", "BSEB Scrutiny Result 2026", "Bihar Board 10th Scrutiny Result 2026", "Bihar Board 12th Scrutiny Result 2026", "Matric Scrutiny Result 2026", "Intermediate Scrutiny Result 2026"]
+  },
+  {
+    id: 30,
+    title: "IGNOU Hall Ticket June 2026 Download Admit Card Link",
+    category: "Admit Card",
+    status: "Expected",
+    date: "2026-05-19",
+    lastUpdated: "2026-05-19",
+    organization: "Indira Gandhi National Open University",
+    shortName: "IGNOU",
+    url: "ignou-hall-ticket-june-2026-download-admit-card-link.html",
+    officialWebsite: "https://ignou.samarth.edu.in/",
+    badge: "Link Active Soon",
+    priority: true,
+    comingSoon: true,
+    keywords: ["IGNOU Hall Ticket June 2026", "IGNOU Admit Card June 2026", "IGNOU TEE June 2026 Hall Ticket", "IGNOU Term End Exam Admit Card", "ignou.samarth.edu.in", "IGNOU Date Sheet June 2026"]
   }
 ];
 
