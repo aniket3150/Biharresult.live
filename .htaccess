@@ -49,6 +49,10 @@
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # SEO & Performance Headers
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' t.me whatsapp.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'"
+  Header set Connection "keep-alive"
 </IfModule>
 
 # Enable ETags
