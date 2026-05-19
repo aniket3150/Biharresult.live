@@ -57,6 +57,11 @@ biharresult-live/
 |   |-- icons/
 |   |-- logo/
 |       |-- logo.svg
+|-- docs/
+|   |-- SEO_OPTIMIZATION_GUIDE.md
+|   |-- WEBSITE_AUDIT_REPORT.md
+|-- scripts/
+|   |-- update-cache-bust.ps1
 |-- sitemap.xml
 |-- robots.txt
 |-- README.md
@@ -140,3 +145,4 @@ git push -u origin main
 - Important homepage links are already present in raw HTML for SEO crawlability.
 - JavaScript enhances the UI (search, latest lists, FAQ accordion, mobile menu).
 - Replace placeholder Telegram/WhatsApp links with your real channels before launch.
+- Cache-busting deploy script is available at `scripts/update-cache-bust.ps1`.

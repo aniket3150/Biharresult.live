@@ -3,6 +3,21 @@ function parseDate(value) {
   return new Date(`${value}T00:00:00`).getTime();
 }
 
+function unregisterServiceWorkers() {
+  if (!("serviceWorker" in navigator)) return;
+
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .getRegistrations()
+      .then((registrations) => {
+        registrations.forEach((registration) => registration.unregister());
+      })
+      .catch(() => {
+        // Ignore cleanup failures in unsupported/locked-down browsers.
+      });
+  });
+}
+
 function getSortedPosts() {
   const data = Array.isArray(window.postsData) ? window.postsData : [];
   return data.slice().sort((a, b) => {
@@ -291,6 +306,7 @@ function updateYear() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  unregisterServiceWorkers();
   renderLatestUpdates();
   renderPriorityUpdates();
   renderCategoryLists();
