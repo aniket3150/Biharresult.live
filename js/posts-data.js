@@ -403,6 +403,21 @@ const postsData = [
     badge: "Application Update",
     priority: true,
     keywords: ["UP TET 2026 Online Form", "UPTET 2026 Apply Online", "UP TET Application Form 2026", "UP Teacher Eligibility Test 2026", "uptet.upessc.org"]
+  },
+  {
+    id: 28,
+    title: "Bihar DElEd Admit Card 2026 Download Link, Date OUT",
+    category: "Admit Card,Bihar Board",
+    status: "To Be Updated",
+    date: "2026-05-19",
+    lastUpdated: "2026-05-19",
+    organization: "Bihar School Examination Board",
+    shortName: "BSEB",
+    url: "posts/admit-card/bihar-deled-admit-card-2026-download-link-date.html",
+    officialWebsite: "https://form.bsebdled.com/login",
+    badge: "Admit Card Date Out",
+    priority: true,
+    keywords: ["Bihar DElEd Admit Card 2026", "BSEB DElEd Admit Card", "DElEd Entrance Exam 2026", "Bihar DElEd Exam Date", "form.bsebdled.com login"]
   }
 ];
 

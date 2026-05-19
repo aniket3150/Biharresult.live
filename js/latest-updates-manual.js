@@ -4,6 +4,11 @@
 // Fields: title, url, updated
 window.latestUpdatesManual = [
   {
+    title: "Bihar DElEd Admit Card 2026 Download Link, Date OUT",
+    url: "posts/admit-card/bihar-deled-admit-card-2026-download-link-date.html",
+    updated: "2026-05-19"
+  },
+  {
     title: "RRB ALP Recruitment 2026 Apply Online, Syllabus PDF",
     url: "posts/jobs/rrb-alp-recruitment-2026-apply-online-syllabus-pdf.html",
     updated: "2026-05-13"
