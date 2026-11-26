@@ -450,6 +450,21 @@ const postsData = [
     priority: true,
     comingSoon: true,
     keywords: ["IGNOU Hall Ticket June 2026", "IGNOU Admit Card June 2026", "IGNOU TEE June 2026 Hall Ticket", "IGNOU Term End Exam Admit Card", "ignou.samarth.edu.in", "IGNOU Date Sheet June 2026"]
+  },
+  {
+    id: 31,
+    title: "Bihar Board Class 10th / 12th 2nd Dummy Admit Card 2027",
+    category: "Admit Card,Bihar Board",
+    status: "Released",
+    date: "2026-11-26",
+    lastUpdated: "2026-11-26",
+    organization: "Bihar School Examination Board",
+    shortName: "BSEB",
+    url: "posts/admit-card/bihar-board-10th-12th-2nd-dummy-admit-card-2027.html",
+    officialWebsite: "https://biharboardonline.com/",
+    badge: "2nd Dummy Admit Card Available",
+    priority: true,
+    keywords: ["Bihar Board 2nd Dummy Admit Card 2027", "BSEB 10th Dummy Admit Card", "BSEB 12th Dummy Admit Card", "Bihar Board Class 10 Dummy Admit Card", "Bihar Board Class 12 Dummy Admit Card", "BSEB Dummy Registration Card 2027"]
   }
 ];
 

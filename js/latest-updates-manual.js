@@ -4,6 +4,11 @@
 // Fields: title, url, updated
 window.latestUpdatesManual = [
   {
+    title: "Bihar Board Class 10th / 12th 2nd Dummy Admit Card 2027",
+    url: "posts/admit-card/bihar-board-10th-12th-2nd-dummy-admit-card-2027.html",
+    updated: "2026-11-26"
+  },
+  {
     title: "BTSC Dresser 2025: Recommended Candidate List Updated",
     url: "https://btsc.bihar.gov.in/result?title=2026",
     updated: "2026-11-25"
@@ -27,10 +32,5 @@ window.latestUpdatesManual = [
     title: "Bihar PGMAC 2026 Round 2 Seat Allotment Result on November 28",
     url: "https://bceceboard.bihar.gov.in/pdf_Adv/ADV_PGMAC26_05.pdf",
     updated: "2026-11-21"
-  },
-  {
-    title: "BPSC Exam Calendar 2026: 71st CCE Result and 72nd CCE Schedule",
-    url: "https://bpsc.bihar.gov.in/exam-calendar/",
-    updated: "2026-11-20"
   }
 ];
