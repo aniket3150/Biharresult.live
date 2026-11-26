@@ -1,0 +1,54 @@
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Allow: /posts/
+Allow: /latest-result.html
+Allow: /latest-jobs.html
+Allow: /admit-card.html
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /search
+Disallow: /*?*utm_
+Disallow: /*?*fbclid=
+Disallow: /*?*gclid=
+Disallow: /temp/
+Crawl-delay: 1
+Request-rate: 30/60
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+Request-rate: 100/60
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+Sitemap: https://biharresult.live/sitemap.xml

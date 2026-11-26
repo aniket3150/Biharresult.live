@@ -1,0 +1,29 @@
+# BiharResult.Live
+
+> Bihar-focused education and exam updates: results, admit cards, jobs, answer keys, syllabus, university notices, and Bihar Board announcements.
+
+## About
+- Site: https://biharresult.live/
+- Region focus: Bihar, India
+- Language: English + Hindi (Hinglish usage in explainer content)
+- Topic focus: Government exam notifications, board results, admission and admit card updates.
+
+## Canonical Sections
+- Home: https://biharresult.live/
+- Latest Result: https://biharresult.live/latest-result.html
+- Admit Card: https://biharresult.live/admit-card.html
+- Latest Jobs: https://biharresult.live/latest-jobs.html
+- Bihar Board: https://biharresult.live/bihar-board.html
+- Answer Key: https://biharresult.live/answer-key.html
+- Syllabus: https://biharresult.live/syllabus.html
+- University: https://biharresult.live/university.html
+
+## Trust and Verification
+- Always verify final dates, links, and eligibility from official authority websites before any action.
+- Contact and policy pages:
+  - https://biharresult.live/contact.html
+  - https://biharresult.live/about.html
+  - https://biharresult.live/disclaimer.html
+
+## Crawling
+- Primary sitemap: https://biharresult.live/sitemap.xml
