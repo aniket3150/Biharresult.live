@@ -4,6 +4,42 @@
 // Fields: title, url, updated
 window.latestUpdatesManual = [
   {
+    title: "CURAJ LDC Recruitment 2026: 2 Posts, Apply by 20 December",
+    url: "posts/jobs/curaj-ldc-recruitment-2026.html",
+    updated: "2026-11-28",
+    date: "2026-10-22"
+  },
+  {
+    title: "BPSC AEDO Recruitment 2026: 935 Posts, Apply from 1 December",
+    url: "posts/jobs/bpsc-aedo-recruitment-2026.html",
+    updated: "2026-11-28",
+    date: "2026-11-26"
+  },
+  {
+    title: "BPSC Agriculture Department Recruitment 2026: 147 Assistant Director & Assistant Controller Posts",
+    url: "posts/jobs/bpsc-agriculture-department-recruitment-2026.html",
+    updated: "2026-11-28",
+    date: "2026-11-28"
+  },
+  {
+    title: "BPBCC Lower Division Clerk Recruitment 2026: 12 Posts, ₹28,000 Pay",
+    url: "posts/jobs/bpbcc-lower-division-clerk-recruitment-2026.html",
+    updated: "2026-11-28",
+    date: "2026-11-25"
+  },
+  {
+    title: "Bihar ECR PGT and TGT Teacher Walk-in Interview 2026 (26–28 November)",
+    url: "posts/jobs/bihar-ecr-teacher-recruitment-2026.html",
+    updated: "2026-11-28",
+    date: "2026-11-24"
+  },
+  {
+    title: "Bihar Vidhan Sabha Recruitment 2026: 20 JSA and Office Attendant Posts",
+    url: "posts/jobs/bihar-vidhan-sabha-recruitment-2026.html",
+    updated: "2026-11-28",
+    date: "2026-11-09"
+  },
+  {
     title: "Bihar Board Class 10th / 12th 2nd Dummy Admit Card 2027",
     url: "posts/admit-card/bihar-board-10th-12th-2nd-dummy-admit-card-2027.html",
     updated: "2026-11-26"

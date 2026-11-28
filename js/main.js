@@ -21,9 +21,12 @@ function unregisterServiceWorkers() {
 function getSortedPosts() {
   const data = Array.isArray(window.postsData) ? window.postsData : [];
   return data.slice().sort((a, b) => {
-    const aTime = parseDate(a.lastUpdated || a.date);
-    const bTime = parseDate(b.lastUpdated || b.date);
-    if (bTime !== aTime) return bTime - aTime;
+    const aPublished = parseDate(a.date || a.lastUpdated);
+    const bPublished = parseDate(b.date || b.lastUpdated);
+    if (bPublished !== aPublished) return bPublished - aPublished;
+    const aUpdated = parseDate(a.lastUpdated);
+    const bUpdated = parseDate(b.lastUpdated);
+    if (bUpdated !== aUpdated) return bUpdated - aUpdated;
     return Number(b.id || 0) - Number(a.id || 0);
   });
 }
@@ -51,8 +54,10 @@ function getManualLatestUpdates() {
     .map((item) => ({
       title: item.title,
       url: item.url,
-      updated: item.updated || item.lastUpdated || ""
-    }));
+      updated: item.updated || item.lastUpdated || "",
+      date: item.date || item.published || item.updated || item.lastUpdated || ""
+    }))
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 }
 
 function slugify(value) {
@@ -154,7 +159,6 @@ function renderCategoryLists() {
       .map(
         (post) => `
       <li>
-        ${post.comingSoon ? `<span class="blink-red-tag coming-soon-alert" aria-label="Coming soon alert">&#9888; Coming Soon</span>` : ""}
         <a href="${post.url}">${post.title}</a>
         <div class="meta-row">
           <span>Updated: ${formatDate(post.lastUpdated || post.date)}</span>
